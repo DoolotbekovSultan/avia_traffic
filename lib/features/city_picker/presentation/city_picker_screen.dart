@@ -1,9 +1,11 @@
 import 'package:aviatraffic/core/di/injector.dart';
+import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/city_picker/domain/entities/city.dart';
 import 'package:aviatraffic/features/city_picker/domain/entities/country.dart';
 import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CityPickerScreen extends StatelessWidget {
   final bool isFrom;
@@ -35,7 +37,7 @@ class _CityPickerView extends StatefulWidget {
 
 class _CityPickerViewState extends State<_CityPickerView> {
   final TextEditingController _ctrl = TextEditingController();
-  Country? _selectedCountry; // Using a wrapper for local state
+  Country? _selectedCountry;
 
   @override
   void dispose() {
@@ -179,10 +181,6 @@ class _Loading extends StatelessWidget {
   );
 }
 
-// ════════════════════════════════════════════════════════════════════
-// SHARED SHELL WIDGET
-// ════════════════════════════════════════════════════════════════════
-
 class _PickerShell extends StatelessWidget {
   final String title;
   final String searchHint;
@@ -298,6 +296,14 @@ class _SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textStyles = getIt<AppTextStyles>();
+    final hintStyle = textStyles.titleMedium.copyWith(
+      fontSize: 15.sp,
+      fontWeight: FontWeight.w600,
+      height: 32 / 15,
+      color: const Color(0xFFADB5BD),
+    );
+
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xFFF2F4F8),
@@ -310,7 +316,7 @@ class _SearchField extends StatelessWidget {
         onChanged: onChanged,
         decoration: InputDecoration(
           hintText: hint,
-          hintStyle: const TextStyle(color: Color(0xFFADB5BD), fontSize: 15),
+          hintStyle: hintStyle,
           prefixIcon: const Icon(
             Icons.search,
             color: Color(0xFF8A8A8E),

@@ -1,7 +1,10 @@
+import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
+import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/city_picker/domain/entities/city.dart';
 import 'package:aviatraffic/features/city_picker/presentation/city_picker_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CityPickerWidget extends StatefulWidget {
   final String initialFrom;
@@ -33,12 +36,8 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
   @override
   void didUpdateWidget(covariant CityPickerWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.initialFrom != widget.initialFrom) {
-      _from = widget.initialFrom;
-    }
-    if (oldWidget.initialTo != widget.initialTo) {
-      _to = widget.initialTo;
-    }
+    if (oldWidget.initialFrom != widget.initialFrom) _from = widget.initialFrom;
+    if (oldWidget.initialTo != widget.initialTo) _to = widget.initialTo;
   }
 
   Future<void> _openFromPicker() async {
@@ -51,12 +50,12 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
         minChildSize: 0.5,
         maxChildSize: 0.95,
         expand: false,
-        builder: (_, __) => const CityPickerScreen(isFrom: true),
+        builder: (_, _) => const CityPickerScreen(isFrom: true),
       ),
     );
     if (result != null) {
       setState(() {
-        _from = '${result.city} (${result.code})';
+        _from = '${result.city},${result.code}';
         widget.onChanged(_from, _to);
       });
     }
@@ -77,7 +76,7 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
     );
     if (result != null) {
       setState(() {
-        _to = '${result.city} (${result.code})';
+        _to = '${result.city},${result.code}';
         widget.onChanged(_from, _to);
       });
     }
@@ -94,83 +93,120 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
-    final tt = Theme.of(context).textTheme;
+    final textStyles = getIt<AppTextStyles>();
 
-    return Container(
-      decoration: BoxDecoration(
-        color: cs.surface,
-        borderRadius: BorderRadius.circular(14),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.08),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
+    final mainTextStyle = textStyles.titleMedium.copyWith(
+      fontSize: 15.sp,
+      fontWeight: FontWeight.w600,
+      height: 16 / 13,
+      color: const Color(0xFF212020),
+    );
+
+    final hintTextStyle = textStyles.titleMedium.copyWith(
+      fontSize: 15.sp,
+      fontWeight: FontWeight.w600,
+      height: 16 / 13,
+      color: const Color(0xFF8992A0),
+    );
+
+    final smallHintStyle = textStyles.bodySmall.copyWith(
+      fontSize: 13.sp,
+      fontWeight: FontWeight.w400,
+      height: 16 / 13,
+      color: const Color(0xFF8992A0),
+    );
+
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(6.r),
           ),
-        ],
-      ),
-      child: Column(
-        children: [
-          // Откуда
-          GestureDetector(
-            onTap: _openFromPicker,
-            behavior: HitTestBehavior.opaque,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      _from.isEmpty ? 'Откуда' : _from,
-                      style: tt.bodyMedium?.copyWith(
-                        color: _from.isEmpty
-                            ? AppColors.neutral500
-                            : AppColors.onBackground,
-                      ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 48.h,
+                child: GestureDetector(
+                  onTap: _openFromPicker,
+                  behavior: HitTestBehavior.opaque,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 7.h,
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: _from.isEmpty
+                              ? Text('Откуда', style: hintTextStyle)
+                              : Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Откуда', style: smallHintStyle),
+                                    Text(_from, style: mainTextStyle),
+                                  ],
+                                ),
+                        ),
+                      ],
                     ),
                   ),
-                  GestureDetector(
-                    onTap: _swapCities,
-                    child: Container(
-                      width: 36,
-                      height: 36,
-                      decoration: const BoxDecoration(
-                        color: AppColors.neutral900,
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(
-                        Icons.swap_horiz_rounded,
-                        color: Colors.white,
-                        size: 20,
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
-          ),
-          Divider(height: 1, color: Colors.grey.shade200),
-          // Куда
-          GestureDetector(
-            onTap: _openToPicker,
-            behavior: HitTestBehavior.opaque,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  _to.isEmpty ? 'Куда' : _to,
-                  style: tt.bodyMedium?.copyWith(
-                    color: _to.isEmpty
-                        ? AppColors.neutral500
-                        : AppColors.onBackground,
+              const Divider(height: 1, indent: 16, endIndent: 16),
+              SizedBox(
+                height: 48.h,
+                child: GestureDetector(
+                  onTap: _openToPicker,
+                  behavior: HitTestBehavior.opaque,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 7.h,
+                    ),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: _to.isEmpty
+                          ? Text('Куда', style: hintTextStyle)
+                          : Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Куда', style: smallHintStyle),
+                                Text(_to, style: mainTextStyle),
+                              ],
+                            ),
+                    ),
                   ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          right: 16.w,
+          top: 0,
+          bottom: 0,
+          child: Center(
+            child: GestureDetector(
+              onTap: _swapCities,
+              child: Container(
+                width: 24.w,
+                height: 24.h,
+                decoration: const BoxDecoration(
+                  color: AppColors.primary,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.swap_horiz_rounded,
+                  color: Colors.white,
+                  size: 16.w,
                 ),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

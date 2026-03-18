@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_bloc.dart';
+part of 'deals_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -16,58 +16,54 @@ final _privateConstructorUsedError = UnsupportedError(
 );
 
 /// @nodoc
-mixin _$HomeEvent {
+mixin _$DealsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() refresh,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? refresh,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? refresh,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_Refresh value) refresh,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_Refresh value)? refresh,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_Refresh value)? refresh,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomeEventCopyWith<$Res> {
-  factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
-      _$HomeEventCopyWithImpl<$Res, HomeEvent>;
+abstract class $DealsEventCopyWith<$Res> {
+  factory $DealsEventCopyWith(
+    DealsEvent value,
+    $Res Function(DealsEvent) then,
+  ) = _$DealsEventCopyWithImpl<$Res, DealsEvent>;
 }
 
 /// @nodoc
-class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
-    implements $HomeEventCopyWith<$Res> {
-  _$HomeEventCopyWithImpl(this._value, this._then);
+class _$DealsEventCopyWithImpl<$Res, $Val extends DealsEvent>
+    implements $DealsEventCopyWith<$Res> {
+  _$DealsEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of HomeEvent
+  /// Create a copy of DealsEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -81,14 +77,14 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$DealsEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
     _$StartedImpl _value,
     $Res Function(_$StartedImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of HomeEvent
+  /// Create a copy of DealsEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -99,7 +95,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'HomeEvent.started()';
+    return 'DealsEvent.started()';
   }
 
   @override
@@ -113,19 +109,13 @@ class _$StartedImpl implements _Started {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() refresh,
-  }) {
+  TResult when<TResult extends Object?>({required TResult Function() started}) {
     return started();
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? refresh,
-  }) {
+  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? started}) {
     return started?.call();
   }
 
@@ -133,7 +123,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? refresh,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -146,7 +135,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_Refresh value) refresh,
   }) {
     return started(this);
   }
@@ -155,7 +143,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_Refresh value)? refresh,
   }) {
     return started?.call(this);
   }
@@ -164,7 +151,6 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_Refresh value)? refresh,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -174,138 +160,31 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements HomeEvent {
+abstract class _Started implements DealsEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$RefreshImplCopyWith<$Res> {
-  factory _$$RefreshImplCopyWith(
-    _$RefreshImpl value,
-    $Res Function(_$RefreshImpl) then,
-  ) = __$$RefreshImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RefreshImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$RefreshImpl>
-    implements _$$RefreshImplCopyWith<$Res> {
-  __$$RefreshImplCopyWithImpl(
-    _$RefreshImpl _value,
-    $Res Function(_$RefreshImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of HomeEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$RefreshImpl implements _Refresh {
-  const _$RefreshImpl();
-
-  @override
-  String toString() {
-    return 'HomeEvent.refresh()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RefreshImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() refresh,
-  }) {
-    return refresh();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? refresh,
-  }) {
-    return refresh?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? refresh,
-    required TResult orElse(),
-  }) {
-    if (refresh != null) {
-      return refresh();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_Refresh value) refresh,
-  }) {
-    return refresh(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_Refresh value)? refresh,
-  }) {
-    return refresh?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Refresh value)? refresh,
-    required TResult orElse(),
-  }) {
-    if (refresh != null) {
-      return refresh(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Refresh implements HomeEvent {
-  const factory _Refresh() = _$RefreshImpl;
-}
-
-/// @nodoc
-mixin _$HomeState {
+mixin _$DealsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<HomeNews> news, List<HomeDeal> deals) loaded,
+    required TResult Function(List<Deal> deals) loaded,
     required TResult Function(Failure failure) failure,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<HomeNews> news, List<HomeDeal> deals)? loaded,
+    TResult? Function(List<Deal> deals)? loaded,
     TResult? Function(Failure failure)? failure,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<HomeNews> news, List<HomeDeal> deals)? loaded,
+    TResult Function(List<Deal> deals)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
@@ -334,22 +213,24 @@ mixin _$HomeState {
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<$Res> {
-  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res, HomeState>;
+abstract class $DealsStateCopyWith<$Res> {
+  factory $DealsStateCopyWith(
+    DealsState value,
+    $Res Function(DealsState) then,
+  ) = _$DealsStateCopyWithImpl<$Res, DealsState>;
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
-    implements $HomeStateCopyWith<$Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$DealsStateCopyWithImpl<$Res, $Val extends DealsState>
+    implements $DealsStateCopyWith<$Res> {
+  _$DealsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of HomeState
+  /// Create a copy of DealsState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -363,14 +244,14 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$DealsStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
     _$InitialImpl _value,
     $Res Function(_$InitialImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of DealsState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -381,7 +262,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial()';
+    return 'DealsState.initial()';
   }
 
   @override
@@ -398,7 +279,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<HomeNews> news, List<HomeDeal> deals) loaded,
+    required TResult Function(List<Deal> deals) loaded,
     required TResult Function(Failure failure) failure,
   }) {
     return initial();
@@ -409,7 +290,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<HomeNews> news, List<HomeDeal> deals)? loaded,
+    TResult? Function(List<Deal> deals)? loaded,
     TResult? Function(Failure failure)? failure,
   }) {
     return initial?.call();
@@ -420,7 +301,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<HomeNews> news, List<HomeDeal> deals)? loaded,
+    TResult Function(List<Deal> deals)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -468,7 +349,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements HomeState {
+abstract class _Initial implements DealsState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -482,14 +363,14 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$DealsStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
     _$LoadingImpl _value,
     $Res Function(_$LoadingImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of DealsState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -500,7 +381,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'HomeState.loading()';
+    return 'DealsState.loading()';
   }
 
   @override
@@ -517,7 +398,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<HomeNews> news, List<HomeDeal> deals) loaded,
+    required TResult Function(List<Deal> deals) loaded,
     required TResult Function(Failure failure) failure,
   }) {
     return loading();
@@ -528,7 +409,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<HomeNews> news, List<HomeDeal> deals)? loaded,
+    TResult? Function(List<Deal> deals)? loaded,
     TResult? Function(Failure failure)? failure,
   }) {
     return loading?.call();
@@ -539,7 +420,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<HomeNews> news, List<HomeDeal> deals)? loaded,
+    TResult Function(List<Deal> deals)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -587,7 +468,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements HomeState {
+abstract class _Loading implements DealsState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -598,33 +479,29 @@ abstract class _$$LoadedImplCopyWith<$Res> {
     $Res Function(_$LoadedImpl) then,
   ) = __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<HomeNews> news, List<HomeDeal> deals});
+  $Res call({List<Deal> deals});
 }
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$LoadedImpl>
+    extends _$DealsStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
     _$LoadedImpl _value,
     $Res Function(_$LoadedImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of DealsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? news = null, Object? deals = null}) {
+  $Res call({Object? deals = null}) {
     return _then(
       _$LoadedImpl(
-        news: null == news
-            ? _value._news
-            : news // ignore: cast_nullable_to_non_nullable
-                  as List<HomeNews>,
         deals: null == deals
             ? _value._deals
             : deals // ignore: cast_nullable_to_non_nullable
-                  as List<HomeDeal>,
+                  as List<Deal>,
       ),
     );
   }
@@ -633,23 +510,11 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl({
-    required final List<HomeNews> news,
-    required final List<HomeDeal> deals,
-  }) : _news = news,
-       _deals = deals;
+  const _$LoadedImpl({required final List<Deal> deals}) : _deals = deals;
 
-  final List<HomeNews> _news;
+  final List<Deal> _deals;
   @override
-  List<HomeNews> get news {
-    if (_news is EqualUnmodifiableListView) return _news;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_news);
-  }
-
-  final List<HomeDeal> _deals;
-  @override
-  List<HomeDeal> get deals {
+  List<Deal> get deals {
     if (_deals is EqualUnmodifiableListView) return _deals;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_deals);
@@ -657,7 +522,7 @@ class _$LoadedImpl implements _Loaded {
 
   @override
   String toString() {
-    return 'HomeState.loaded(news: $news, deals: $deals)';
+    return 'DealsState.loaded(deals: $deals)';
   }
 
   @override
@@ -665,18 +530,14 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            const DeepCollectionEquality().equals(other._news, _news) &&
             const DeepCollectionEquality().equals(other._deals, _deals));
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(_news),
-    const DeepCollectionEquality().hash(_deals),
-  );
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_deals));
 
-  /// Create a copy of HomeState
+  /// Create a copy of DealsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -689,10 +550,10 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<HomeNews> news, List<HomeDeal> deals) loaded,
+    required TResult Function(List<Deal> deals) loaded,
     required TResult Function(Failure failure) failure,
   }) {
-    return loaded(news, deals);
+    return loaded(deals);
   }
 
   @override
@@ -700,10 +561,10 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<HomeNews> news, List<HomeDeal> deals)? loaded,
+    TResult? Function(List<Deal> deals)? loaded,
     TResult? Function(Failure failure)? failure,
   }) {
-    return loaded?.call(news, deals);
+    return loaded?.call(deals);
   }
 
   @override
@@ -711,12 +572,12 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<HomeNews> news, List<HomeDeal> deals)? loaded,
+    TResult Function(List<Deal> deals)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(news, deals);
+      return loaded(deals);
     }
     return orElse();
   }
@@ -759,16 +620,12 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements HomeState {
-  const factory _Loaded({
-    required final List<HomeNews> news,
-    required final List<HomeDeal> deals,
-  }) = _$LoadedImpl;
+abstract class _Loaded implements DealsState {
+  const factory _Loaded({required final List<Deal> deals}) = _$LoadedImpl;
 
-  List<HomeNews> get news;
-  List<HomeDeal> get deals;
+  List<Deal> get deals;
 
-  /// Create a copy of HomeState
+  /// Create a copy of DealsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
@@ -789,14 +646,14 @@ abstract class _$$FailureImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FailureImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$FailureImpl>
+    extends _$DealsStateCopyWithImpl<$Res, _$FailureImpl>
     implements _$$FailureImplCopyWith<$Res> {
   __$$FailureImplCopyWithImpl(
     _$FailureImpl _value,
     $Res Function(_$FailureImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of HomeState
+  /// Create a copy of DealsState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -811,7 +668,7 @@ class __$$FailureImplCopyWithImpl<$Res>
     );
   }
 
-  /// Create a copy of HomeState
+  /// Create a copy of DealsState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -832,7 +689,7 @@ class _$FailureImpl implements _Failure {
 
   @override
   String toString() {
-    return 'HomeState.failure(failure: $failure)';
+    return 'DealsState.failure(failure: $failure)';
   }
 
   @override
@@ -846,7 +703,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, failure);
 
-  /// Create a copy of HomeState
+  /// Create a copy of DealsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -859,7 +716,7 @@ class _$FailureImpl implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<HomeNews> news, List<HomeDeal> deals) loaded,
+    required TResult Function(List<Deal> deals) loaded,
     required TResult Function(Failure failure) failure,
   }) {
     return failure(this.failure);
@@ -870,7 +727,7 @@ class _$FailureImpl implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<HomeNews> news, List<HomeDeal> deals)? loaded,
+    TResult? Function(List<Deal> deals)? loaded,
     TResult? Function(Failure failure)? failure,
   }) {
     return failure?.call(this.failure);
@@ -881,7 +738,7 @@ class _$FailureImpl implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<HomeNews> news, List<HomeDeal> deals)? loaded,
+    TResult Function(List<Deal> deals)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -929,12 +786,12 @@ class _$FailureImpl implements _Failure {
   }
 }
 
-abstract class _Failure implements HomeState {
+abstract class _Failure implements DealsState {
   const factory _Failure({required final Failure failure}) = _$FailureImpl;
 
   Failure get failure;
 
-  /// Create a copy of HomeState
+  /// Create a copy of DealsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>

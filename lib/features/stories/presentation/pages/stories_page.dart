@@ -17,20 +17,20 @@ class StoriesPage extends StatelessWidget {
     return BlocProvider(
       create: (context) =>
           getIt<StoriesBloc>()..add(const StoriesEvent.started()),
-      child: _StoryInfoView(initialIndex: initialIndex),
+      child: _StoriesPageState(initialIndex: initialIndex),
     );
   }
 }
 
-class _StoryInfoView extends StatefulWidget {
+class _StoriesPageState extends StatefulWidget {
   final int initialIndex;
-  const _StoryInfoView({required this.initialIndex});
+  const _StoriesPageState({required this.initialIndex});
 
   @override
-  State<_StoryInfoView> createState() => _StoryInfoViewState();
+  State<_StoriesPageState> createState() => _StoriesPageStateState();
 }
 
-class _StoryInfoViewState extends State<_StoryInfoView>
+class _StoriesPageStateState extends State<_StoriesPageState>
     with TickerProviderStateMixin {
   late int _currentSlide;
   late AnimationController _progressController;
@@ -83,7 +83,6 @@ class _StoryInfoViewState extends State<_StoryInfoView>
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
     final tt = Theme.of(context).textTheme;
 
     return BlocBuilder<StoriesBloc, StoriesState>(
@@ -195,7 +194,6 @@ class _StoryInfoViewState extends State<_StoryInfoView>
                                           ),
                                         ),
                                         const SizedBox(height: 10),
-                                        // TODO: close button
                                         Align(
                                           alignment: Alignment.centerRight,
                                           child: GestureDetector(
@@ -261,16 +259,6 @@ class _StoryInfoViewState extends State<_StoryInfoView>
                                       height: 56,
                                       child: ElevatedButton(
                                         onPressed: () {},
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor: cs.primary,
-                                          foregroundColor: Colors.white,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              14,
-                                            ),
-                                          ),
-                                          elevation: 0,
-                                        ),
                                         child: Text(
                                           'Подробнее',
                                           style: tt.titleMedium?.copyWith(
@@ -299,7 +287,6 @@ class _StoryInfoViewState extends State<_StoryInfoView>
   }
 }
 
-/// Индикатор прогресса story
 class _StoryIndicator extends StatelessWidget {
   final bool isActive;
   final bool isDone;

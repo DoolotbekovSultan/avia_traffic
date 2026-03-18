@@ -28,18 +28,18 @@ import 'package:aviatraffic/features/city_picker/domain/usecases/get_countries_u
     as _i1043;
 import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_bloc.dart'
     as _i227;
-import 'package:aviatraffic/features/home/data/datasources/impl/home_remote_datasource.dart'
-    as _i478;
-import 'package:aviatraffic/features/home/data/datasources/interface/i_home_remote_datasource.dart'
-    as _i385;
-import 'package:aviatraffic/features/home/data/repositories/home_repository.dart'
-    as _i1041;
-import 'package:aviatraffic/features/home/domain/repositories/i_home_repository.dart'
-    as _i1032;
-import 'package:aviatraffic/features/home/domain/usecases/get_home_data_usecase.dart'
-    as _i288;
-import 'package:aviatraffic/features/home/presentation/bloc/home_bloc.dart'
-    as _i176;
+import 'package:aviatraffic/features/deals/data/datasources/i_deals_remote_datasource.dart'
+    as _i247;
+import 'package:aviatraffic/features/deals/data/datasources/mock_deals_remote_datasource.dart'
+    as _i242;
+import 'package:aviatraffic/features/deals/data/repositories/deals_repository.dart'
+    as _i412;
+import 'package:aviatraffic/features/deals/domain/repositories/i_deals_repository.dart'
+    as _i825;
+import 'package:aviatraffic/features/deals/domain/usecases/get_deals_usecase.dart'
+    as _i334;
+import 'package:aviatraffic/features/deals/presentation/bloc/deals_bloc.dart'
+    as _i99;
 import 'package:aviatraffic/features/onboarding/data/datasources/impl/onboarding_remote_datasource.dart'
     as _i1015;
 import 'package:aviatraffic/features/onboarding/data/datasources/interface/i_onboarding_remote_datasource.dart'
@@ -78,11 +78,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i367.ICityPickerRemoteDatasource>(
       () => _i302.MockCityPickerRemoteDatasource(),
     );
+    gh.lazySingleton<_i247.IDealsRemoteDatasource>(
+      () => _i242.MockDealsRemoteDatasource(),
+    );
     gh.lazySingleton<_i555.IOnboardingRemoteDatasource>(
       () => _i1015.MockOnboardingRemoteDatasource(),
     );
-    gh.lazySingleton<_i385.IHomeRemoteDatasource>(
-      () => _i478.MockHomeRemoteDatasource(),
+    gh.lazySingleton<_i825.IDealsRepository>(
+      () => _i412.DealsRepository(gh<_i247.IDealsRemoteDatasource>()),
     );
     gh.singleton<_i831.AppTextStyles>(() => const _i746.NunitoSansTextStyles());
     gh.lazySingleton<_i302.IStoriesRemoteDatasource>(
@@ -92,14 +95,14 @@ extension GetItInjectableX on _i174.GetIt {
       () =>
           _i1062.CityPickerRepository(gh<_i367.ICityPickerRemoteDatasource>()),
     );
-    gh.lazySingleton<_i1032.IHomeRepository>(
-      () => _i1041.HomeRepository(gh<_i385.IHomeRemoteDatasource>()),
-    );
     gh.lazySingleton<_i524.IOnboardingRepository>(
       () => _i641.OnboardingRepository(gh<_i555.IOnboardingRemoteDatasource>()),
     );
-    gh.lazySingleton<_i288.GetHomeDataUsecase>(
-      () => _i288.GetHomeDataUsecase(gh<_i1032.IHomeRepository>()),
+    gh.lazySingleton<_i334.GetDealsUsecase>(
+      () => _i334.GetDealsUsecase(gh<_i825.IDealsRepository>()),
+    );
+    gh.factory<_i99.DealsBloc>(
+      () => _i99.DealsBloc(gh<_i334.GetDealsUsecase>()),
     );
     gh.lazySingleton<_i572.GetPagesUsecase>(
       () => _i572.GetPagesUsecase(gh<_i524.IOnboardingRepository>()),
@@ -115,9 +118,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i73.IStoriesRepository>(
       () => _i933.StoriesRepository(gh<_i302.IStoriesRemoteDatasource>()),
-    );
-    gh.lazySingleton<_i176.HomeBloc>(
-      () => _i176.HomeBloc(getHomeDataUsecase: gh<_i288.GetHomeDataUsecase>()),
     );
     gh.lazySingleton<_i900.GetStoriesUsecase>(
       () => _i900.GetStoriesUsecase(gh<_i73.IStoriesRepository>()),

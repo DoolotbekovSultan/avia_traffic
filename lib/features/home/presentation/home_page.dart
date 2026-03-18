@@ -1,40 +1,23 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:aviatraffic/core/di/injector.dart';
-import 'package:aviatraffic/core/router/app_router.gr.dart';
-import 'package:aviatraffic/core/failure/failure_utils.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
-import 'package:aviatraffic/features/home/domain/entities/home_deal.dart';
-import 'package:aviatraffic/features/home/domain/entities/home_news.dart';
-import 'package:aviatraffic/features/home/presentation/bloc/home_bloc.dart';
+import 'package:aviatraffic/core/theme/gap.dart';
+import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/city_picker/presentation/widgets/city_picker_widget.dart';
+import 'package:aviatraffic/features/stories/presentation/widgets/stories_widget.dart';
+import 'package:aviatraffic/features/deals/presentation/widgets/deals_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-// ════════════════════════════════════════════════════════════════════
-// HOME SCREEN
-// ════════════════════════════════════════════════════════════════════
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 @RoutePage()
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<HomeBloc>()..add(const HomeEvent.started()),
-      child: const _HomeScreenView(),
-    );
-  }
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenView extends StatefulWidget {
-  const _HomeScreenView();
-
-  @override
-  State<_HomeScreenView> createState() => _HomeScreenViewState();
-}
-
-class _HomeScreenViewState extends State<_HomeScreenView> {
+class _HomeScreenState extends State<HomeScreen> {
   String _from = '';
   String _to = '';
   DateTime? _departDate;
@@ -83,45 +66,23 @@ class _HomeScreenViewState extends State<_HomeScreenView> {
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
 
-    return BlocBuilder<HomeBloc, HomeState>(
-      builder: (context, state) {
-        return state.map(
-          initial: (_) => const SizedBox.shrink(),
-          loading: (_) => Scaffold(
-            backgroundColor: cs.surfaceContainerLow,
-            body: const Center(child: CircularProgressIndicator()),
-          ),
-          failure: (s) => Scaffold(
-            backgroundColor: cs.surfaceContainerLow,
-            body: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text(
-                  s.failure.userMessage,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-              ),
-            ),
-          ),
-          loaded: (s) => Scaffold(
-            backgroundColor: cs.surfaceContainerLow,
-            body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: cs.surfaceContainerLow,
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _buildHeaderSection(),
-                  _buildBottomSection(news: s.news, deals: s.deals),
-                ],
+                children: [_buildHeaderSection(), _buildBottomSection()],
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
-
-  // ── HEADER (gradient) ─────────────────────────────────────────────
 
   Widget _buildHeaderSection() {
     final cs = Theme.of(context).colorScheme;
@@ -133,7 +94,7 @@ class _HomeScreenViewState extends State<_HomeScreenView> {
           end: Alignment.bottomRight,
           colors: [
             cs.primaryContainer,
-            cs.primary.withOpacity(0.8),
+            cs.primary.withValues(alpha: .8),
             cs.primary,
           ],
           stops: [0.0, 0.5, 1.0],
@@ -154,119 +115,44 @@ class _HomeScreenViewState extends State<_HomeScreenView> {
   }
 
   Widget _buildAppBar() {
-    final tt = Theme.of(context).textTheme;
-    final cs = Theme.of(context).colorScheme;
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Stack(
         children: [
-          Row(
-            children: [
-              Text(
-                'AVIA',
-                style: tt.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w900,
-                  color: cs.onPrimary,
-                  letterSpacing: 1.5,
-                ),
+          Expanded(
+            child: Center(
+              child: Image.asset(
+                'assets/images/logo.png',
+                width: 152.w,
+                height: 19.h,
               ),
-              const SizedBox(width: 2),
-              Text(
-                'TRAFFIC',
-                style: tt.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w900,
-                  color: cs.primaryFixedDim,
-                  letterSpacing: 1.5,
-                ),
-              ),
-              const SizedBox(width: 4),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        width: 26,
-                        height: 3,
-                        decoration: BoxDecoration(
-                          color: cs.primaryFixedDim,
-                          borderRadius: BorderRadius.circular(2),
-                        ),
-                      ),
-                      const SizedBox(width: 2),
-                      Icon(Icons.flight, color: cs.primaryFixedDim, size: 14),
-                    ],
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    'COMPANY',
-                    style: TextStyle(
-                      fontSize: 7,
-                      color: cs.onPrimary.withOpacity(0.8),
-                      letterSpacing: 2,
-                    ),
-                  ),
-                ],
-              ),
-            ],
+            ),
           ),
-          Row(
-            children: [
-              _iconBtn(Icons.settings_outlined),
-              const SizedBox(width: 8),
-              Stack(
-                children: [
-                  _iconBtn(Icons.notifications_outlined),
-                  Positioned(
-                    right: 4,
-                    top: 4,
-                    child: Container(
-                      width: 14,
-                      height: 14,
-                      decoration: const BoxDecoration(
-                        color: Colors.blue,
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Center(
-                        child: Text(
-                          '1',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 8,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+          Align(
+            alignment: AlignmentGeometry.centerRight,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Image.asset(
+                  'assets/images/settings.png',
+                  width: 24.w,
+                  height: 24.w,
+                ),
+                Gap.h16,
+                Image.asset(
+                  'assets/images/nottification.png',
+                  width: 24,
+                  height: 24,
+                ),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _iconBtn(IconData icon) => Container(
-    width: 36,
-    height: 36,
-    decoration: BoxDecoration(
-      color: Colors.white.withOpacity(0.2),
-      shape: BoxShape.circle,
-    ),
-    child: Icon(icon, color: Colors.white, size: 20),
-  );
-
-  // ── SEARCH FORM ───────────────────────────────────────────────────
-
   Widget _buildSearchForm() {
-    final cs = Theme.of(context).colorScheme;
-    final tt = Theme.of(context).textTheme;
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
@@ -277,8 +163,6 @@ class _HomeScreenViewState extends State<_HomeScreenView> {
             onChanged: _onCityChanged,
           ),
           const SizedBox(height: 10),
-
-          // Когда / Обратно
           Row(
             children: [
               Expanded(
@@ -299,19 +183,13 @@ class _HomeScreenViewState extends State<_HomeScreenView> {
             ],
           ),
           const SizedBox(height: 10),
-
-          // Пассажиры
           _selectField(
             label: 'Количество пассажиров',
             onTap: _showPassengersDialog,
           ),
           const SizedBox(height: 10),
-
-          // Валюта
           _currencyField(),
           const SizedBox(height: 14),
-
-          // Поиск
           SizedBox(
             width: double.infinity,
             height: 52,
@@ -342,36 +220,37 @@ class _HomeScreenViewState extends State<_HomeScreenView> {
     required VoidCallback onTap,
   }) {
     final cs = Theme.of(context).colorScheme;
-    final tt = Theme.of(context).textTheme;
-
+    final textStyles = getIt<AppTextStyles>();
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+        height: 48.h,
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
         decoration: BoxDecoration(
           color: cs.surface,
-          borderRadius: BorderRadius.circular(14),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.06),
-              blurRadius: 8,
-              offset: const Offset(0, 2),
-            ),
-          ],
+          borderRadius: BorderRadius.circular(6.r),
         ),
         child: Row(
           children: [
             Expanded(
               child: Text(
                 value.isEmpty ? label : value,
-                style: tt.bodyMedium?.copyWith(
+                style: textStyles.titleMedium.copyWith(
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w600,
+                  height: 16 / 13,
                   color: value.isEmpty
                       ? AppColors.neutral500
                       : AppColors.onBackground,
                 ),
               ),
             ),
-            Icon(Icons.calendar_today_outlined, size: 18, color: cs.primary),
+            if (label == 'Когда')
+              Icon(
+                Icons.calendar_today_outlined,
+                size: 18.w,
+                color: cs.primary,
+              ),
           ],
         ),
       ),
@@ -380,56 +259,70 @@ class _HomeScreenViewState extends State<_HomeScreenView> {
 
   Widget _selectField({required String label, required VoidCallback onTap}) {
     final cs = Theme.of(context).colorScheme;
-    final tt = Theme.of(context).textTheme;
 
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-        decoration: BoxDecoration(
-          color: cs.surface,
-          borderRadius: BorderRadius.circular(14),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.06),
-              blurRadius: 8,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: Text(
-                label,
-                style: tt.bodyMedium?.copyWith(color: AppColors.neutral500),
-              ),
-            ),
-            const Icon(
-              Icons.chevron_right,
-              color: AppColors.neutral500,
-              size: 22,
-            ),
-          ],
-        ),
+    final textStyles = getIt<AppTextStyles>();
+
+    final hintTextStyle = textStyles.titleMedium.copyWith(
+      fontSize: 15.sp,
+      fontWeight: FontWeight.w600,
+      height: 16 / 13,
+      color: const Color(0xFF8992A0),
+    );
+
+    return Container(
+      height: 48.h,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      decoration: BoxDecoration(
+        color: cs.surface,
+        borderRadius: BorderRadius.circular(6.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.06),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Expanded(child: Text(label, style: hintTextStyle)),
+          const Icon(
+            Icons.chevron_right,
+            color: AppColors.neutral500,
+            size: 22,
+          ),
+        ],
       ),
     );
   }
 
   Widget _currencyField() {
     final cs = Theme.of(context).colorScheme;
-    final tt = Theme.of(context).textTheme;
+    final smallHintStyle = getIt<AppTextStyles>().bodySmall.copyWith(
+      fontSize: 13.sp,
+      fontWeight: FontWeight.w400,
+      height: 16 / 13,
+      color: const Color(0xFF8992A0),
+    );
+
+    final mainTextStyle = getIt<AppTextStyles>().titleMedium.copyWith(
+      fontSize: 15.sp,
+      fontWeight: FontWeight.w600,
+      height: 16 / 13,
+      color: const Color(0xFF212020),
+    );
 
     return GestureDetector(
       onTap: _showCurrencyDialog,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        height: 48.h,
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         decoration: BoxDecoration(
           color: cs.surface,
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(6.r),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.06),
+              color: Colors.black.withValues(alpha: 0.06),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -440,19 +333,11 @@ class _HomeScreenViewState extends State<_HomeScreenView> {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Валюта',
-                    style: tt.bodySmall?.copyWith(color: AppColors.neutral500),
-                  ),
+                  Text('Валюта', style: smallHintStyle),
                   const SizedBox(height: 2),
-                  Text(
-                    _currency,
-                    style: tt.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.onBackground,
-                    ),
-                  ),
+                  Text(_currency, style: mainTextStyle),
                 ],
               ),
             ),
@@ -467,12 +352,7 @@ class _HomeScreenViewState extends State<_HomeScreenView> {
     );
   }
 
-  // ── BOTTOM CONTENT ────────────────────────────────────────────────
-
-  Widget _buildBottomSection({
-    required List<HomeNews> news,
-    required List<HomeDeal> deals,
-  }) {
+  Widget _buildBottomSection() {
     final cs = Theme.of(context).colorScheme;
 
     return Container(
@@ -481,240 +361,10 @@ class _HomeScreenViewState extends State<_HomeScreenView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 20),
-          _buildNewsSection(news),
+          const StoriesWidget(),
           const SizedBox(height: 24),
-          _buildHotDealsSection(deals),
+          const DealsWidget(),
           const SizedBox(height: 20),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildNewsSection(List<HomeNews> news) {
-    final tt = Theme.of(context).textTheme;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text(
-            'Последние новости',
-            style: tt.titleLarge?.copyWith(
-              fontWeight: FontWeight.w700,
-              color: AppColors.onBackground,
-            ),
-          ),
-        ),
-        const SizedBox(height: 12),
-        SizedBox(
-          height: 120,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            itemCount: news.length,
-            itemBuilder: (context, i) => Padding(
-              padding: EdgeInsets.only(right: i < news.length - 1 ? 12 : 0),
-              child: GestureDetector(
-                onTap: () {
-                  context.router.push(StoriesRoute(initialIndex: i));
-                },
-                child: _newsCard(news[i], i == 0),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _newsCard(HomeNews item, bool selected) {
-    final cs = Theme.of(context).colorScheme;
-
-    return Container(
-      width: 110,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14),
-        border: selected ? Border.all(color: cs.primary, width: 2.5) : null,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(selected ? 12 : 14),
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            Image.network(
-              item.imageUrl,
-              fit: BoxFit.cover,
-              errorBuilder: (_, __, ___) =>
-                  Container(color: AppColors.neutral200),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Colors.transparent, Colors.black.withOpacity(0.65)],
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 8,
-              left: 8,
-              right: 8,
-              child: Text(
-                item.title,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 11,
-                  fontWeight: FontWeight.w500,
-                  height: 1.3,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildHotDealsSection(List<HomeDeal> deals) {
-    final tt = Theme.of(context).textTheme;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text(
-            'Горячие предложения',
-            style: tt.titleLarge?.copyWith(
-              fontWeight: FontWeight.w700,
-              color: AppColors.onBackground,
-            ),
-          ),
-        ),
-        const SizedBox(height: 12),
-        SizedBox(
-          height: 160,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            itemCount: deals.length,
-            itemBuilder: (context, i) => Padding(
-              padding: EdgeInsets.only(right: i < deals.length - 1 ? 12 : 0),
-              child: GestureDetector(
-                onTap: () {
-                  context.router.push(StoriesRoute(initialIndex: 0));
-                },
-                child: _dealCard(deals[i]),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _dealCard(HomeDeal deal) {
-    final cs = Theme.of(context).colorScheme;
-    final tt = Theme.of(context).textTheme;
-
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      height: 120,
-      decoration: BoxDecoration(
-        color: cs.surface,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.06),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 5,
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '${deal.from} -\n${deal.to}',
-                    style: tt.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.onBackground,
-                      height: 1.2,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    'Купить билет',
-                    style: tt.bodySmall?.copyWith(
-                      color: cs.primary,
-                      fontWeight: FontWeight.w600,
-                      decoration: TextDecoration.underline,
-                      decorationColor: cs.primary,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 4,
-            child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(16),
-                bottomRight: Radius.circular(16),
-              ),
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  Image.network(
-                    deal.imageUrl,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) =>
-                        Container(color: AppColors.neutral200),
-                  ),
-                  Positioned(
-                    bottom: 10,
-                    right: 10,
-                    child: Container(
-                      width: 36,
-                      height: 36,
-                      decoration: BoxDecoration(
-                        color: cs.primary,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: cs.primary.withOpacity(0.4),
-                            blurRadius: 8,
-                          ),
-                        ],
-                      ),
-                      child: const Icon(
-                        Icons.chat_bubble_rounded,
-                        color: Colors.white,
-                        size: 18,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
         ],
       ),
     );
