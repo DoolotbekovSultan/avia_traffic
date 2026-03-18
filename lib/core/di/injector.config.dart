@@ -1,0 +1,136 @@
+// dart format width=80
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+// **************************************************************************
+// InjectableConfigGenerator
+// **************************************************************************
+
+// ignore_for_file: type=lint
+// coverage:ignore-file
+
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:aviatraffic/core/router/app_router.dart' as _i306;
+import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart'
+    as _i831;
+import 'package:aviatraffic/core/theme/text_styles/nunito_sans_text_styles.dart'
+    as _i746;
+import 'package:aviatraffic/features/city_picker/data/datasources/i_city_picker_remote_datasource.dart'
+    as _i367;
+import 'package:aviatraffic/features/city_picker/data/datasources/mock_city_picker_remote_datasource.dart'
+    as _i302;
+import 'package:aviatraffic/features/city_picker/data/repositories/city_picker_repository.dart'
+    as _i1062;
+import 'package:aviatraffic/features/city_picker/domain/repositories/i_city_picker_repository.dart'
+    as _i475;
+import 'package:aviatraffic/features/city_picker/domain/usecases/get_cities_usecase.dart'
+    as _i834;
+import 'package:aviatraffic/features/city_picker/domain/usecases/get_countries_usecase.dart'
+    as _i1043;
+import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_bloc.dart'
+    as _i227;
+import 'package:aviatraffic/features/home/data/datasources/impl/home_remote_datasource.dart'
+    as _i478;
+import 'package:aviatraffic/features/home/data/datasources/interface/i_home_remote_datasource.dart'
+    as _i385;
+import 'package:aviatraffic/features/home/data/repositories/home_repository.dart'
+    as _i1041;
+import 'package:aviatraffic/features/home/domain/repositories/i_home_repository.dart'
+    as _i1032;
+import 'package:aviatraffic/features/home/domain/usecases/get_home_data_usecase.dart'
+    as _i288;
+import 'package:aviatraffic/features/home/presentation/bloc/home_bloc.dart'
+    as _i176;
+import 'package:aviatraffic/features/onboarding/data/datasources/impl/onboarding_remote_datasource.dart'
+    as _i1015;
+import 'package:aviatraffic/features/onboarding/data/datasources/interface/i_onboarding_remote_datasource.dart'
+    as _i555;
+import 'package:aviatraffic/features/onboarding/data/repositories/onboarding_repository.dart'
+    as _i641;
+import 'package:aviatraffic/features/onboarding/domain/repositories/i_onboarding_repository.dart'
+    as _i524;
+import 'package:aviatraffic/features/onboarding/domain/usecases/get_pages_usecase.dart'
+    as _i572;
+import 'package:aviatraffic/features/onboarding/presentation/bloc/onboarding_bloc.dart'
+    as _i507;
+import 'package:aviatraffic/features/stories/data/datasources/i_stories_remote_datasource.dart'
+    as _i302;
+import 'package:aviatraffic/features/stories/data/datasources/mock_stories_remote_datasource.dart'
+    as _i589;
+import 'package:aviatraffic/features/stories/data/repositories/stories_repository.dart'
+    as _i933;
+import 'package:aviatraffic/features/stories/domain/repositories/i_stories_repository.dart'
+    as _i73;
+import 'package:aviatraffic/features/stories/domain/usecases/get_stories_usecase.dart'
+    as _i900;
+import 'package:aviatraffic/features/stories/presentation/bloc/stories_bloc.dart'
+    as _i753;
+import 'package:get_it/get_it.dart' as _i174;
+import 'package:injectable/injectable.dart' as _i526;
+
+extension GetItInjectableX on _i174.GetIt {
+  // initializes the registration of main-scope dependencies inside of GetIt
+  _i174.GetIt init({
+    String? environment,
+    _i526.EnvironmentFilter? environmentFilter,
+  }) {
+    final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    gh.singleton<_i306.AppRouter>(() => _i306.AppRouter());
+    gh.lazySingleton<_i367.ICityPickerRemoteDatasource>(
+      () => _i302.MockCityPickerRemoteDatasource(),
+    );
+    gh.lazySingleton<_i555.IOnboardingRemoteDatasource>(
+      () => _i1015.MockOnboardingRemoteDatasource(),
+    );
+    gh.lazySingleton<_i385.IHomeRemoteDatasource>(
+      () => _i478.MockHomeRemoteDatasource(),
+    );
+    gh.singleton<_i831.AppTextStyles>(() => const _i746.NunitoSansTextStyles());
+    gh.lazySingleton<_i302.IStoriesRemoteDatasource>(
+      () => _i589.MockStoriesRemoteDatasource(),
+    );
+    gh.lazySingleton<_i475.ICityPickerRepository>(
+      () =>
+          _i1062.CityPickerRepository(gh<_i367.ICityPickerRemoteDatasource>()),
+    );
+    gh.lazySingleton<_i1032.IHomeRepository>(
+      () => _i1041.HomeRepository(gh<_i385.IHomeRemoteDatasource>()),
+    );
+    gh.lazySingleton<_i524.IOnboardingRepository>(
+      () => _i641.OnboardingRepository(gh<_i555.IOnboardingRemoteDatasource>()),
+    );
+    gh.lazySingleton<_i288.GetHomeDataUsecase>(
+      () => _i288.GetHomeDataUsecase(gh<_i1032.IHomeRepository>()),
+    );
+    gh.lazySingleton<_i572.GetPagesUsecase>(
+      () => _i572.GetPagesUsecase(gh<_i524.IOnboardingRepository>()),
+    );
+    gh.lazySingleton<_i507.OnboardingBloc>(
+      () => _i507.OnboardingBloc(getPagesUsecase: gh<_i572.GetPagesUsecase>()),
+    );
+    gh.lazySingleton<_i834.GetCitiesUsecase>(
+      () => _i834.GetCitiesUsecase(gh<_i475.ICityPickerRepository>()),
+    );
+    gh.lazySingleton<_i1043.GetCountriesUsecase>(
+      () => _i1043.GetCountriesUsecase(gh<_i475.ICityPickerRepository>()),
+    );
+    gh.lazySingleton<_i73.IStoriesRepository>(
+      () => _i933.StoriesRepository(gh<_i302.IStoriesRemoteDatasource>()),
+    );
+    gh.lazySingleton<_i176.HomeBloc>(
+      () => _i176.HomeBloc(getHomeDataUsecase: gh<_i288.GetHomeDataUsecase>()),
+    );
+    gh.lazySingleton<_i900.GetStoriesUsecase>(
+      () => _i900.GetStoriesUsecase(gh<_i73.IStoriesRepository>()),
+    );
+    gh.factory<_i753.StoriesBloc>(
+      () => _i753.StoriesBloc(gh<_i900.GetStoriesUsecase>()),
+    );
+    gh.factory<_i227.CityPickerBloc>(
+      () => _i227.CityPickerBloc(
+        gh<_i834.GetCitiesUsecase>(),
+        gh<_i1043.GetCountriesUsecase>(),
+      ),
+    );
+    return this;
+  }
+}
