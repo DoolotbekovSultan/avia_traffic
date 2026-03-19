@@ -4,4 +4,5 @@ import 'package:dartz/dartz.dart';
 
 abstract class IStoriesRepository {
   Future<Either<Failure, List<StoryItem>>> getStories();
+  Future<Either<Failure, StoryItem>> getStoryById(int id);
 }

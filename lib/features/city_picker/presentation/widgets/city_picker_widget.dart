@@ -2,7 +2,7 @@ import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/city_picker/domain/entities/city.dart';
-import 'package:aviatraffic/features/city_picker/presentation/city_picker_screen.dart';
+import 'package:aviatraffic/features/city_picker/presentation/city_picker_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -50,7 +50,7 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
         minChildSize: 0.5,
         maxChildSize: 0.95,
         expand: false,
-        builder: (_, _) => const CityPickerScreen(isFrom: true),
+        builder: (_, _) => const CityPickerPage(isFrom: true),
       ),
     );
     if (result != null) {
@@ -71,7 +71,7 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
         minChildSize: 0.5,
         maxChildSize: 0.95,
         expand: false,
-        builder: (_, __) => const CityPickerScreen(isFrom: false),
+        builder: (_, __) => const CityPickerPage(isFrom: false),
       ),
     );
     if (result != null) {
@@ -96,7 +96,7 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
     final textStyles = getIt<AppTextStyles>();
 
     final mainTextStyle = textStyles.titleMedium.copyWith(
-      fontSize: 15.sp,
+      fontSize: 14.sp,
       fontWeight: FontWeight.w600,
       height: 16 / 13,
       color: const Color(0xFF212020),

@@ -1,11 +1,14 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/failure/failure_utils.dart';
+import 'package:aviatraffic/core/router/app_router.gr.dart';
 import 'package:aviatraffic/core/theme/gap.dart';
-import 'package:aviatraffic/features/stories/presentation/bloc/stories_bloc.dart';
+import 'package:aviatraffic/features/stories/presentation/bloc/stories/stories_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 @RoutePage()
 class StoriesPage extends StatelessWidget {
@@ -222,43 +225,55 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                 ],
                               ),
                             ),
-                            Expanded(
+                            Flexible(
                               flex: 45,
                               child: Container(
                                 color: Colors.black,
                                 padding: const EdgeInsets.fromLTRB(
                                   20,
-                                  24,
+                                  0,
                                   20,
                                   24,
                                 ),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
-                                      slide.title,
-                                      style: tt.headlineLarge?.copyWith(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w800,
+                                    SizedBox(
+                                      height: 65.h,
+                                      child: AutoSizeText(
+                                        slide.title,
+                                        style: tt.headlineLarge?.copyWith(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w800,
+                                        ),
                                       ),
                                     ),
                                     const SizedBox(height: 16),
                                     Gap.h16,
-                                    Text(
-                                      slide.subtitle,
-                                      style: tt.bodyLarge?.copyWith(
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.white.withValues(
-                                          alpha: 0.75,
+                                    Expanded(
+                                      child: SingleChildScrollView(
+                                        physics: const BouncingScrollPhysics(),
+                                        child: Text(
+                                          slide.detailed,
+                                          style: tt.bodyLarge?.copyWith(
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white.withValues(
+                                              alpha: 0.75,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
-                                    const Spacer(),
+                                    const SizedBox(height: 16),
                                     SizedBox(
                                       width: double.infinity,
                                       height: 56,
                                       child: ElevatedButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          context.router.push(
+                                            StoryDetailRoute(id: slide.id),
+                                          );
+                                        },
                                         child: Text(
                                           'Подробнее',
                                           style: tt.titleMedium?.copyWith(

@@ -9,6 +9,7 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:aviatraffic/core/di/network_module.dart' as _i94;
 import 'package:aviatraffic/core/router/app_router.dart' as _i306;
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart'
     as _i831;
@@ -54,16 +55,21 @@ import 'package:aviatraffic/features/onboarding/presentation/bloc/onboarding_blo
     as _i507;
 import 'package:aviatraffic/features/stories/data/datasources/i_stories_remote_datasource.dart'
     as _i302;
-import 'package:aviatraffic/features/stories/data/datasources/mock_stories_remote_datasource.dart'
-    as _i589;
+import 'package:aviatraffic/features/stories/data/datasources/stories_remote_datasources.dart'
+    as _i59;
 import 'package:aviatraffic/features/stories/data/repositories/stories_repository.dart'
     as _i933;
 import 'package:aviatraffic/features/stories/domain/repositories/i_stories_repository.dart'
     as _i73;
 import 'package:aviatraffic/features/stories/domain/usecases/get_stories_usecase.dart'
     as _i900;
-import 'package:aviatraffic/features/stories/presentation/bloc/stories_bloc.dart'
-    as _i753;
+import 'package:aviatraffic/features/stories/domain/usecases/get_story_by_id_usecase.dart'
+    as _i896;
+import 'package:aviatraffic/features/stories/presentation/bloc/stories/stories_bloc.dart'
+    as _i731;
+import 'package:aviatraffic/features/stories/presentation/bloc/story/story_bloc.dart'
+    as _i193;
+import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -74,7 +80,9 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    final networkModule = _$NetworkModule();
     gh.singleton<_i306.AppRouter>(() => _i306.AppRouter());
+    gh.lazySingleton<_i361.Dio>(() => networkModule.dio);
     gh.lazySingleton<_i367.ICityPickerRemoteDatasource>(
       () => _i302.MockCityPickerRemoteDatasource(),
     );
@@ -88,15 +96,15 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i412.DealsRepository(gh<_i247.IDealsRemoteDatasource>()),
     );
     gh.singleton<_i831.AppTextStyles>(() => const _i746.NunitoSansTextStyles());
-    gh.lazySingleton<_i302.IStoriesRemoteDatasource>(
-      () => _i589.MockStoriesRemoteDatasource(),
-    );
     gh.lazySingleton<_i475.ICityPickerRepository>(
       () =>
           _i1062.CityPickerRepository(gh<_i367.ICityPickerRemoteDatasource>()),
     );
     gh.lazySingleton<_i524.IOnboardingRepository>(
       () => _i641.OnboardingRepository(gh<_i555.IOnboardingRemoteDatasource>()),
+    );
+    gh.lazySingleton<_i302.IStoriesRemoteDatasource>(
+      () => _i59.StoriesRemoteDatasources(dio: gh<_i361.Dio>()),
     );
     gh.lazySingleton<_i334.GetDealsUsecase>(
       () => _i334.GetDealsUsecase(gh<_i825.IDealsRepository>()),
@@ -110,11 +118,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i507.OnboardingBloc>(
       () => _i507.OnboardingBloc(getPagesUsecase: gh<_i572.GetPagesUsecase>()),
     );
-    gh.lazySingleton<_i834.GetCitiesUsecase>(
-      () => _i834.GetCitiesUsecase(gh<_i475.ICityPickerRepository>()),
-    );
     gh.lazySingleton<_i1043.GetCountriesUsecase>(
       () => _i1043.GetCountriesUsecase(gh<_i475.ICityPickerRepository>()),
+    );
+    gh.lazySingleton<_i834.GetCitiesUsecase>(
+      () => _i834.GetCitiesUsecase(gh<_i475.ICityPickerRepository>()),
     );
     gh.lazySingleton<_i73.IStoriesRepository>(
       () => _i933.StoriesRepository(gh<_i302.IStoriesRemoteDatasource>()),
@@ -122,8 +130,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i900.GetStoriesUsecase>(
       () => _i900.GetStoriesUsecase(gh<_i73.IStoriesRepository>()),
     );
-    gh.factory<_i753.StoriesBloc>(
-      () => _i753.StoriesBloc(gh<_i900.GetStoriesUsecase>()),
+    gh.lazySingleton<_i896.GetStoryByIdUsecase>(
+      () => _i896.GetStoryByIdUsecase(gh<_i73.IStoriesRepository>()),
+    );
+    gh.factory<_i731.StoriesBloc>(
+      () => _i731.StoriesBloc(gh<_i900.GetStoriesUsecase>()),
     );
     gh.factory<_i227.CityPickerBloc>(
       () => _i227.CityPickerBloc(
@@ -131,6 +142,11 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i1043.GetCountriesUsecase>(),
       ),
     );
+    gh.factory<_i193.StoryBloc>(
+      () => _i193.StoryBloc(gh<_i896.GetStoryByIdUsecase>()),
+    );
     return this;
   }
 }
+
+class _$NetworkModule extends _i94.NetworkModule {}

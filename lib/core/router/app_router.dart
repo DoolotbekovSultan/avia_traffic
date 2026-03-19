@@ -11,5 +11,6 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: HomeRoute.page),
     AutoRoute(page: StoriesRoute.page),
     AutoRoute(page: DealDetailRoute.page),
+    AutoRoute(page: StoryDetailRoute.page),
   ];
 }

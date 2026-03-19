@@ -12,7 +12,7 @@ import 'package:aviatraffic/features/onboarding/domain/entities/page.dart'
 
 @RoutePage()
 class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({super.key});
+  OnboardingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +36,8 @@ class _OnboardingPageViewState extends State<_OnboardingPageView>
   late final PageController _pageController;
   late final AnimationController _fadeController;
   late final Animation<double> _fadeAnimation;
+
+  bool _isReady = false;
 
   @override
   void initState() {
@@ -67,12 +69,25 @@ class _OnboardingPageViewState extends State<_OnboardingPageView>
     );
   }
 
+  Future<void> _preloadImages(List<entity.Page> pages) async {
+    for (final page in pages) {
+      await precacheImage(NetworkImage(page.imageUrl), context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<OnboardingBloc, OnboardingState>(
       listener: (context, state) {
         state.mapOrNull(
-          loaded: (s) {
+          loaded: (s) async {
+            await _preloadImages(s.pages);
+
+            if (!mounted) return;
+
+            setState(() {
+              _isReady = true;
+            });
             WidgetsBinding.instance.addPostFrameCallback((_) {
               if (_pageController.hasClients) {
                 _animateToPage(s.currentPageIndex);
@@ -89,12 +104,15 @@ class _OnboardingPageViewState extends State<_OnboardingPageView>
           body: state.map(
             initial: (_) => const SizedBox.shrink(),
             loading: (_) => const _LoadingView(),
-            loaded: (s) => _LoadedView(
-              pages: s.pages,
-              currentIndex: s.currentPageIndex,
-              pageController: _pageController,
-              fadeAnimation: _fadeAnimation,
-            ),
+            loaded: (s) {
+              if (!_isReady) return _LoadingView();
+              return _LoadedView(
+                pages: s.pages,
+                currentIndex: s.currentPageIndex,
+                pageController: _pageController,
+                fadeAnimation: _fadeAnimation,
+              );
+            },
             failure: (s) => _FailureView(message: s.failure.userMessage),
             completed: (_) => const SizedBox.shrink(),
           ),
@@ -230,7 +248,7 @@ class _OnboardingPageItem extends StatelessWidget {
           errorBuilder: (_, __, ___) => Container(
             height: 456.h,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surfaceVariant,
+              color: Theme.of(context).colorScheme.surfaceContainer,
               borderRadius: BorderRadius.circular(24.r),
             ),
             child: Icon(

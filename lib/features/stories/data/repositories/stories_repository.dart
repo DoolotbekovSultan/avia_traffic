@@ -19,4 +19,11 @@ class StoriesRepository with DioExceptionHandler implements IStoriesRepository {
         final models = await _remoteDatasource.getStories();
         return models.toDomain();
       });
+
+  @override
+  Future<Either<Failure, StoryItem>> getStoryById(int id) =>
+      executeSafely(() async {
+        final model = await _remoteDatasource.getStoryById(id);
+        return model.toDomain();
+      });
 }

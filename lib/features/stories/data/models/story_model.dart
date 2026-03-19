@@ -4,13 +4,19 @@ part 'story_model.g.dart';
 
 @JsonSerializable()
 class StoryModel {
+  final int id;
   final String title;
-  final String subtitle;
+  final String description;
+  @JsonKey(name: 'img_mb')
   final String imageUrl;
+  final String detailed;
+
   StoryModel({
+    required this.id,
     required this.title,
-    required this.subtitle,
+    required this.description,
     required this.imageUrl,
+    required this.detailed,
   });
 
   factory StoryModel.fromJson(Map<String, dynamic> json) =>

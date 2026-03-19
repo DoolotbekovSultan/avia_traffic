@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CityPickerScreen extends StatelessWidget {
+class CityPickerPage extends StatelessWidget {
   final bool isFrom;
 
-  const CityPickerScreen({super.key, required this.isFrom});
+  const CityPickerPage({super.key, required this.isFrom});
 
   @override
   Widget build(BuildContext context) {

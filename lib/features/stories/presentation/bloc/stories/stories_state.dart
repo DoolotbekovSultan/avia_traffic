@@ -1,7 +1,7 @@
 part of 'stories_bloc.dart';
 
 @freezed
-class StoriesState with _$StoriesState {
+sealed class StoriesState with _$StoriesState {
   const factory StoriesState.initial() = _Initial;
   const factory StoriesState.loading() = _Loading;
   const factory StoriesState.loaded({required List<StoryItem> stories}) =
