@@ -1,11 +1,17 @@
-class Deal {
-  final String imageUrl;
-  final String title;
-  final String description;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const Deal({
-    required this.imageUrl,
-    required this.title,
-    required this.description,
-  });
+part 'deal.freezed.dart';
+
+@freezed
+class Deal with _$Deal {
+  const factory Deal({
+    required int id,
+    required String language,
+    required String codeTo,
+    required String codeFrom,
+    required String slug,
+    required String imageUrl,
+    required String title,
+    required String description,
+  }) = _Deal;
 }

@@ -1,83 +1,64 @@
 import 'package:aviatraffic/features/city_picker/data/datasources/i_city_picker_remote_datasource.dart';
+import 'package:aviatraffic/features/city_picker/data/models/airport_model.dart';
 import 'package:aviatraffic/features/city_picker/data/models/city_model.dart';
 import 'package:aviatraffic/features/city_picker/data/models/country_model.dart';
-import 'package:injectable/injectable.dart';
 
-@LazySingleton(as: ICityPickerRemoteDatasource)
 class MockCityPickerRemoteDatasource extends ICityPickerRemoteDatasource {
   @override
   Future<List<CityModel>> getCities() async {
-    return const [
-      CityModel(city: 'Бишкек', country: 'Кыргызстан', code: 'FRU'),
-      CityModel(city: 'Ош', country: 'Кыргызстан', code: 'OSS'),
-      CityModel(city: 'Москва', country: 'Россия', code: 'SVO'),
-      CityModel(city: 'Екатеринбург', country: 'Россия', code: 'SVX'),
-      CityModel(city: 'Иркутск', country: 'Россия', code: 'IKT'),
-      CityModel(city: 'Казань', country: 'Россия', code: 'KZN'),
-      CityModel(city: 'Краснодар', country: 'Россия', code: 'KRR'),
-      CityModel(city: 'Санкт-Петербург', country: 'Россия', code: 'LED'),
-      CityModel(city: 'Новосибирск', country: 'Россия', code: 'OVB'),
-      CityModel(city: 'Стамбул', country: 'Турция', code: 'IST'),
-      CityModel(city: 'Дубай', country: 'ОАЭ', code: 'DXB'),
-      CityModel(city: 'Алматы', country: 'Казахстан', code: 'ALA'),
-      CityModel(city: 'Астана', country: 'Казахстан', code: 'NQZ'),
-      CityModel(city: 'Ташкент', country: 'Узбекистан', code: 'TAS'),
-    ];
+    final countries = await getCountries();
+    return countries.expand((country) {
+      return country.cities.map((city) => city.copyWith(country: country.name));
+    }).toList();
   }
 
   @override
   Future<List<CountryModel>> getCountries() async {
     return const [
       CountryModel(
+        id: 1,
         name: 'Россия',
+        codeName: 'RUS',
+        img: 'https://flagcdn.com/w320/ru.png',
         directions: 70,
-        priceFrom: 9600,
         cities: [
-          CityModel(city: 'Москва', country: 'Россия', code: 'SVO'),
-          CityModel(city: 'Санкт-Петербург', country: 'Россия', code: 'LED'),
-          CityModel(city: 'Екатеринбург', country: 'Россия', code: 'SVX'),
-          CityModel(city: 'Казань', country: 'Россия', code: 'KZN'),
-          CityModel(city: 'Краснодар', country: 'Россия', code: 'KRR'),
-          CityModel(city: 'Новосибирск', country: 'Россия', code: 'OVB'),
-          CityModel(city: 'Иркутск', country: 'Россия', code: 'IKT'),
+          CityModel(
+            id: 1,
+            name: 'Москва',
+            codeName: 'MOW',
+            airports: [
+              AirportModel(id: 1, name: 'Шереметьево', codeName: 'SVO'),
+              AirportModel(id: 2, name: 'Домодедово', codeName: 'DME'),
+              AirportModel(id: 3, name: 'Внуково', codeName: 'VKO'),
+            ],
+          ),
+          CityModel(
+            id: 2,
+            name: 'Санкт-Петербург',
+            codeName: 'LED',
+            airports: [AirportModel(id: 4, name: 'Пулково', codeName: 'LED')],
+          ),
         ],
       ),
       CountryModel(
-        name: 'Турция',
-        directions: 25,
-        priceFrom: 8900,
+        id: 2,
+        name: 'Кыргызстан',
+        codeName: 'KGZ',
+        img: 'https://flagcdn.com/w320/kg.png',
+        directions: 15,
         cities: [
-          CityModel(city: 'Стамбул', country: 'Турция', code: 'IST'),
-          CityModel(city: 'Анкара', country: 'Турция', code: 'ESB'),
-          CityModel(city: 'Анталья', country: 'Турция', code: 'AYT'),
-        ],
-      ),
-      CountryModel(
-        name: 'ОАЭ',
-        directions: 6,
-        priceFrom: 12456,
-        cities: [
-          CityModel(city: 'Дубай', country: 'ОАЭ', code: 'DXB'),
-          CityModel(city: 'Абу-Даби', country: 'ОАЭ', code: 'AUH'),
-        ],
-      ),
-      CountryModel(
-        name: 'Германия',
-        directions: 6,
-        priceFrom: 12456,
-        cities: [
-          CityModel(city: 'Франкфурт', country: 'Германия', code: 'FRA'),
-          CityModel(city: 'Берлин', country: 'Германия', code: 'BER'),
-          CityModel(city: 'Мюнхен', country: 'Германия', code: 'MUC'),
-        ],
-      ),
-      CountryModel(
-        name: 'Казахстан',
-        directions: 6,
-        priceFrom: 12456,
-        cities: [
-          CityModel(city: 'Алматы', country: 'Казахстан', code: 'ALA'),
-          CityModel(city: 'Астана', country: 'Казахстан', code: 'NQZ'),
+          CityModel(
+            id: 3,
+            name: 'Бишкек',
+            codeName: 'FRU',
+            airports: [AirportModel(id: 5, name: 'Манас', codeName: 'FRU')],
+          ),
+          CityModel(
+            id: 4,
+            name: 'Ош',
+            codeName: 'OSS',
+            airports: [AirportModel(id: 6, name: 'Ош', codeName: 'OSS')],
+          ),
         ],
       ),
     ];

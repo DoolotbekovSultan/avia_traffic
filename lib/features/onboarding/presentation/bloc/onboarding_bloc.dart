@@ -3,6 +3,7 @@ import 'package:aviatraffic/core/common/base_usecase/no_params.dart';
 import 'package:aviatraffic/core/failure/failure.dart';
 import 'package:aviatraffic/features/onboarding/domain/entities/page.dart';
 import 'package:aviatraffic/features/onboarding/domain/usecases/get_pages_usecase.dart';
+import 'package:aviatraffic/features/onboarding/domain/usecases/set_onboarding_seen_usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -14,10 +15,14 @@ part 'onboarding_state.dart';
 @lazySingleton
 class OnboardingBloc extends BaseBloc<OnboardingEvent, OnboardingState> {
   final GetPagesUsecase _getPagesUsecase;
+  final SetOnboardingSeenUsecase _setOnboardingSeenUsecase;
 
-  OnboardingBloc({required GetPagesUsecase getPagesUsecase})
-    : _getPagesUsecase = getPagesUsecase,
-      super(const OnboardingState.initial()) {
+  OnboardingBloc({
+    required GetPagesUsecase getPagesUsecase,
+    required SetOnboardingSeenUsecase setOnboardingSeenUsecase,
+  }) : _getPagesUsecase = getPagesUsecase,
+       _setOnboardingSeenUsecase = setOnboardingSeenUsecase,
+       super(const OnboardingState.initial()) {
     on<OnboardingEvent>(
       (event, emit) => event.map(
         started: (_) => _onStarted(emit),
@@ -50,6 +55,7 @@ class OnboardingBloc extends BaseBloc<OnboardingEvent, OnboardingState> {
             loadedState.currentPageIndex == loadedState.pages.length - 1;
 
         if (isLastPage) {
+          _setOnboardingSeenUsecase(NoParams());
           emit(const OnboardingState.completed());
         } else {
           emit(
@@ -79,6 +85,7 @@ class OnboardingBloc extends BaseBloc<OnboardingEvent, OnboardingState> {
   }
 
   void _onSkipOnboarding(Emitter<OnboardingState> emit) {
+    _setOnboardingSeenUsecase(NoParams());
     emit(const OnboardingState.completed());
   }
 

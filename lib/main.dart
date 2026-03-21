@@ -3,10 +3,12 @@ import 'package:aviatraffic/core/theme/light_theme.dart';
 import 'package:aviatraffic/core/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
+  await initializeDateFormatting('ru');
   runApp(const MyApp());
 }
 

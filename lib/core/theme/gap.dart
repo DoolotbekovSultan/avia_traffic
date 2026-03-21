@@ -36,6 +36,7 @@ class Gap {
   static SizedBox h2 = SizedBox(width: s2.w);
   static SizedBox h4 = SizedBox(width: s4.w);
   static SizedBox h8 = SizedBox(width: s8.w);
+  static SizedBox h10 = SizedBox(width: 10.w);
   static SizedBox h12 = SizedBox(width: s12.w);
   static SizedBox h16 = SizedBox(width: s16.w);
   static SizedBox h24 = SizedBox(width: s24.w);

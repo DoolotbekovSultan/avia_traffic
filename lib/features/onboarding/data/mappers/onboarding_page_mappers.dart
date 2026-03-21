@@ -3,7 +3,7 @@ import 'package:aviatraffic/features/onboarding/domain/entities/page.dart';
 
 extension OnboardingPageModelMapper on PageModel {
   Page toDomain() =>
-      Page(imageUrl: imageUrl, title: title, description: description);
+      Page(imagePath: imagePath, title: title, description: description);
 }
 
 extension OnboardingPageModelsMapper on List<PageModel> {

@@ -2,6 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:aviatraffic/core/router/app_router.gr.dart';
 import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/failure/failure_utils.dart';
+import 'package:aviatraffic/core/theme/app_colors.dart';
+import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
+import 'package:aviatraffic/utils/request_permissions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -71,7 +74,7 @@ class _OnboardingPageViewState extends State<_OnboardingPageView>
 
   Future<void> _preloadImages(List<entity.Page> pages) async {
     for (final page in pages) {
-      await precacheImage(NetworkImage(page.imageUrl), context);
+      await precacheImage(NetworkImage(page.imagePath), context);
     }
   }
 
@@ -94,8 +97,11 @@ class _OnboardingPageViewState extends State<_OnboardingPageView>
               }
             });
           },
-          completed: (_) {
-            context.router.replace(const HomeRoute());
+          completed: (_) async {
+            await requestPermissions();
+            if (context.mounted) {
+              context.router.replace(const HomeRoute());
+            }
           },
         );
       },
@@ -171,12 +177,15 @@ class _LoadedView extends StatelessWidget {
   final PageController pageController;
   final Animation<double> fadeAnimation;
 
-  const _LoadedView({
+  _LoadedView({
     required this.pages,
     required this.currentIndex,
     required this.pageController,
     required this.fadeAnimation,
   });
+
+  final TextStyle textStyle = getIt<AppTextStyles>().bodyMediumSemiBold
+      .copyWith(color: AppColors.primary);
 
   @override
   Widget build(BuildContext context) {
@@ -213,14 +222,14 @@ class _LoadedView extends StatelessWidget {
                 onPressed: () {
                   bloc.add(OnboardingEvent.skipOnboarding());
                 },
-                child: Text("Закрыть"),
+                child: Text("Закрыть", style: textStyle),
               ),
               _DotsIndicator(count: pages.length, currentIndex: currentIndex),
               TextButton(
                 onPressed: () {
                   bloc.add(OnboardingEvent.nextPage());
                 },
-                child: Text("Далее"),
+                child: Text("Далее", style: textStyle),
               ),
             ],
           ),
@@ -236,12 +245,12 @@ class _OnboardingPageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tt = Theme.of(context).textTheme;
+    final textStyles = getIt<AppTextStyles>();
 
     return Column(
       children: [
-        Image.network(
-          page.imageUrl,
+        Image.asset(
+          page.imagePath,
           height: 456.h,
           width: double.infinity,
           fit: BoxFit.cover,
@@ -258,21 +267,21 @@ class _OnboardingPageItem extends StatelessWidget {
             ),
           ),
         ),
-        Gap.v48,
+        SizedBox(height: 51.h),
         Text(
           page.title,
           textAlign: TextAlign.center,
-          style: tt.headlineSmall?.copyWith(
-            fontWeight: FontWeight.w900,
-            color: Colors.black,
+          style: textStyles.displaySmallBold.copyWith(
+            color: AppColors.onBackground,
           ),
         ),
-
         Gap.v10,
         Text(
           page.description,
           textAlign: TextAlign.center,
-          style: tt.titleMedium,
+          style: textStyles.bodyMediumSemiBold.copyWith(
+            color: AppColors.onBackground,
+          ),
         ),
       ],
     );
@@ -296,11 +305,11 @@ class _DotsIndicator extends StatelessWidget {
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeInOut,
           margin: EdgeInsets.symmetric(horizontal: 4.w),
-          width: isActive ? 10.w : 10.w,
+          width: 10.w,
           height: 10.h,
           decoration: BoxDecoration(
             color: isActive ? cs.primary : cs.surfaceContainer,
-            borderRadius: BorderRadius.circular(4.r),
+            borderRadius: BorderRadius.circular(80.r),
           ),
         );
       }),

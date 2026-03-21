@@ -5,6 +5,7 @@ import 'package:aviatraffic/features/city_picker/domain/entities/city.dart';
 import 'package:aviatraffic/features/city_picker/presentation/city_picker_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CityPickerWidget extends StatefulWidget {
   final String initialFrom;
@@ -55,7 +56,7 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
     );
     if (result != null) {
       setState(() {
-        _from = '${result.city},${result.code}';
+        _from = '${result.name},${result.codeName}';
         widget.onChanged(_from, _to);
       });
     }
@@ -76,7 +77,7 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
     );
     if (result != null) {
       setState(() {
-        _to = '${result.city},${result.code}';
+        _to = '${result.name},${result.codeName}';
         widget.onChanged(_from, _to);
       });
     }
@@ -95,25 +96,19 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
   Widget build(BuildContext context) {
     final textStyles = getIt<AppTextStyles>();
 
-    final mainTextStyle = textStyles.titleMedium.copyWith(
-      fontSize: 14.sp,
-      fontWeight: FontWeight.w600,
+    final mainTextStyle = textStyles.bodyMediumSemiBold.copyWith(
       height: 16 / 13,
-      color: const Color(0xFF212020),
+      color: AppColors.onBackground,
     );
 
-    final hintTextStyle = textStyles.titleMedium.copyWith(
-      fontSize: 15.sp,
-      fontWeight: FontWeight.w600,
+    final hintTextStyle = textStyles.bodyMediumSemiBold.copyWith(
       height: 16 / 13,
       color: const Color(0xFF8992A0),
     );
 
-    final smallHintStyle = textStyles.bodySmall.copyWith(
-      fontSize: 13.sp,
-      fontWeight: FontWeight.w400,
+    final smallHintStyle = textStyles.caption.copyWith(
       height: 16 / 13,
-      color: const Color(0xFF8992A0),
+      color: AppColors.neutral500,
     );
 
     return Stack(
@@ -126,8 +121,8 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(
-                height: 48.h,
+              ConstrainedBox(
+                constraints: BoxConstraints(minHeight: 48.h),
                 child: GestureDetector(
                   onTap: _openFromPicker,
                   behavior: HitTestBehavior.opaque,
@@ -154,9 +149,9 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
                   ),
                 ),
               ),
-              const Divider(height: 1, indent: 16, endIndent: 16),
-              SizedBox(
-                height: 48.h,
+              Divider(),
+              ConstrainedBox(
+                constraints: BoxConstraints(minHeight: 48.h),
                 child: GestureDetector(
                   onTap: _openToPicker,
                   behavior: HitTestBehavior.opaque,
@@ -197,11 +192,7 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
                   color: AppColors.primary,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(
-                  Icons.swap_horiz_rounded,
-                  color: Colors.white,
-                  size: 16.w,
-                ),
+                child: SvgPicture.asset('assets/images/swap.svg'),
               ),
             ),
           ),

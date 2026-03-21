@@ -4,4 +4,6 @@ import 'package:dartz/dartz.dart';
 
 abstract class IOnboardingRepository {
   Future<Either<Failure, List<Page>>> getPages();
+  Future<Either<Failure, bool>> isOnboardingSeen();
+  Future<Either<Failure, void>> setOnboardingSeen();
 }

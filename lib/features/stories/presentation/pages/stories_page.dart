@@ -1,14 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:aviatraffic/core/constants/widget_constants.dart';
 import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/failure/failure_utils.dart';
 import 'package:aviatraffic/core/router/app_router.gr.dart';
+import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/gap.dart';
+import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/stories/presentation/bloc/stories/stories_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 @RoutePage()
 class StoriesPage extends StatelessWidget {
@@ -17,17 +21,15 @@ class StoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) =>
-          getIt<StoriesBloc>()..add(const StoriesEvent.started()),
-      child: _StoriesPageState(initialIndex: initialIndex),
+    return BlocProvider.value(
+      value: getIt<StoriesBloc>()..add(StoriesEvent.updateIndex(initialIndex)),
+      child: const _StoriesPageState(),
     );
   }
 }
 
 class _StoriesPageState extends StatefulWidget {
-  final int initialIndex;
-  const _StoriesPageState({required this.initialIndex});
+  const _StoriesPageState();
 
   @override
   State<_StoriesPageState> createState() => _StoriesPageStateState();
@@ -35,47 +37,23 @@ class _StoriesPageState extends StatefulWidget {
 
 class _StoriesPageStateState extends State<_StoriesPageState>
     with TickerProviderStateMixin {
-  late int _currentSlide;
   late AnimationController _progressController;
 
   @override
   void initState() {
     super.initState();
-    _currentSlide = widget.initialIndex;
-    _progressController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 4))
-          ..addStatusListener((status) {
-            if (status == AnimationStatus.completed) {
-              _nextSlide();
-            }
-          });
+    _progressController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 4),
+    )..forward();
   }
 
   void _nextSlide() {
-    final state = context.read<StoriesBloc>().state;
-    state.mapOrNull(
-      loaded: (s) {
-        if (_currentSlide < s.stories.length - 1) {
-          setState(() {
-            _currentSlide++;
-          });
-          _progressController.reset();
-          _progressController.forward();
-        } else {
-          context.router.maybePop();
-        }
-      },
-    );
+    context.read<StoriesBloc>().add(const StoriesEvent.nextStory());
   }
 
   void _prevSlide() {
-    if (_currentSlide > 0) {
-      setState(() {
-        _currentSlide--;
-      });
-      _progressController.reset();
-      _progressController.forward();
-    }
+    context.read<StoriesBloc>().add(const StoriesEvent.previousStory());
   }
 
   @override
@@ -88,7 +66,15 @@ class _StoriesPageStateState extends State<_StoriesPageState>
   Widget build(BuildContext context) {
     final tt = Theme.of(context).textTheme;
 
-    return BlocBuilder<StoriesBloc, StoriesState>(
+    return BlocConsumer<StoriesBloc, StoriesState>(
+      listener: (context, state) {
+        state.mapOrNull(
+          loaded: (s) {
+            _progressController.reset();
+            _progressController.forward();
+          },
+        );
+      },
       builder: (context, state) {
         return state.map(
           initial: (_) => const Scaffold(backgroundColor: Colors.black),
@@ -107,12 +93,8 @@ class _StoriesPageStateState extends State<_StoriesPageState>
           ),
           loaded: (s) {
             final slides = s.stories;
-            if (!_progressController.isAnimating &&
-                _progressController.status != AnimationStatus.completed) {
-              _progressController.forward();
-            }
-
-            final slide = slides[_currentSlide];
+            final currentIndex = s.currentIndex;
+            final slide = slides[currentIndex];
 
             return Scaffold(
               backgroundColor: Colors.black,
@@ -150,6 +132,23 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                       ),
                                     ),
                                   ),
+                                  Align(
+                                    alignment: .topCenter,
+                                    child: Container(
+                                      height: 100.h,
+                                      width: double.infinity,
+                                      decoration: const BoxDecoration(
+                                        gradient: LinearGradient(
+                                          begin: .topCenter,
+                                          end: .bottomCenter,
+                                          colors: [
+                                            Colors.black,
+                                            Colors.transparent,
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                   Positioned(
                                     bottom: 0,
                                     left: 0,
@@ -169,9 +168,9 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                     ),
                                   ),
                                   Positioned(
-                                    top: 12,
-                                    left: 12,
-                                    right: 12,
+                                    top: 12.h,
+                                    left: 12.w,
+                                    right: 12.w,
                                     child: Column(
                                       children: [
                                         Row(
@@ -179,16 +178,15 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                             slides.length,
                                             (index) => Expanded(
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                      horizontal: 2,
-                                                    ),
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 2.w,
+                                                ),
                                                 child: _StoryIndicator(
                                                   isActive:
-                                                      index == _currentSlide,
-                                                  isDone: index < _currentSlide,
+                                                      index == currentIndex,
+                                                  isDone: index < currentIndex,
                                                   controller:
-                                                      index == _currentSlide
+                                                      index == currentIndex
                                                       ? _progressController
                                                       : null,
                                                 ),
@@ -196,26 +194,16 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                             ),
                                           ),
                                         ),
-                                        const SizedBox(height: 10),
+                                        Gap.v10,
                                         Align(
                                           alignment: Alignment.centerRight,
                                           child: GestureDetector(
                                             onTap: () =>
                                                 context.router.maybePop(),
-                                            child: Container(
-                                              width: 32,
-                                              height: 32,
-                                              decoration: BoxDecoration(
-                                                color: Colors.black.withValues(
-                                                  alpha: 0.4,
-                                                ),
-                                                shape: BoxShape.circle,
-                                              ),
-                                              child: const Icon(
-                                                Icons.close,
-                                                color: Colors.white,
-                                                size: 18,
-                                              ),
+                                            child: SvgPicture.asset(
+                                              'assets/images/stories_close.svg',
+                                              width: 32.w,
+                                              height: 32.h,
                                             ),
                                           ),
                                         ),
@@ -238,48 +226,44 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(
-                                      height: 65.h,
-                                      child: AutoSizeText(
-                                        slide.title,
-                                        style: tt.headlineLarge?.copyWith(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w800,
-                                        ),
-                                      ),
+                                    Text(
+                                      slide.title,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: getIt<AppTextStyles>()
+                                          .displaySmallBold
+                                          .copyWith(color: Colors.white),
+                                      maxLines: 2,
                                     ),
-                                    const SizedBox(height: 16),
-                                    Gap.h16,
+                                    Gap.v16,
                                     Expanded(
                                       child: SingleChildScrollView(
                                         physics: const BouncingScrollPhysics(),
                                         child: Text(
                                           slide.detailed,
-                                          style: tt.bodyLarge?.copyWith(
-                                            fontWeight: FontWeight.w600,
-                                            color: Colors.white.withValues(
-                                              alpha: 0.75,
-                                            ),
-                                          ),
+                                          style: getIt<AppTextStyles>()
+                                              .bodyMediumSemiBold
+                                              .copyWith(color: Colors.white),
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(height: 16),
-                                    SizedBox(
-                                      width: double.infinity,
-                                      height: 56,
-                                      child: ElevatedButton(
-                                        onPressed: () {
-                                          context.router.push(
-                                            StoryDetailRoute(id: slide.id),
-                                          );
-                                        },
-                                        child: Text(
-                                          'Подробнее',
-                                          style: tt.titleMedium?.copyWith(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
+                                    Gap.v16,
+                                    Padding(
+                                      padding: .all(
+                                        WidgetConstants.mediumPadding,
+                                      ),
+                                      child: SizedBox(
+                                        width: double.infinity,
+                                        height: 56.h,
+                                        child: ElevatedButton(
+                                          onPressed: () {
+                                            context.router.push(
+                                              StoryDetailRoute(id: slide.id),
+                                            );
+                                          },
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: AppColors.primary,
                                           ),
+                                          child: Text('Подробнее'),
                                         ),
                                       ),
                                     ),

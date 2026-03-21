@@ -9,16 +9,16 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:aviatraffic/core/di/network_module.dart' as _i94;
+import 'package:aviatraffic/core/di/register_module.dart' as _i1056;
 import 'package:aviatraffic/core/router/app_router.dart' as _i306;
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart'
     as _i831;
 import 'package:aviatraffic/core/theme/text_styles/nunito_sans_text_styles.dart'
     as _i746;
+import 'package:aviatraffic/features/city_picker/data/datasources/city_picker_remote_datasource.dart'
+    as _i783;
 import 'package:aviatraffic/features/city_picker/data/datasources/i_city_picker_remote_datasource.dart'
     as _i367;
-import 'package:aviatraffic/features/city_picker/data/datasources/mock_city_picker_remote_datasource.dart'
-    as _i302;
 import 'package:aviatraffic/features/city_picker/data/repositories/city_picker_repository.dart'
     as _i1062;
 import 'package:aviatraffic/features/city_picker/domain/repositories/i_city_picker_repository.dart'
@@ -29,10 +29,16 @@ import 'package:aviatraffic/features/city_picker/domain/usecases/get_countries_u
     as _i1043;
 import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_bloc.dart'
     as _i227;
+import 'package:aviatraffic/features/date_picker/data/repositories/date_picker_repository.dart'
+    as _i532;
+import 'package:aviatraffic/features/date_picker/domain/repositories/i_date_picker_repository.dart'
+    as _i666;
+import 'package:aviatraffic/features/date_picker/presentation/bloc/date_picker_bloc.dart'
+    as _i812;
+import 'package:aviatraffic/features/deals/data/datasources/deals_remote_datasource.dart'
+    as _i276;
 import 'package:aviatraffic/features/deals/data/datasources/i_deals_remote_datasource.dart'
     as _i247;
-import 'package:aviatraffic/features/deals/data/datasources/mock_deals_remote_datasource.dart'
-    as _i242;
 import 'package:aviatraffic/features/deals/data/repositories/deals_repository.dart'
     as _i412;
 import 'package:aviatraffic/features/deals/domain/repositories/i_deals_repository.dart'
@@ -41,8 +47,12 @@ import 'package:aviatraffic/features/deals/domain/usecases/get_deals_usecase.dar
     as _i334;
 import 'package:aviatraffic/features/deals/presentation/bloc/deals_bloc.dart'
     as _i99;
+import 'package:aviatraffic/features/onboarding/data/datasources/impl/onboarding_local_datasource.dart'
+    as _i993;
 import 'package:aviatraffic/features/onboarding/data/datasources/impl/onboarding_remote_datasource.dart'
     as _i1015;
+import 'package:aviatraffic/features/onboarding/data/datasources/interface/i_onboarding_local_datasource.dart'
+    as _i450;
 import 'package:aviatraffic/features/onboarding/data/datasources/interface/i_onboarding_remote_datasource.dart'
     as _i555;
 import 'package:aviatraffic/features/onboarding/data/repositories/onboarding_repository.dart'
@@ -51,6 +61,10 @@ import 'package:aviatraffic/features/onboarding/domain/repositories/i_onboarding
     as _i524;
 import 'package:aviatraffic/features/onboarding/domain/usecases/get_pages_usecase.dart'
     as _i572;
+import 'package:aviatraffic/features/onboarding/domain/usecases/is_onboarding_seen_usecase.dart'
+    as _i733;
+import 'package:aviatraffic/features/onboarding/domain/usecases/set_onboarding_seen_usecase.dart'
+    as _i335;
 import 'package:aviatraffic/features/onboarding/presentation/bloc/onboarding_bloc.dart'
     as _i507;
 import 'package:aviatraffic/features/stories/data/datasources/i_stories_remote_datasource.dart'
@@ -72,36 +86,51 @@ import 'package:aviatraffic/features/stories/presentation/bloc/story/story_bloc.
 import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
+import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
-  _i174.GetIt init({
+  Future<_i174.GetIt> init({
     String? environment,
     _i526.EnvironmentFilter? environmentFilter,
-  }) {
+  }) async {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
-    final networkModule = _$NetworkModule();
+    final registerModule = _$RegisterModule();
+    await gh.factoryAsync<_i460.SharedPreferences>(
+      () => registerModule.prefs,
+      preResolve: true,
+    );
+    gh.factory<_i812.DatePickerBloc>(() => _i812.DatePickerBloc());
     gh.singleton<_i306.AppRouter>(() => _i306.AppRouter());
-    gh.lazySingleton<_i361.Dio>(() => networkModule.dio);
+    gh.lazySingleton<_i361.Dio>(() => registerModule.dio);
     gh.lazySingleton<_i367.ICityPickerRemoteDatasource>(
-      () => _i302.MockCityPickerRemoteDatasource(),
+      () => _i783.CityPickerRemoteDatasource(gh<_i361.Dio>()),
+    );
+    gh.lazySingleton<_i666.IDatePickerRepository>(
+      () => _i532.DatePickerRepository(),
+    );
+    gh.lazySingleton<_i450.IOnboardingLocalDataSource>(
+      () => _i993.OnboardingLocalDataSource(gh<_i460.SharedPreferences>()),
     );
     gh.lazySingleton<_i247.IDealsRemoteDatasource>(
-      () => _i242.MockDealsRemoteDatasource(),
-    );
-    gh.lazySingleton<_i555.IOnboardingRemoteDatasource>(
-      () => _i1015.MockOnboardingRemoteDatasource(),
+      () => _i276.DealsRemoteDatasource(gh<_i361.Dio>()),
     );
     gh.lazySingleton<_i825.IDealsRepository>(
       () => _i412.DealsRepository(gh<_i247.IDealsRemoteDatasource>()),
+    );
+    gh.lazySingleton<_i555.IOnboardingRemoteDatasource>(
+      () => _i1015.OnboardingRemoteDatasource(),
+    );
+    gh.lazySingleton<_i524.IOnboardingRepository>(
+      () => _i641.OnboardingRepository(
+        gh<_i555.IOnboardingRemoteDatasource>(),
+        gh<_i450.IOnboardingLocalDataSource>(),
+      ),
     );
     gh.singleton<_i831.AppTextStyles>(() => const _i746.NunitoSansTextStyles());
     gh.lazySingleton<_i475.ICityPickerRepository>(
       () =>
           _i1062.CityPickerRepository(gh<_i367.ICityPickerRemoteDatasource>()),
-    );
-    gh.lazySingleton<_i524.IOnboardingRepository>(
-      () => _i641.OnboardingRepository(gh<_i555.IOnboardingRemoteDatasource>()),
     );
     gh.lazySingleton<_i302.IStoriesRemoteDatasource>(
       () => _i59.StoriesRemoteDatasources(dio: gh<_i361.Dio>()),
@@ -112,11 +141,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i99.DealsBloc>(
       () => _i99.DealsBloc(gh<_i334.GetDealsUsecase>()),
     );
+    gh.lazySingleton<_i335.SetOnboardingSeenUsecase>(
+      () => _i335.SetOnboardingSeenUsecase(gh<_i524.IOnboardingRepository>()),
+    );
     gh.lazySingleton<_i572.GetPagesUsecase>(
       () => _i572.GetPagesUsecase(gh<_i524.IOnboardingRepository>()),
     );
-    gh.lazySingleton<_i507.OnboardingBloc>(
-      () => _i507.OnboardingBloc(getPagesUsecase: gh<_i572.GetPagesUsecase>()),
+    gh.lazySingleton<_i733.IsOnboardingSeenUseCase>(
+      () => _i733.IsOnboardingSeenUseCase(gh<_i524.IOnboardingRepository>()),
     );
     gh.lazySingleton<_i1043.GetCountriesUsecase>(
       () => _i1043.GetCountriesUsecase(gh<_i475.ICityPickerRepository>()),
@@ -127,13 +159,19 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i73.IStoriesRepository>(
       () => _i933.StoriesRepository(gh<_i302.IStoriesRemoteDatasource>()),
     );
+    gh.lazySingleton<_i507.OnboardingBloc>(
+      () => _i507.OnboardingBloc(
+        getPagesUsecase: gh<_i572.GetPagesUsecase>(),
+        setOnboardingSeenUsecase: gh<_i335.SetOnboardingSeenUsecase>(),
+      ),
+    );
     gh.lazySingleton<_i900.GetStoriesUsecase>(
       () => _i900.GetStoriesUsecase(gh<_i73.IStoriesRepository>()),
     );
     gh.lazySingleton<_i896.GetStoryByIdUsecase>(
       () => _i896.GetStoryByIdUsecase(gh<_i73.IStoriesRepository>()),
     );
-    gh.factory<_i731.StoriesBloc>(
+    gh.lazySingleton<_i731.StoriesBloc>(
       () => _i731.StoriesBloc(gh<_i900.GetStoriesUsecase>()),
     );
     gh.factory<_i227.CityPickerBloc>(
@@ -149,4 +187,4 @@ extension GetItInjectableX on _i174.GetIt {
   }
 }
 
-class _$NetworkModule extends _i94.NetworkModule {}
+class _$RegisterModule extends _i1056.RegisterModule {}

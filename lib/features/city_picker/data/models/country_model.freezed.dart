@@ -21,10 +21,12 @@ CountryModel _$CountryModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CountryModel {
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  int get directions => throw _privateConstructorUsedError;
-  int get priceFrom => throw _privateConstructorUsedError;
-  String get currency => throw _privateConstructorUsedError;
+  @JsonKey(name: 'code_name')
+  String get codeName => throw _privateConstructorUsedError;
+  String get img => throw _privateConstructorUsedError;
+  int? get directions => throw _privateConstructorUsedError;
   List<CityModel> get cities => throw _privateConstructorUsedError;
 
   /// Serializes this CountryModel to a JSON map.
@@ -45,10 +47,11 @@ abstract class $CountryModelCopyWith<$Res> {
   ) = _$CountryModelCopyWithImpl<$Res, CountryModel>;
   @useResult
   $Res call({
+    int id,
     String name,
-    int directions,
-    int priceFrom,
-    String currency,
+    @JsonKey(name: 'code_name') String codeName,
+    String img,
+    int? directions,
     List<CityModel> cities,
   });
 }
@@ -68,30 +71,35 @@ class _$CountryModelCopyWithImpl<$Res, $Val extends CountryModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? name = null,
-    Object? directions = null,
-    Object? priceFrom = null,
-    Object? currency = null,
+    Object? codeName = null,
+    Object? img = null,
+    Object? directions = freezed,
     Object? cities = null,
   }) {
     return _then(
       _value.copyWith(
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as int,
             name: null == name
                 ? _value.name
                 : name // ignore: cast_nullable_to_non_nullable
                       as String,
-            directions: null == directions
+            codeName: null == codeName
+                ? _value.codeName
+                : codeName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            img: null == img
+                ? _value.img
+                : img // ignore: cast_nullable_to_non_nullable
+                      as String,
+            directions: freezed == directions
                 ? _value.directions
                 : directions // ignore: cast_nullable_to_non_nullable
-                      as int,
-            priceFrom: null == priceFrom
-                ? _value.priceFrom
-                : priceFrom // ignore: cast_nullable_to_non_nullable
-                      as int,
-            currency: null == currency
-                ? _value.currency
-                : currency // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as int?,
             cities: null == cities
                 ? _value.cities
                 : cities // ignore: cast_nullable_to_non_nullable
@@ -112,10 +120,11 @@ abstract class _$$CountryModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
+    int id,
     String name,
-    int directions,
-    int priceFrom,
-    String currency,
+    @JsonKey(name: 'code_name') String codeName,
+    String img,
+    int? directions,
     List<CityModel> cities,
   });
 }
@@ -134,30 +143,35 @@ class __$$CountryModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? name = null,
-    Object? directions = null,
-    Object? priceFrom = null,
-    Object? currency = null,
+    Object? codeName = null,
+    Object? img = null,
+    Object? directions = freezed,
     Object? cities = null,
   }) {
     return _then(
       _$CountryModelImpl(
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as int,
         name: null == name
             ? _value.name
             : name // ignore: cast_nullable_to_non_nullable
                   as String,
-        directions: null == directions
+        codeName: null == codeName
+            ? _value.codeName
+            : codeName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        img: null == img
+            ? _value.img
+            : img // ignore: cast_nullable_to_non_nullable
+                  as String,
+        directions: freezed == directions
             ? _value.directions
             : directions // ignore: cast_nullable_to_non_nullable
-                  as int,
-        priceFrom: null == priceFrom
-            ? _value.priceFrom
-            : priceFrom // ignore: cast_nullable_to_non_nullable
-                  as int,
-        currency: null == currency
-            ? _value.currency
-            : currency // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as int?,
         cities: null == cities
             ? _value._cities
             : cities // ignore: cast_nullable_to_non_nullable
@@ -171,10 +185,11 @@ class __$$CountryModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CountryModelImpl extends _CountryModel {
   const _$CountryModelImpl({
+    required this.id,
     required this.name,
-    required this.directions,
-    required this.priceFrom,
-    this.currency = 'с',
+    @JsonKey(name: 'code_name') required this.codeName,
+    required this.img,
+    this.directions,
     required final List<CityModel> cities,
   }) : _cities = cities,
        super._();
@@ -183,14 +198,16 @@ class _$CountryModelImpl extends _CountryModel {
       _$$CountryModelImplFromJson(json);
 
   @override
+  final int id;
+  @override
   final String name;
   @override
-  final int directions;
+  @JsonKey(name: 'code_name')
+  final String codeName;
   @override
-  final int priceFrom;
+  final String img;
   @override
-  @JsonKey()
-  final String currency;
+  final int? directions;
   final List<CityModel> _cities;
   @override
   List<CityModel> get cities {
@@ -201,7 +218,7 @@ class _$CountryModelImpl extends _CountryModel {
 
   @override
   String toString() {
-    return 'CountryModel(name: $name, directions: $directions, priceFrom: $priceFrom, currency: $currency, cities: $cities)';
+    return 'CountryModel(id: $id, name: $name, codeName: $codeName, img: $img, directions: $directions, cities: $cities)';
   }
 
   @override
@@ -209,13 +226,13 @@ class _$CountryModelImpl extends _CountryModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CountryModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.codeName, codeName) ||
+                other.codeName == codeName) &&
+            (identical(other.img, img) || other.img == img) &&
             (identical(other.directions, directions) ||
                 other.directions == directions) &&
-            (identical(other.priceFrom, priceFrom) ||
-                other.priceFrom == priceFrom) &&
-            (identical(other.currency, currency) ||
-                other.currency == currency) &&
             const DeepCollectionEquality().equals(other._cities, _cities));
   }
 
@@ -223,10 +240,11 @@ class _$CountryModelImpl extends _CountryModel {
   @override
   int get hashCode => Object.hash(
     runtimeType,
+    id,
     name,
+    codeName,
+    img,
     directions,
-    priceFrom,
-    currency,
     const DeepCollectionEquality().hash(_cities),
   );
 
@@ -246,10 +264,11 @@ class _$CountryModelImpl extends _CountryModel {
 
 abstract class _CountryModel extends CountryModel {
   const factory _CountryModel({
+    required final int id,
     required final String name,
-    required final int directions,
-    required final int priceFrom,
-    final String currency,
+    @JsonKey(name: 'code_name') required final String codeName,
+    required final String img,
+    final int? directions,
     required final List<CityModel> cities,
   }) = _$CountryModelImpl;
   const _CountryModel._() : super._();
@@ -258,13 +277,16 @@ abstract class _CountryModel extends CountryModel {
       _$CountryModelImpl.fromJson;
 
   @override
+  int get id;
+  @override
   String get name;
   @override
-  int get directions;
+  @JsonKey(name: 'code_name')
+  String get codeName;
   @override
-  int get priceFrom;
+  String get img;
   @override
-  String get currency;
+  int? get directions;
   @override
   List<CityModel> get cities;
 

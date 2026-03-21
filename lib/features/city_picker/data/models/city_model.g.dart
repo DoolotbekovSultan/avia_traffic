@@ -8,14 +8,20 @@ part of 'city_model.dart';
 
 _$CityModelImpl _$$CityModelImplFromJson(Map<String, dynamic> json) =>
     _$CityModelImpl(
-      city: json['city'] as String,
-      country: json['country'] as String,
-      code: json['code'] as String,
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      codeName: json['code_name'] as String,
+      country: json['country'] as String?,
+      airports: (json['airports'] as List<dynamic>)
+          .map((e) => AirportModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$CityModelImplToJson(_$CityModelImpl instance) =>
     <String, dynamic>{
-      'city': instance.city,
+      'id': instance.id,
+      'name': instance.name,
+      'code_name': instance.codeName,
       'country': instance.country,
-      'code': instance.code,
+      'airports': instance.airports,
     };

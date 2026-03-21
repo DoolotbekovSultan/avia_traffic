@@ -21,9 +21,12 @@ CityModel _$CityModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CityModel {
-  String get city => throw _privateConstructorUsedError;
-  String get country => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'code_name')
+  String get codeName => throw _privateConstructorUsedError;
+  String? get country => throw _privateConstructorUsedError;
+  List<AirportModel> get airports => throw _privateConstructorUsedError;
 
   /// Serializes this CityModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,7 +43,13 @@ abstract class $CityModelCopyWith<$Res> {
   factory $CityModelCopyWith(CityModel value, $Res Function(CityModel) then) =
       _$CityModelCopyWithImpl<$Res, CityModel>;
   @useResult
-  $Res call({String city, String country, String code});
+  $Res call({
+    int id,
+    String name,
+    @JsonKey(name: 'code_name') String codeName,
+    String? country,
+    List<AirportModel> airports,
+  });
 }
 
 /// @nodoc
@@ -58,24 +67,34 @@ class _$CityModelCopyWithImpl<$Res, $Val extends CityModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? city = null,
-    Object? country = null,
-    Object? code = null,
+    Object? id = null,
+    Object? name = null,
+    Object? codeName = null,
+    Object? country = freezed,
+    Object? airports = null,
   }) {
     return _then(
       _value.copyWith(
-            city: null == city
-                ? _value.city
-                : city // ignore: cast_nullable_to_non_nullable
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as int,
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
                       as String,
-            country: null == country
+            codeName: null == codeName
+                ? _value.codeName
+                : codeName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            country: freezed == country
                 ? _value.country
                 : country // ignore: cast_nullable_to_non_nullable
-                      as String,
-            code: null == code
-                ? _value.code
-                : code // ignore: cast_nullable_to_non_nullable
-                      as String,
+                      as String?,
+            airports: null == airports
+                ? _value.airports
+                : airports // ignore: cast_nullable_to_non_nullable
+                      as List<AirportModel>,
           )
           as $Val,
     );
@@ -91,7 +110,13 @@ abstract class _$$CityModelImplCopyWith<$Res>
   ) = __$$CityModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String city, String country, String code});
+  $Res call({
+    int id,
+    String name,
+    @JsonKey(name: 'code_name') String codeName,
+    String? country,
+    List<AirportModel> airports,
+  });
 }
 
 /// @nodoc
@@ -108,24 +133,34 @@ class __$$CityModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? city = null,
-    Object? country = null,
-    Object? code = null,
+    Object? id = null,
+    Object? name = null,
+    Object? codeName = null,
+    Object? country = freezed,
+    Object? airports = null,
   }) {
     return _then(
       _$CityModelImpl(
-        city: null == city
-            ? _value.city
-            : city // ignore: cast_nullable_to_non_nullable
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as int,
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
                   as String,
-        country: null == country
+        codeName: null == codeName
+            ? _value.codeName
+            : codeName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        country: freezed == country
             ? _value.country
             : country // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
+                  as String?,
+        airports: null == airports
+            ? _value._airports
+            : airports // ignore: cast_nullable_to_non_nullable
+                  as List<AirportModel>,
       ),
     );
   }
@@ -135,24 +170,37 @@ class __$$CityModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CityModelImpl extends _CityModel {
   const _$CityModelImpl({
-    required this.city,
-    required this.country,
-    required this.code,
-  }) : super._();
+    required this.id,
+    required this.name,
+    @JsonKey(name: 'code_name') required this.codeName,
+    this.country,
+    required final List<AirportModel> airports,
+  }) : _airports = airports,
+       super._();
 
   factory _$CityModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CityModelImplFromJson(json);
 
   @override
-  final String city;
+  final int id;
   @override
-  final String country;
+  final String name;
   @override
-  final String code;
+  @JsonKey(name: 'code_name')
+  final String codeName;
+  @override
+  final String? country;
+  final List<AirportModel> _airports;
+  @override
+  List<AirportModel> get airports {
+    if (_airports is EqualUnmodifiableListView) return _airports;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_airports);
+  }
 
   @override
   String toString() {
-    return 'CityModel(city: $city, country: $country, code: $code)';
+    return 'CityModel(id: $id, name: $name, codeName: $codeName, country: $country, airports: $airports)';
   }
 
   @override
@@ -160,14 +208,24 @@ class _$CityModelImpl extends _CityModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CityModelImpl &&
-            (identical(other.city, city) || other.city == city) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.codeName, codeName) ||
+                other.codeName == codeName) &&
             (identical(other.country, country) || other.country == country) &&
-            (identical(other.code, code) || other.code == code));
+            const DeepCollectionEquality().equals(other._airports, _airports));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, city, country, code);
+  int get hashCode => Object.hash(
+    runtimeType,
+    id,
+    name,
+    codeName,
+    country,
+    const DeepCollectionEquality().hash(_airports),
+  );
 
   /// Create a copy of CityModel
   /// with the given fields replaced by the non-null parameter values.
@@ -185,9 +243,11 @@ class _$CityModelImpl extends _CityModel {
 
 abstract class _CityModel extends CityModel {
   const factory _CityModel({
-    required final String city,
-    required final String country,
-    required final String code,
+    required final int id,
+    required final String name,
+    @JsonKey(name: 'code_name') required final String codeName,
+    final String? country,
+    required final List<AirportModel> airports,
   }) = _$CityModelImpl;
   const _CityModel._() : super._();
 
@@ -195,11 +255,16 @@ abstract class _CityModel extends CityModel {
       _$CityModelImpl.fromJson;
 
   @override
-  String get city;
+  int get id;
   @override
-  String get country;
+  String get name;
   @override
-  String get code;
+  @JsonKey(name: 'code_name')
+  String get codeName;
+  @override
+  String? get country;
+  @override
+  List<AirportModel> get airports;
 
   /// Create a copy of CityModel
   /// with the given fields replaced by the non-null parameter values.

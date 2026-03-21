@@ -4,6 +4,7 @@ import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/deals/domain/entities/deal.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 @RoutePage()
@@ -37,34 +38,48 @@ class DealDetailPage extends StatelessWidget {
           children: [
             SizedBox(
               width: double.infinity,
-              height: 200.h,
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  Image.network(
-                    deal.imageUrl,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, _, _) =>
-                        Container(color: const Color(0xFF3A3A5C)),
-                  ),
-                  Center(
-                    child: Text(
-                      deal.title,
-                      style: getIt<AppTextStyles>().headlineLargeBold.copyWith(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
+              height: 250.h,
+              child: Image.network(
+                deal.imageUrl,
+                fit: BoxFit.cover,
+                errorBuilder: (_, _, _) =>
+                    Container(color: const Color(0xFF3A3A5C)),
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
-              child: Text(
-                deal.description,
-                style: getIt<AppTextStyles>().bodyLargeSemiBold.copyWith(
-                  color: AppColors.onBackground,
-                ),
+              padding: EdgeInsets.all(16.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    deal.title,
+                    style: getIt<AppTextStyles>().headlineMediumBold.copyWith(
+                      color: AppColors.onBackground,
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  Text(
+                    '${deal.codeFrom} - ${deal.codeTo}',
+                    style: getIt<AppTextStyles>().titleMediumBold.copyWith(
+                      color: AppColors.primary,
+                    ),
+                  ),
+                  const Divider(height: 32),
+                  Html(
+                    data: deal.description,
+                    style: {
+                      "body": Style(
+                        margin: Margins.zero,
+                        padding: HtmlPaddings.zero,
+                        fontSize: FontSize(14.sp),
+                        lineHeight: const LineHeight(1.5),
+                        color: AppColors.onBackground,
+                      ),
+                      "p": Style(margin: Margins.only(bottom: 12)),
+                      "strong": Style(fontWeight: FontWeight.bold),
+                    },
+                  ),
+                ],
               ),
             ),
           ],

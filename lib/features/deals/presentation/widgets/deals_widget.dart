@@ -42,9 +42,9 @@ class _DealsView extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 12),
+        SizedBox(height: 12.h),
         SizedBox(
-          height: 160,
+          height: 160.h,
           child: BlocBuilder<DealsBloc, DealsState>(
             builder: (context, state) {
               return state.map(
@@ -91,7 +91,7 @@ class _EmptyDeals extends StatelessWidget {
   const _EmptyDeals();
   @override
   Widget build(BuildContext context) =>
-      Padding(padding: .all(16.w), child: Text('Нет доступных предложений'));
+      Padding(padding: EdgeInsets.all(16.w), child: const Text('Нет доступных предложений'));
 }
 
 class _DealCard extends StatelessWidget {
@@ -106,7 +106,7 @@ class _DealCard extends StatelessWidget {
     return Container(
       width: 280.w,
       margin: EdgeInsets.only(bottom: 12.h),
-      height: 120.h,
+      height: 140.h,
       decoration: BoxDecoration(
         color: cs.surface,
         borderRadius: BorderRadius.circular(16.r),
@@ -130,9 +130,18 @@ class _DealCard extends StatelessWidget {
                 children: [
                   Text(
                     deal.title,
-                    style: getIt<AppTextStyles>().titleLargeBold.copyWith(
+                    style: getIt<AppTextStyles>().titleMediumBold.copyWith(
                       fontWeight: FontWeight.w700,
                       color: AppColors.onBackground,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(height: 8.h),
+                  Text(
+                    '${deal.codeFrom} - ${deal.codeTo}',
+                    style: getIt<AppTextStyles>().bodySmallBold.copyWith(
+                      color: AppColors.primary,
                     ),
                   ),
                 ],
@@ -159,16 +168,16 @@ class _DealCard extends StatelessWidget {
                     bottom: 10.h,
                     right: 10.w,
                     child: Container(
-                      width: 36.w,
-                      height: 36.h,
+                      width: 32.w,
+                      height: 32.h,
                       decoration: BoxDecoration(
                         color: cs.primary,
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
-                        Icons.chat_bubble_rounded,
+                        Icons.arrow_forward_rounded,
                         color: Colors.white,
-                        size: 18.w,
+                        size: 16.w,
                       ),
                     ),
                   ),

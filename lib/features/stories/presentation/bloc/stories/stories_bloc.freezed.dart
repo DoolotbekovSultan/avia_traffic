@@ -20,27 +20,45 @@ mixin _$StoriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(int index) updateIndex,
+    required TResult Function() nextStory,
+    required TResult Function() previousStory,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(int index)? updateIndex,
+    TResult? Function()? nextStory,
+    TResult? Function()? previousStory,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(int index)? updateIndex,
+    TResult Function()? nextStory,
+    TResult Function()? previousStory,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_UpdateIndex value) updateIndex,
+    required TResult Function(_NextStory value) nextStory,
+    required TResult Function(_PreviousStory value) previousStory,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateIndex value)? updateIndex,
+    TResult? Function(_NextStory value)? nextStory,
+    TResult? Function(_PreviousStory value)? previousStory,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_UpdateIndex value)? updateIndex,
+    TResult Function(_NextStory value)? nextStory,
+    TResult Function(_PreviousStory value)? previousStory,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -109,13 +127,23 @@ class _$StartedImpl implements _Started {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({required TResult Function() started}) {
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(int index) updateIndex,
+    required TResult Function() nextStory,
+    required TResult Function() previousStory,
+  }) {
     return started();
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? started}) {
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(int index)? updateIndex,
+    TResult? Function()? nextStory,
+    TResult? Function()? previousStory,
+  }) {
     return started?.call();
   }
 
@@ -123,6 +151,9 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(int index)? updateIndex,
+    TResult Function()? nextStory,
+    TResult Function()? previousStory,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -135,6 +166,9 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_UpdateIndex value) updateIndex,
+    required TResult Function(_NextStory value) nextStory,
+    required TResult Function(_PreviousStory value) previousStory,
   }) {
     return started(this);
   }
@@ -143,6 +177,9 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateIndex value)? updateIndex,
+    TResult? Function(_NextStory value)? nextStory,
+    TResult? Function(_PreviousStory value)? previousStory,
   }) {
     return started?.call(this);
   }
@@ -151,6 +188,9 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_UpdateIndex value)? updateIndex,
+    TResult Function(_NextStory value)? nextStory,
+    TResult Function(_PreviousStory value)? previousStory,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -165,26 +205,418 @@ abstract class _Started implements StoriesEvent {
 }
 
 /// @nodoc
+abstract class _$$UpdateIndexImplCopyWith<$Res> {
+  factory _$$UpdateIndexImplCopyWith(
+    _$UpdateIndexImpl value,
+    $Res Function(_$UpdateIndexImpl) then,
+  ) = __$$UpdateIndexImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$UpdateIndexImplCopyWithImpl<$Res>
+    extends _$StoriesEventCopyWithImpl<$Res, _$UpdateIndexImpl>
+    implements _$$UpdateIndexImplCopyWith<$Res> {
+  __$$UpdateIndexImplCopyWithImpl(
+    _$UpdateIndexImpl _value,
+    $Res Function(_$UpdateIndexImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of StoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? index = null}) {
+    return _then(
+      _$UpdateIndexImpl(
+        null == index
+            ? _value.index
+            : index // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+class _$UpdateIndexImpl implements _UpdateIndex {
+  const _$UpdateIndexImpl(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'StoriesEvent.updateIndex(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateIndexImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  /// Create a copy of StoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateIndexImplCopyWith<_$UpdateIndexImpl> get copyWith =>
+      __$$UpdateIndexImplCopyWithImpl<_$UpdateIndexImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(int index) updateIndex,
+    required TResult Function() nextStory,
+    required TResult Function() previousStory,
+  }) {
+    return updateIndex(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(int index)? updateIndex,
+    TResult? Function()? nextStory,
+    TResult? Function()? previousStory,
+  }) {
+    return updateIndex?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(int index)? updateIndex,
+    TResult Function()? nextStory,
+    TResult Function()? previousStory,
+    required TResult orElse(),
+  }) {
+    if (updateIndex != null) {
+      return updateIndex(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_UpdateIndex value) updateIndex,
+    required TResult Function(_NextStory value) nextStory,
+    required TResult Function(_PreviousStory value) previousStory,
+  }) {
+    return updateIndex(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateIndex value)? updateIndex,
+    TResult? Function(_NextStory value)? nextStory,
+    TResult? Function(_PreviousStory value)? previousStory,
+  }) {
+    return updateIndex?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UpdateIndex value)? updateIndex,
+    TResult Function(_NextStory value)? nextStory,
+    TResult Function(_PreviousStory value)? previousStory,
+    required TResult orElse(),
+  }) {
+    if (updateIndex != null) {
+      return updateIndex(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateIndex implements StoriesEvent {
+  const factory _UpdateIndex(final int index) = _$UpdateIndexImpl;
+
+  int get index;
+
+  /// Create a copy of StoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateIndexImplCopyWith<_$UpdateIndexImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NextStoryImplCopyWith<$Res> {
+  factory _$$NextStoryImplCopyWith(
+    _$NextStoryImpl value,
+    $Res Function(_$NextStoryImpl) then,
+  ) = __$$NextStoryImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NextStoryImplCopyWithImpl<$Res>
+    extends _$StoriesEventCopyWithImpl<$Res, _$NextStoryImpl>
+    implements _$$NextStoryImplCopyWith<$Res> {
+  __$$NextStoryImplCopyWithImpl(
+    _$NextStoryImpl _value,
+    $Res Function(_$NextStoryImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of StoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$NextStoryImpl implements _NextStory {
+  const _$NextStoryImpl();
+
+  @override
+  String toString() {
+    return 'StoriesEvent.nextStory()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NextStoryImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(int index) updateIndex,
+    required TResult Function() nextStory,
+    required TResult Function() previousStory,
+  }) {
+    return nextStory();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(int index)? updateIndex,
+    TResult? Function()? nextStory,
+    TResult? Function()? previousStory,
+  }) {
+    return nextStory?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(int index)? updateIndex,
+    TResult Function()? nextStory,
+    TResult Function()? previousStory,
+    required TResult orElse(),
+  }) {
+    if (nextStory != null) {
+      return nextStory();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_UpdateIndex value) updateIndex,
+    required TResult Function(_NextStory value) nextStory,
+    required TResult Function(_PreviousStory value) previousStory,
+  }) {
+    return nextStory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateIndex value)? updateIndex,
+    TResult? Function(_NextStory value)? nextStory,
+    TResult? Function(_PreviousStory value)? previousStory,
+  }) {
+    return nextStory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UpdateIndex value)? updateIndex,
+    TResult Function(_NextStory value)? nextStory,
+    TResult Function(_PreviousStory value)? previousStory,
+    required TResult orElse(),
+  }) {
+    if (nextStory != null) {
+      return nextStory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NextStory implements StoriesEvent {
+  const factory _NextStory() = _$NextStoryImpl;
+}
+
+/// @nodoc
+abstract class _$$PreviousStoryImplCopyWith<$Res> {
+  factory _$$PreviousStoryImplCopyWith(
+    _$PreviousStoryImpl value,
+    $Res Function(_$PreviousStoryImpl) then,
+  ) = __$$PreviousStoryImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PreviousStoryImplCopyWithImpl<$Res>
+    extends _$StoriesEventCopyWithImpl<$Res, _$PreviousStoryImpl>
+    implements _$$PreviousStoryImplCopyWith<$Res> {
+  __$$PreviousStoryImplCopyWithImpl(
+    _$PreviousStoryImpl _value,
+    $Res Function(_$PreviousStoryImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of StoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$PreviousStoryImpl implements _PreviousStory {
+  const _$PreviousStoryImpl();
+
+  @override
+  String toString() {
+    return 'StoriesEvent.previousStory()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$PreviousStoryImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(int index) updateIndex,
+    required TResult Function() nextStory,
+    required TResult Function() previousStory,
+  }) {
+    return previousStory();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(int index)? updateIndex,
+    TResult? Function()? nextStory,
+    TResult? Function()? previousStory,
+  }) {
+    return previousStory?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(int index)? updateIndex,
+    TResult Function()? nextStory,
+    TResult Function()? previousStory,
+    required TResult orElse(),
+  }) {
+    if (previousStory != null) {
+      return previousStory();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_UpdateIndex value) updateIndex,
+    required TResult Function(_NextStory value) nextStory,
+    required TResult Function(_PreviousStory value) previousStory,
+  }) {
+    return previousStory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateIndex value)? updateIndex,
+    TResult? Function(_NextStory value)? nextStory,
+    TResult? Function(_PreviousStory value)? previousStory,
+  }) {
+    return previousStory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UpdateIndex value)? updateIndex,
+    TResult Function(_NextStory value)? nextStory,
+    TResult Function(_PreviousStory value)? previousStory,
+    required TResult orElse(),
+  }) {
+    if (previousStory != null) {
+      return previousStory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PreviousStory implements StoriesEvent {
+  const factory _PreviousStory() = _$PreviousStoryImpl;
+}
+
+/// @nodoc
 mixin _$StoriesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<StoryItem> stories) loaded,
+    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
     required TResult Function(Failure failure) failure,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<StoryItem> stories)? loaded,
+    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
     TResult? Function(Failure failure)? failure,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<StoryItem> stories)? loaded,
+    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
@@ -279,7 +711,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<StoryItem> stories) loaded,
+    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
     required TResult Function(Failure failure) failure,
   }) {
     return initial();
@@ -290,7 +722,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<StoryItem> stories)? loaded,
+    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
     TResult? Function(Failure failure)? failure,
   }) {
     return initial?.call();
@@ -301,7 +733,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<StoryItem> stories)? loaded,
+    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -398,7 +830,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<StoryItem> stories) loaded,
+    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
     required TResult Function(Failure failure) failure,
   }) {
     return loading();
@@ -409,7 +841,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<StoryItem> stories)? loaded,
+    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
     TResult? Function(Failure failure)? failure,
   }) {
     return loading?.call();
@@ -420,7 +852,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<StoryItem> stories)? loaded,
+    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -479,7 +911,7 @@ abstract class _$$LoadedImplCopyWith<$Res> {
     $Res Function(_$LoadedImpl) then,
   ) = __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<StoryItem> stories});
+  $Res call({List<StoryItem> stories, int currentIndex});
 }
 
 /// @nodoc
@@ -495,13 +927,17 @@ class __$$LoadedImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? stories = null}) {
+  $Res call({Object? stories = null, Object? currentIndex = null}) {
     return _then(
       _$LoadedImpl(
         stories: null == stories
             ? _value._stories
             : stories // ignore: cast_nullable_to_non_nullable
                   as List<StoryItem>,
+        currentIndex: null == currentIndex
+            ? _value.currentIndex
+            : currentIndex // ignore: cast_nullable_to_non_nullable
+                  as int,
       ),
     );
   }
@@ -510,8 +946,10 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl({required final List<StoryItem> stories})
-    : _stories = stories;
+  const _$LoadedImpl({
+    required final List<StoryItem> stories,
+    this.currentIndex = 0,
+  }) : _stories = stories;
 
   final List<StoryItem> _stories;
   @override
@@ -522,8 +960,12 @@ class _$LoadedImpl implements _Loaded {
   }
 
   @override
+  @JsonKey()
+  final int currentIndex;
+
+  @override
   String toString() {
-    return 'StoriesState.loaded(stories: $stories)';
+    return 'StoriesState.loaded(stories: $stories, currentIndex: $currentIndex)';
   }
 
   @override
@@ -531,12 +973,17 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            const DeepCollectionEquality().equals(other._stories, _stories));
+            const DeepCollectionEquality().equals(other._stories, _stories) &&
+            (identical(other.currentIndex, currentIndex) ||
+                other.currentIndex == currentIndex));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_stories));
+  int get hashCode => Object.hash(
+    runtimeType,
+    const DeepCollectionEquality().hash(_stories),
+    currentIndex,
+  );
 
   /// Create a copy of StoriesState
   /// with the given fields replaced by the non-null parameter values.
@@ -551,10 +998,10 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<StoryItem> stories) loaded,
+    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
     required TResult Function(Failure failure) failure,
   }) {
-    return loaded(stories);
+    return loaded(stories, currentIndex);
   }
 
   @override
@@ -562,10 +1009,10 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<StoryItem> stories)? loaded,
+    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
     TResult? Function(Failure failure)? failure,
   }) {
-    return loaded?.call(stories);
+    return loaded?.call(stories, currentIndex);
   }
 
   @override
@@ -573,12 +1020,12 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<StoryItem> stories)? loaded,
+    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(stories);
+      return loaded(stories, currentIndex);
     }
     return orElse();
   }
@@ -622,10 +1069,13 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements StoriesState {
-  const factory _Loaded({required final List<StoryItem> stories}) =
-      _$LoadedImpl;
+  const factory _Loaded({
+    required final List<StoryItem> stories,
+    final int currentIndex,
+  }) = _$LoadedImpl;
 
   List<StoryItem> get stories;
+  int get currentIndex;
 
   /// Create a copy of StoriesState
   /// with the given fields replaced by the non-null parameter values.
@@ -718,7 +1168,7 @@ class _$FailureImpl implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<StoryItem> stories) loaded,
+    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
     required TResult Function(Failure failure) failure,
   }) {
     return failure(this.failure);
@@ -729,7 +1179,7 @@ class _$FailureImpl implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<StoryItem> stories)? loaded,
+    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
     TResult? Function(Failure failure)? failure,
   }) {
     return failure?.call(this.failure);
@@ -740,7 +1190,7 @@ class _$FailureImpl implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<StoryItem> stories)? loaded,
+    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {

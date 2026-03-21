@@ -16,8 +16,8 @@ class StoriesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<StoriesBloc>()..add(const StoriesEvent.started()),
+    return BlocProvider.value(
+      value: getIt<StoriesBloc>()..add(const StoriesEvent.started()),
       child: const _StoriesWidgetState(),
     );
   }
@@ -50,27 +50,109 @@ class _StoriesWidgetState extends StatelessWidget {
                 initial: (_) => const _Loading(),
                 loading: (_) => const _Loading(),
                 failure: (f) => Center(child: Text(f.failure.userMessage)),
-                loaded: (s) => ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  itemCount: s.stories.length,
-                  itemBuilder: (context, i) => Padding(
-                    padding: EdgeInsets.only(
-                      right: i < s.stories.length - 1 ? 12.w : 0,
-                    ),
-                    child: GestureDetector(
-                      onTap: () {
-                        context.router.push(StoriesRoute(initialIndex: i));
-                      },
-                      child: _StoryCard(item: s.stories[i], selected: i == 0),
-                    ),
-                  ),
+                loaded: (s) => _StoriesList(
+                  stories: s.stories,
+                  currentIndex: s.currentIndex,
                 ),
               );
             },
           ),
         ),
       ],
+    );
+  }
+}
+
+class _StoriesList extends StatefulWidget {
+  final List<StoryItem> stories;
+  final int currentIndex;
+
+  const _StoriesList({required this.stories, required this.currentIndex});
+
+  @override
+  State<StatefulWidget> createState() => _StoriesListState();
+}
+
+class _StoriesListState extends State<_StoriesList> {
+  late final ScrollController _scrollController;
+
+  static const double _cardWidth = 107.0;
+  static const double _cardSpacing = 12.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _scrollToIndex(widget.currentIndex, animated: false);
+    });
+  }
+
+  @override
+  void didUpdateWidget(_StoriesList oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.currentIndex != widget.currentIndex) {
+      _scrollToIndex(widget.currentIndex);
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void _scrollToIndex(int index, {bool animated = true}) {
+    if (!_scrollController.hasClients) return;
+
+    final offset = index * (_cardWidth.w + _cardSpacing.w);
+    final maxScroll = _scrollController.position.maxScrollExtent;
+
+    if (offset > maxScroll) {
+      if (animated) {
+        _scrollController.animateTo(
+          maxScroll,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
+      } else {
+        _scrollController.jumpTo(maxScroll);
+      }
+    } else {
+      if (animated) {
+        _scrollController.animateTo(
+          offset,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
+      } else {
+        _scrollController.jumpTo(offset);
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      controller: _scrollController,
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      itemCount: widget.stories.length,
+      itemBuilder: (context, i) => Padding(
+        padding: EdgeInsets.only(
+          right: i < widget.stories.length - 1 ? 12.w : 0,
+        ),
+        child: GestureDetector(
+          onTap: () {
+            context.read<StoriesBloc>().add(StoriesEvent.updateIndex(i));
+            context.router.push(StoriesRoute(initialIndex: i));
+          },
+          child: _StoryCard(
+            item: widget.stories[i],
+            selected: i == widget.currentIndex,
+          ),
+        ),
+      ),
     );
   }
 }
@@ -93,9 +175,16 @@ class _StoryCard extends StatelessWidget {
     return Container(
       width: 107.w,
       height: 107.h,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16.r)),
+      padding: .all(2.w),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16.r),
+        border: .all(
+          color: selected ? AppColors.primary : AppColors.neutral200,
+          width: 1.5.w,
+        ),
+      ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
         child: Stack(
           fit: StackFit.expand,
           children: [
@@ -125,6 +214,7 @@ class _StoryCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: getIt<AppTextStyles>().caption.copyWith(
+                  height: 16 / 13,
                   color: Colors.white,
                 ),
               ),

@@ -17,10 +17,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Country {
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String get codeName => throw _privateConstructorUsedError;
+  String get img => throw _privateConstructorUsedError;
   int get directions => throw _privateConstructorUsedError;
-  int get priceFrom => throw _privateConstructorUsedError;
-  String get currency => throw _privateConstructorUsedError;
   List<City> get cities => throw _privateConstructorUsedError;
 
   /// Create a copy of Country
@@ -35,10 +36,11 @@ abstract class $CountryCopyWith<$Res> {
       _$CountryCopyWithImpl<$Res, Country>;
   @useResult
   $Res call({
+    int id,
     String name,
+    String codeName,
+    String img,
     int directions,
-    int priceFrom,
-    String currency,
     List<City> cities,
   });
 }
@@ -58,30 +60,35 @@ class _$CountryCopyWithImpl<$Res, $Val extends Country>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? name = null,
+    Object? codeName = null,
+    Object? img = null,
     Object? directions = null,
-    Object? priceFrom = null,
-    Object? currency = null,
     Object? cities = null,
   }) {
     return _then(
       _value.copyWith(
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as int,
             name: null == name
                 ? _value.name
                 : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            codeName: null == codeName
+                ? _value.codeName
+                : codeName // ignore: cast_nullable_to_non_nullable
+                      as String,
+            img: null == img
+                ? _value.img
+                : img // ignore: cast_nullable_to_non_nullable
                       as String,
             directions: null == directions
                 ? _value.directions
                 : directions // ignore: cast_nullable_to_non_nullable
                       as int,
-            priceFrom: null == priceFrom
-                ? _value.priceFrom
-                : priceFrom // ignore: cast_nullable_to_non_nullable
-                      as int,
-            currency: null == currency
-                ? _value.currency
-                : currency // ignore: cast_nullable_to_non_nullable
-                      as String,
             cities: null == cities
                 ? _value.cities
                 : cities // ignore: cast_nullable_to_non_nullable
@@ -101,10 +108,11 @@ abstract class _$$CountryImplCopyWith<$Res> implements $CountryCopyWith<$Res> {
   @override
   @useResult
   $Res call({
+    int id,
     String name,
+    String codeName,
+    String img,
     int directions,
-    int priceFrom,
-    String currency,
     List<City> cities,
   });
 }
@@ -123,30 +131,35 @@ class __$$CountryImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? name = null,
+    Object? codeName = null,
+    Object? img = null,
     Object? directions = null,
-    Object? priceFrom = null,
-    Object? currency = null,
     Object? cities = null,
   }) {
     return _then(
       _$CountryImpl(
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as int,
         name: null == name
             ? _value.name
             : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        codeName: null == codeName
+            ? _value.codeName
+            : codeName // ignore: cast_nullable_to_non_nullable
+                  as String,
+        img: null == img
+            ? _value.img
+            : img // ignore: cast_nullable_to_non_nullable
                   as String,
         directions: null == directions
             ? _value.directions
             : directions // ignore: cast_nullable_to_non_nullable
                   as int,
-        priceFrom: null == priceFrom
-            ? _value.priceFrom
-            : priceFrom // ignore: cast_nullable_to_non_nullable
-                  as int,
-        currency: null == currency
-            ? _value.currency
-            : currency // ignore: cast_nullable_to_non_nullable
-                  as String,
         cities: null == cities
             ? _value._cities
             : cities // ignore: cast_nullable_to_non_nullable
@@ -160,21 +173,24 @@ class __$$CountryImplCopyWithImpl<$Res>
 
 class _$CountryImpl implements _Country {
   const _$CountryImpl({
+    required this.id,
     required this.name,
+    required this.codeName,
+    required this.img,
     required this.directions,
-    required this.priceFrom,
-    required this.currency,
     required final List<City> cities,
   }) : _cities = cities;
 
   @override
+  final int id;
+  @override
   final String name;
   @override
+  final String codeName;
+  @override
+  final String img;
+  @override
   final int directions;
-  @override
-  final int priceFrom;
-  @override
-  final String currency;
   final List<City> _cities;
   @override
   List<City> get cities {
@@ -185,7 +201,7 @@ class _$CountryImpl implements _Country {
 
   @override
   String toString() {
-    return 'Country(name: $name, directions: $directions, priceFrom: $priceFrom, currency: $currency, cities: $cities)';
+    return 'Country(id: $id, name: $name, codeName: $codeName, img: $img, directions: $directions, cities: $cities)';
   }
 
   @override
@@ -193,23 +209,24 @@ class _$CountryImpl implements _Country {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CountryImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.codeName, codeName) ||
+                other.codeName == codeName) &&
+            (identical(other.img, img) || other.img == img) &&
             (identical(other.directions, directions) ||
                 other.directions == directions) &&
-            (identical(other.priceFrom, priceFrom) ||
-                other.priceFrom == priceFrom) &&
-            (identical(other.currency, currency) ||
-                other.currency == currency) &&
             const DeepCollectionEquality().equals(other._cities, _cities));
   }
 
   @override
   int get hashCode => Object.hash(
     runtimeType,
+    id,
     name,
+    codeName,
+    img,
     directions,
-    priceFrom,
-    currency,
     const DeepCollectionEquality().hash(_cities),
   );
 
@@ -224,21 +241,24 @@ class _$CountryImpl implements _Country {
 
 abstract class _Country implements Country {
   const factory _Country({
+    required final int id,
     required final String name,
+    required final String codeName,
+    required final String img,
     required final int directions,
-    required final int priceFrom,
-    required final String currency,
     required final List<City> cities,
   }) = _$CountryImpl;
 
   @override
+  int get id;
+  @override
   String get name;
   @override
+  String get codeName;
+  @override
+  String get img;
+  @override
   int get directions;
-  @override
-  int get priceFrom;
-  @override
-  String get currency;
   @override
   List<City> get cities;
 

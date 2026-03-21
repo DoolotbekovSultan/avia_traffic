@@ -8,10 +8,11 @@ part of 'country_model.dart';
 
 _$CountryModelImpl _$$CountryModelImplFromJson(Map<String, dynamic> json) =>
     _$CountryModelImpl(
+      id: (json['id'] as num).toInt(),
       name: json['name'] as String,
-      directions: (json['directions'] as num).toInt(),
-      priceFrom: (json['priceFrom'] as num).toInt(),
-      currency: json['currency'] as String? ?? 'с',
+      codeName: json['code_name'] as String,
+      img: json['img'] as String,
+      directions: (json['directions'] as num?)?.toInt(),
       cities: (json['cities'] as List<dynamic>)
           .map((e) => CityModel.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -19,9 +20,10 @@ _$CountryModelImpl _$$CountryModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$CountryModelImplToJson(_$CountryModelImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
+      'code_name': instance.codeName,
+      'img': instance.img,
       'directions': instance.directions,
-      'priceFrom': instance.priceFrom,
-      'currency': instance.currency,
       'cities': instance.cities,
     };

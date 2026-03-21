@@ -207,7 +207,8 @@ class NunitoSansTextStyles implements AppTextStyles {
     fontFamily: _family,
     fontSize: 32.sp,
     fontWeight: FontWeight.w800,
-    height: 1.20,
+    height: 1,
+    letterSpacing: 0,
     textBaseline: TextBaseline.alphabetic,
   );
 
@@ -259,9 +260,10 @@ class NunitoSansTextStyles implements AppTextStyles {
   TextStyle get titleMediumBold => TextStyle(
     inherit: false,
     fontFamily: _family,
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w800,
-    height: 1.38,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w700,
+    height: 1.33,
+    letterSpacing: 0,
     textBaseline: TextBaseline.alphabetic,
   );
 
@@ -291,9 +293,10 @@ class NunitoSansTextStyles implements AppTextStyles {
   TextStyle get bodyMediumBold => TextStyle(
     inherit: false,
     fontFamily: _family,
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w800,
-    height: 1.40,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w700,
+    height: 2.13,
+    letterSpacing: 0,
     textBaseline: TextBaseline.alphabetic,
   );
 
@@ -310,22 +313,23 @@ class NunitoSansTextStyles implements AppTextStyles {
   // SEMIBOLD VARIANTS
 
   @override
-  TextStyle get bodyLargeSemiBold => TextStyle(
+  TextStyle get bodyMediumSemiBold => TextStyle(
     inherit: false,
     fontFamily: _family,
-    fontSize: 16.sp,
+    fontSize: 15.sp,
     fontWeight: FontWeight.w600,
-    height: 1.45,
+    height: 2.13,
+    letterSpacing: 0,
     textBaseline: TextBaseline.alphabetic,
   );
 
   @override
-  TextStyle get bodyMediumSemiBold => TextStyle(
+  TextStyle get bodyLargeSemiBold => TextStyle(
     inherit: false,
     fontFamily: _family,
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
-    height: 1.40,
+    height: 1.45,
     textBaseline: TextBaseline.alphabetic,
   );
 
@@ -380,10 +384,10 @@ class NunitoSansTextStyles implements AppTextStyles {
   TextStyle get caption => TextStyle(
     inherit: false,
     fontFamily: _family,
-    fontSize: 12.sp,
+    fontSize: 13.sp,
     fontWeight: FontWeight.w400,
-    height: 1.33,
-    letterSpacing: 0.4,
+    height: 2.46,
+    letterSpacing: 0,
     textBaseline: TextBaseline.alphabetic,
   );
 

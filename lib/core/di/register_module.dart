@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 @module
-abstract class NetworkModule {
+abstract class RegisterModule {
   @lazySingleton
   Dio get dio => Dio(
     BaseOptions(
@@ -11,4 +12,6 @@ abstract class NetworkModule {
       receiveTimeout: const Duration(seconds: 10),
     ),
   );
+  @preResolve
+  Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
 }

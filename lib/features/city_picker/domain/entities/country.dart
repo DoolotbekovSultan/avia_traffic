@@ -6,10 +6,11 @@ part 'country.freezed.dart';
 @freezed
 class Country with _$Country {
   const factory Country({
+    required int id,
     required String name,
+    required String codeName,
+    required String img,
     required int directions,
-    required int priceFrom,
-    required String currency,
     required List<City> cities,
   }) = _Country;
 }

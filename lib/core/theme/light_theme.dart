@@ -157,17 +157,16 @@ abstract class LightTheme {
   // ─── AppBar ────────────────────────────────────────────────────────────────
 
   static AppBarTheme get _appBarTheme => AppBarTheme(
+    elevation: 0,
+    titleTextStyle: getIt<AppTextStyles>().titleMediumBold.copyWith(
+      color: AppColors.onBackground,
+    ),
+    centerTitle: true,
     backgroundColor: AppColors.surface,
     foregroundColor: AppColors.onSurface,
     surfaceTintColor: Colors.transparent,
     shadowColor: Colors.transparent,
-    elevation: 0,
     scrolledUnderElevation: 1,
-    centerTitle: true,
-    titleTextStyle: getIt<AppTextStyles>().titleLarge.copyWith(
-      color: AppColors.onSurface,
-      inherit: false,
-    ),
     toolbarTextStyle: getIt<AppTextStyles>().bodyMedium.copyWith(
       color: AppColors.onSurface,
       inherit: false,
@@ -280,22 +279,19 @@ abstract class LightTheme {
   static ElevatedButtonThemeData get _elevatedButtonTheme =>
       ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primary,
-          foregroundColor: AppColors.onPrimary,
+          backgroundColor: AppColors.onBackground,
+          foregroundColor: Colors.white,
+          textStyle: getIt<AppTextStyles>().bodyMediumSemiBold,
           disabledBackgroundColor: AppColors.neutral300,
           disabledForegroundColor: AppColors.neutral500,
           surfaceTintColor: Colors.transparent,
           shadowColor: Colors.transparent,
           elevation: 0,
-          textStyle: getIt<AppTextStyles>().buttonMedium.copyWith(
-            color: AppColors.onPrimary,
-            inherit: false,
-          ),
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
-              WidgetConstants.borderRadiusMML,
+              WidgetConstants.borderRadiusLarge,
             ),
           ),
         ),
@@ -775,11 +771,11 @@ abstract class LightTheme {
   // ─── Divider ───────────────────────────────────────────────────────────────
 
   static DividerThemeData get _dividerTheme => const DividerThemeData(
-    color: AppColors.neutral300,
     thickness: 1,
     space: 1,
-    indent: 0,
-    endIndent: 0,
+    indent: 16,
+    endIndent: 16,
+    color: AppColors.neutral100,
   );
 
   // ─── List ──────────────────────────────────────────────────────────────────

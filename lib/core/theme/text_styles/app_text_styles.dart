@@ -136,11 +136,11 @@ abstract class AppTextStyles {
 
   /// 16px, Semibold
   /// Полужирный вариант bodyLarge.
-  TextStyle get bodyLargeSemiBold;
+  TextStyle get bodyMediumSemiBold;
 
   /// 14px, Semibold
   /// Полужирный вариант bodyMedium.
-  TextStyle get bodyMediumSemiBold;
+  TextStyle get bodyLargeSemiBold;
 
   /// 12px, Semibold
   /// Полужирный вариант bodySmall.

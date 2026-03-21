@@ -4,12 +4,12 @@ part 'page_model.g.dart';
 
 @JsonSerializable()
 class PageModel {
-  final String imageUrl;
+  final String imagePath;
   final String title;
   final String description;
 
   PageModel({
-    required this.imageUrl,
+    required this.imagePath,
     required this.title,
     required this.description,
   });

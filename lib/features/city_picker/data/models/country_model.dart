@@ -8,10 +8,11 @@ part 'country_model.g.dart';
 @freezed
 class CountryModel with _$CountryModel {
   const factory CountryModel({
+    required int id,
     required String name,
-    required int directions,
-    required int priceFrom,
-    @Default('с') String currency,
+    @JsonKey(name: 'code_name') required String codeName,
+    required String img,
+    int? directions,
     required List<CityModel> cities,
   }) = _CountryModel;
 
@@ -21,12 +22,13 @@ class CountryModel with _$CountryModel {
   const CountryModel._();
 
   Country toDomain() => Country(
-        name: name,
-        directions: directions,
-        priceFrom: priceFrom,
-        currency: currency,
-        cities: cities.toDomain(),
-      );
+    id: id,
+    name: name,
+    codeName: codeName,
+    img: img,
+    directions: directions ?? cities.length,
+    cities: cities.toDomain(),
+  );
 }
 
 extension CountryModelListX on List<CountryModel> {

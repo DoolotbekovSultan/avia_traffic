@@ -1,4 +1,6 @@
 import 'package:aviatraffic/core/di/injector.dart';
+import 'package:aviatraffic/core/theme/app_colors.dart';
+import 'package:aviatraffic/core/theme/gap.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/city_picker/domain/entities/city.dart';
 import 'package:aviatraffic/features/city_picker/domain/entities/country.dart';
@@ -6,6 +8,7 @@ import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_b
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CityPickerPage extends StatelessWidget {
   final bool isFrom;
@@ -45,21 +48,39 @@ class _CityPickerViewState extends State<_CityPickerView> {
     super.dispose();
   }
 
-  void _onBack() {
-    setState(() {
-      _selectedCountry = null;
-      _ctrl.clear();
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    final textStyles = getIt<AppTextStyles>();
     return BlocBuilder<CityPickerBloc, CityPickerState>(
       builder: (context, state) {
         return state.map(
-          initial: (_) => const _Loading(),
-          loading: (_) => const _Loading(),
-          failure: (f) => Center(child: Text(f.failure.toString())),
+          initial: (_) => _PickerShell(
+            title: widget.isFrom ? 'Откуда' : 'Куда',
+            searchHint: widget.isFrom ? 'Откуда' : 'Куда',
+            controller: _ctrl,
+            child: const _Loading(),
+          ),
+          loading: (_) => _PickerShell(
+            title: widget.isFrom ? 'Откуда' : 'Куда',
+            searchHint: widget.isFrom ? 'Откуда' : 'Куда',
+            controller: _ctrl,
+            child: const _Loading(),
+          ),
+          failure: (f) => _PickerShell(
+            title: 'Ошибка',
+            searchHint: 'Поиск',
+            controller: _ctrl,
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(32.0),
+                child: Text(
+                  f.failure.toString(),
+                  textAlign: TextAlign.center,
+                  style: textStyles.bodyMedium,
+                ),
+              ),
+            ),
+          ),
           citiesLoaded: (s) {
             final q = _ctrl.text.toLowerCase();
             final filtered = q.isEmpty
@@ -67,9 +88,8 @@ class _CityPickerViewState extends State<_CityPickerView> {
                 : s.cities
                       .where(
                         (c) =>
-                            c.city.toLowerCase().contains(q) ||
-                            c.country.toLowerCase().contains(q) ||
-                            c.code.toLowerCase().contains(q),
+                            c.name.toLowerCase().contains(q) ||
+                            c.country.toLowerCase().contains(q),
                       )
                       .toList();
 
@@ -80,11 +100,10 @@ class _CityPickerViewState extends State<_CityPickerView> {
               onChanged: (_) => setState(() {}),
               child: filtered.isEmpty
                   ? _EmptySearch()
-                  : ListView.separated(
+                  : ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: filtered.length,
-                      separatorBuilder: (_, __) => _Divider(),
                       itemBuilder: (_, i) => _CityRow(
                         city: filtered[i],
                         onTap: () => Navigator.pop(context, filtered[i]),
@@ -100,32 +119,23 @@ class _CityPickerViewState extends State<_CityPickerView> {
                   : _selectedCountry!.cities
                         .where(
                           (c) =>
-                              c.city.toLowerCase().contains(q) ||
-                              c.code.toLowerCase().contains(q),
+                              c.name.toLowerCase().contains(q) ||
+                              c.country.toLowerCase().contains(q),
                         )
                         .toList();
 
               return _PickerShell(
-                title: _selectedCountry!.name,
+                title: 'Куда / ${_selectedCountry!.name}',
                 searchHint: 'Поиск города',
                 controller: _ctrl,
                 onChanged: (_) => setState(() {}),
-                leadingAction: IconButton(
-                  icon: const Icon(
-                    Icons.arrow_back_ios_new_rounded,
-                    size: 18,
-                    color: Color(0xFF1A1A2E),
-                  ),
-                  onPressed: _onBack,
-                ),
-                showClose: false,
+                showClose: true,
                 child: filteredCities.isEmpty
                     ? _EmptySearch()
-                    : ListView.separated(
+                    : ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: filteredCities.length,
-                        separatorBuilder: (_, __) => _Divider(),
                         itemBuilder: (_, i) => _CityRow(
                           city: filteredCities[i],
                           onTap: () =>
@@ -210,26 +220,23 @@ class _PickerShell extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const SizedBox(height: 10),
+          Gap.v10,
           Center(
             child: Container(
-              width: 40,
-              height: 4,
+              width: 40.w,
+              height: 4.h,
               decoration: BoxDecoration(
                 color: Colors.grey.shade300,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
           ),
-          const SizedBox(height: 14),
+          Gap.v16,
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Row(
               children: [
-                if (leadingAction != null) ...[
-                  leadingAction!,
-                  const SizedBox(width: 4),
-                ],
+                if (leadingAction != null) ...[leadingAction!, Gap.h4],
                 Expanded(
                   child: Text(
                     title,
@@ -243,18 +250,10 @@ class _PickerShell extends StatelessWidget {
                 if (showClose)
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: Container(
-                      width: 30,
-                      height: 30,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade100,
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(
-                        Icons.close,
-                        size: 18,
-                        color: Color(0xFF5B8DEF),
-                      ),
+                    child: SizedBox(
+                      width: 24.w,
+                      height: 24.h,
+                      child: SvgPicture.asset('assets/images/close.svg'),
                     ),
                   ),
               ],
@@ -297,51 +296,78 @@ class _SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyles = getIt<AppTextStyles>();
-    final hintStyle = textStyles.titleMedium.copyWith(
-      fontSize: 15.sp,
-      fontWeight: FontWeight.w600,
-      height: 32 / 15,
-      color: const Color(0xFFADB5BD),
-    );
 
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFFF2F4F8),
-        borderRadius: BorderRadius.circular(14),
-      ),
-      child: TextField(
-        controller: controller,
-        autofocus: true,
-        style: const TextStyle(fontSize: 15),
-        onChanged: onChanged,
-        decoration: InputDecoration(
-          hintText: hint,
-          hintStyle: hintStyle,
-          prefixIcon: const Icon(
-            Icons.search,
-            color: Color(0xFF8A8A8E),
-            size: 22,
-          ),
-          suffixIcon: ValueListenableBuilder<TextEditingValue>(
-            valueListenable: controller,
-            builder: (_, value, __) => value.text.isNotEmpty
-                ? GestureDetector(
-                    onTap: () {
-                      controller.clear();
-                      onChanged?.call('');
-                    },
-                    child: const Icon(
-                      Icons.cancel,
-                      color: Color(0xFFADB5BD),
-                      size: 20,
+    return ValueListenableBuilder<TextEditingValue>(
+      valueListenable: controller,
+      builder: (context, value, child) {
+        final hasText = value.text.isNotEmpty;
+        return Row(
+          children: [
+            Expanded(
+              child: TextField(
+                controller: controller,
+                textAlignVertical: TextAlignVertical.center,
+                style: textStyles.bodyMediumSemiBold.copyWith(
+                  color: AppColors.onBackground,
+                ),
+                onChanged: onChanged,
+                decoration: InputDecoration(
+                  hintText: hint,
+                  hintStyle: textStyles.bodyMediumSemiBold.copyWith(
+                    color: AppColors.neutral500,
+                    height: 16 / 13,
+                  ),
+
+                  prefixIconConstraints: BoxConstraints(
+                    minWidth: 56.w,
+                    minHeight: 48.h,
+                  ),
+                  filled: true,
+                  fillColor: AppColors.neutral100,
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Image.asset(
+                      'assets/images/search.png',
+                      color: AppColors.onBackground,
+                      width: 24.w,
+                      height: 24.h,
                     ),
-                  )
-                : const SizedBox.shrink(),
-          ),
-          border: InputBorder.none,
-          contentPadding: const EdgeInsets.symmetric(vertical: 14),
-        ),
-      ),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(6.r),
+                    borderSide: BorderSide.none,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(6.r),
+                    borderSide: BorderSide.none,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(6.r),
+                    borderSide: BorderSide.none,
+                  ),
+                  contentPadding: EdgeInsets.symmetric(vertical: 12.h),
+                ),
+              ),
+            ),
+            if (hasText) ...[
+              SizedBox(width: 16.w),
+              GestureDetector(
+                onTap: () {
+                  controller.clear();
+                  onChanged?.call('');
+                  FocusScope.of(context).unfocus();
+                },
+                child: Text(
+                  'Отмена',
+                  style: textStyles.bodyMediumSemiBold.copyWith(
+                    color: AppColors.primary,
+                  ),
+                ),
+              ),
+            ],
+          ],
+        );
+      },
     );
   }
 }
@@ -365,30 +391,27 @@ class _CityRow extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    city.city,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF1A1A2E),
+                    city.name,
+                    style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
+                      color: AppColors.onBackground,
+                      height: 16 / 13,
                     ),
                   ),
-                  const SizedBox(height: 2),
+                  SizedBox(height: 6.h),
                   Text(
                     city.country,
-                    style: const TextStyle(
-                      fontSize: 13,
-                      color: Color(0xFFADB5BD),
+                    style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
+                      color: AppColors.neutral500,
+                      height: 16 / 13,
                     ),
                   ),
                 ],
               ),
             ),
             Text(
-              city.code,
-              style: const TextStyle(
-                fontSize: 15,
-                color: Color(0xFFADB5BD),
-                letterSpacing: 0.5,
+              city.codeName,
+              style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
+                color: AppColors.neutral500,
               ),
             ),
           ],
@@ -404,16 +427,6 @@ class _CountryRow extends StatelessWidget {
 
   const _CountryRow({required this.country, required this.onTap});
 
-  String _formatPrice(int price) {
-    final s = price.toString();
-    final buffer = StringBuffer();
-    for (int i = 0; i < s.length; i++) {
-      if (i > 0 && (s.length - i) % 3 == 0) buffer.write('\u00A0');
-      buffer.write(s[i]);
-    }
-    return buffer.toString();
-  }
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -421,37 +434,28 @@ class _CountryRow extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    country.name,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF1A1A2E),
-                    ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  country.name,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFF1A1A2E),
                   ),
-                  const SizedBox(height: 3),
-                  Text(
-                    '${country.directions} направлений',
-                    style: const TextStyle(
-                      fontSize: 13,
-                      color: Color(0xFFADB5BD),
-                    ),
+                ),
+                const SizedBox(height: 3),
+                Text(
+                  '${country.directions} направлений',
+                  style: const TextStyle(
+                    fontSize: 15,
+                    color: Color(0xFFADB5BD),
                   ),
-                ],
-              ),
-            ),
-            Text(
-              'от ${_formatPrice(country.priceFrom)} ${country.currency}',
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                color: Color(0xFF8A8A8E),
-              ),
+                ),
+              ],
             ),
           ],
         ),

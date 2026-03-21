@@ -1,29 +1,31 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
+import 'package:aviatraffic/core/theme/gap.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/city_picker/presentation/widgets/city_picker_widget.dart';
+import 'package:aviatraffic/features/date_picker/presentation/date_picker_sheet.dart';
+import 'package:aviatraffic/features/home/presentation/widgets/currency_bottom_sheet.dart';
+import 'package:aviatraffic/features/home/presentation/widgets/passengers_bottom_sheet.dart';
 import 'package:aviatraffic/features/stories/presentation/widgets/stories_widget.dart';
 import 'package:aviatraffic/features/deals/presentation/widgets/deals_widget.dart';
 import 'package:aviatraffic/shared/presentation/widgets/avia_traffic_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 @RoutePage()
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
-
     return Scaffold(
-      backgroundColor: cs.surfaceContainerLow,
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SingleChildScrollView(
@@ -41,19 +43,13 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildHeaderSection() {
-    final cs = Theme.of(context).colorScheme;
-
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            cs.primaryContainer,
-            cs.primary.withValues(alpha: .8),
-            cs.primary,
-          ],
-          stops: [0.0, 0.5, 1.0],
+          begin: .centerLeft,
+          end: .centerRight,
+          colors: [Color(0xFFF7C8C8), AppColors.primary],
+          stops: [0.0, 1.0],
         ),
       ),
       child: SafeArea(
@@ -61,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             AviaTrafficAppBar(),
-            const SizedBox(height: 16),
+            Gap.v24,
             _SearchForm(),
             const SizedBox(height: 20),
           ],
@@ -78,11 +74,11 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 20),
+          Gap.v24,
           const StoriesWidget(),
-          const SizedBox(height: 24),
+          SizedBox(height: 18.h),
           const DealsWidget(),
-          const SizedBox(height: 20),
+          Gap.v16,
         ],
       ),
     );
@@ -99,8 +95,10 @@ class _SearchFormState extends State<_SearchForm> {
   String _to = '';
   DateTime? _departDate;
   DateTime? _returnDate;
-  int _passengers = 1;
   String _currency = 'KGS';
+  int adultCount = 0;
+  int childCount = 0;
+  int babyCount = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +111,7 @@ class _SearchFormState extends State<_SearchForm> {
             initialTo: _to,
             onChanged: _onCityChanged,
           ),
-          const SizedBox(height: 10),
+          Gap.v10,
           Row(
             children: [
               Expanded(
@@ -123,7 +121,7 @@ class _SearchFormState extends State<_SearchForm> {
                   onTap: () => _selectDate(true),
                 ),
               ),
-              const SizedBox(width: 10),
+              Gap.h10,
               Expanded(
                 child: _dateField(
                   label: 'Обратно',
@@ -133,32 +131,19 @@ class _SearchFormState extends State<_SearchForm> {
               ),
             ],
           ),
-          const SizedBox(height: 10),
+          Gap.v10,
           _selectField(
             label: 'Количество пассажиров',
-            onTap: _showPassengersDialog,
+            onTap: _showPassengersSheet,
+            count: adultCount + childCount + babyCount,
           ),
-          const SizedBox(height: 10),
+          Gap.v10,
           _currencyField(),
-          const SizedBox(height: 14),
+          Gap.v16,
           SizedBox(
             width: double.infinity,
-            height: 52,
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF1A1A2E),
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                elevation: 0,
-              ),
-              child: const Text(
-                'Поиск',
-                style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
-              ),
-            ),
+            height: 56.h,
+            child: ElevatedButton(onPressed: () {}, child: Text('Поиск')),
           ),
         ],
       ),
@@ -183,7 +168,7 @@ class _SearchFormState extends State<_SearchForm> {
       onTap: onTap,
       child: Container(
         height: 48.h,
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        padding: EdgeInsets.only(left: 16.w, right: 12.w),
         decoration: BoxDecoration(
           color: cs.surface,
           borderRadius: BorderRadius.circular(6.r),
@@ -193,9 +178,7 @@ class _SearchFormState extends State<_SearchForm> {
             Expanded(
               child: Text(
                 value.isEmpty ? label : value,
-                style: textStyles.titleMedium.copyWith(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w600,
+                style: textStyles.bodyMediumSemiBold.copyWith(
                   height: 16 / 13,
                   color: value.isEmpty
                       ? AppColors.neutral500
@@ -204,10 +187,10 @@ class _SearchFormState extends State<_SearchForm> {
               ),
             ),
             if (label == 'Когда')
-              Icon(
-                Icons.calendar_today_outlined,
-                size: 18.w,
-                color: cs.primary,
+              SvgPicture.asset(
+                'assets/images/calendar.svg',
+                height: 24.h,
+                width: 24.w,
               ),
           ],
         ),
@@ -215,94 +198,59 @@ class _SearchFormState extends State<_SearchForm> {
     );
   }
 
-  Widget _selectField({required String label, required VoidCallback onTap}) {
+  Widget _selectField({
+    required String label,
+    required VoidCallback onTap,
+    required int count,
+  }) {
     final cs = Theme.of(context).colorScheme;
 
     final textStyles = getIt<AppTextStyles>();
 
-    final hintTextStyle = textStyles.titleMedium.copyWith(
-      fontSize: 15.sp,
-      fontWeight: FontWeight.w600,
+    final hintTextStyle = textStyles.bodyMediumSemiBold.copyWith(
       height: 16 / 13,
-      color: const Color(0xFF8992A0),
-    );
-
-    return Container(
-      height: 48.h,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      decoration: BoxDecoration(
-        color: cs.surface,
-        borderRadius: BorderRadius.circular(6.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.06),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Expanded(child: Text(label, style: hintTextStyle)),
-          const Icon(
-            Icons.chevron_right,
-            color: AppColors.neutral500,
-            size: 22,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _currencyField() {
-    final cs = Theme.of(context).colorScheme;
-    final smallHintStyle = getIt<AppTextStyles>().bodySmall.copyWith(
-      fontSize: 13.sp,
-      fontWeight: FontWeight.w400,
-      height: 16 / 13,
-      color: const Color(0xFF8992A0),
-    );
-
-    final mainTextStyle = getIt<AppTextStyles>().titleMedium.copyWith(
-      fontSize: 15.sp,
-      fontWeight: FontWeight.w600,
-      height: 16 / 13,
-      color: const Color(0xFF212020),
+      color: AppColors.neutral500,
     );
 
     return GestureDetector(
-      onTap: _showCurrencyDialog,
+      onTap: onTap,
       child: Container(
         height: 48.h,
         padding: const EdgeInsets.symmetric(horizontal: 16),
         decoration: BoxDecoration(
           color: cs.surface,
           borderRadius: BorderRadius.circular(6.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.06),
-              blurRadius: 8,
-              offset: const Offset(0, 2),
-            ),
-          ],
         ),
         child: Row(
           children: [
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Валюта', style: smallHintStyle),
-                  const SizedBox(height: 2),
-                  Text(_currency, style: mainTextStyle),
-                ],
-              ),
+              child: count == 0
+                  ? Text(label, style: hintTextStyle)
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Кол-во пассажиоров',
+                          style: textStyles.caption.copyWith(
+                            height: 16 / 13,
+                            color: AppColors.neutral500,
+                          ),
+                        ),
+                        Text(
+                          count.toString(),
+                          style: textStyles.bodyMediumSemiBold.copyWith(
+                            height: 16 / 13,
+                            color: AppColors.onBackground,
+                          ),
+                        ),
+                      ],
+                    ),
             ),
-            const Icon(
-              Icons.chevron_right,
-              color: AppColors.neutral500,
-              size: 22,
+            SvgPicture.asset(
+              'assets/images/arrow.svg',
+              height: 16.h,
+              width: 16.w,
             ),
           ],
         ),
@@ -310,121 +258,123 @@ class _SearchFormState extends State<_SearchForm> {
     );
   }
 
-  void _showCurrencyDialog() {
-    const currencies = ['KGS', 'USD', 'EUR', 'RUB'];
-    showDialog(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('Выберите валюту'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: currencies
-              .map(
-                (c) => ListTile(
-                  title: Text(c),
-                  trailing: _currency == c
-                      ? const Icon(Icons.check, color: Color(0xFF5B8DEF))
-                      : null,
-                  onTap: () {
-                    setState(() => _currency = c);
-                    Navigator.pop(context);
-                  },
+  Widget _currencyField() {
+    final cs = Theme.of(context).colorScheme;
+    final smallHintStyle = getIt<AppTextStyles>().caption.copyWith(
+      height: 16 / 13,
+      color: AppColors.neutral500,
+    );
+
+    final mainTextStyle = getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
+      color: AppColors.onBackground,
+      height: 16 / 13,
+    );
+
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: 48),
+      child: GestureDetector(
+        onTap: _showCurrencySheet,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 7.h),
+          decoration: BoxDecoration(
+            color: cs.surface,
+            borderRadius: BorderRadius.circular(6.r),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('Валюта', style: smallHintStyle),
+                    Text(_currency, style: mainTextStyle),
+                  ],
                 ),
-              )
-              .toList(),
+              ),
+              SvgPicture.asset(
+                'assets/images/arrow.svg',
+                height: 16.h,
+                width: 16.w,
+              ),
+            ],
+          ),
         ),
+      ),
+    );
+  }
+
+  void _showCurrencySheet() {
+    showModalBottomSheet(
+      showDragHandle: false,
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (_) => CurrencyBottomSheet(
+        selected: _currency,
+        onSelected: (value) => setState(() => _currency = value),
+      ),
+    );
+  }
+
+  void _showPassengersSheet() {
+    showModalBottomSheet(
+      context: context,
+      showDragHandle: false,
+      backgroundColor: Colors.transparent,
+      builder: (_) => PassengersBottomSheet(
+        adultCount: adultCount,
+        childCount: childCount,
+        babyCount: babyCount,
+        update: (a, c, b) {
+          setState(() {
+            adultCount = a;
+            childCount = c;
+            babyCount = b;
+          });
+        },
       ),
     );
   }
 
   String _formatDate(DateTime? date) {
     if (date == null) return '';
-    return '${date.day.toString().padLeft(2, '0')}.${date.month.toString().padLeft(2, '0')}.${date.year}';
+    const months = [
+      'января',
+      'февраля',
+      'марта',
+      'апреля',
+      'мая',
+      'июня',
+      'июля',
+      'августа',
+      'сентября',
+      'октября',
+      'ноября',
+      'декабря',
+    ];
+    const weekdays = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+    return '${date.day} ${months[date.month - 1]}, ${weekdays[date.weekday - 1]}';
   }
 
   Future<void> _selectDate(bool isDeparture) async {
-    final now = DateTime.now();
-    final picked = await showDatePicker(
+    await showModalBottomSheet(
       context: context,
-      initialDate: now,
-      firstDate: now,
-      lastDate: DateTime(now.year + 2),
-      builder: (context, child) => Theme(
-        data: Theme.of(context).copyWith(
-          colorScheme: const ColorScheme.light(primary: Color(0xFF5B8DEF)),
-        ),
-        child: child!,
+      isScrollControlled: true,
+      showDragHandle: false,
+      backgroundColor: Colors.transparent,
+      builder: (_) => DatePickerSheet(
+        initialDate: _departDate,
+        initialReturnDate: _returnDate,
+        onConfirm: (depart, ret) {
+          setState(() {
+            _departDate = depart;
+            _returnDate = ret;
+          });
+        },
+        prices: const {},
       ),
-    );
-    if (picked != null) {
-      setState(() {
-        if (isDeparture) {
-          _departDate = picked;
-        } else {
-          _returnDate = picked;
-        }
-      });
-    }
-  }
-
-  void _showPassengersDialog() {
-    final cs = Theme.of(context).colorScheme;
-    final tt = Theme.of(context).textTheme;
-
-    showDialog(
-      context: context,
-      builder: (context) {
-        int tmp = _passengers;
-        return StatefulBuilder(
-          builder: (context, setD) {
-            return AlertDialog(
-              title: const Text('Количество пассажиров'),
-              content: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      if (tmp > 1) setD(() => tmp--);
-                    },
-                    icon: const Icon(Icons.remove_circle_outline),
-                    color: cs.primary,
-                  ),
-                  Text(
-                    '$tmp',
-                    style: tt.headlineMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      if (tmp < 9) setD(() => tmp++);
-                    },
-                    icon: const Icon(Icons.add_circle_outline),
-                    color: cs.primary,
-                  ),
-                ],
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('Отмена'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() => _passengers = tmp);
-                    Navigator.pop(context);
-                  },
-                  style: ElevatedButton.styleFrom(backgroundColor: cs.primary),
-                  child: const Text(
-                    'OK',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ],
-            );
-          },
-        );
-      },
     );
   }
 }

@@ -17,9 +17,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$City {
-  String get city => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get codeName => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
+  List<Airport> get airports => throw _privateConstructorUsedError;
 
   /// Create a copy of City
   /// with the given fields replaced by the non-null parameter values.
@@ -32,7 +34,13 @@ abstract class $CityCopyWith<$Res> {
   factory $CityCopyWith(City value, $Res Function(City) then) =
       _$CityCopyWithImpl<$Res, City>;
   @useResult
-  $Res call({String city, String country, String code});
+  $Res call({
+    int id,
+    String name,
+    String codeName,
+    String country,
+    List<Airport> airports,
+  });
 }
 
 /// @nodoc
@@ -50,24 +58,34 @@ class _$CityCopyWithImpl<$Res, $Val extends City>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? city = null,
+    Object? id = null,
+    Object? name = null,
+    Object? codeName = null,
     Object? country = null,
-    Object? code = null,
+    Object? airports = null,
   }) {
     return _then(
       _value.copyWith(
-            city: null == city
-                ? _value.city
-                : city // ignore: cast_nullable_to_non_nullable
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as int,
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            codeName: null == codeName
+                ? _value.codeName
+                : codeName // ignore: cast_nullable_to_non_nullable
                       as String,
             country: null == country
                 ? _value.country
                 : country // ignore: cast_nullable_to_non_nullable
                       as String,
-            code: null == code
-                ? _value.code
-                : code // ignore: cast_nullable_to_non_nullable
-                      as String,
+            airports: null == airports
+                ? _value.airports
+                : airports // ignore: cast_nullable_to_non_nullable
+                      as List<Airport>,
           )
           as $Val,
     );
@@ -82,7 +100,13 @@ abstract class _$$CityImplCopyWith<$Res> implements $CityCopyWith<$Res> {
   ) = __$$CityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String city, String country, String code});
+  $Res call({
+    int id,
+    String name,
+    String codeName,
+    String country,
+    List<Airport> airports,
+  });
 }
 
 /// @nodoc
@@ -97,24 +121,34 @@ class __$$CityImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? city = null,
+    Object? id = null,
+    Object? name = null,
+    Object? codeName = null,
     Object? country = null,
-    Object? code = null,
+    Object? airports = null,
   }) {
     return _then(
       _$CityImpl(
-        city: null == city
-            ? _value.city
-            : city // ignore: cast_nullable_to_non_nullable
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as int,
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        codeName: null == codeName
+            ? _value.codeName
+            : codeName // ignore: cast_nullable_to_non_nullable
                   as String,
         country: null == country
             ? _value.country
             : country // ignore: cast_nullable_to_non_nullable
                   as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
+        airports: null == airports
+            ? _value._airports
+            : airports // ignore: cast_nullable_to_non_nullable
+                  as List<Airport>,
       ),
     );
   }
@@ -124,21 +158,32 @@ class __$$CityImplCopyWithImpl<$Res>
 
 class _$CityImpl implements _City {
   const _$CityImpl({
-    required this.city,
+    required this.id,
+    required this.name,
+    required this.codeName,
     required this.country,
-    required this.code,
-  });
+    required final List<Airport> airports,
+  }) : _airports = airports;
 
   @override
-  final String city;
+  final int id;
+  @override
+  final String name;
+  @override
+  final String codeName;
   @override
   final String country;
+  final List<Airport> _airports;
   @override
-  final String code;
+  List<Airport> get airports {
+    if (_airports is EqualUnmodifiableListView) return _airports;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_airports);
+  }
 
   @override
   String toString() {
-    return 'City(city: $city, country: $country, code: $code)';
+    return 'City(id: $id, name: $name, codeName: $codeName, country: $country, airports: $airports)';
   }
 
   @override
@@ -146,13 +191,23 @@ class _$CityImpl implements _City {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CityImpl &&
-            (identical(other.city, city) || other.city == city) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.codeName, codeName) ||
+                other.codeName == codeName) &&
             (identical(other.country, country) || other.country == country) &&
-            (identical(other.code, code) || other.code == code));
+            const DeepCollectionEquality().equals(other._airports, _airports));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, city, country, code);
+  int get hashCode => Object.hash(
+    runtimeType,
+    id,
+    name,
+    codeName,
+    country,
+    const DeepCollectionEquality().hash(_airports),
+  );
 
   /// Create a copy of City
   /// with the given fields replaced by the non-null parameter values.
@@ -165,17 +220,23 @@ class _$CityImpl implements _City {
 
 abstract class _City implements City {
   const factory _City({
-    required final String city,
+    required final int id,
+    required final String name,
+    required final String codeName,
     required final String country,
-    required final String code,
+    required final List<Airport> airports,
   }) = _$CityImpl;
 
   @override
-  String get city;
+  int get id;
+  @override
+  String get name;
+  @override
+  String get codeName;
   @override
   String get country;
   @override
-  String get code;
+  List<Airport> get airports;
 
   /// Create a copy of City
   /// with the given fields replaced by the non-null parameter values.

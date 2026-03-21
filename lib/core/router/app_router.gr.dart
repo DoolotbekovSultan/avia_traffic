@@ -9,26 +9,28 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i6;
-import 'package:aviatraffic/features/deals/domain/entities/deal.dart' as _i8;
+import 'package:auto_route/auto_route.dart' as _i8;
+import 'package:aviatraffic/core/router/app_router.dart' as _i5;
+import 'package:aviatraffic/features/deals/domain/entities/deal.dart' as _i10;
 import 'package:aviatraffic/features/deals/presentation/pages/deal_detail_page.dart'
     as _i1;
 import 'package:aviatraffic/features/home/presentation/home_page.dart' as _i2;
 import 'package:aviatraffic/features/onboarding/presentation/pages/onboarding_page.dart'
-    as _i3;
-import 'package:aviatraffic/features/stories/presentation/pages/stories_page.dart'
     as _i4;
+import 'package:aviatraffic/features/stories/presentation/pages/stories_page.dart'
+    as _i6;
 import 'package:aviatraffic/features/stories/presentation/pages/story_detail_page.dart'
-    as _i5;
-import 'package:flutter/material.dart' as _i7;
+    as _i7;
+import 'package:aviatraffic/main_page.dart' as _i3;
+import 'package:flutter/material.dart' as _i9;
 
 /// generated route for
 /// [_i1.DealDetailPage]
-class DealDetailRoute extends _i6.PageRouteInfo<DealDetailRouteArgs> {
+class DealDetailRoute extends _i8.PageRouteInfo<DealDetailRouteArgs> {
   DealDetailRoute({
-    _i7.Key? key,
-    required _i8.Deal deal,
-    List<_i6.PageRouteInfo>? children,
+    _i9.Key? key,
+    required _i10.Deal deal,
+    List<_i8.PageRouteInfo>? children,
   }) : super(
          DealDetailRoute.name,
          args: DealDetailRouteArgs(key: key, deal: deal),
@@ -37,7 +39,7 @@ class DealDetailRoute extends _i6.PageRouteInfo<DealDetailRouteArgs> {
 
   static const String name = 'DealDetailRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<DealDetailRouteArgs>();
@@ -49,9 +51,9 @@ class DealDetailRoute extends _i6.PageRouteInfo<DealDetailRouteArgs> {
 class DealDetailRouteArgs {
   const DealDetailRouteArgs({this.key, required this.deal});
 
-  final _i7.Key? key;
+  final _i9.Key? key;
 
-  final _i8.Deal deal;
+  final _i10.Deal deal;
 
   @override
   String toString() {
@@ -60,25 +62,41 @@ class DealDetailRouteArgs {
 }
 
 /// generated route for
-/// [_i2.HomeScreen]
-class HomeRoute extends _i6.PageRouteInfo<void> {
-  const HomeRoute({List<_i6.PageRouteInfo>? children})
+/// [_i2.HomePage]
+class HomeRoute extends _i8.PageRouteInfo<void> {
+  const HomeRoute({List<_i8.PageRouteInfo>? children})
     : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i2.HomeScreen();
+      return const _i2.HomePage();
     },
   );
 }
 
 /// generated route for
-/// [_i3.OnboardingPage]
-class OnboardingRoute extends _i6.PageRouteInfo<OnboardingRouteArgs> {
-  OnboardingRoute({_i7.Key? key, List<_i6.PageRouteInfo>? children})
+/// [_i3.MainPage]
+class MainRoute extends _i8.PageRouteInfo<void> {
+  const MainRoute({List<_i8.PageRouteInfo>? children})
+    : super(MainRoute.name, initialChildren: children);
+
+  static const String name = 'MainRoute';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i3.MainPage();
+    },
+  );
+}
+
+/// generated route for
+/// [_i4.OnboardingPage]
+class OnboardingRoute extends _i8.PageRouteInfo<OnboardingRouteArgs> {
+  OnboardingRoute({_i9.Key? key, List<_i8.PageRouteInfo>? children})
     : super(
         OnboardingRoute.name,
         args: OnboardingRouteArgs(key: key),
@@ -87,13 +105,13 @@ class OnboardingRoute extends _i6.PageRouteInfo<OnboardingRouteArgs> {
 
   static const String name = 'OnboardingRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<OnboardingRouteArgs>(
         orElse: () => const OnboardingRouteArgs(),
       );
-      return _i3.OnboardingPage(key: args.key);
+      return _i4.OnboardingPage(key: args.key);
     },
   );
 }
@@ -101,7 +119,7 @@ class OnboardingRoute extends _i6.PageRouteInfo<OnboardingRouteArgs> {
 class OnboardingRouteArgs {
   const OnboardingRouteArgs({this.key});
 
-  final _i7.Key? key;
+  final _i9.Key? key;
 
   @override
   String toString() {
@@ -110,12 +128,28 @@ class OnboardingRouteArgs {
 }
 
 /// generated route for
-/// [_i4.StoriesPage]
-class StoriesRoute extends _i6.PageRouteInfo<StoriesRouteArgs> {
+/// [_i5.ProfilePage]
+class ProfileRoute extends _i8.PageRouteInfo<void> {
+  const ProfileRoute({List<_i8.PageRouteInfo>? children})
+    : super(ProfileRoute.name, initialChildren: children);
+
+  static const String name = 'ProfileRoute';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i5.ProfilePage();
+    },
+  );
+}
+
+/// generated route for
+/// [_i6.StoriesPage]
+class StoriesRoute extends _i8.PageRouteInfo<StoriesRouteArgs> {
   StoriesRoute({
-    _i7.Key? key,
+    _i9.Key? key,
     int initialIndex = 0,
-    List<_i6.PageRouteInfo>? children,
+    List<_i8.PageRouteInfo>? children,
   }) : super(
          StoriesRoute.name,
          args: StoriesRouteArgs(key: key, initialIndex: initialIndex),
@@ -124,13 +158,13 @@ class StoriesRoute extends _i6.PageRouteInfo<StoriesRouteArgs> {
 
   static const String name = 'StoriesRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<StoriesRouteArgs>(
         orElse: () => const StoriesRouteArgs(),
       );
-      return _i4.StoriesPage(key: args.key, initialIndex: args.initialIndex);
+      return _i6.StoriesPage(key: args.key, initialIndex: args.initialIndex);
     },
   );
 }
@@ -138,7 +172,7 @@ class StoriesRoute extends _i6.PageRouteInfo<StoriesRouteArgs> {
 class StoriesRouteArgs {
   const StoriesRouteArgs({this.key, this.initialIndex = 0});
 
-  final _i7.Key? key;
+  final _i9.Key? key;
 
   final int initialIndex;
 
@@ -149,12 +183,12 @@ class StoriesRouteArgs {
 }
 
 /// generated route for
-/// [_i5.StoryDetailPage]
-class StoryDetailRoute extends _i6.PageRouteInfo<StoryDetailRouteArgs> {
+/// [_i7.StoryDetailPage]
+class StoryDetailRoute extends _i8.PageRouteInfo<StoryDetailRouteArgs> {
   StoryDetailRoute({
-    _i7.Key? key,
+    _i9.Key? key,
     required int id,
-    List<_i6.PageRouteInfo>? children,
+    List<_i8.PageRouteInfo>? children,
   }) : super(
          StoryDetailRoute.name,
          args: StoryDetailRouteArgs(key: key, id: id),
@@ -163,11 +197,11 @@ class StoryDetailRoute extends _i6.PageRouteInfo<StoryDetailRouteArgs> {
 
   static const String name = 'StoryDetailRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<StoryDetailRouteArgs>();
-      return _i5.StoryDetailPage(key: args.key, id: args.id);
+      return _i7.StoryDetailPage(key: args.key, id: args.id);
     },
   );
 }
@@ -175,7 +209,7 @@ class StoryDetailRoute extends _i6.PageRouteInfo<StoryDetailRouteArgs> {
 class StoryDetailRouteArgs {
   const StoryDetailRouteArgs({this.key, required this.id});
 
-  final _i7.Key? key;
+  final _i9.Key? key;
 
   final int id;
 
