@@ -14,23 +14,76 @@ class AuthRepository with DioExceptionHandler implements IAuthRepository {
 
   @override
   Future<Either<Failure, User>> register({
-    required String email,
     required String firstName,
     required String phone,
     required String password,
     required String confirmPassword,
+    String? email,
   }) => executeSafely(() async {
     final model = await _remoteDataSource.register(
-      email: email,
       firstName: firstName,
       phone: phone,
       password: password,
       confirmPassword: confirmPassword,
+      email: email,
     );
     return model.toDomain();
   });
 
   @override
-  Future<Either<Failure, String>> resendEmail({required String email}) =>
+  Future<Either<Failure, void>> login({
+    required String phone,
+    required String password,
+  }) => executeSafely(
+    () => _remoteDataSource.login(phone: phone, password: password),
+  );
+
+  @override
+  Future<Either<Failure, void>> logout() =>
+      executeSafely(() => _remoteDataSource.logout());
+
+  @override
+  Future<Either<Failure, void>> confirmCode({
+    required String email,
+    required String code,
+  }) => executeSafely(
+    () => _remoteDataSource.confirmCode(email: email, code: code),
+  );
+
+  @override
+  Future<Either<Failure, void>> resendEmail({required String email}) =>
       executeSafely(() => _remoteDataSource.resendEmail(email: email));
+
+  @override
+  Future<Either<Failure, void>> forgotPassword({required String email}) =>
+      executeSafely(() => _remoteDataSource.forgotPassword(email: email));
+
+  @override
+  Future<Either<Failure, void>> modifyPassword({
+    required String password,
+    required String confirmPassword,
+  }) => executeSafely(
+    () => _remoteDataSource.modifyPassword(
+      password: password,
+      confirmPassword: confirmPassword,
+    ),
+  );
+
+  @override
+  Future<Either<Failure, void>> modifyPersonal({
+    required String email,
+    String? firstName,
+  }) => executeSafely(
+    () => _remoteDataSource.modifyPersonal(email: email, firstName: firstName),
+  );
+
+  @override
+  Future<Either<Failure, User>> getPersonalInfo() => executeSafely(() async {
+    final model = await _remoteDataSource.getPersonalInfo();
+    return model.toDomain();
+  });
+
+  @override
+  Future<Either<Failure, void>> deleteAccount() =>
+      executeSafely(() => _remoteDataSource.deleteAccount());
 }

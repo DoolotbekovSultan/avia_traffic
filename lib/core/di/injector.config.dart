@@ -23,8 +23,26 @@ import 'package:aviatraffic/features/auth/data/repositories/auth_repository.dart
     as _i1010;
 import 'package:aviatraffic/features/auth/domain/repositories/i_auth_repository.dart'
     as _i739;
+import 'package:aviatraffic/features/auth/domain/usecases/confirm_code_usecase.dart'
+    as _i461;
+import 'package:aviatraffic/features/auth/domain/usecases/delete_account_usecase.dart'
+    as _i933;
+import 'package:aviatraffic/features/auth/domain/usecases/forgot_password_usecase.dart'
+    as _i1059;
+import 'package:aviatraffic/features/auth/domain/usecases/get_personal_info_usecase.dart'
+    as _i230;
+import 'package:aviatraffic/features/auth/domain/usecases/login_usecase.dart'
+    as _i148;
+import 'package:aviatraffic/features/auth/domain/usecases/logout_usecase.dart'
+    as _i1036;
+import 'package:aviatraffic/features/auth/domain/usecases/modify_password_usecase.dart'
+    as _i244;
+import 'package:aviatraffic/features/auth/domain/usecases/modify_personal_usecase.dart'
+    as _i453;
 import 'package:aviatraffic/features/auth/domain/usecases/register_usecase.dart'
     as _i144;
+import 'package:aviatraffic/features/auth/domain/usecases/resend_email_usecase.dart'
+    as _i324;
 import 'package:aviatraffic/features/city_picker/data/datasources/city_picker_remote_datasource.dart'
     as _i783;
 import 'package:aviatraffic/features/city_picker/data/datasources/i_city_picker_remote_datasource.dart'
@@ -183,6 +201,33 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i144.RegisterUseCase>(
       () => _i144.RegisterUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.lazySingleton<_i461.ConfirmCodeUseCase>(
+      () => _i461.ConfirmCodeUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.lazySingleton<_i1059.ForgotPasswordUseCase>(
+      () => _i1059.ForgotPasswordUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.lazySingleton<_i148.LoginUseCase>(
+      () => _i148.LoginUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.lazySingleton<_i1036.LogoutUseCase>(
+      () => _i1036.LogoutUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.lazySingleton<_i230.GetPersonalInfoUseCase>(
+      () => _i230.GetPersonalInfoUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.lazySingleton<_i324.ResendEmailUseCase>(
+      () => _i324.ResendEmailUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.lazySingleton<_i244.ModifyPasswordUseCase>(
+      () => _i244.ModifyPasswordUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.lazySingleton<_i933.DeleteAccountUseCase>(
+      () => _i933.DeleteAccountUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.lazySingleton<_i453.ModifyPersonalUseCase>(
+      () => _i453.ModifyPersonalUseCase(gh<_i739.IAuthRepository>()),
     );
     gh.lazySingleton<_i900.GetStoriesUsecase>(
       () => _i900.GetStoriesUsecase(gh<_i73.IStoriesRepository>()),

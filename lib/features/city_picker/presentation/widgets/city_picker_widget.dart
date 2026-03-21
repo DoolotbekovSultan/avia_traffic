@@ -2,7 +2,7 @@ import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/city_picker/domain/entities/city.dart';
-import 'package:aviatraffic/features/city_picker/presentation/city_picker_page.dart';
+import 'package:aviatraffic/features/city_picker/presentation/city_picker_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -45,13 +45,14 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
     final result = await showModalBottomSheet<City>(
       context: context,
       isScrollControlled: true,
+      showDragHandle: false,
       backgroundColor: Colors.transparent,
       builder: (_) => DraggableScrollableSheet(
         initialChildSize: 0.85,
         minChildSize: 0.5,
         maxChildSize: 0.95,
         expand: false,
-        builder: (_, _) => const CityPickerPage(isFrom: true),
+        builder: (_, _) => const CityPickerSheet(isFrom: true),
       ),
     );
     if (result != null) {
@@ -67,12 +68,13 @@ class _CityPickerWidgetState extends State<CityPickerWidget> {
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
+      showDragHandle: false,
       builder: (_) => DraggableScrollableSheet(
         initialChildSize: 0.85,
         minChildSize: 0.5,
         maxChildSize: 0.95,
         expand: false,
-        builder: (_, __) => const CityPickerPage(isFrom: false),
+        builder: (_, __) => const CityPickerSheet(isFrom: false),
       ),
     );
     if (result != null) {

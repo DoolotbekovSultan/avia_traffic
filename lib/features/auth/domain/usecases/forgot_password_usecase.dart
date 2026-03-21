@@ -5,13 +5,13 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
-class ResendEmailUseCase extends BaseUseCase<void, String> {
+class ForgotPasswordUseCase extends BaseUseCase<void, String> {
   final IAuthRepository _repository;
 
-  ResendEmailUseCase(this._repository);
+  ForgotPasswordUseCase(this._repository);
 
   @override
   Future<Either<Failure, void>> execute(String params) {
-    return _repository.resendEmail(email: params);
+    return _repository.forgotPassword(email: params);
   }
 }
