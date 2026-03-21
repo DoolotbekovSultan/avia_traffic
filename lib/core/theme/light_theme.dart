@@ -281,7 +281,9 @@ abstract class LightTheme {
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.onBackground,
           foregroundColor: Colors.white,
-          textStyle: getIt<AppTextStyles>().bodyMediumSemiBold,
+          textStyle: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
+            height: 16 / 13,
+          ),
           disabledBackgroundColor: AppColors.neutral300,
           disabledForegroundColor: AppColors.neutral500,
           surfaceTintColor: Colors.transparent,

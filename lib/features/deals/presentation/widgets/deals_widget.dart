@@ -8,9 +8,11 @@ import 'package:aviatraffic/features/deals/presentation/bloc/deals_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class DealsWidget extends StatelessWidget {
-  const DealsWidget({super.key});
+  final Function(Deal) onClickBuyTicket;
+  const DealsWidget({super.key, required this.onClickBuyTicket});
 
   @override
   Widget build(BuildContext context) {
@@ -61,13 +63,9 @@ class _DealsView extends StatelessWidget {
                           padding: EdgeInsets.only(
                             right: i < s.deals.length - 1 ? 12.w : 0,
                           ),
-                          child: GestureDetector(
-                            onTap: () {
-                              context.router.push(
-                                DealDetailRoute(deal: s.deals[i]),
-                              );
-                            },
-                            child: _DealCard(deal: s.deals[i]),
+                          child: _DealCard(
+                            deal: s.deals[i],
+                            onClickBuyTickerBtn: (deal) {},
                           ),
                         ),
                       ),
@@ -90,103 +88,119 @@ class _Loading extends StatelessWidget {
 class _EmptyDeals extends StatelessWidget {
   const _EmptyDeals();
   @override
-  Widget build(BuildContext context) =>
-      Padding(padding: EdgeInsets.all(16.w), child: const Text('Нет доступных предложений'));
+  Widget build(BuildContext context) => Padding(
+    padding: EdgeInsets.all(16.w),
+    child: const Text('Нет доступных предложений'),
+  );
 }
 
 class _DealCard extends StatelessWidget {
   final Deal deal;
+  final Function(Deal) onClickBuyTickerBtn;
 
-  const _DealCard({required this.deal});
+  const _DealCard({required this.deal, required this.onClickBuyTickerBtn});
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
 
-    return Container(
-      width: 280.w,
-      margin: EdgeInsets.only(bottom: 12.h),
-      height: 140.h,
-      decoration: BoxDecoration(
-        color: cs.surface,
-        borderRadius: BorderRadius.circular(16.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.06),
-            blurRadius: 12.r,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 5,
-            child: Padding(
-              padding: EdgeInsets.all(16.r),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    deal.title,
-                    style: getIt<AppTextStyles>().titleMediumBold.copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.onBackground,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    '${deal.codeFrom} - ${deal.codeTo}',
-                    style: getIt<AppTextStyles>().bodySmallBold.copyWith(
-                      color: AppColors.primary,
-                    ),
-                  ),
-                ],
+    return Stack(
+      children: [
+        SizedBox(width: 344.w),
+        Container(
+          width: 342.w,
+          height: 144.h,
+          decoration: BoxDecoration(
+            color: cs.surface,
+            borderRadius: BorderRadius.circular(16.r),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.06),
+                blurRadius: 12.r,
+                offset: const Offset(0, 4),
               ),
-            ),
+            ],
           ),
-          Expanded(
-            flex: 4,
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(16.r),
-                bottomRight: Radius.circular(16.r),
+          child: Row(
+            children: [
+              SizedBox(
+                width: 204.w,
+                child: Padding(
+                  padding: EdgeInsets.all(16.r),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        deal.title,
+                        style: getIt<AppTextStyles>().titleMediumBold.copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.onBackground,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      InkWell(
+                        onTap: () => onClickBuyTickerBtn(deal),
+                        child: Text(
+                          'Купить билет',
+                          style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
+                            color: AppColors.onBackground,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  Image.network(
+              SizedBox(
+                width: 138.w,
+                height: double.infinity,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(16.r),
+                    bottomRight: Radius.circular(16.r),
+                  ),
+                  child: Image.network(
                     deal.imageUrl,
                     fit: BoxFit.cover,
                     errorBuilder: (_, _, _) =>
                         Container(color: AppColors.neutral200),
                   ),
-                  Positioned(
-                    bottom: 10.h,
-                    right: 10.w,
-                    child: Container(
-                      width: 32.w,
-                      height: 32.h,
-                      decoration: BoxDecoration(
-                        color: cs.primary,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.arrow_forward_rounded,
-                        color: Colors.white,
-                        size: 16.w,
-                      ),
-                    ),
-                  ),
-                ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          right: 0,
+          top: (144.h - 48.h) / 2,
+          child: GestureDetector(
+            onTap: () {
+              context.router.push(DealDetailRoute(deal: deal));
+            },
+            child: Container(
+              width: 48.w,
+              height: 48.h,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [Color(0xFFF7C8C8), AppColors.primary],
+                ),
+                shape: BoxShape.circle,
+              ),
+              child: Center(
+                child: SvgPicture.asset(
+                  'assets/images/messange.svg',
+                  height: 24.h,
+                  width: 24.w,
+                ),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

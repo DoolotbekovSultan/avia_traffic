@@ -107,9 +107,12 @@ class _CityPickerViewState extends State<_CityPickerView> {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: filtered.length,
-                      itemBuilder: (_, i) => _CityRow(
-                        city: filtered[i],
-                        onTap: () => Navigator.pop(context, filtered[i]),
+                      itemBuilder: (_, i) => Padding(
+                        padding: .only(bottom: 24.h),
+                        child: _CityRow(
+                          city: filtered[i],
+                          onTap: () => Navigator.pop(context, filtered[i]),
+                        ),
                       ),
                     ),
             );
@@ -139,10 +142,13 @@ class _CityPickerViewState extends State<_CityPickerView> {
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: filteredCities.length,
-                        itemBuilder: (_, i) => _CityRow(
-                          city: filteredCities[i],
-                          onTap: () =>
-                              Navigator.pop(context, filteredCities[i]),
+                        itemBuilder: (_, i) => Padding(
+                          padding: .only(bottom: 24.h),
+                          child: _CityRow(
+                            city: filteredCities[i],
+                            onTap: () =>
+                                Navigator.pop(context, filteredCities[i]),
+                          ),
                         ),
                       ),
               );
@@ -166,12 +172,15 @@ class _CityPickerViewState extends State<_CityPickerView> {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: filteredCountries.length,
-                      itemBuilder: (_, i) => _CountryRow(
-                        country: filteredCountries[i],
-                        onTap: () => setState(() {
-                          _selectedCountry = filteredCountries[i];
-                          _ctrl.clear();
-                        }),
+                      itemBuilder: (_, i) => Padding(
+                        padding: .only(bottom: 24.h),
+                        child: _CountryRow(
+                          country: filteredCountries[i],
+                          onTap: () => setState(() {
+                            _selectedCountry = filteredCountries[i];
+                            _ctrl.clear();
+                          }),
+                        ),
                       ),
                     ),
             );
@@ -252,7 +261,7 @@ class _PickerShell extends StatelessWidget {
               onChanged: onChanged,
             ),
           ),
-          Gap.v16,
+          Gap.v24,
           Flexible(
             child: SingleChildScrollView(
               physics: const ClampingScrollPhysics(),
@@ -365,7 +374,7 @@ class _CityRow extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: .symmetric(horizontal: WidgetConstants.mediumPadding),
+        padding: .symmetric(horizontal: 16.w),
         child: Row(
           children: [
             Expanded(
@@ -414,7 +423,7 @@ class _CountryRow extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: .symmetric(horizontal: WidgetConstants.mediumPadding),
+        padding: .symmetric(horizontal: 16.w),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

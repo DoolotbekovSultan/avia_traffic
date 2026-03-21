@@ -1,5 +1,3 @@
-import 'package:aviatraffic/core/di/injector.dart';
-import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,12 +22,7 @@ class DatePickerBottomButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             minimumSize: Size(double.infinity, 56.h),
           ),
-          child: Text(
-            hasReturn ? 'Далее' : 'Обратный билет не нужен',
-            style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-              height: 16 / 13,
-            ),
-          ),
+          child: Text(hasReturn ? 'Далее' : 'Обратный билет не нужен'),
         ),
       ),
     );

@@ -155,7 +155,7 @@ class _DatePickerSheetContent extends StatelessWidget {
             child: DateChip(
               isDepart: false,
               date: state.returnDate,
-              onClear: () {}, // Not used for return date in original code
+              onClear: () {},
             ),
           ),
         ],

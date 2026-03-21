@@ -3,6 +3,7 @@ import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/gap.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
+import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_bloc.dart';
 import 'package:aviatraffic/features/city_picker/presentation/widgets/city_picker_widget.dart';
 import 'package:aviatraffic/features/date_picker/presentation/date_picker_sheet.dart';
 import 'package:aviatraffic/features/home/presentation/widgets/currency_bottom_sheet.dart';
@@ -77,7 +78,11 @@ class _HomePageState extends State<HomePage> {
           Gap.v24,
           const StoriesWidget(),
           SizedBox(height: 18.h),
-          const DealsWidget(),
+          DealsWidget(
+            onClickBuyTicket: (deal) {
+              // getIt<CityPickerBloc>().add()
+            },
+          ),
           Gap.v16,
         ],
       ),

@@ -30,53 +30,63 @@ class MonthCalendar extends StatelessWidget {
     const weekdayLabels = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
     final useCase = GetCalendarMonthUseCase();
-    final cells = useCase.execute(month: month, prices: prices);
+    final getCalendarMonthParams = GetCalendarMonthParams(
+      month: month,
+      prices: prices,
+    );
 
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.surface,
-        borderRadius: BorderRadius.circular(6.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.06),
-            blurRadius: 16,
-            spreadRadius: 2,
-            offset: Offset.zero,
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(16.w, 20.h, 16.w, 0),
-        child: Column(
-          children: [
-            Text(
-              _monthTitle(month),
-              style: textStyles.bodyMediumBold.copyWith(
-                color: AppColors.onBackground,
+    return FutureBuilder(
+      future: useCase(getCalendarMonthParams),
+      builder: (context, snapshot) {
+        return Container(
+          decoration: BoxDecoration(
+            color: AppColors.surface,
+            borderRadius: BorderRadius.circular(6.r),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.06),
+                blurRadius: 16,
+                spreadRadius: 2,
+                offset: Offset.zero,
               ),
-            ),
-            SizedBox(height: 22.h),
-            const Divider(),
-            const SizedBox(height: 20),
-            Row(
-              children: weekdayLabels.map((day) {
-                return Expanded(
-                  child: Center(
-                    child: Text(
-                      day,
-                      style: textStyles.bodyMediumBold.copyWith(
-                        color: AppColors.neutral500,
-                      ),
-                    ),
+            ],
+          ),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(16.w, 20.h, 16.w, 0),
+            child: Column(
+              children: [
+                Text(
+                  _monthTitle(month),
+                  style: textStyles.bodyMediumBold.copyWith(
+                    color: AppColors.onBackground,
                   ),
-                );
-              }).toList(),
+                ),
+                SizedBox(height: 22.h),
+                const Divider(),
+                const SizedBox(height: 20),
+                Row(
+                  children: weekdayLabels.map((day) {
+                    return Expanded(
+                      child: Center(
+                        child: Text(
+                          day,
+                          style: textStyles.bodyMediumBold.copyWith(
+                            color: AppColors.neutral500,
+                          ),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+                Gap.v24,
+                _buildDaysGrid(
+                  snapshot.data!.fold((failure) => [], (cells) => cells),
+                ),
+              ],
             ),
-            Gap.v24,
-            _buildDaysGrid(cells),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 
@@ -109,11 +119,14 @@ class MonthCalendar extends StatelessWidget {
     final textStyles = getIt<AppTextStyles>();
     final date = cell.date;
 
-    final isDepart = departDate != null && DateUtils.isSameDay(date, departDate!);
-    final isReturn = returnDate != null && DateUtils.isSameDay(date, returnDate!);
+    final isDepart =
+        departDate != null && DateUtils.isSameDay(date, departDate!);
+    final isReturn =
+        returnDate != null && DateUtils.isSameDay(date, returnDate!);
     final isSelected = isDepart || isReturn;
 
-    final isInRange = departDate != null &&
+    final isInRange =
+        departDate != null &&
         returnDate != null &&
         date.isAfter(departDate!) &&
         date.isBefore(returnDate!);
@@ -177,8 +190,8 @@ class MonthCalendar extends StatelessWidget {
                       color: isSelected
                           ? Colors.white
                           : cell.isCurrentMonth
-                              ? AppColors.onBackground
-                              : AppColors.neutral500,
+                          ? AppColors.onBackground
+                          : AppColors.neutral500,
                     ),
                   ),
                 ),

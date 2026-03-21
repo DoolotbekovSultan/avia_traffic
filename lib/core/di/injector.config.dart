@@ -57,10 +57,6 @@ import 'package:aviatraffic/features/city_picker/domain/usecases/get_countries_u
     as _i1043;
 import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_bloc.dart'
     as _i227;
-import 'package:aviatraffic/features/date_picker/data/repositories/date_picker_repository.dart'
-    as _i532;
-import 'package:aviatraffic/features/date_picker/domain/repositories/i_date_picker_repository.dart'
-    as _i666;
 import 'package:aviatraffic/features/date_picker/presentation/bloc/date_picker_bloc.dart'
     as _i812;
 import 'package:aviatraffic/features/deals/data/datasources/deals_remote_datasource.dart'
@@ -133,9 +129,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i361.Dio>(() => registerModule.dio);
     gh.lazySingleton<_i367.ICityPickerRemoteDatasource>(
       () => _i783.CityPickerRemoteDatasource(gh<_i361.Dio>()),
-    );
-    gh.lazySingleton<_i666.IDatePickerRepository>(
-      () => _i532.DatePickerRepository(),
     );
     gh.lazySingleton<_i450.IOnboardingLocalDataSource>(
       () => _i993.OnboardingLocalDataSource(gh<_i460.SharedPreferences>()),

@@ -64,7 +64,7 @@ class DealDetailPage extends StatelessWidget {
                       color: AppColors.primary,
                     ),
                   ),
-                  const Divider(height: 32),
+                  Divider(height: 32.h),
                   Html(
                     data: deal.description,
                     style: {
