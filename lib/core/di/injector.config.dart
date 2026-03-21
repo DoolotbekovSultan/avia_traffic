@@ -15,6 +15,16 @@ import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart'
     as _i831;
 import 'package:aviatraffic/core/theme/text_styles/nunito_sans_text_styles.dart'
     as _i746;
+import 'package:aviatraffic/features/auth/data/datasources/auth_remote_datasource.dart'
+    as _i1008;
+import 'package:aviatraffic/features/auth/data/datasources/i_auth_remote_datasource.dart'
+    as _i601;
+import 'package:aviatraffic/features/auth/data/repositories/auth_repository.dart'
+    as _i1010;
+import 'package:aviatraffic/features/auth/domain/repositories/i_auth_repository.dart'
+    as _i739;
+import 'package:aviatraffic/features/auth/domain/usecases/register_usecase.dart'
+    as _i144;
 import 'package:aviatraffic/features/city_picker/data/datasources/city_picker_remote_datasource.dart'
     as _i783;
 import 'package:aviatraffic/features/city_picker/data/datasources/i_city_picker_remote_datasource.dart'
@@ -118,6 +128,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i825.IDealsRepository>(
       () => _i412.DealsRepository(gh<_i247.IDealsRemoteDatasource>()),
     );
+    gh.lazySingleton<_i601.IAuthRemoteDataSource>(
+      () => _i1008.AuthRemoteDataSource(gh<_i361.Dio>()),
+    );
     gh.lazySingleton<_i555.IOnboardingRemoteDatasource>(
       () => _i1015.OnboardingRemoteDatasource(),
     );
@@ -128,6 +141,9 @@ extension GetItInjectableX on _i174.GetIt {
       ),
     );
     gh.singleton<_i831.AppTextStyles>(() => const _i746.NunitoSansTextStyles());
+    gh.lazySingleton<_i739.IAuthRepository>(
+      () => _i1010.AuthRepository(gh<_i601.IAuthRemoteDataSource>()),
+    );
     gh.lazySingleton<_i475.ICityPickerRepository>(
       () =>
           _i1062.CityPickerRepository(gh<_i367.ICityPickerRemoteDatasource>()),
@@ -164,6 +180,9 @@ extension GetItInjectableX on _i174.GetIt {
         getPagesUsecase: gh<_i572.GetPagesUsecase>(),
         setOnboardingSeenUsecase: gh<_i335.SetOnboardingSeenUsecase>(),
       ),
+    );
+    gh.lazySingleton<_i144.RegisterUseCase>(
+      () => _i144.RegisterUseCase(gh<_i739.IAuthRepository>()),
     );
     gh.lazySingleton<_i900.GetStoriesUsecase>(
       () => _i900.GetStoriesUsecase(gh<_i73.IStoriesRepository>()),
