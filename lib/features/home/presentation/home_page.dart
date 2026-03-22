@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
               City? cityTo;
 
               cityListState.mapOrNull(
-                citiesLoaded: (s) {
+                loaded: (s) {
                   try {
                     cityFrom = s.cities.firstWhere(
                       (c) => c.codeName == deal.codeFrom,

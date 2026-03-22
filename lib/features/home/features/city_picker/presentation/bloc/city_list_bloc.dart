@@ -29,20 +29,48 @@ class CityListBloc extends BaseBloc<CityListEvent, CityListState> {
   }
 
   Future<void> _onGetCities(Emitter<CityListState> emit) async {
-    emit(const CityListState.loading());
+    final currentCities = state.maybeMap(
+      loaded: (s) => s.cities,
+      orElse: () => <City>[],
+    );
+    final currentCountries = state.maybeMap(
+      loaded: (s) => s.countries,
+      orElse: () => <Country>[],
+    );
+
+    if (currentCities.isEmpty) {
+      emit(const CityListState.loading());
+    }
+
     final result = await _getCitiesUsecase.execute(NoParams());
     result.fold(
       (failure) => emit(CityListState.failure(failure: failure)),
-      (cities) => emit(CityListState.citiesLoaded(cities: cities)),
+      (cities) => emit(
+        CityListState.loaded(cities: cities, countries: currentCountries),
+      ),
     );
   }
 
   Future<void> _onGetCountries(Emitter<CityListState> emit) async {
-    emit(const CityListState.loading());
+    final currentCities = state.maybeMap(
+      loaded: (s) => s.cities,
+      orElse: () => <City>[],
+    );
+    final currentCountries = state.maybeMap(
+      loaded: (s) => s.countries,
+      orElse: () => <Country>[],
+    );
+
+    if (currentCountries.isEmpty) {
+      emit(const CityListState.loading());
+    }
+
     final result = await _getCountriesUsecase.execute(NoParams());
     result.fold(
       (failure) => emit(CityListState.failure(failure: failure)),
-      (countries) => emit(CityListState.countriesLoaded(countries: countries)),
+      (countries) => emit(
+        CityListState.loaded(cities: currentCities, countries: countries),
+      ),
     );
   }
 }

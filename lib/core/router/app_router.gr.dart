@@ -112,36 +112,18 @@ class MainRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.OnboardingPage]
-class OnboardingRoute extends _i8.PageRouteInfo<OnboardingRouteArgs> {
-  OnboardingRoute({_i9.Key? key, List<_i8.PageRouteInfo>? children})
-    : super(
-        OnboardingRoute.name,
-        args: OnboardingRouteArgs(key: key),
-        initialChildren: children,
-      );
+class OnboardingRoute extends _i8.PageRouteInfo<void> {
+  const OnboardingRoute({List<_i8.PageRouteInfo>? children})
+    : super(OnboardingRoute.name, initialChildren: children);
 
   static const String name = 'OnboardingRoute';
 
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      final args = data.argsAs<OnboardingRouteArgs>(
-        orElse: () => const OnboardingRouteArgs(),
-      );
-      return _i5.OnboardingPage(key: args.key);
+      return const _i5.OnboardingPage();
     },
   );
-}
-
-class OnboardingRouteArgs {
-  const OnboardingRouteArgs({this.key});
-
-  final _i9.Key? key;
-
-  @override
-  String toString() {
-    return 'OnboardingRouteArgs{key: $key}';
-  }
 }
 
 /// generated route for

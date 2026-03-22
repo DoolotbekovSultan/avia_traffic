@@ -30,11 +30,12 @@ class _CityPickerSheetState extends State<CityPickerSheet> {
 
     state.maybeMap(
       loading: (_) => null,
-      citiesLoaded: (s) {
-        if (!widget.isFrom) bloc.add(const CityListEvent.getCountries());
-      },
-      countriesLoaded: (s) {
-        if (widget.isFrom) bloc.add(const CityListEvent.getCities());
+      loaded: (s) {
+        if (widget.isFrom && s.cities.isEmpty) {
+          bloc.add(const CityListEvent.getCities());
+        } else if (!widget.isFrom && s.countries.isEmpty) {
+          bloc.add(const CityListEvent.getCountries());
+        }
       },
       orElse: () {
         bloc.add(
@@ -97,40 +98,40 @@ class _CityPickerViewState extends State<_CityPickerView> {
             controller: _ctrl,
             child: Center(child: Text(f.failure.toString())),
           ),
-          citiesLoaded: (s) {
+          loaded: (s) {
             final query = _ctrl.text.toLowerCase();
-            final filtered = s.cities
-                .where((c) => c.name.toLowerCase().contains(query))
-                .toList();
 
-            return _PickerShell(
-              title: widget.isFrom ? context.l10n.from : context.l10n.to,
-              searchHint: widget.isFrom ? context.l10n.from : context.l10n.to,
-              controller: _ctrl,
-              onChanged: (_) => setState(() {}),
-              child: ListView.builder(
-                itemCount: filtered.length,
-                itemBuilder: (_, i) => Padding(
-                  padding: .only(bottom: 24.h),
-                  child: _CityRow(
-                    city: filtered[i],
-                    onTap: () => Navigator.pop(context, filtered[i]),
+            if (widget.isFrom) {
+              final filtered = s.cities
+                  .where((c) => c.name.toLowerCase().contains(query))
+                  .toList();
+
+              return _PickerShell(
+                title: context.l10n.from,
+                searchHint: context.l10n.from,
+                controller: _ctrl,
+                onChanged: (_) => setState(() {}),
+                child: ListView.builder(
+                  itemCount: filtered.length,
+                  itemBuilder: (_, i) => Padding(
+                    padding: EdgeInsets.only(bottom: 24.h),
+                    child: _CityRow(
+                      city: filtered[i],
+                      onTap: () => Navigator.pop(context, filtered[i]),
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
-          countriesLoaded: (s) {
-            final query = _ctrl.text.toLowerCase();
+              );
+            }
 
+            // !isFrom - Country/City picker
             if (_selectedCountry != null) {
               final filteredCities = _selectedCountry!.cities
                   .where((c) => c.name.toLowerCase().contains(query))
                   .toList();
 
               return _PickerShell(
-                title:
-                    '${widget.isFrom ? context.l10n.from : context.l10n.to} / ${_selectedCountry!.name}',
+                title: '${context.l10n.to} / ${_selectedCountry!.name}',
                 searchHint: context.l10n.search,
                 controller: _ctrl,
                 onChanged: (_) => setState(() {}),
@@ -141,7 +142,7 @@ class _CityPickerViewState extends State<_CityPickerView> {
                 child: ListView.builder(
                   itemCount: filteredCities.length,
                   itemBuilder: (_, i) => Padding(
-                    padding: EdgeInsets.only(bottom: 24.h),
+                    padding: EdgeInsets.symmetric(vertical: 12.h),
                     child: _CityRow(
                       city: filteredCities[i],
                       onTap: () => Navigator.pop(context, filteredCities[i]),
@@ -156,14 +157,14 @@ class _CityPickerViewState extends State<_CityPickerView> {
                 .toList();
 
             return _PickerShell(
-              title: widget.isFrom ? context.l10n.from : context.l10n.to,
+              title: context.l10n.to,
               searchHint: context.l10n.search,
               controller: _ctrl,
               onChanged: (_) => setState(() {}),
               child: ListView.builder(
                 itemCount: filteredCountries.length,
                 itemBuilder: (_, i) => Padding(
-                  padding: EdgeInsets.only(bottom: 24.h),
+                  padding: EdgeInsets.symmetric(vertical: 12.h),
                   child: _CountryRow(
                     country: filteredCountries[i],
                     onTap: () => setState(() {

@@ -183,18 +183,11 @@ class _LoadedView extends StatelessWidget {
     return Scaffold(
       body: FadeTransition(
         opacity: fadeAnimation,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Expanded(
-              child: PageView.builder(
-                controller: pageController,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: pages.length,
-                itemBuilder: (_, i) => _OnboardingPageItem(page: pages[i]),
-              ),
-            ),
-          ],
+        child: PageView.builder(
+          controller: pageController,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: pages.length,
+          itemBuilder: (_, i) => _OnboardingPageItem(page: pages[i]),
         ),
       ),
       bottomNavigationBar: Padding(
@@ -205,20 +198,26 @@ class _LoadedView extends StatelessWidget {
         ),
         child: SafeArea(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TextButton(
-                onPressed: () {
-                  bloc.add(OnboardingEvent.skipOnboarding());
-                },
-                child: Text(l10n.close, style: textStyle),
+              Opacity(
+                opacity: currentIndex == pages.length - 1 ? 0 : 1,
+                child: TextButton(
+                  onPressed: currentIndex == pages.length - 1
+                      ? null
+                      : () => bloc.add(const OnboardingEvent.skipOnboarding()),
+                  child: Text(l10n.close, style: textStyle),
+                ),
               ),
               _DotsIndicator(count: pages.length, currentIndex: currentIndex),
               TextButton(
                 onPressed: () {
-                  bloc.add(OnboardingEvent.nextPage());
+                  bloc.add(const OnboardingEvent.nextPage());
                 },
-                child: Text(l10n.next, style: textStyle),
+                child: Text(
+                  currentIndex == pages.length - 1 ? l10n.next : l10n.next,
+                  style: textStyle,
+                ),
               ),
             ],
           ),
