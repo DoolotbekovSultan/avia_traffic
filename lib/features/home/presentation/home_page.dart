@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'package:aviatraffic/core/localization/extensions/localization_context_extensions.dart';
 import 'package:aviatraffic/features/home/features/city_picker/domain/entities/city.dart';
 import 'package:aviatraffic/features/home/features/city_picker/presentation/bloc/city_list_bloc.dart';
 import 'package:aviatraffic/features/home/features/city_picker/presentation/bloc/city_picker_bloc.dart';
@@ -44,39 +45,44 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider.value(value: getIt<CityPickerBloc>()),
-        BlocProvider.value(value: getIt<CityListBloc>()),
-      ],
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            colors: [const Color(0xFFF7C8C8), AppColors.primary],
-            stops: const [0.0, 1.0],
-          ),
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: [const Color(0xFFF7C8C8), AppColors.primary],
+          stops: const [0.0, 1.0],
         ),
+      ),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider.value(value: getIt<CityPickerBloc>()),
+          BlocProvider.value(value: getIt<CityListBloc>()),
+        ],
         child: Scaffold(
-          appBar: AviaTrafficAppBar(),
           backgroundColor: Colors.transparent,
-          body: LayoutBuilder(
-            builder: (context, constraints) {
-              return SingleChildScrollView(
-                controller: _scrollController,
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildHeaderSection(context),
-                      _buildBottomSection(context),
-                    ],
+          appBar: const AviaTrafficAppBar(),
+          body: SafeArea(
+            bottom: false,
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  controller: _scrollController,
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: constraints.maxHeight,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildHeaderSection(context),
+                        _buildBottomSection(context),
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
         ),
       ),
@@ -84,11 +90,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildHeaderSection(BuildContext context) {
-    return SafeArea(
-      bottom: false,
-      child: Column(
-        children: [Gap.v24, const _SearchForm(), const SizedBox(height: 20)],
-      ),
+    return Column(
+      children: [
+        Gap.v24,
+        const _SearchForm(),
+        SizedBox(height: 20.h),
+      ],
     );
   }
 
@@ -163,13 +170,13 @@ class _SearchFormState extends State<_SearchForm> {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
-          const CityPickerWidget(),
+          CityPickerWidget(),
           Gap.v10,
           Row(
             children: [
               Expanded(
                 child: _dateField(
-                  label: 'Когда',
+                  label: context.l10n.when,
                   value: _formatDate(_departDate),
                   onTap: () => _selectDate(true),
                 ),
@@ -177,7 +184,7 @@ class _SearchFormState extends State<_SearchForm> {
               Gap.h10,
               Expanded(
                 child: _dateField(
-                  label: 'Обратно',
+                  label: context.l10n.back_trip,
                   value: _formatDate(_returnDate),
                   onTap: () => _selectDate(false),
                 ),
@@ -186,7 +193,7 @@ class _SearchFormState extends State<_SearchForm> {
           ),
           Gap.v10,
           _selectField(
-            label: 'Количество пассажиров',
+            label: context.l10n.passengers,
             onTap: _showPassengersSheet,
             count: adultCount + childCount + babyCount,
           ),
@@ -198,10 +205,10 @@ class _SearchFormState extends State<_SearchForm> {
             height: 56.h,
             child: ElevatedButton(
               onPressed: () {
-                final cities = context.read<CityPickerBloc>().state;
+                // final cities = context.read<CityPickerBloc>().state;
                 // use cities.from, cities.to
               },
-              child: const Text('Поиск'),
+              child: Text(context.l10n.search),
             ),
           ),
         ],
@@ -216,36 +223,36 @@ class _SearchFormState extends State<_SearchForm> {
   }) {
     final cs = Theme.of(context).colorScheme;
     final textStyles = getIt<AppTextStyles>();
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: 48.h,
-        padding: EdgeInsets.only(left: 16.w, right: 12.w),
-        decoration: BoxDecoration(
-          color: cs.surface,
-          borderRadius: BorderRadius.circular(6.r),
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: Text(
-                value.isEmpty ? label : value,
-                style: textStyles.bodyMediumSemiBold.copyWith(
-                  height: 16 / 13,
-                  color: value.isEmpty
-                      ? AppColors.neutral500
-                      : AppColors.onBackground,
-                ),
+    return Container(
+      height: 48.h,
+      padding: EdgeInsets.only(left: 16.w, right: 12.w),
+      decoration: BoxDecoration(
+        color: cs.surface,
+        borderRadius: BorderRadius.circular(6.r),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Text(
+              value.isEmpty ? label : value,
+              style: textStyles.bodyMediumSemiBold.copyWith(
+                height: 16 / 13,
+                color: value.isEmpty
+                    ? AppColors.neutral500
+                    : AppColors.onBackground,
               ),
             ),
-            if (label == 'Когда')
-              SvgPicture.asset(
+          ),
+          if (label == context.l10n.when)
+            GestureDetector(
+              onTap: onTap,
+              child: SvgPicture.asset(
                 'assets/images/calendar.svg',
                 height: 24.h,
                 width: 24.w,
               ),
-          ],
-        ),
+            ),
+        ],
       ),
     );
   }
@@ -256,9 +263,7 @@ class _SearchFormState extends State<_SearchForm> {
     required int count,
   }) {
     final cs = Theme.of(context).colorScheme;
-
     final textStyles = getIt<AppTextStyles>();
-
     final hintTextStyle = textStyles.bodyMediumSemiBold.copyWith(
       height: 16 / 13,
       color: AppColors.neutral500,
@@ -268,10 +273,10 @@ class _SearchFormState extends State<_SearchForm> {
       onTap: onTap,
       child: Container(
         height: 48.h,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: .symmetric(horizontal: 16.w),
         decoration: BoxDecoration(
           color: cs.surface,
-          borderRadius: BorderRadius.circular(6.r),
+          borderRadius: .circular(6.r),
         ),
         child: Row(
           children: [
@@ -283,7 +288,7 @@ class _SearchFormState extends State<_SearchForm> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Кол-во пассажиров',
+                          context.l10n.passenger_count,
                           style: textStyles.caption.copyWith(
                             height: 16 / 13,
                             color: AppColors.neutral500,
@@ -312,46 +317,44 @@ class _SearchFormState extends State<_SearchForm> {
 
   Widget _currencyField() {
     final cs = Theme.of(context).colorScheme;
-    final smallHintStyle = getIt<AppTextStyles>().caption.copyWith(
+    final textStyles = getIt<AppTextStyles>();
+    final smallHintStyle = textStyles.caption.copyWith(
       height: 16 / 13,
       color: AppColors.neutral500,
     );
 
-    final mainTextStyle = getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
+    final mainTextStyle = textStyles.bodyMediumSemiBold.copyWith(
       color: AppColors.onBackground,
       height: 16 / 13,
     );
 
-    return ConstrainedBox(
-      constraints: const BoxConstraints(minHeight: 48),
-      child: GestureDetector(
-        onTap: _showCurrencySheet,
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 7.h),
-          decoration: BoxDecoration(
-            color: cs.surface,
-            borderRadius: BorderRadius.circular(6.r),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text('Валюта', style: smallHintStyle),
-                    Text(_currency, style: mainTextStyle),
-                  ],
-                ),
+    return GestureDetector(
+      onTap: _showCurrencySheet,
+      child: Container(
+        height: 48.h,
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        decoration: BoxDecoration(
+          color: cs.surface,
+          borderRadius: BorderRadius.circular(6.r),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(context.l10n.currency, style: smallHintStyle),
+                  Text(_currency, style: mainTextStyle),
+                ],
               ),
-              SvgPicture.asset(
-                'assets/images/arrow.svg',
-                height: 16.h,
-                width: 16.w,
-              ),
-            ],
-          ),
+            ),
+            SvgPicture.asset(
+              'assets/images/arrow.svg',
+              height: 16.h,
+              width: 16.w,
+            ),
+          ],
         ),
       ),
     );
@@ -392,21 +395,29 @@ class _SearchFormState extends State<_SearchForm> {
 
   String _formatDate(DateTime? date) {
     if (date == null) return '';
-    const months = [
-      'января',
-      'февраля',
-      'марта',
-      'апреля',
-      'мая',
-      'июня',
-      'июля',
-      'августа',
-      'сентября',
-      'октября',
-      'ноября',
-      'декабря',
+    final months = [
+      context.l10n.january,
+      context.l10n.february,
+      context.l10n.march,
+      context.l10n.april,
+      context.l10n.may,
+      context.l10n.june,
+      context.l10n.july,
+      context.l10n.august,
+      context.l10n.september,
+      context.l10n.october,
+      context.l10n.november,
+      context.l10n.december,
     ];
-    const weekdays = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+    final weekdays = [
+      context.l10n.monday_short,
+      context.l10n.tuesday_short,
+      context.l10n.wednesday_short,
+      context.l10n.thursday_short,
+      context.l10n.friday_short,
+      context.l10n.saturday_short,
+      context.l10n.sunday_short,
+    ];
     return '${date.day} ${months[date.month - 1]}, ${weekdays[date.weekday - 1]}';
   }
 

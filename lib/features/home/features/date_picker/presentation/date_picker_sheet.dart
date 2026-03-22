@@ -1,10 +1,10 @@
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/gap.dart';
 import 'package:aviatraffic/features/home/features/date_picker/presentation/bloc/date_picker_bloc.dart';
-import 'package:aviatraffic/features/home/features/date_picker/presentation/widgets/bottom_button.dart';
+import 'package:aviatraffic/features/home/features/date_picker/presentation/widgets/date_picker_bottom_button.dart';
 import 'package:aviatraffic/features/home/features/date_picker/presentation/widgets/date_chip.dart';
 import 'package:aviatraffic/features/home/features/date_picker/presentation/widgets/month_calendar.dart';
-import 'package:aviatraffic/features/home/features/date_picker/presentation/widgets/top_bar.dart';
+import 'package:aviatraffic/shared/presentation/widgets/bottom_sheet_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -57,9 +57,6 @@ class _DatePickerSheetContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<DatePickerBloc, DatePickerState>(
       builder: (context, state) {
-        // If state is initial and we have initial dates, we might want to update it.
-        // But better to do it in BlocProvider's create.
-
         return DraggableScrollableSheet(
           initialChildSize: 0.92,
           minChildSize: 0.5,
@@ -70,13 +67,15 @@ class _DatePickerSheetContent extends StatelessWidget {
                 color: AppColors.surface,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
               ),
+              padding: .symmetric(horizontal: 16.w),
               child: Column(
                 children: [
-                  _buildDragHandle(),
-                  DatePickerTopBar(
+                  BottomSheetHeader(
+                    title: 'Когда',
                     onClose: () =>
                         _onConfirm(context, state.departDate, state.returnDate),
                   ),
+                  Gap.v24,
                   _buildDateSelector(context, state),
                   const Divider(height: 1),
                   Expanded(
@@ -122,23 +121,9 @@ class _DatePickerSheetContent extends StatelessWidget {
     );
   }
 
-  Widget _buildDragHandle() {
-    return Padding(
-      padding: EdgeInsets.only(top: 10.h, bottom: 4.h),
-      child: Container(
-        width: 36.w,
-        height: 4.h,
-        decoration: BoxDecoration(
-          color: AppColors.neutral200,
-          borderRadius: BorderRadius.circular(2.r),
-        ),
-      ),
-    );
-  }
-
   Widget _buildDateSelector(BuildContext context, DatePickerState state) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(16.w, 4.h, 16.w, 12.h),
+      padding: .only(top: 4.h, bottom: 12.h),
       child: Row(
         children: [
           Expanded(

@@ -8,7 +8,6 @@ import 'package:aviatraffic/features/home/features/stories/presentation/bloc/sto
 import 'package:aviatraffic/shared/presentation/widgets/app_html.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -90,20 +89,7 @@ class StoryDetailPage extends StatelessWidget {
                           horizontal: 16.w,
                           vertical: 24.h,
                         ),
-                        child: AppHtml(
-                          data: story.description,
-                          style: {
-                            "body":
-                                Style.fromTextStyle(
-                                  textStyles.bodyMediumSemiBold,
-                                ).copyWith(
-                                  color: AppColors.onBackground,
-                                  padding: HtmlPaddings.zero,
-                                  margin: Margins.zero,
-                                  lineHeight: LineHeight(1.5.h),
-                                ),
-                          },
-                        ),
+                        child: AppHtml(data: story.description),
                       ),
                     ],
                   ),

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:aviatraffic/core/di/injector.dart';
+import 'package:aviatraffic/core/localization/extensions/localization_context_extensions.dart';
 import 'package:aviatraffic/core/router/app_router.gr.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
@@ -22,25 +23,26 @@ class DealsWidget extends StatelessWidget {
         bloc.add(const DealsEvent.started());
         return bloc;
       },
-      child: _DealsView(onClickBuyTicket: onClickBuyTicket),
+      child: _DealsWidgetState(onClickBuyTicket: onClickBuyTicket),
     );
   }
 }
 
-class _DealsView extends StatelessWidget {
+class _DealsWidgetState extends StatelessWidget {
   final Function(Deal) onClickBuyTicket;
-  const _DealsView({required this.onClickBuyTicket});
+  const _DealsWidgetState({required this.onClickBuyTicket});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
-            'Горячие предложения',
-            style: getIt<AppTextStyles>().titleLargeBold.copyWith(
+            l10n.hot_deals,
+            style: getIt<AppTextStyles>().titleMediumBold.copyWith(
               color: Colors.black,
             ),
           ),
@@ -91,7 +93,7 @@ class _EmptyDeals extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
     padding: EdgeInsets.all(16.w),
-    child: const Text('Нет доступных предложений'),
+    child: Text(context.l10n.no_deals),
   );
 }
 
@@ -104,6 +106,7 @@ class _DealCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
+    final l10n = context.l10n;
 
     return Stack(
       children: [
@@ -144,7 +147,7 @@ class _DealCard extends StatelessWidget {
                       InkWell(
                         onTap: () => onClickBuyTickerBtn(deal),
                         child: Text(
-                          'Купить билет',
+                          l10n.buy_ticket,
                           style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
                             color: AppColors.onBackground,
                           ),

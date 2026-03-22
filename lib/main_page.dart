@@ -1,3 +1,4 @@
+import 'package:aviatraffic/core/localization/extensions/localization_context_extensions.dart';
 import 'package:aviatraffic/core/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
@@ -26,6 +27,7 @@ class MainPage extends StatelessWidget {
   const MainPage({super.key});
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return AutoTabsScaffold(
       routes: [
         HomeRoute(),
@@ -40,27 +42,27 @@ class MainPage extends StatelessWidget {
           onTap: tabsRouter.setActiveIndex,
           items: [
             BottomNavigationBarItem(
-              label: 'Главная',
+              label: l10n.home,
               icon: BottomIcon(path: _homeIconPath),
               activeIcon: BottomIcon(path: _activeHomeIconPath),
             ),
             BottomNavigationBarItem(
-              label: 'Регистрация',
+              label: l10n.registration,
               icon: BottomIcon(path: _registrationIconPath),
               activeIcon: BottomIcon(path: _activeRegistrationIconPath),
             ),
             BottomNavigationBarItem(
-              label: 'Услуги',
+              label: l10n.services,
               icon: BottomIcon(path: _servicesIconPath),
               activeIcon: BottomIcon(path: _activeServicesIconPath),
             ),
             BottomNavigationBarItem(
-              label: 'Статус рейса',
+              label: l10n.flight_status,
               icon: BottomIcon(path: _flightStatusIconPath),
               activeIcon: BottomIcon(path: _activeFlightStatusIconPath),
             ),
             BottomNavigationBarItem(
-              label: 'Профиль',
+              label: l10n.profile,
               icon: BottomIcon(path: _profileIconPath),
               activeIcon: BottomIcon(path: _activeProfileIconPath),
             ),

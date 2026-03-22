@@ -7,6 +7,7 @@ import 'package:aviatraffic/core/theme/gap.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/home/features/stories/domain/entities/story_item.dart';
 import 'package:aviatraffic/features/home/features/stories/presentation/bloc/stories/stories_bloc.dart';
+import 'package:aviatraffic/shared/presentation/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,18 +29,17 @@ class _StoriesWidgetState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tt = Theme.of(context).textTheme;
-    final titleStyle = tt.titleLarge?.copyWith(
-      fontWeight: FontWeight.w700,
-      color: AppColors.onBackground,
-    );
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text('Последние новости', style: titleStyle),
+          child: Text(
+            'Последние новости',
+            style: getIt<AppTextStyles>().titleMediumBold.copyWith(
+              color: Colors.black,
+            ),
+          ),
         ),
         Gap.v12,
         SizedBox(
@@ -47,8 +47,8 @@ class _StoriesWidgetState extends StatelessWidget {
           child: BlocBuilder<StoriesBloc, StoriesState>(
             builder: (context, state) {
               return state.map(
-                initial: (_) => const _Loading(),
-                loading: (_) => const _Loading(),
+                initial: (_) => const LoadingWidget(),
+                loading: (_) => const LoadingWidget(),
                 failure: (f) => Center(child: Text(f.failure.userMessage)),
                 loaded: (s) => _StoriesList(
                   stories: s.stories,
@@ -76,8 +76,8 @@ class _StoriesList extends StatefulWidget {
 class _StoriesListState extends State<_StoriesList> {
   late final ScrollController _scrollController;
 
-  static const double _cardWidth = 107.0;
-  static const double _cardSpacing = 12.0;
+  static const double _cardWidth = 107;
+  static const double _cardSpacing = 12;
 
   @override
   void initState() {
@@ -136,7 +136,7 @@ class _StoriesListState extends State<_StoriesList> {
     return ListView.builder(
       controller: _scrollController,
       scrollDirection: Axis.horizontal,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: .symmetric(horizontal: 16.w),
       itemCount: widget.stories.length,
       itemBuilder: (context, i) => Padding(
         padding: EdgeInsets.only(
@@ -157,13 +157,6 @@ class _StoriesListState extends State<_StoriesList> {
   }
 }
 
-class _Loading extends StatelessWidget {
-  const _Loading();
-  @override
-  Widget build(BuildContext context) =>
-      const Center(child: CircularProgressIndicator());
-}
-
 class _StoryCard extends StatelessWidget {
   final StoryItem item;
   final bool selected;
@@ -175,10 +168,10 @@ class _StoryCard extends StatelessWidget {
     return Container(
       width: 107.w,
       height: 107.h,
-      padding: .all(2.w),
+      padding: .symmetric(horizontal: 2.w, vertical: 2.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.r),
-        border: .all(
+        border: Border.all(
           color: selected ? AppColors.primary : AppColors.neutral200,
           width: 1.5.w,
         ),
@@ -206,9 +199,9 @@ class _StoryCard extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 8,
-              left: 8,
-              right: 8,
+              bottom: 8.h,
+              left: 8.w,
+              right: 8.w,
               child: Text(
                 item.title,
                 maxLines: 2,

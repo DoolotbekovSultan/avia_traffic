@@ -42,10 +42,6 @@ class StoriesBloc extends BaseBloc<StoriesEvent, StoriesState> {
     });
   }
 
-  void _stopTimer() {
-    _timer?.cancel();
-  }
-
   Future<void> _onStarted(Emitter<StoriesState> emit) async {
     emit(const StoriesState.loading());
     final result = await _getStoriesUsecase(NoParams());

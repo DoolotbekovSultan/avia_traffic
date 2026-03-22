@@ -1,9 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:aviatraffic/core/constants/widget_constants.dart';
 import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/failure/failure_utils.dart';
 import 'package:aviatraffic/core/router/app_router.gr.dart';
+import 'package:aviatraffic/core/localization/extensions/localization_context_extensions.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/gap.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
@@ -64,7 +63,7 @@ class _StoriesPageStateState extends State<_StoriesPageState>
 
   @override
   Widget build(BuildContext context) {
-    final tt = Theme.of(context).textTheme;
+    final l10n = context.l10n;
 
     return BlocConsumer<StoriesBloc, StoriesState>(
       listener: (context, state) {
@@ -123,7 +122,7 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                   Image.network(
                                     slide.imageUrl,
                                     fit: BoxFit.cover,
-                                    errorBuilder: (_, __, ___) => Container(
+                                    errorBuilder: (_, _, _) => Container(
                                       color: const Color(0xFF1A1A2E),
                                       child: const Icon(
                                         Icons.image,
@@ -133,14 +132,14 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                     ),
                                   ),
                                   Align(
-                                    alignment: .topCenter,
+                                    alignment: Alignment.topCenter,
                                     child: Container(
                                       height: 100.h,
                                       width: double.infinity,
                                       decoration: const BoxDecoration(
                                         gradient: LinearGradient(
-                                          begin: .topCenter,
-                                          end: .bottomCenter,
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
                                           colors: [
                                             Colors.black,
                                             Colors.transparent,
@@ -248,8 +247,8 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                     ),
                                     Gap.v16,
                                     Padding(
-                                      padding: .all(
-                                        WidgetConstants.mediumPadding,
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: 16.h,
                                       ),
                                       child: SizedBox(
                                         width: double.infinity,
@@ -263,7 +262,7 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                           style: ElevatedButton.styleFrom(
                                             backgroundColor: AppColors.primary,
                                           ),
-                                          child: Text('Подробнее'),
+                                          child: Text(l10n.read_more),
                                         ),
                                       ),
                                     ),

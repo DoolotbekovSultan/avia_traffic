@@ -1,9 +1,11 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:aviatraffic/core/router/app_router.gr.dart';
 import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/failure/failure_utils.dart';
+import 'package:aviatraffic/core/router/app_router.gr.dart';
+import 'package:aviatraffic/core/localization/extensions/localization_context_extensions.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
+import 'package:aviatraffic/shared/presentation/widgets/loading_widget.dart';
 import 'package:aviatraffic/utils/request_permissions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,7 +17,7 @@ import 'package:aviatraffic/features/onboarding/domain/entities/page.dart'
 
 @RoutePage()
 class OnboardingPage extends StatelessWidget {
-  OnboardingPage({super.key});
+  const OnboardingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -109,9 +111,9 @@ class _OnboardingPageViewState extends State<_OnboardingPageView>
         return Scaffold(
           body: state.map(
             initial: (_) => const SizedBox.shrink(),
-            loading: (_) => const _LoadingView(),
+            loading: (_) => const LoadingWidget(),
             loaded: (s) {
-              if (!_isReady) return _LoadingView();
+              if (!_isReady) return LoadingWidget();
               return _LoadedView(
                 pages: s.pages,
                 currentIndex: s.currentPageIndex,
@@ -124,20 +126,6 @@ class _OnboardingPageViewState extends State<_OnboardingPageView>
           ),
         );
       },
-    );
-  }
-}
-
-class _LoadingView extends StatelessWidget {
-  const _LoadingView();
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: CircularProgressIndicator(
-        color: Theme.of(context).colorScheme.primary,
-        strokeWidth: 2,
-      ),
     );
   }
 }
@@ -190,6 +178,7 @@ class _LoadedView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = context.read<OnboardingBloc>();
+    final l10n = context.l10n;
 
     return Scaffold(
       body: FadeTransition(
@@ -222,14 +211,14 @@ class _LoadedView extends StatelessWidget {
                 onPressed: () {
                   bloc.add(OnboardingEvent.skipOnboarding());
                 },
-                child: Text("Закрыть", style: textStyle),
+                child: Text(l10n.close, style: textStyle),
               ),
               _DotsIndicator(count: pages.length, currentIndex: currentIndex),
               TextButton(
                 onPressed: () {
                   bloc.add(OnboardingEvent.nextPage());
                 },
-                child: Text("Далее", style: textStyle),
+                child: Text(l10n.next, style: textStyle),
               ),
             ],
           ),

@@ -1,3 +1,4 @@
+import 'package:aviatraffic/core/localization/extensions/localization_context_extensions.dart';
 import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
@@ -102,12 +103,18 @@ class CityPickerWidget extends StatelessWidget {
                           children: [
                             Expanded(
                               child: from == null
-                                  ? Text('Откуда', style: hintTextStyle)
+                                  ? Text(
+                                      context.l10n.from,
+                                      style: hintTextStyle,
+                                    )
                                   : Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text('Откуда', style: smallHintStyle),
+                                        Text(
+                                          context.l10n.from,
+                                          style: smallHintStyle,
+                                        ),
                                         Text(from.name, style: mainTextStyle),
                                       ],
                                     ),
@@ -132,12 +139,15 @@ class CityPickerWidget extends StatelessWidget {
                           children: [
                             Expanded(
                               child: to == null
-                                  ? Text('Куда', style: hintTextStyle)
+                                  ? Text(context.l10n.to, style: hintTextStyle)
                                   : Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text('Куда', style: smallHintStyle),
+                                        Text(
+                                          context.l10n.to,
+                                          style: smallHintStyle,
+                                        ),
                                         Text(to.name, style: mainTextStyle),
                                       ],
                                     ),

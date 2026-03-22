@@ -1,4 +1,4 @@
-import 'package:aviatraffic/core/constants/widget_constants.dart';
+import 'package:aviatraffic/core/localization/extensions/localization_context_extensions.dart';
 import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/gap.dart';
@@ -6,12 +6,11 @@ import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/home/features/city_picker/domain/entities/city.dart';
 import 'package:aviatraffic/features/home/features/city_picker/domain/entities/country.dart';
 import 'package:aviatraffic/features/home/features/city_picker/presentation/bloc/city_list_bloc.dart';
-import 'package:aviatraffic/shared/presentation/widgets/drag_handle.dart';
+import 'package:aviatraffic/shared/presentation/widgets/bottom_sheet_header.dart';
 import 'package:aviatraffic/shared/presentation/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CityPickerSheet extends StatefulWidget {
   final bool isFrom;
@@ -77,136 +76,103 @@ class _CityPickerViewState extends State<_CityPickerView> {
 
   @override
   Widget build(BuildContext context) {
-    final textStyles = getIt<AppTextStyles>();
     return BlocBuilder<CityListBloc, CityListState>(
       builder: (context, state) {
         return state.map(
           initial: (_) => _PickerShell(
-            title: widget.isFrom ? 'Откуда' : 'Куда',
-            searchHint: widget.isFrom ? 'Откуда' : 'Куда',
+            title: widget.isFrom ? context.l10n.from : context.l10n.to,
+            searchHint: widget.isFrom ? context.l10n.from : context.l10n.to,
             controller: _ctrl,
             child: const LoadingWidget(),
           ),
           loading: (_) => _PickerShell(
-            title: widget.isFrom ? 'Откуда' : 'Куда',
-            searchHint: widget.isFrom ? 'Откуда' : 'Куда',
+            title: widget.isFrom ? context.l10n.from : context.l10n.to,
+            searchHint: widget.isFrom ? context.l10n.from : context.l10n.to,
             controller: _ctrl,
             child: const LoadingWidget(),
           ),
           failure: (f) => _PickerShell(
-            title: 'Ошибка',
-            searchHint: 'Поиск',
+            title: context.l10n.error,
+            searchHint: context.l10n.search,
             controller: _ctrl,
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: Text(
-                  f.failure.toString(),
-                  textAlign: TextAlign.center,
-                  style: textStyles.bodyMedium,
-                ),
-              ),
-            ),
+            child: Center(child: Text(f.failure.toString())),
           ),
           citiesLoaded: (s) {
-            final q = _ctrl.text.toLowerCase();
-            final filtered = q.isEmpty
-                ? s.cities
-                : s.cities
-                      .where(
-                        (c) =>
-                            c.name.toLowerCase().contains(q) ||
-                            c.country.toLowerCase().contains(q),
-                      )
-                      .toList();
+            final query = _ctrl.text.toLowerCase();
+            final filtered = s.cities
+                .where((c) => c.name.toLowerCase().contains(query))
+                .toList();
 
             return _PickerShell(
-              title: 'Откуда',
-              searchHint: 'Откуда',
+              title: widget.isFrom ? context.l10n.from : context.l10n.to,
+              searchHint: widget.isFrom ? context.l10n.from : context.l10n.to,
               controller: _ctrl,
               onChanged: (_) => setState(() {}),
-              child: filtered.isEmpty
-                  ? _EmptySearch()
-                  : ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: filtered.length,
-                      itemBuilder: (_, i) => Padding(
-                        padding: .only(bottom: 24.h),
-                        child: _CityRow(
-                          city: filtered[i],
-                          onTap: () => Navigator.pop(context, filtered[i]),
-                        ),
-                      ),
-                    ),
+              child: ListView.builder(
+                itemCount: filtered.length,
+                itemBuilder: (_, i) => Padding(
+                  padding: .only(bottom: 24.h),
+                  child: _CityRow(
+                    city: filtered[i],
+                    onTap: () => Navigator.pop(context, filtered[i]),
+                  ),
+                ),
+              ),
             );
           },
           countriesLoaded: (s) {
+            final query = _ctrl.text.toLowerCase();
+
             if (_selectedCountry != null) {
-              final q = _ctrl.text.toLowerCase();
-              final filteredCities = q.isEmpty
-                  ? _selectedCountry!.cities
-                  : _selectedCountry!.cities
-                        .where(
-                          (c) =>
-                              c.name.toLowerCase().contains(q) ||
-                              c.country.toLowerCase().contains(q),
-                        )
-                        .toList();
+              final filteredCities = _selectedCountry!.cities
+                  .where((c) => c.name.toLowerCase().contains(query))
+                  .toList();
 
               return _PickerShell(
-                title: 'Куда / ${_selectedCountry!.name}',
-                searchHint: 'Поиск города',
+                title:
+                    '${widget.isFrom ? context.l10n.from : context.l10n.to} / ${_selectedCountry!.name}',
+                searchHint: context.l10n.search,
                 controller: _ctrl,
                 onChanged: (_) => setState(() {}),
-                showClose: true,
-                child: filteredCities.isEmpty
-                    ? _EmptySearch()
-                    : ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: filteredCities.length,
-                        itemBuilder: (_, i) => Padding(
-                          padding: .only(bottom: 24.h),
-                          child: _CityRow(
-                            city: filteredCities[i],
-                            onTap: () =>
-                                Navigator.pop(context, filteredCities[i]),
-                          ),
-                        ),
-                      ),
+                onBack: () => setState(() {
+                  _selectedCountry = null;
+                  _ctrl.clear();
+                }),
+                child: ListView.builder(
+                  itemCount: filteredCities.length,
+                  itemBuilder: (_, i) => Padding(
+                    padding: EdgeInsets.only(bottom: 24.h),
+                    child: _CityRow(
+                      city: filteredCities[i],
+                      onTap: () => Navigator.pop(context, filteredCities[i]),
+                    ),
+                  ),
+                ),
               );
             }
 
-            final q = _ctrl.text.toLowerCase();
-            final filteredCountries = q.isEmpty
-                ? s.countries
-                : s.countries
-                      .where((c) => c.name.toLowerCase().contains(q))
-                      .toList();
+            final filteredCountries = s.countries
+                .where((c) => c.name.toLowerCase().contains(query))
+                .toList();
 
             return _PickerShell(
-              title: 'Куда',
-              searchHint: 'Куда',
+              title: widget.isFrom ? context.l10n.from : context.l10n.to,
+              searchHint: context.l10n.search,
               controller: _ctrl,
               onChanged: (_) => setState(() {}),
-              child: filteredCountries.isEmpty
-                  ? _EmptySearch()
-                  : ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: filteredCountries.length,
-                      itemBuilder: (_, i) => Padding(
-                        padding: .only(bottom: 24.h),
-                        child: _CountryRow(
-                          country: filteredCountries[i],
-                          onTap: () => setState(() {
-                            _selectedCountry = filteredCountries[i];
-                            _ctrl.clear();
-                          }),
-                        ),
-                      ),
-                    ),
+              child: ListView.builder(
+                itemCount: filteredCountries.length,
+                itemBuilder: (_, i) => Padding(
+                  padding: EdgeInsets.only(bottom: 24.h),
+                  child: _CountryRow(
+                    country: filteredCountries[i],
+                    onTap: () => setState(() {
+                      _selectedCountry = filteredCountries[i];
+                      _ctrl.clear();
+                    }),
+                  ),
+                ),
+              ),
             );
           },
         );
@@ -220,8 +186,7 @@ class _PickerShell extends StatelessWidget {
   final String searchHint;
   final TextEditingController controller;
   final Widget child;
-  final Widget? leadingAction;
-  final bool showClose;
+  final VoidCallback? onBack;
   final ValueChanged<String>? onChanged;
 
   const _PickerShell({
@@ -229,8 +194,7 @@ class _PickerShell extends StatelessWidget {
     required this.searchHint,
     required this.controller,
     required this.child,
-    this.leadingAction,
-    this.showClose = true,
+    this.onBack,
     this.onChanged,
   });
 
@@ -238,61 +202,24 @@ class _PickerShell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+        color: AppColors.surface,
+        borderRadius: .vertical(top: .circular(28.r)),
       ),
+      padding: .symmetric(horizontal: 16.w),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
         children: [
-          Center(
-            child: Padding(
-              padding: .symmetric(vertical: 7.h),
-              child: DragHandle(),
-            ),
-          ),
-          Gap.v16,
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Row(
-              children: [
-                if (leadingAction != null) ...[leadingAction!, Gap.h4],
-                Expanded(
-                  child: Text(
-                    title,
-                    style: getIt<AppTextStyles>().titleMediumBold.copyWith(
-                      color: AppColors.onBackground,
-                    ),
-                  ),
-                ),
-                if (showClose)
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: SvgPicture.asset(
-                      'assets/images/close.svg',
-                      width: 24.w,
-                      height: 24.h,
-                    ),
-                  ),
-              ],
-            ),
+          BottomSheetHeader(
+            title: title,
+            onClose: () => Navigator.pop(context),
           ),
           Gap.v24,
-          Padding(
-            padding: .symmetric(horizontal: 16.w),
-            child: _SearchField(
-              controller: controller,
-              hint: searchHint,
-              onChanged: onChanged,
-            ),
+          _SearchField(
+            controller: controller,
+            hint: searchHint,
+            onChanged: onChanged,
           ),
           Gap.v24,
-          Flexible(
-            child: SingleChildScrollView(
-              physics: const ClampingScrollPhysics(),
-              child: child,
-            ),
-          ),
-          SizedBox(height: MediaQuery.of(context).padding.bottom + 8.h),
+          Flexible(child: child),
         ],
       ),
     );
@@ -395,42 +322,40 @@ class _CityRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textStyles = getIt<AppTextStyles>();
     return InkWell(
       onTap: onTap,
-      child: Padding(
-        padding: .symmetric(horizontal: 16.w),
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    city.name,
-                    style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                      color: AppColors.onBackground,
-                      height: 1,
-                    ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  city.name,
+                  style: textStyles.bodyMediumSemiBold.copyWith(
+                    color: AppColors.onBackground,
+                    height: 1,
                   ),
-                  SizedBox(height: 6.h),
-                  Text(
-                    city.country,
-                    style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                      color: AppColors.neutral500,
-                      height: 1,
-                    ),
+                ),
+                SizedBox(height: 6.h),
+                Text(
+                  city.country,
+                  style: textStyles.bodyMediumSemiBold.copyWith(
+                    color: AppColors.neutral500,
+                    height: 1,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Text(
-              city.codeName,
-              style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                color: AppColors.neutral500,
-              ),
+          ),
+          Text(
+            city.codeName,
+            style: textStyles.bodyMediumSemiBold.copyWith(
+              color: AppColors.neutral500,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -439,57 +364,38 @@ class _CityRow extends StatelessWidget {
 class _CountryRow extends StatelessWidget {
   final Country country;
   final VoidCallback onTap;
+  final textStyles = getIt<AppTextStyles>();
 
-  const _CountryRow({required this.country, required this.onTap});
+  _CountryRow({required this.country, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Padding(
-        padding: .symmetric(horizontal: 16.w),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  country.name,
-                  style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                    color: AppColors.onBackground,
-                    height: 1,
-                  ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                country.name,
+                style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
+                  color: AppColors.onBackground,
+                  height: 1,
                 ),
-                SizedBox(height: 6.h),
-                Text(
-                  '${country.directions} направлений',
-                  style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                    color: AppColors.neutral500,
-                    height: 1,
-                  ),
+              ),
+              SizedBox(height: 6.h),
+              Text(
+                '${country.directions} направлений',
+                style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
+                  color: AppColors.neutral500,
+                  height: 1,
                 ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _EmptySearch extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(32.w),
-      child: Center(
-        child: Text(
-          'Ничего не найдено',
-          style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-            color: AppColors.neutral500,
+              ),
+            ],
           ),
-        ),
+        ],
       ),
     );
   }

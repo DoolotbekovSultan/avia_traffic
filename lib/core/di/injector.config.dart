@@ -9,7 +9,10 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:aviatraffic/core/bloc/locale/locale_bloc.dart' as _i672;
 import 'package:aviatraffic/core/di/register_module.dart' as _i1056;
+import 'package:aviatraffic/core/localization/system_locale_service.dart'
+    as _i865;
 import 'package:aviatraffic/core/router/app_router.dart' as _i306;
 import 'package:aviatraffic/core/router/guards/onboarding_guard.dart' as _i785;
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart'
@@ -130,9 +133,15 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i475.DatePickerBloc>(() => _i475.DatePickerBloc());
     gh.singleton<_i306.AppRouter>(() => _i306.AppRouter());
     gh.lazySingleton<_i361.Dio>(() => registerModule.dio);
+    gh.lazySingleton<_i865.SystemLocaleService>(
+      () => _i865.SystemLocaleService(),
+    );
     gh.lazySingleton<_i1029.CityPickerBloc>(() => _i1029.CityPickerBloc());
     gh.lazySingleton<_i450.IOnboardingLocalDataSource>(
       () => _i993.OnboardingLocalDataSource(gh<_i460.SharedPreferences>()),
+    );
+    gh.lazySingleton<_i672.LocaleBloc>(
+      () => _i672.LocaleBloc(gh<_i460.SharedPreferences>()),
     );
     gh.lazySingleton<_i733.IDealsRemoteDatasource>(
       () => _i463.DealsRemoteDatasource(gh<_i361.Dio>()),
@@ -195,14 +204,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i520.IStoriesRepository>(
       () => _i1037.StoriesRepository(gh<_i1044.IStoriesRemoteDatasource>()),
     );
-    gh.lazySingleton<_i144.RegisterUseCase>(
-      () => _i144.RegisterUseCase(gh<_i739.IAuthRepository>()),
-    );
     gh.lazySingleton<_i461.ConfirmCodeUseCase>(
       () => _i461.ConfirmCodeUseCase(gh<_i739.IAuthRepository>()),
     );
     gh.lazySingleton<_i1059.ForgotPasswordUseCase>(
       () => _i1059.ForgotPasswordUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.lazySingleton<_i144.RegisterUseCase>(
+      () => _i144.RegisterUseCase(gh<_i739.IAuthRepository>()),
     );
     gh.lazySingleton<_i148.LoginUseCase>(
       () => _i148.LoginUseCase(gh<_i739.IAuthRepository>()),

@@ -1,3 +1,4 @@
+import 'package:aviatraffic/core/localization/extensions/localization_context_extensions.dart';
 import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/gap.dart';
@@ -27,7 +28,16 @@ class MonthCalendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyles = getIt<AppTextStyles>();
-    const weekdayLabels = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+    final l10n = context.l10n;
+    final weekdayLabels = [
+      l10n.monday_short,
+      l10n.tuesday_short,
+      l10n.wednesday_short,
+      l10n.thursday_short,
+      l10n.friday_short,
+      l10n.saturday_short,
+      l10n.sunday_short,
+    ];
 
     final useCase = GetCalendarMonthUseCase();
     final getCalendarMonthParams = GetCalendarMonthParams(
@@ -52,11 +62,11 @@ class MonthCalendar extends StatelessWidget {
             ],
           ),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(16.w, 20.h, 16.w, 0),
+            padding: .only(top: 20),
             child: Column(
               children: [
                 Text(
-                  _monthTitle(month),
+                  _monthTitle(month, context),
                   style: textStyles.bodyMediumBold.copyWith(
                     color: AppColors.onBackground,
                   ),
@@ -80,7 +90,7 @@ class MonthCalendar extends StatelessWidget {
                 ),
                 Gap.v24,
                 _buildDaysGrid(
-                  snapshot.data!.fold((failure) => [], (cells) => cells),
+                  snapshot.data?.fold((failure) => [], (cells) => cells) ?? [],
                 ),
               ],
             ),
@@ -90,8 +100,11 @@ class MonthCalendar extends StatelessWidget {
     );
   }
 
-  String _monthTitle(DateTime month) {
-    final formatted = DateFormat('MMMM yyyy', 'ru').format(month);
+  String _monthTitle(DateTime month, BuildContext context) {
+    final formatted = DateFormat(
+      'MMMM yyyy',
+      context.currentLocale.languageCode,
+    ).format(month);
     return "${formatted[0].toUpperCase()}${formatted.substring(1).toLowerCase()}";
   }
 
