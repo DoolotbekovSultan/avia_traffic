@@ -6,11 +6,11 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
-class IsOnboardingSeenUseCase extends BaseUseCase<void, NoParams> {
+class IsOnboardingSeenUseCase extends BaseUseCase<bool, NoParams> {
   final IOnboardingRepository _repository;
   IsOnboardingSeenUseCase(this._repository);
 
   @override
-  Future<Either<Failure, void>> execute(NoParams params) async =>
+  Future<Either<Failure, bool>> execute(NoParams params) async =>
       await _repository.isOnboardingSeen();
 }

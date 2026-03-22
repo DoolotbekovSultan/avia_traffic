@@ -100,7 +100,7 @@ class _OnboardingPageViewState extends State<_OnboardingPageView>
           completed: (_) async {
             await requestPermissions();
             if (context.mounted) {
-              context.router.replace(const HomeRoute());
+              context.router.replace(const MainRoute());
             }
           },
         );

@@ -11,6 +11,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:aviatraffic/core/di/register_module.dart' as _i1056;
 import 'package:aviatraffic/core/router/app_router.dart' as _i306;
+import 'package:aviatraffic/core/router/guards/onboarding_guard.dart' as _i785;
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart'
     as _i831;
 import 'package:aviatraffic/core/theme/text_styles/nunito_sans_text_styles.dart'
@@ -224,6 +225,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i453.ModifyPersonalUseCase>(
       () => _i453.ModifyPersonalUseCase(gh<_i739.IAuthRepository>()),
+    );
+    gh.factory<_i785.OnboardingGuard>(
+      () => _i785.OnboardingGuard(gh<_i733.IsOnboardingSeenUseCase>()),
     );
     gh.lazySingleton<_i900.GetStoriesUsecase>(
       () => _i900.GetStoriesUsecase(gh<_i73.IStoriesRepository>()),
