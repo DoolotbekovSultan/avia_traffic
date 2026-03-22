@@ -3,7 +3,6 @@ import 'package:aviatraffic/core/di/injector.dart';
 import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/gap.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
-import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_bloc.dart';
 import 'package:aviatraffic/features/city_picker/presentation/widgets/city_picker_widget.dart';
 import 'package:aviatraffic/features/date_picker/presentation/date_picker_sheet.dart';
 import 'package:aviatraffic/features/home/presentation/widgets/currency_bottom_sheet.dart';
@@ -15,6 +14,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'package:aviatraffic/features/city_picker/domain/entities/city.dart';
+import 'package:aviatraffic/features/city_picker/presentation/bloc/city_list_bloc.dart';
+import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 @RoutePage()
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,42 +28,66 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    getIt<CityListBloc>().add(const CityListEvent.getCities());
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraints.maxHeight),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [_buildHeaderSection(), _buildBottomSection()],
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider.value(value: getIt<CityPickerBloc>()),
+        BlocProvider.value(value: getIt<CityListBloc>()),
+      ],
+      child: Scaffold(
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              controller: _scrollController,
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildHeaderSection(context),
+                    _buildBottomSection(context),
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
 
-  Widget _buildHeaderSection() {
+  Widget _buildHeaderSection(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: .centerLeft,
-          end: .centerRight,
-          colors: [Color(0xFFF7C8C8), AppColors.primary],
-          stops: [0.0, 1.0],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: [const Color(0xFFF7C8C8), AppColors.primary],
+          stops: const [0.0, 1.0],
         ),
       ),
       child: SafeArea(
         bottom: false,
         child: Column(
           children: [
-            AviaTrafficAppBar(),
+            const AviaTrafficAppBar(),
             Gap.v24,
-            _SearchForm(),
+            const _SearchForm(),
             const SizedBox(height: 20),
           ],
         ),
@@ -67,7 +95,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildBottomSection() {
+  Widget _buildBottomSection(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
 
     return Container(
@@ -80,7 +108,34 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 18.h),
           DealsWidget(
             onClickBuyTicket: (deal) {
-              // getIt<CityPickerBloc>().add()
+              final cityListState = context.read<CityListBloc>().state;
+              City? cityFrom;
+              City? cityTo;
+
+              cityListState.mapOrNull(
+                citiesLoaded: (s) {
+                  try {
+                    cityFrom = s.cities.firstWhere(
+                      (c) => c.codeName == deal.codeFrom,
+                    );
+                  } catch (_) {}
+                  try {
+                    cityTo = s.cities.firstWhere(
+                      (c) => c.codeName == deal.codeTo,
+                    );
+                  } catch (_) {}
+                },
+              );
+
+              context.read<CityPickerBloc>().add(
+                CityPickerEvent.setCities(from: cityFrom, to: cityTo),
+              );
+
+              _scrollController.animateTo(
+                0,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+              );
             },
           ),
           Gap.v16,
@@ -91,13 +146,13 @@ class _HomePageState extends State<HomePage> {
 }
 
 class _SearchForm extends StatefulWidget {
+  const _SearchForm();
+
   @override
   State<_SearchForm> createState() => _SearchFormState();
 }
 
 class _SearchFormState extends State<_SearchForm> {
-  String _from = '';
-  String _to = '';
   DateTime? _departDate;
   DateTime? _returnDate;
   String _currency = 'KGS';
@@ -111,11 +166,7 @@ class _SearchFormState extends State<_SearchForm> {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
-          CityPickerWidget(
-            initialFrom: _from,
-            initialTo: _to,
-            onChanged: _onCityChanged,
-          ),
+          const CityPickerWidget(),
           Gap.v10,
           Row(
             children: [
@@ -148,18 +199,17 @@ class _SearchFormState extends State<_SearchForm> {
           SizedBox(
             width: double.infinity,
             height: 56.h,
-            child: ElevatedButton(onPressed: () {}, child: Text('Поиск')),
+            child: ElevatedButton(
+              onPressed: () {
+                final cities = context.read<CityPickerBloc>().state;
+                // use cities.from, cities.to
+              },
+              child: const Text('Поиск'),
+            ),
           ),
         ],
       ),
     );
-  }
-
-  void _onCityChanged(String from, String to) {
-    setState(() {
-      _from = from;
-      _to = to;
-    });
   }
 
   Widget _dateField({
@@ -236,7 +286,7 @@ class _SearchFormState extends State<_SearchForm> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Кол-во пассажиоров',
+                          'Кол-во пассажиров',
                           style: textStyles.caption.copyWith(
                             height: 16 / 13,
                             color: AppColors.neutral500,
@@ -276,7 +326,7 @@ class _SearchFormState extends State<_SearchForm> {
     );
 
     return ConstrainedBox(
-      constraints: BoxConstraints(minHeight: 48),
+      constraints: const BoxConstraints(minHeight: 48),
       child: GestureDetector(
         onTap: _showCurrencySheet,
         child: Container(

@@ -22,13 +22,14 @@ class DealsWidget extends StatelessWidget {
         bloc.add(const DealsEvent.started());
         return bloc;
       },
-      child: const _DealsView(),
+      child: _DealsView(onClickBuyTicket: onClickBuyTicket),
     );
   }
 }
 
 class _DealsView extends StatelessWidget {
-  const _DealsView();
+  final Function(Deal) onClickBuyTicket;
+  const _DealsView({required this.onClickBuyTicket});
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +66,7 @@ class _DealsView extends StatelessWidget {
                           ),
                           child: _DealCard(
                             deal: s.deals[i],
-                            onClickBuyTickerBtn: (deal) {},
+                            onClickBuyTickerBtn: onClickBuyTicket,
                           ),
                         ),
                       ),

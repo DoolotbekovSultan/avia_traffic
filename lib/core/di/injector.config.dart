@@ -55,6 +55,8 @@ import 'package:aviatraffic/features/city_picker/domain/usecases/get_cities_usec
     as _i834;
 import 'package:aviatraffic/features/city_picker/domain/usecases/get_countries_usecase.dart'
     as _i1043;
+import 'package:aviatraffic/features/city_picker/presentation/bloc/city_list_bloc.dart'
+    as _i126;
 import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_bloc.dart'
     as _i227;
 import 'package:aviatraffic/features/date_picker/presentation/bloc/date_picker_bloc.dart'
@@ -127,6 +129,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i812.DatePickerBloc>(() => _i812.DatePickerBloc());
     gh.singleton<_i306.AppRouter>(() => _i306.AppRouter());
     gh.lazySingleton<_i361.Dio>(() => registerModule.dio);
+    gh.lazySingleton<_i227.CityPickerBloc>(() => _i227.CityPickerBloc());
     gh.lazySingleton<_i367.ICityPickerRemoteDatasource>(
       () => _i783.CityPickerRemoteDatasource(gh<_i361.Dio>()),
     );
@@ -231,8 +234,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i731.StoriesBloc>(
       () => _i731.StoriesBloc(gh<_i900.GetStoriesUsecase>()),
     );
-    gh.factory<_i227.CityPickerBloc>(
-      () => _i227.CityPickerBloc(
+    gh.lazySingleton<_i126.CityListBloc>(
+      () => _i126.CityListBloc(
         gh<_i834.GetCitiesUsecase>(),
         gh<_i1043.GetCountriesUsecase>(),
       ),

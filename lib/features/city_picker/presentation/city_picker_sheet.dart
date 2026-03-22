@@ -5,7 +5,7 @@ import 'package:aviatraffic/core/theme/gap.dart';
 import 'package:aviatraffic/core/theme/text_styles/app_text_styles.dart';
 import 'package:aviatraffic/features/city_picker/domain/entities/city.dart';
 import 'package:aviatraffic/features/city_picker/domain/entities/country.dart';
-import 'package:aviatraffic/features/city_picker/presentation/bloc/city_picker_bloc.dart';
+import 'package:aviatraffic/features/city_picker/presentation/bloc/city_list_bloc.dart';
 import 'package:aviatraffic/shared/presentation/widgets/drag_handle.dart';
 import 'package:aviatraffic/shared/presentation/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,21 +13,45 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-class CityPickerSheet extends StatelessWidget {
+class CityPickerSheet extends StatefulWidget {
   final bool isFrom;
-
+ 
   const CityPickerSheet({super.key, required this.isFrom});
 
   @override
+  State<CityPickerSheet> createState() => _CityPickerSheetState();
+}
+
+class _CityPickerSheetState extends State<CityPickerSheet> {
+  @override
+  void initState() {
+    super.initState();
+    final bloc = getIt<CityListBloc>();
+    final state = bloc.state;
+
+    state.maybeMap(
+      loading: (_) => null,
+      citiesLoaded: (s) {
+        if (!widget.isFrom) bloc.add(const CityListEvent.getCountries());
+      },
+      countriesLoaded: (s) {
+        if (widget.isFrom) bloc.add(const CityListEvent.getCities());
+      },
+      orElse: () {
+        bloc.add(
+          widget.isFrom
+              ? const CityListEvent.getCities()
+              : const CityListEvent.getCountries(),
+        );
+      },
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<CityPickerBloc>()
-        ..add(
-          isFrom
-              ? const CityPickerEvent.getCities()
-              : const CityPickerEvent.getCountries(),
-        ),
-      child: _CityPickerView(isFrom: isFrom),
+    return BlocProvider.value(
+      value: getIt<CityListBloc>(),
+      child: _CityPickerView(isFrom: widget.isFrom),
     );
   }
 }
@@ -54,7 +78,7 @@ class _CityPickerViewState extends State<_CityPickerView> {
   @override
   Widget build(BuildContext context) {
     final textStyles = getIt<AppTextStyles>();
-    return BlocBuilder<CityPickerBloc, CityPickerState>(
+    return BlocBuilder<CityListBloc, CityListState>(
       builder: (context, state) {
         return state.map(
           initial: (_) => _PickerShell(

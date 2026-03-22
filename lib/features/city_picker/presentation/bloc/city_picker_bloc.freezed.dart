@@ -19,34 +19,46 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CityPickerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getCities,
-    required TResult Function() getCountries,
+    required TResult Function(City from) setFrom,
+    required TResult Function(City to) setTo,
+    required TResult Function(City? from, City? to) setCities,
+    required TResult Function() swap,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getCities,
-    TResult? Function()? getCountries,
+    TResult? Function(City from)? setFrom,
+    TResult? Function(City to)? setTo,
+    TResult? Function(City? from, City? to)? setCities,
+    TResult? Function()? swap,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getCities,
-    TResult Function()? getCountries,
+    TResult Function(City from)? setFrom,
+    TResult Function(City to)? setTo,
+    TResult Function(City? from, City? to)? setCities,
+    TResult Function()? swap,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetCities value) getCities,
-    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_SetFrom value) setFrom,
+    required TResult Function(_SetTo value) setTo,
+    required TResult Function(_SetCities value) setCities,
+    required TResult Function(_Swap value) swap,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetCities value)? getCities,
-    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_SetFrom value)? setFrom,
+    TResult? Function(_SetTo value)? setTo,
+    TResult? Function(_SetCities value)? setCities,
+    TResult? Function(_Swap value)? swap,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetCities value)? getCities,
-    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_SetFrom value)? setFrom,
+    TResult Function(_SetTo value)? setTo,
+    TResult Function(_SetCities value)? setCities,
+    TResult Function(_Swap value)? swap,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -74,21 +86,545 @@ class _$CityPickerEventCopyWithImpl<$Res, $Val extends CityPickerEvent>
 }
 
 /// @nodoc
-abstract class _$$GetCitiesImplCopyWith<$Res> {
-  factory _$$GetCitiesImplCopyWith(
-    _$GetCitiesImpl value,
-    $Res Function(_$GetCitiesImpl) then,
-  ) = __$$GetCitiesImplCopyWithImpl<$Res>;
+abstract class _$$SetFromImplCopyWith<$Res> {
+  factory _$$SetFromImplCopyWith(
+    _$SetFromImpl value,
+    $Res Function(_$SetFromImpl) then,
+  ) = __$$SetFromImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({City from});
+
+  $CityCopyWith<$Res> get from;
 }
 
 /// @nodoc
-class __$$GetCitiesImplCopyWithImpl<$Res>
-    extends _$CityPickerEventCopyWithImpl<$Res, _$GetCitiesImpl>
-    implements _$$GetCitiesImplCopyWith<$Res> {
-  __$$GetCitiesImplCopyWithImpl(
-    _$GetCitiesImpl _value,
-    $Res Function(_$GetCitiesImpl) _then,
+class __$$SetFromImplCopyWithImpl<$Res>
+    extends _$CityPickerEventCopyWithImpl<$Res, _$SetFromImpl>
+    implements _$$SetFromImplCopyWith<$Res> {
+  __$$SetFromImplCopyWithImpl(
+    _$SetFromImpl _value,
+    $Res Function(_$SetFromImpl) _then,
   ) : super(_value, _then);
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? from = null}) {
+    return _then(
+      _$SetFromImpl(
+        from: null == from
+            ? _value.from
+            : from // ignore: cast_nullable_to_non_nullable
+                  as City,
+      ),
+    );
+  }
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CityCopyWith<$Res> get from {
+    return $CityCopyWith<$Res>(_value.from, (value) {
+      return _then(_value.copyWith(from: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SetFromImpl implements _SetFrom {
+  const _$SetFromImpl({required this.from});
+
+  @override
+  final City from;
+
+  @override
+  String toString() {
+    return 'CityPickerEvent.setFrom(from: $from)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetFromImpl &&
+            (identical(other.from, from) || other.from == from));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, from);
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetFromImplCopyWith<_$SetFromImpl> get copyWith =>
+      __$$SetFromImplCopyWithImpl<_$SetFromImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(City from) setFrom,
+    required TResult Function(City to) setTo,
+    required TResult Function(City? from, City? to) setCities,
+    required TResult Function() swap,
+  }) {
+    return setFrom(from);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(City from)? setFrom,
+    TResult? Function(City to)? setTo,
+    TResult? Function(City? from, City? to)? setCities,
+    TResult? Function()? swap,
+  }) {
+    return setFrom?.call(from);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(City from)? setFrom,
+    TResult Function(City to)? setTo,
+    TResult Function(City? from, City? to)? setCities,
+    TResult Function()? swap,
+    required TResult orElse(),
+  }) {
+    if (setFrom != null) {
+      return setFrom(from);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SetFrom value) setFrom,
+    required TResult Function(_SetTo value) setTo,
+    required TResult Function(_SetCities value) setCities,
+    required TResult Function(_Swap value) swap,
+  }) {
+    return setFrom(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SetFrom value)? setFrom,
+    TResult? Function(_SetTo value)? setTo,
+    TResult? Function(_SetCities value)? setCities,
+    TResult? Function(_Swap value)? swap,
+  }) {
+    return setFrom?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SetFrom value)? setFrom,
+    TResult Function(_SetTo value)? setTo,
+    TResult Function(_SetCities value)? setCities,
+    TResult Function(_Swap value)? swap,
+    required TResult orElse(),
+  }) {
+    if (setFrom != null) {
+      return setFrom(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetFrom implements CityPickerEvent {
+  const factory _SetFrom({required final City from}) = _$SetFromImpl;
+
+  City get from;
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SetFromImplCopyWith<_$SetFromImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetToImplCopyWith<$Res> {
+  factory _$$SetToImplCopyWith(
+    _$SetToImpl value,
+    $Res Function(_$SetToImpl) then,
+  ) = __$$SetToImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({City to});
+
+  $CityCopyWith<$Res> get to;
+}
+
+/// @nodoc
+class __$$SetToImplCopyWithImpl<$Res>
+    extends _$CityPickerEventCopyWithImpl<$Res, _$SetToImpl>
+    implements _$$SetToImplCopyWith<$Res> {
+  __$$SetToImplCopyWithImpl(
+    _$SetToImpl _value,
+    $Res Function(_$SetToImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? to = null}) {
+    return _then(
+      _$SetToImpl(
+        to: null == to
+            ? _value.to
+            : to // ignore: cast_nullable_to_non_nullable
+                  as City,
+      ),
+    );
+  }
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CityCopyWith<$Res> get to {
+    return $CityCopyWith<$Res>(_value.to, (value) {
+      return _then(_value.copyWith(to: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SetToImpl implements _SetTo {
+  const _$SetToImpl({required this.to});
+
+  @override
+  final City to;
+
+  @override
+  String toString() {
+    return 'CityPickerEvent.setTo(to: $to)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetToImpl &&
+            (identical(other.to, to) || other.to == to));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, to);
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetToImplCopyWith<_$SetToImpl> get copyWith =>
+      __$$SetToImplCopyWithImpl<_$SetToImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(City from) setFrom,
+    required TResult Function(City to) setTo,
+    required TResult Function(City? from, City? to) setCities,
+    required TResult Function() swap,
+  }) {
+    return setTo(to);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(City from)? setFrom,
+    TResult? Function(City to)? setTo,
+    TResult? Function(City? from, City? to)? setCities,
+    TResult? Function()? swap,
+  }) {
+    return setTo?.call(to);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(City from)? setFrom,
+    TResult Function(City to)? setTo,
+    TResult Function(City? from, City? to)? setCities,
+    TResult Function()? swap,
+    required TResult orElse(),
+  }) {
+    if (setTo != null) {
+      return setTo(to);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SetFrom value) setFrom,
+    required TResult Function(_SetTo value) setTo,
+    required TResult Function(_SetCities value) setCities,
+    required TResult Function(_Swap value) swap,
+  }) {
+    return setTo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SetFrom value)? setFrom,
+    TResult? Function(_SetTo value)? setTo,
+    TResult? Function(_SetCities value)? setCities,
+    TResult? Function(_Swap value)? swap,
+  }) {
+    return setTo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SetFrom value)? setFrom,
+    TResult Function(_SetTo value)? setTo,
+    TResult Function(_SetCities value)? setCities,
+    TResult Function(_Swap value)? swap,
+    required TResult orElse(),
+  }) {
+    if (setTo != null) {
+      return setTo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetTo implements CityPickerEvent {
+  const factory _SetTo({required final City to}) = _$SetToImpl;
+
+  City get to;
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SetToImplCopyWith<_$SetToImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetCitiesImplCopyWith<$Res> {
+  factory _$$SetCitiesImplCopyWith(
+    _$SetCitiesImpl value,
+    $Res Function(_$SetCitiesImpl) then,
+  ) = __$$SetCitiesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({City? from, City? to});
+
+  $CityCopyWith<$Res>? get from;
+  $CityCopyWith<$Res>? get to;
+}
+
+/// @nodoc
+class __$$SetCitiesImplCopyWithImpl<$Res>
+    extends _$CityPickerEventCopyWithImpl<$Res, _$SetCitiesImpl>
+    implements _$$SetCitiesImplCopyWith<$Res> {
+  __$$SetCitiesImplCopyWithImpl(
+    _$SetCitiesImpl _value,
+    $Res Function(_$SetCitiesImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? from = freezed, Object? to = freezed}) {
+    return _then(
+      _$SetCitiesImpl(
+        from: freezed == from
+            ? _value.from
+            : from // ignore: cast_nullable_to_non_nullable
+                  as City?,
+        to: freezed == to
+            ? _value.to
+            : to // ignore: cast_nullable_to_non_nullable
+                  as City?,
+      ),
+    );
+  }
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CityCopyWith<$Res>? get from {
+    if (_value.from == null) {
+      return null;
+    }
+
+    return $CityCopyWith<$Res>(_value.from!, (value) {
+      return _then(_value.copyWith(from: value));
+    });
+  }
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CityCopyWith<$Res>? get to {
+    if (_value.to == null) {
+      return null;
+    }
+
+    return $CityCopyWith<$Res>(_value.to!, (value) {
+      return _then(_value.copyWith(to: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SetCitiesImpl implements _SetCities {
+  const _$SetCitiesImpl({this.from, this.to});
+
+  @override
+  final City? from;
+  @override
+  final City? to;
+
+  @override
+  String toString() {
+    return 'CityPickerEvent.setCities(from: $from, to: $to)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetCitiesImpl &&
+            (identical(other.from, from) || other.from == from) &&
+            (identical(other.to, to) || other.to == to));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, from, to);
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetCitiesImplCopyWith<_$SetCitiesImpl> get copyWith =>
+      __$$SetCitiesImplCopyWithImpl<_$SetCitiesImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(City from) setFrom,
+    required TResult Function(City to) setTo,
+    required TResult Function(City? from, City? to) setCities,
+    required TResult Function() swap,
+  }) {
+    return setCities(from, to);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(City from)? setFrom,
+    TResult? Function(City to)? setTo,
+    TResult? Function(City? from, City? to)? setCities,
+    TResult? Function()? swap,
+  }) {
+    return setCities?.call(from, to);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(City from)? setFrom,
+    TResult Function(City to)? setTo,
+    TResult Function(City? from, City? to)? setCities,
+    TResult Function()? swap,
+    required TResult orElse(),
+  }) {
+    if (setCities != null) {
+      return setCities(from, to);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SetFrom value) setFrom,
+    required TResult Function(_SetTo value) setTo,
+    required TResult Function(_SetCities value) setCities,
+    required TResult Function(_Swap value) swap,
+  }) {
+    return setCities(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SetFrom value)? setFrom,
+    TResult? Function(_SetTo value)? setTo,
+    TResult? Function(_SetCities value)? setCities,
+    TResult? Function(_Swap value)? swap,
+  }) {
+    return setCities?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SetFrom value)? setFrom,
+    TResult Function(_SetTo value)? setTo,
+    TResult Function(_SetCities value)? setCities,
+    TResult Function(_Swap value)? swap,
+    required TResult orElse(),
+  }) {
+    if (setCities != null) {
+      return setCities(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetCities implements CityPickerEvent {
+  const factory _SetCities({final City? from, final City? to}) =
+      _$SetCitiesImpl;
+
+  City? get from;
+  City? get to;
+
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SetCitiesImplCopyWith<_$SetCitiesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SwapImplCopyWith<$Res> {
+  factory _$$SwapImplCopyWith(
+    _$SwapImpl value,
+    $Res Function(_$SwapImpl) then,
+  ) = __$$SwapImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SwapImplCopyWithImpl<$Res>
+    extends _$CityPickerEventCopyWithImpl<$Res, _$SwapImpl>
+    implements _$$SwapImplCopyWith<$Res> {
+  __$$SwapImplCopyWithImpl(_$SwapImpl _value, $Res Function(_$SwapImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of CityPickerEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -96,18 +632,18 @@ class __$$GetCitiesImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetCitiesImpl implements _GetCities {
-  const _$GetCitiesImpl();
+class _$SwapImpl implements _Swap {
+  const _$SwapImpl();
 
   @override
   String toString() {
-    return 'CityPickerEvent.getCities()';
+    return 'CityPickerEvent.swap()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetCitiesImpl);
+        (other.runtimeType == runtimeType && other is _$SwapImpl);
   }
 
   @override
@@ -116,30 +652,36 @@ class _$GetCitiesImpl implements _GetCities {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getCities,
-    required TResult Function() getCountries,
+    required TResult Function(City from) setFrom,
+    required TResult Function(City to) setTo,
+    required TResult Function(City? from, City? to) setCities,
+    required TResult Function() swap,
   }) {
-    return getCities();
+    return swap();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getCities,
-    TResult? Function()? getCountries,
+    TResult? Function(City from)? setFrom,
+    TResult? Function(City to)? setTo,
+    TResult? Function(City? from, City? to)? setCities,
+    TResult? Function()? swap,
   }) {
-    return getCities?.call();
+    return swap?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getCities,
-    TResult Function()? getCountries,
+    TResult Function(City from)? setFrom,
+    TResult Function(City to)? setTo,
+    TResult Function(City? from, City? to)? setCities,
+    TResult Function()? swap,
     required TResult orElse(),
   }) {
-    if (getCities != null) {
-      return getCities();
+    if (swap != null) {
+      return swap();
     }
     return orElse();
   }
@@ -147,198 +689,81 @@ class _$GetCitiesImpl implements _GetCities {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetCities value) getCities,
-    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_SetFrom value) setFrom,
+    required TResult Function(_SetTo value) setTo,
+    required TResult Function(_SetCities value) setCities,
+    required TResult Function(_Swap value) swap,
   }) {
-    return getCities(this);
+    return swap(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetCities value)? getCities,
-    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_SetFrom value)? setFrom,
+    TResult? Function(_SetTo value)? setTo,
+    TResult? Function(_SetCities value)? setCities,
+    TResult? Function(_Swap value)? swap,
   }) {
-    return getCities?.call(this);
+    return swap?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetCities value)? getCities,
-    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_SetFrom value)? setFrom,
+    TResult Function(_SetTo value)? setTo,
+    TResult Function(_SetCities value)? setCities,
+    TResult Function(_Swap value)? swap,
     required TResult orElse(),
   }) {
-    if (getCities != null) {
-      return getCities(this);
+    if (swap != null) {
+      return swap(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetCities implements CityPickerEvent {
-  const factory _GetCities() = _$GetCitiesImpl;
-}
-
-/// @nodoc
-abstract class _$$GetCountriesImplCopyWith<$Res> {
-  factory _$$GetCountriesImplCopyWith(
-    _$GetCountriesImpl value,
-    $Res Function(_$GetCountriesImpl) then,
-  ) = __$$GetCountriesImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetCountriesImplCopyWithImpl<$Res>
-    extends _$CityPickerEventCopyWithImpl<$Res, _$GetCountriesImpl>
-    implements _$$GetCountriesImplCopyWith<$Res> {
-  __$$GetCountriesImplCopyWithImpl(
-    _$GetCountriesImpl _value,
-    $Res Function(_$GetCountriesImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of CityPickerEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$GetCountriesImpl implements _GetCountries {
-  const _$GetCountriesImpl();
-
-  @override
-  String toString() {
-    return 'CityPickerEvent.getCountries()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetCountriesImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getCities,
-    required TResult Function() getCountries,
-  }) {
-    return getCountries();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getCities,
-    TResult? Function()? getCountries,
-  }) {
-    return getCountries?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getCities,
-    TResult Function()? getCountries,
-    required TResult orElse(),
-  }) {
-    if (getCountries != null) {
-      return getCountries();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetCities value) getCities,
-    required TResult Function(_GetCountries value) getCountries,
-  }) {
-    return getCountries(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetCities value)? getCities,
-    TResult? Function(_GetCountries value)? getCountries,
-  }) {
-    return getCountries?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetCities value)? getCities,
-    TResult Function(_GetCountries value)? getCountries,
-    required TResult orElse(),
-  }) {
-    if (getCountries != null) {
-      return getCountries(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetCountries implements CityPickerEvent {
-  const factory _GetCountries() = _$GetCountriesImpl;
+abstract class _Swap implements CityPickerEvent {
+  const factory _Swap() = _$SwapImpl;
 }
 
 /// @nodoc
 mixin _$CityPickerState {
+  City? get from => throw _privateConstructorUsedError;
+  City? get to => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<City> cities) citiesLoaded,
-    required TResult Function(List<Country> countries) countriesLoaded,
-    required TResult Function(Failure failure) failure,
+    required TResult Function(City? from, City? to) initial,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<City> cities)? citiesLoaded,
-    TResult? Function(List<Country> countries)? countriesLoaded,
-    TResult? Function(Failure failure)? failure,
+    TResult? Function(City? from, City? to)? initial,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<City> cities)? citiesLoaded,
-    TResult Function(List<Country> countries)? countriesLoaded,
-    TResult Function(Failure failure)? failure,
+    TResult Function(City? from, City? to)? initial,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_CitiesLoaded value) citiesLoaded,
-    required TResult Function(_CountriesLoaded value) countriesLoaded,
-    required TResult Function(_Failure value) failure,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_CitiesLoaded value)? citiesLoaded,
-    TResult? Function(_CountriesLoaded value)? countriesLoaded,
-    TResult? Function(_Failure value)? failure,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_CitiesLoaded value)? citiesLoaded,
-    TResult Function(_CountriesLoaded value)? countriesLoaded,
-    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
+
+  /// Create a copy of CityPickerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $CityPickerStateCopyWith<CityPickerState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -347,6 +772,11 @@ abstract class $CityPickerStateCopyWith<$Res> {
     CityPickerState value,
     $Res Function(CityPickerState) then,
   ) = _$CityPickerStateCopyWithImpl<$Res, CityPickerState>;
+  @useResult
+  $Res call({City? from, City? to});
+
+  $CityCopyWith<$Res>? get from;
+  $CityCopyWith<$Res>? get to;
 }
 
 /// @nodoc
@@ -361,14 +791,68 @@ class _$CityPickerStateCopyWithImpl<$Res, $Val extends CityPickerState>
 
   /// Create a copy of CityPickerState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? from = freezed, Object? to = freezed}) {
+    return _then(
+      _value.copyWith(
+            from: freezed == from
+                ? _value.from
+                : from // ignore: cast_nullable_to_non_nullable
+                      as City?,
+            to: freezed == to
+                ? _value.to
+                : to // ignore: cast_nullable_to_non_nullable
+                      as City?,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of CityPickerState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CityCopyWith<$Res>? get from {
+    if (_value.from == null) {
+      return null;
+    }
+
+    return $CityCopyWith<$Res>(_value.from!, (value) {
+      return _then(_value.copyWith(from: value) as $Val);
+    });
+  }
+
+  /// Create a copy of CityPickerState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CityCopyWith<$Res>? get to {
+    if (_value.to == null) {
+      return null;
+    }
+
+    return $CityCopyWith<$Res>(_value.to!, (value) {
+      return _then(_value.copyWith(to: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
+abstract class _$$InitialImplCopyWith<$Res>
+    implements $CityPickerStateCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
     _$InitialImpl value,
     $Res Function(_$InitialImpl) then,
   ) = __$$InitialImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({City? from, City? to});
+
+  @override
+  $CityCopyWith<$Res>? get from;
+  @override
+  $CityCopyWith<$Res>? get to;
 }
 
 /// @nodoc
@@ -382,63 +866,83 @@ class __$$InitialImplCopyWithImpl<$Res>
 
   /// Create a copy of CityPickerState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? from = freezed, Object? to = freezed}) {
+    return _then(
+      _$InitialImpl(
+        from: freezed == from
+            ? _value.from
+            : from // ignore: cast_nullable_to_non_nullable
+                  as City?,
+        to: freezed == to
+            ? _value.to
+            : to // ignore: cast_nullable_to_non_nullable
+                  as City?,
+      ),
+    );
+  }
 }
 
 /// @nodoc
 
 class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+  const _$InitialImpl({this.from, this.to});
+
+  @override
+  final City? from;
+  @override
+  final City? to;
 
   @override
   String toString() {
-    return 'CityPickerState.initial()';
+    return 'CityPickerState.initial(from: $from, to: $to)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$InitialImpl &&
+            (identical(other.from, from) || other.from == from) &&
+            (identical(other.to, to) || other.to == to));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, from, to);
+
+  /// Create a copy of CityPickerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
+      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<City> cities) citiesLoaded,
-    required TResult Function(List<Country> countries) countriesLoaded,
-    required TResult Function(Failure failure) failure,
+    required TResult Function(City? from, City? to) initial,
   }) {
-    return initial();
+    return initial(from, to);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<City> cities)? citiesLoaded,
-    TResult? Function(List<Country> countries)? countriesLoaded,
-    TResult? Function(Failure failure)? failure,
+    TResult? Function(City? from, City? to)? initial,
   }) {
-    return initial?.call();
+    return initial?.call(from, to);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<City> cities)? citiesLoaded,
-    TResult Function(List<Country> countries)? countriesLoaded,
-    TResult Function(Failure failure)? failure,
+    TResult Function(City? from, City? to)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial();
+      return initial(from, to);
     }
     return orElse();
   }
@@ -447,10 +951,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_CitiesLoaded value) citiesLoaded,
-    required TResult Function(_CountriesLoaded value) countriesLoaded,
-    required TResult Function(_Failure value) failure,
   }) {
     return initial(this);
   }
@@ -459,10 +959,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_CitiesLoaded value)? citiesLoaded,
-    TResult? Function(_CountriesLoaded value)? countriesLoaded,
-    TResult? Function(_Failure value)? failure,
   }) {
     return initial?.call(this);
   }
@@ -471,10 +967,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_CitiesLoaded value)? citiesLoaded,
-    TResult Function(_CountriesLoaded value)? countriesLoaded,
-    TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -485,644 +977,17 @@ class _$InitialImpl implements _Initial {
 }
 
 abstract class _Initial implements CityPickerState {
-  const factory _Initial() = _$InitialImpl;
-}
+  const factory _Initial({final City? from, final City? to}) = _$InitialImpl;
 
-/// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-    _$LoadingImpl value,
-    $Res Function(_$LoadingImpl) then,
-  ) = __$$LoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$CityPickerStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-    _$LoadingImpl _value,
-    $Res Function(_$LoadingImpl) _then,
-  ) : super(_value, _then);
+  @override
+  City? get from;
+  @override
+  City? get to;
 
   /// Create a copy of CityPickerState
   /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
-
   @override
-  String toString() {
-    return 'CityPickerState.loading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<City> cities) citiesLoaded,
-    required TResult Function(List<Country> countries) countriesLoaded,
-    required TResult Function(Failure failure) failure,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<City> cities)? citiesLoaded,
-    TResult? Function(List<Country> countries)? countriesLoaded,
-    TResult? Function(Failure failure)? failure,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<City> cities)? citiesLoaded,
-    TResult Function(List<Country> countries)? countriesLoaded,
-    TResult Function(Failure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_CitiesLoaded value) citiesLoaded,
-    required TResult Function(_CountriesLoaded value) countriesLoaded,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_CitiesLoaded value)? citiesLoaded,
-    TResult? Function(_CountriesLoaded value)? countriesLoaded,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_CitiesLoaded value)? citiesLoaded,
-    TResult Function(_CountriesLoaded value)? countriesLoaded,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Loading implements CityPickerState {
-  const factory _Loading() = _$LoadingImpl;
-}
-
-/// @nodoc
-abstract class _$$CitiesLoadedImplCopyWith<$Res> {
-  factory _$$CitiesLoadedImplCopyWith(
-    _$CitiesLoadedImpl value,
-    $Res Function(_$CitiesLoadedImpl) then,
-  ) = __$$CitiesLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<City> cities});
-}
-
-/// @nodoc
-class __$$CitiesLoadedImplCopyWithImpl<$Res>
-    extends _$CityPickerStateCopyWithImpl<$Res, _$CitiesLoadedImpl>
-    implements _$$CitiesLoadedImplCopyWith<$Res> {
-  __$$CitiesLoadedImplCopyWithImpl(
-    _$CitiesLoadedImpl _value,
-    $Res Function(_$CitiesLoadedImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of CityPickerState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? cities = null}) {
-    return _then(
-      _$CitiesLoadedImpl(
-        cities: null == cities
-            ? _value._cities
-            : cities // ignore: cast_nullable_to_non_nullable
-                  as List<City>,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-
-class _$CitiesLoadedImpl implements _CitiesLoaded {
-  const _$CitiesLoadedImpl({required final List<City> cities})
-    : _cities = cities;
-
-  final List<City> _cities;
-  @override
-  List<City> get cities {
-    if (_cities is EqualUnmodifiableListView) return _cities;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_cities);
-  }
-
-  @override
-  String toString() {
-    return 'CityPickerState.citiesLoaded(cities: $cities)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CitiesLoadedImpl &&
-            const DeepCollectionEquality().equals(other._cities, _cities));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_cities));
-
-  /// Create a copy of CityPickerState
-  /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CitiesLoadedImplCopyWith<_$CitiesLoadedImpl> get copyWith =>
-      __$$CitiesLoadedImplCopyWithImpl<_$CitiesLoadedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<City> cities) citiesLoaded,
-    required TResult Function(List<Country> countries) countriesLoaded,
-    required TResult Function(Failure failure) failure,
-  }) {
-    return citiesLoaded(cities);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<City> cities)? citiesLoaded,
-    TResult? Function(List<Country> countries)? countriesLoaded,
-    TResult? Function(Failure failure)? failure,
-  }) {
-    return citiesLoaded?.call(cities);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<City> cities)? citiesLoaded,
-    TResult Function(List<Country> countries)? countriesLoaded,
-    TResult Function(Failure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (citiesLoaded != null) {
-      return citiesLoaded(cities);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_CitiesLoaded value) citiesLoaded,
-    required TResult Function(_CountriesLoaded value) countriesLoaded,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return citiesLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_CitiesLoaded value)? citiesLoaded,
-    TResult? Function(_CountriesLoaded value)? countriesLoaded,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return citiesLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_CitiesLoaded value)? citiesLoaded,
-    TResult Function(_CountriesLoaded value)? countriesLoaded,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (citiesLoaded != null) {
-      return citiesLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CitiesLoaded implements CityPickerState {
-  const factory _CitiesLoaded({required final List<City> cities}) =
-      _$CitiesLoadedImpl;
-
-  List<City> get cities;
-
-  /// Create a copy of CityPickerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CitiesLoadedImplCopyWith<_$CitiesLoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CountriesLoadedImplCopyWith<$Res> {
-  factory _$$CountriesLoadedImplCopyWith(
-    _$CountriesLoadedImpl value,
-    $Res Function(_$CountriesLoadedImpl) then,
-  ) = __$$CountriesLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<Country> countries});
-}
-
-/// @nodoc
-class __$$CountriesLoadedImplCopyWithImpl<$Res>
-    extends _$CityPickerStateCopyWithImpl<$Res, _$CountriesLoadedImpl>
-    implements _$$CountriesLoadedImplCopyWith<$Res> {
-  __$$CountriesLoadedImplCopyWithImpl(
-    _$CountriesLoadedImpl _value,
-    $Res Function(_$CountriesLoadedImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of CityPickerState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? countries = null}) {
-    return _then(
-      _$CountriesLoadedImpl(
-        countries: null == countries
-            ? _value._countries
-            : countries // ignore: cast_nullable_to_non_nullable
-                  as List<Country>,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-
-class _$CountriesLoadedImpl implements _CountriesLoaded {
-  const _$CountriesLoadedImpl({required final List<Country> countries})
-    : _countries = countries;
-
-  final List<Country> _countries;
-  @override
-  List<Country> get countries {
-    if (_countries is EqualUnmodifiableListView) return _countries;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_countries);
-  }
-
-  @override
-  String toString() {
-    return 'CityPickerState.countriesLoaded(countries: $countries)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CountriesLoadedImpl &&
-            const DeepCollectionEquality().equals(
-              other._countries,
-              _countries,
-            ));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_countries));
-
-  /// Create a copy of CityPickerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CountriesLoadedImplCopyWith<_$CountriesLoadedImpl> get copyWith =>
-      __$$CountriesLoadedImplCopyWithImpl<_$CountriesLoadedImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<City> cities) citiesLoaded,
-    required TResult Function(List<Country> countries) countriesLoaded,
-    required TResult Function(Failure failure) failure,
-  }) {
-    return countriesLoaded(countries);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<City> cities)? citiesLoaded,
-    TResult? Function(List<Country> countries)? countriesLoaded,
-    TResult? Function(Failure failure)? failure,
-  }) {
-    return countriesLoaded?.call(countries);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<City> cities)? citiesLoaded,
-    TResult Function(List<Country> countries)? countriesLoaded,
-    TResult Function(Failure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (countriesLoaded != null) {
-      return countriesLoaded(countries);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_CitiesLoaded value) citiesLoaded,
-    required TResult Function(_CountriesLoaded value) countriesLoaded,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return countriesLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_CitiesLoaded value)? citiesLoaded,
-    TResult? Function(_CountriesLoaded value)? countriesLoaded,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return countriesLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_CitiesLoaded value)? citiesLoaded,
-    TResult Function(_CountriesLoaded value)? countriesLoaded,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (countriesLoaded != null) {
-      return countriesLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CountriesLoaded implements CityPickerState {
-  const factory _CountriesLoaded({required final List<Country> countries}) =
-      _$CountriesLoadedImpl;
-
-  List<Country> get countries;
-
-  /// Create a copy of CityPickerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CountriesLoadedImplCopyWith<_$CountriesLoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$FailureImplCopyWith<$Res> {
-  factory _$$FailureImplCopyWith(
-    _$FailureImpl value,
-    $Res Function(_$FailureImpl) then,
-  ) = __$$FailureImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Failure failure});
-
-  $FailureCopyWith<$Res> get failure;
-}
-
-/// @nodoc
-class __$$FailureImplCopyWithImpl<$Res>
-    extends _$CityPickerStateCopyWithImpl<$Res, _$FailureImpl>
-    implements _$$FailureImplCopyWith<$Res> {
-  __$$FailureImplCopyWithImpl(
-    _$FailureImpl _value,
-    $Res Function(_$FailureImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of CityPickerState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? failure = null}) {
-    return _then(
-      _$FailureImpl(
-        failure: null == failure
-            ? _value.failure
-            : failure // ignore: cast_nullable_to_non_nullable
-                  as Failure,
-      ),
-    );
-  }
-
-  /// Create a copy of CityPickerState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $FailureCopyWith<$Res> get failure {
-    return $FailureCopyWith<$Res>(_value.failure, (value) {
-      return _then(_value.copyWith(failure: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$FailureImpl implements _Failure {
-  const _$FailureImpl({required this.failure});
-
-  @override
-  final Failure failure;
-
-  @override
-  String toString() {
-    return 'CityPickerState.failure(failure: $failure)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FailureImpl &&
-            (identical(other.failure, failure) || other.failure == failure));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, failure);
-
-  /// Create a copy of CityPickerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<City> cities) citiesLoaded,
-    required TResult Function(List<Country> countries) countriesLoaded,
-    required TResult Function(Failure failure) failure,
-  }) {
-    return failure(this.failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<City> cities)? citiesLoaded,
-    TResult? Function(List<Country> countries)? countriesLoaded,
-    TResult? Function(Failure failure)? failure,
-  }) {
-    return failure?.call(this.failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<City> cities)? citiesLoaded,
-    TResult Function(List<Country> countries)? countriesLoaded,
-    TResult Function(Failure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this.failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_CitiesLoaded value) citiesLoaded,
-    required TResult Function(_CountriesLoaded value) countriesLoaded,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return failure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_CitiesLoaded value)? citiesLoaded,
-    TResult? Function(_CountriesLoaded value)? countriesLoaded,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return failure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_CitiesLoaded value)? citiesLoaded,
-    TResult Function(_CountriesLoaded value)? countriesLoaded,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Failure implements CityPickerState {
-  const factory _Failure({required final Failure failure}) = _$FailureImpl;
-
-  Failure get failure;
-
-  /// Create a copy of CityPickerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
