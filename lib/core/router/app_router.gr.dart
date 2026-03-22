@@ -10,19 +10,19 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i8;
-import 'package:aviatraffic/core/router/app_router.dart' as _i5;
-import 'package:aviatraffic/home/features/deals/domain/entities/deal.dart'
+import 'package:aviatraffic/core/router/app_router.dart' as _i2;
+import 'package:aviatraffic/features/home/features/deals/domain/entities/deal.dart'
     as _i10;
-import 'package:aviatraffic/home/features/deals/presentation/pages/deal_detail_page.dart'
+import 'package:aviatraffic/features/home/features/deals/presentation/pages/deal_detail_page.dart'
     as _i1;
-import 'package:aviatraffic/home/presentation/home_page.dart' as _i2;
-import 'package:aviatraffic/features/onboarding/presentation/pages/onboarding_page.dart'
-    as _i4;
-import 'package:aviatraffic/home/features/stories/presentation/pages/stories_page.dart'
+import 'package:aviatraffic/features/home/features/stories/presentation/pages/stories_page.dart'
     as _i6;
-import 'package:aviatraffic/home/features/stories/presentation/pages/story_detail_page.dart'
+import 'package:aviatraffic/features/home/features/stories/presentation/pages/story_detail_page.dart'
     as _i7;
-import 'package:aviatraffic/main_page.dart' as _i3;
+import 'package:aviatraffic/features/home/presentation/home_page.dart' as _i3;
+import 'package:aviatraffic/features/onboarding/presentation/pages/onboarding_page.dart'
+    as _i5;
+import 'package:aviatraffic/main_page.dart' as _i4;
 import 'package:flutter/material.dart' as _i9;
 
 /// generated route for
@@ -63,7 +63,23 @@ class DealDetailRouteArgs {
 }
 
 /// generated route for
-/// [_i2.HomePage]
+/// [_i2.FlightStatusPage]
+class FlightStatusRoute extends _i8.PageRouteInfo<void> {
+  const FlightStatusRoute({List<_i8.PageRouteInfo>? children})
+    : super(FlightStatusRoute.name, initialChildren: children);
+
+  static const String name = 'FlightStatusRoute';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i2.FlightStatusPage();
+    },
+  );
+}
+
+/// generated route for
+/// [_i3.HomePage]
 class HomeRoute extends _i8.PageRouteInfo<void> {
   const HomeRoute({List<_i8.PageRouteInfo>? children})
     : super(HomeRoute.name, initialChildren: children);
@@ -73,13 +89,13 @@ class HomeRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i2.HomePage();
+      return const _i3.HomePage();
     },
   );
 }
 
 /// generated route for
-/// [_i3.MainPage]
+/// [_i4.MainPage]
 class MainRoute extends _i8.PageRouteInfo<void> {
   const MainRoute({List<_i8.PageRouteInfo>? children})
     : super(MainRoute.name, initialChildren: children);
@@ -89,13 +105,13 @@ class MainRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i3.MainPage();
+      return const _i4.MainPage();
     },
   );
 }
 
 /// generated route for
-/// [_i4.OnboardingPage]
+/// [_i5.OnboardingPage]
 class OnboardingRoute extends _i8.PageRouteInfo<OnboardingRouteArgs> {
   OnboardingRoute({_i9.Key? key, List<_i8.PageRouteInfo>? children})
     : super(
@@ -112,7 +128,7 @@ class OnboardingRoute extends _i8.PageRouteInfo<OnboardingRouteArgs> {
       final args = data.argsAs<OnboardingRouteArgs>(
         orElse: () => const OnboardingRouteArgs(),
       );
-      return _i4.OnboardingPage(key: args.key);
+      return _i5.OnboardingPage(key: args.key);
     },
   );
 }
@@ -129,7 +145,7 @@ class OnboardingRouteArgs {
 }
 
 /// generated route for
-/// [_i5.ProfilePage]
+/// [_i2.ProfilePage]
 class ProfileRoute extends _i8.PageRouteInfo<void> {
   const ProfileRoute({List<_i8.PageRouteInfo>? children})
     : super(ProfileRoute.name, initialChildren: children);
@@ -139,7 +155,39 @@ class ProfileRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i5.ProfilePage();
+      return const _i2.ProfilePage();
+    },
+  );
+}
+
+/// generated route for
+/// [_i2.RegistrationPage]
+class RegistrationRoute extends _i8.PageRouteInfo<void> {
+  const RegistrationRoute({List<_i8.PageRouteInfo>? children})
+    : super(RegistrationRoute.name, initialChildren: children);
+
+  static const String name = 'RegistrationRoute';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i2.RegistrationPage();
+    },
+  );
+}
+
+/// generated route for
+/// [_i2.ServicesPage]
+class ServicesRoute extends _i8.PageRouteInfo<void> {
+  const ServicesRoute({List<_i8.PageRouteInfo>? children})
+    : super(ServicesRoute.name, initialChildren: children);
+
+  static const String name = 'ServicesRoute';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i2.ServicesPage();
     },
   );
 }

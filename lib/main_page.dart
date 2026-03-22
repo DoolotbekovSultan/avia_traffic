@@ -1,15 +1,23 @@
-import 'package:aviatraffic/core/constants/widget_constants.dart';
 import 'package:aviatraffic/core/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 // active icons
 const _activeHomeIconPath = 'assets/images/active_home_bottom_icon.svg';
+const _activeServicesIconPath = 'assets/images/active_services_bottom_icon.svg';
+const _activeRegistrationIconPath =
+    'assets/images/active_registration_bottom_icon.svg';
+const _activeFlightStatusIconPath =
+    'assets/images/active_flight_status_bottom_icon.svg';
 const _activeProfileIconPath = 'assets/images/active_profile_bottom_icon.svg';
 
 // active icons
 const _homeIconPath = 'assets/images/home_bottom_icon.svg';
+const _registrationIconPath = 'assets/images/registration_bottom_icon.svg';
+const _servicesIconPath = 'assets/images/services_bottom_icon.svg';
+const _flightStatusIconPath = 'assets/images/flight_status_bottom_icon.svg';
 const _profileIconPath = 'assets/images/profile_bottom_icon.svg';
 
 // Временная навигация
@@ -19,19 +27,40 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      routes: [HomeRoute(), ProfileRoute()],
+      routes: [
+        HomeRoute(),
+        RegistrationRoute(),
+        ServicesRoute(),
+        FlightStatusRoute(),
+        ProfileRoute(),
+      ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
           items: [
             BottomNavigationBarItem(
-              label: 'Home',
+              label: 'Главная',
               icon: BottomIcon(path: _homeIconPath),
               activeIcon: BottomIcon(path: _activeHomeIconPath),
             ),
             BottomNavigationBarItem(
-              label: 'Profile',
+              label: 'Регистрация',
+              icon: BottomIcon(path: _registrationIconPath),
+              activeIcon: BottomIcon(path: _activeRegistrationIconPath),
+            ),
+            BottomNavigationBarItem(
+              label: 'Услуги',
+              icon: BottomIcon(path: _servicesIconPath),
+              activeIcon: BottomIcon(path: _activeServicesIconPath),
+            ),
+            BottomNavigationBarItem(
+              label: 'Статус рейса',
+              icon: BottomIcon(path: _flightStatusIconPath),
+              activeIcon: BottomIcon(path: _activeFlightStatusIconPath),
+            ),
+            BottomNavigationBarItem(
+              label: 'Профиль',
               icon: BottomIcon(path: _profileIconPath),
               activeIcon: BottomIcon(path: _activeProfileIconPath),
             ),
@@ -48,10 +77,6 @@ class BottomIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      path,
-      height: WidgetConstants.bottomIcomSize,
-      width: WidgetConstants.bottomIcomSize,
-    );
+    return SvgPicture.asset(path, height: 24.h, width: 24.w);
   }
 }

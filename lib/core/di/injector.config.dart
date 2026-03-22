@@ -44,36 +44,52 @@ import 'package:aviatraffic/features/auth/domain/usecases/register_usecase.dart'
     as _i144;
 import 'package:aviatraffic/features/auth/domain/usecases/resend_email_usecase.dart'
     as _i324;
-import 'package:aviatraffic/home/features/city_picker/data/datasources/city_picker_remote_datasource.dart'
-    as _i783;
-import 'package:aviatraffic/home/features/city_picker/data/datasources/i_city_picker_remote_datasource.dart'
-    as _i367;
-import 'package:aviatraffic/home/features/city_picker/data/repositories/city_picker_repository.dart'
-    as _i1062;
-import 'package:aviatraffic/home/features/city_picker/domain/repositories/i_city_picker_repository.dart'
+import 'package:aviatraffic/features/home/features/city_picker/data/datasources/city_picker_remote_datasource.dart'
+    as _i460;
+import 'package:aviatraffic/features/home/features/city_picker/data/datasources/i_city_picker_remote_datasource.dart'
+    as _i21;
+import 'package:aviatraffic/features/home/features/city_picker/data/repositories/city_picker_repository.dart'
+    as _i202;
+import 'package:aviatraffic/features/home/features/city_picker/domain/repositories/i_city_picker_repository.dart'
+    as _i331;
+import 'package:aviatraffic/features/home/features/city_picker/domain/usecases/get_cities_usecase.dart'
+    as _i589;
+import 'package:aviatraffic/features/home/features/city_picker/domain/usecases/get_countries_usecase.dart'
+    as _i243;
+import 'package:aviatraffic/features/home/features/city_picker/presentation/bloc/city_list_bloc.dart'
+    as _i982;
+import 'package:aviatraffic/features/home/features/city_picker/presentation/bloc/city_picker_bloc.dart'
+    as _i1029;
+import 'package:aviatraffic/features/home/features/date_picker/presentation/bloc/date_picker_bloc.dart'
     as _i475;
-import 'package:aviatraffic/home/features/city_picker/domain/usecases/get_cities_usecase.dart'
-    as _i834;
-import 'package:aviatraffic/home/features/city_picker/domain/usecases/get_countries_usecase.dart'
-    as _i1043;
-import 'package:aviatraffic/home/features/city_picker/presentation/bloc/city_list_bloc.dart'
-    as _i126;
-import 'package:aviatraffic/home/features/city_picker/presentation/bloc/city_picker_bloc.dart'
-    as _i227;
-import 'package:aviatraffic/home/features/date_picker/presentation/bloc/date_picker_bloc.dart'
+import 'package:aviatraffic/features/home/features/deals/data/datasources/deals_remote_datasource.dart'
+    as _i463;
+import 'package:aviatraffic/features/home/features/deals/data/datasources/i_deals_remote_datasource.dart'
+    as _i733;
+import 'package:aviatraffic/features/home/features/deals/data/repositories/deals_repository.dart'
+    as _i596;
+import 'package:aviatraffic/features/home/features/deals/domain/repositories/i_deals_repository.dart'
+    as _i884;
+import 'package:aviatraffic/features/home/features/deals/domain/usecases/get_deals_usecase.dart'
+    as _i308;
+import 'package:aviatraffic/features/home/features/deals/presentation/bloc/deals_bloc.dart'
     as _i812;
-import 'package:aviatraffic/home/features/deals/data/datasources/deals_remote_datasource.dart'
-    as _i276;
-import 'package:aviatraffic/home/features/deals/data/datasources/i_deals_remote_datasource.dart'
-    as _i247;
-import 'package:aviatraffic/home/features/deals/data/repositories/deals_repository.dart'
-    as _i412;
-import 'package:aviatraffic/home/features/deals/domain/repositories/i_deals_repository.dart'
-    as _i825;
-import 'package:aviatraffic/home/features/deals/domain/usecases/get_deals_usecase.dart'
-    as _i334;
-import 'package:aviatraffic/home/features/deals/presentation/bloc/deals_bloc.dart'
-    as _i99;
+import 'package:aviatraffic/features/home/features/stories/data/datasources/i_stories_remote_datasource.dart'
+    as _i1044;
+import 'package:aviatraffic/features/home/features/stories/data/datasources/stories_remote_datasources.dart'
+    as _i23;
+import 'package:aviatraffic/features/home/features/stories/data/repositories/stories_repository.dart'
+    as _i1037;
+import 'package:aviatraffic/features/home/features/stories/domain/repositories/i_stories_repository.dart'
+    as _i520;
+import 'package:aviatraffic/features/home/features/stories/domain/usecases/get_stories_usecase.dart'
+    as _i656;
+import 'package:aviatraffic/features/home/features/stories/domain/usecases/get_story_by_id_usecase.dart'
+    as _i283;
+import 'package:aviatraffic/features/home/features/stories/presentation/bloc/stories/stories_bloc.dart'
+    as _i710;
+import 'package:aviatraffic/features/home/features/stories/presentation/bloc/story/story_bloc.dart'
+    as _i1032;
 import 'package:aviatraffic/features/onboarding/data/datasources/impl/onboarding_local_datasource.dart'
     as _i993;
 import 'package:aviatraffic/features/onboarding/data/datasources/impl/onboarding_remote_datasource.dart'
@@ -94,22 +110,6 @@ import 'package:aviatraffic/features/onboarding/domain/usecases/set_onboarding_s
     as _i335;
 import 'package:aviatraffic/features/onboarding/presentation/bloc/onboarding_bloc.dart'
     as _i507;
-import 'package:aviatraffic/home/features/stories/data/datasources/i_stories_remote_datasource.dart'
-    as _i302;
-import 'package:aviatraffic/home/features/stories/data/datasources/stories_remote_datasources.dart'
-    as _i59;
-import 'package:aviatraffic/home/features/stories/data/repositories/stories_repository.dart'
-    as _i933;
-import 'package:aviatraffic/home/features/stories/domain/repositories/i_stories_repository.dart'
-    as _i73;
-import 'package:aviatraffic/home/features/stories/domain/usecases/get_stories_usecase.dart'
-    as _i900;
-import 'package:aviatraffic/home/features/stories/domain/usecases/get_story_by_id_usecase.dart'
-    as _i896;
-import 'package:aviatraffic/home/features/stories/presentation/bloc/stories/stories_bloc.dart'
-    as _i731;
-import 'package:aviatraffic/home/features/stories/presentation/bloc/story/story_bloc.dart'
-    as _i193;
 import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
@@ -127,21 +127,18 @@ extension GetItInjectableX on _i174.GetIt {
       () => registerModule.prefs,
       preResolve: true,
     );
-    gh.factory<_i812.DatePickerBloc>(() => _i812.DatePickerBloc());
+    gh.factory<_i475.DatePickerBloc>(() => _i475.DatePickerBloc());
     gh.singleton<_i306.AppRouter>(() => _i306.AppRouter());
     gh.lazySingleton<_i361.Dio>(() => registerModule.dio);
-    gh.lazySingleton<_i227.CityPickerBloc>(() => _i227.CityPickerBloc());
-    gh.lazySingleton<_i367.ICityPickerRemoteDatasource>(
-      () => _i783.CityPickerRemoteDatasource(gh<_i361.Dio>()),
-    );
+    gh.lazySingleton<_i1029.CityPickerBloc>(() => _i1029.CityPickerBloc());
     gh.lazySingleton<_i450.IOnboardingLocalDataSource>(
       () => _i993.OnboardingLocalDataSource(gh<_i460.SharedPreferences>()),
     );
-    gh.lazySingleton<_i247.IDealsRemoteDatasource>(
-      () => _i276.DealsRemoteDatasource(gh<_i361.Dio>()),
+    gh.lazySingleton<_i733.IDealsRemoteDatasource>(
+      () => _i463.DealsRemoteDatasource(gh<_i361.Dio>()),
     );
-    gh.lazySingleton<_i825.IDealsRepository>(
-      () => _i412.DealsRepository(gh<_i247.IDealsRemoteDatasource>()),
+    gh.lazySingleton<_i884.IDealsRepository>(
+      () => _i596.DealsRepository(gh<_i733.IDealsRemoteDatasource>()),
     );
     gh.lazySingleton<_i601.IAuthRemoteDataSource>(
       () => _i1008.AuthRemoteDataSource(gh<_i361.Dio>()),
@@ -159,18 +156,17 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i739.IAuthRepository>(
       () => _i1010.AuthRepository(gh<_i601.IAuthRemoteDataSource>()),
     );
-    gh.lazySingleton<_i475.ICityPickerRepository>(
-      () =>
-          _i1062.CityPickerRepository(gh<_i367.ICityPickerRemoteDatasource>()),
+    gh.lazySingleton<_i21.ICityPickerRemoteDatasource>(
+      () => _i460.CityPickerRemoteDatasource(gh<_i361.Dio>()),
     );
-    gh.lazySingleton<_i302.IStoriesRemoteDatasource>(
-      () => _i59.StoriesRemoteDatasources(dio: gh<_i361.Dio>()),
+    gh.lazySingleton<_i1044.IStoriesRemoteDatasource>(
+      () => _i23.StoriesRemoteDatasources(dio: gh<_i361.Dio>()),
     );
-    gh.lazySingleton<_i334.GetDealsUsecase>(
-      () => _i334.GetDealsUsecase(gh<_i825.IDealsRepository>()),
+    gh.lazySingleton<_i331.ICityPickerRepository>(
+      () => _i202.CityPickerRepository(gh<_i21.ICityPickerRemoteDatasource>()),
     );
-    gh.factory<_i99.DealsBloc>(
-      () => _i99.DealsBloc(gh<_i334.GetDealsUsecase>()),
+    gh.lazySingleton<_i308.GetDealsUsecase>(
+      () => _i308.GetDealsUsecase(gh<_i884.IDealsRepository>()),
     );
     gh.lazySingleton<_i335.SetOnboardingSeenUsecase>(
       () => _i335.SetOnboardingSeenUsecase(gh<_i524.IOnboardingRepository>()),
@@ -181,20 +177,23 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i733.IsOnboardingSeenUseCase>(
       () => _i733.IsOnboardingSeenUseCase(gh<_i524.IOnboardingRepository>()),
     );
-    gh.lazySingleton<_i1043.GetCountriesUsecase>(
-      () => _i1043.GetCountriesUsecase(gh<_i475.ICityPickerRepository>()),
+    gh.factory<_i812.DealsBloc>(
+      () => _i812.DealsBloc(gh<_i308.GetDealsUsecase>()),
     );
-    gh.lazySingleton<_i834.GetCitiesUsecase>(
-      () => _i834.GetCitiesUsecase(gh<_i475.ICityPickerRepository>()),
+    gh.lazySingleton<_i243.GetCountriesUsecase>(
+      () => _i243.GetCountriesUsecase(gh<_i331.ICityPickerRepository>()),
     );
-    gh.lazySingleton<_i73.IStoriesRepository>(
-      () => _i933.StoriesRepository(gh<_i302.IStoriesRemoteDatasource>()),
+    gh.lazySingleton<_i589.GetCitiesUsecase>(
+      () => _i589.GetCitiesUsecase(gh<_i331.ICityPickerRepository>()),
     );
     gh.lazySingleton<_i507.OnboardingBloc>(
       () => _i507.OnboardingBloc(
         getPagesUsecase: gh<_i572.GetPagesUsecase>(),
         setOnboardingSeenUsecase: gh<_i335.SetOnboardingSeenUsecase>(),
       ),
+    );
+    gh.lazySingleton<_i520.IStoriesRepository>(
+      () => _i1037.StoriesRepository(gh<_i1044.IStoriesRemoteDatasource>()),
     );
     gh.lazySingleton<_i144.RegisterUseCase>(
       () => _i144.RegisterUseCase(gh<_i739.IAuthRepository>()),
@@ -229,23 +228,23 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i785.OnboardingGuard>(
       () => _i785.OnboardingGuard(gh<_i733.IsOnboardingSeenUseCase>()),
     );
-    gh.lazySingleton<_i900.GetStoriesUsecase>(
-      () => _i900.GetStoriesUsecase(gh<_i73.IStoriesRepository>()),
+    gh.lazySingleton<_i656.GetStoriesUsecase>(
+      () => _i656.GetStoriesUsecase(gh<_i520.IStoriesRepository>()),
     );
-    gh.lazySingleton<_i896.GetStoryByIdUsecase>(
-      () => _i896.GetStoryByIdUsecase(gh<_i73.IStoriesRepository>()),
+    gh.lazySingleton<_i283.GetStoryByIdUsecase>(
+      () => _i283.GetStoryByIdUsecase(gh<_i520.IStoriesRepository>()),
     );
-    gh.lazySingleton<_i731.StoriesBloc>(
-      () => _i731.StoriesBloc(gh<_i900.GetStoriesUsecase>()),
-    );
-    gh.lazySingleton<_i126.CityListBloc>(
-      () => _i126.CityListBloc(
-        gh<_i834.GetCitiesUsecase>(),
-        gh<_i1043.GetCountriesUsecase>(),
+    gh.lazySingleton<_i982.CityListBloc>(
+      () => _i982.CityListBloc(
+        gh<_i589.GetCitiesUsecase>(),
+        gh<_i243.GetCountriesUsecase>(),
       ),
     );
-    gh.factory<_i193.StoryBloc>(
-      () => _i193.StoryBloc(gh<_i896.GetStoryByIdUsecase>()),
+    gh.factory<_i1032.StoryBloc>(
+      () => _i1032.StoryBloc(gh<_i283.GetStoryByIdUsecase>()),
+    );
+    gh.lazySingleton<_i710.StoriesBloc>(
+      () => _i710.StoriesBloc(gh<_i656.GetStoriesUsecase>()),
     );
     return this;
   }

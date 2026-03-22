@@ -6,7 +6,7 @@ abstract class WidgetConstants {
   static double buttonHeight = 38.0.h;
   static double searchBarHeight = 40.0.h;
   static double iconSize = 24.0.w;
-  static double bottomIcomSize = 40.w;
+  static double bottomIcomSize = 24.w;
   static double smallIconSize = 16.0.w;
   static double mediumIconSize = 20.0.w;
   static double largeIconSize = 32.0.w;

@@ -179,9 +179,11 @@ abstract class LightTheme {
   // ─── Navigation ────────────────────────────────────────────────────────────
 
   static BottomNavigationBarThemeData get _bottomNavigationBarTheme =>
-      const BottomNavigationBarThemeData(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+      BottomNavigationBarThemeData(
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        selectedLabelStyle: getIt<AppTextStyles>().overline,
+        unselectedLabelStyle: getIt<AppTextStyles>().overline,
         backgroundColor: AppColors.surface,
         selectedItemColor: AppColors.primary,
         unselectedItemColor: AppColors.neutral600,

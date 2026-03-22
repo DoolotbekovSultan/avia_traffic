@@ -17,6 +17,42 @@ class ProfilePage extends StatelessWidget {
   }
 }
 
+@RoutePage()
+class RegistrationPage extends StatelessWidget {
+  const RegistrationPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(child: Text('Registration Page - Architecture marker')),
+    );
+  }
+}
+
+@RoutePage()
+class ServicesPage extends StatelessWidget {
+  const ServicesPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(child: Text('Services Page - Architecture marker')),
+    );
+  }
+}
+
+@RoutePage()
+class FlightStatusPage extends StatelessWidget {
+  const FlightStatusPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(child: Text('Flight Status Page - Architecture marker')),
+    );
+  }
+}
+
 @singleton
 @AutoRouterConfig(replaceInRouteName: 'Page,Route')
 class AppRouter extends RootStackRouter {
@@ -34,6 +70,9 @@ class AppRouter extends RootStackRouter {
       guards: [getIt<OnboardingGuard>()],
       children: [
         AutoRoute(path: 'home', page: HomeRoute.page),
+        AutoRoute(path: 'registration', page: RegistrationRoute.page),
+        AutoRoute(path: 'services', page: ServicesRoute.page),
+        AutoRoute(path: 'flight_status', page: FlightStatusRoute.page),
         AutoRoute(path: "profile", page: ProfileRoute.page),
       ],
     ),

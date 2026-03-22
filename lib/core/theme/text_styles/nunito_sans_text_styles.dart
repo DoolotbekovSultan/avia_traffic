@@ -395,7 +395,7 @@ class NunitoSansTextStyles implements AppTextStyles {
   TextStyle get overline => TextStyle(
     inherit: false,
     fontFamily: _family,
-    fontSize: 10.sp,
+    fontSize: 11.sp,
     fontWeight: FontWeight.w600,
     height: 1.6,
     letterSpacing: 0.5,
