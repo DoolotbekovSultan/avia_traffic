@@ -11,15 +11,16 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i8;
 import 'package:aviatraffic/core/router/app_router.dart' as _i5;
-import 'package:aviatraffic/features/deals/domain/entities/deal.dart' as _i10;
-import 'package:aviatraffic/features/deals/presentation/pages/deal_detail_page.dart'
+import 'package:aviatraffic/home/features/deals/domain/entities/deal.dart'
+    as _i10;
+import 'package:aviatraffic/home/features/deals/presentation/pages/deal_detail_page.dart'
     as _i1;
-import 'package:aviatraffic/features/home/presentation/home_page.dart' as _i2;
+import 'package:aviatraffic/home/presentation/home_page.dart' as _i2;
 import 'package:aviatraffic/features/onboarding/presentation/pages/onboarding_page.dart'
     as _i4;
-import 'package:aviatraffic/features/stories/presentation/pages/stories_page.dart'
+import 'package:aviatraffic/home/features/stories/presentation/pages/stories_page.dart'
     as _i6;
-import 'package:aviatraffic/features/stories/presentation/pages/story_detail_page.dart'
+import 'package:aviatraffic/home/features/stories/presentation/pages/story_detail_page.dart'
     as _i7;
 import 'package:aviatraffic/main_page.dart' as _i3;
 import 'package:flutter/material.dart' as _i9;
