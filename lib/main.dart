@@ -11,7 +11,6 @@ import 'package:intl/date_symbol_data_local.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Белый фон статус-бара и черные иконки
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarIconBrightness: Brightness.dark,
@@ -31,7 +30,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => getIt<LocaleBloc>()..add(const LocaleEvent.started()),
+          create: (context) =>
+              getIt<LocaleBloc>()..add(const LocaleEvent.started()),
         ),
       ],
       child: ScreenUtilInit(
@@ -48,7 +48,8 @@ class MyApp extends StatelessWidget {
                   theme: LightTheme.themeData,
                   themeMode: ThemeMode.light,
                   locale: s.locale,
-                  localizationsDelegates: AppLocalizations.localizationsDelegates,
+                  localizationsDelegates:
+                      AppLocalizations.localizationsDelegates,
                   supportedLocales: AppLocalizations.supportedLocales,
                   routerConfig: appRouter.config(),
                 ),

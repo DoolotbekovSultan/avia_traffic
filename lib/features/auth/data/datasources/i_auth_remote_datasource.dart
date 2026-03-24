@@ -1,7 +1,7 @@
 import 'package:aviatraffic/features/auth/data/models/user_model.dart';
 
 abstract class IAuthRemoteDataSource {
-  Future<UserModel> register({
+  Future<void> register({
     required String firstName,
     required String phone,
     required String password,

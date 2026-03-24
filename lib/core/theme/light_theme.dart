@@ -286,8 +286,8 @@ abstract class LightTheme {
           textStyle: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
             height: 16 / 13,
           ),
-          disabledBackgroundColor: AppColors.neutral300,
-          disabledForegroundColor: AppColors.neutral500,
+          disabledBackgroundColor: AppColors.neutral200,
+          disabledForegroundColor: Colors.white,
           surfaceTintColor: Colors.transparent,
           shadowColor: Colors.transparent,
           elevation: 0,
@@ -406,39 +406,27 @@ abstract class LightTheme {
     filled: true,
     fillColor: AppColors.background,
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.all(
-        Radius.circular(WidgetConstants.borderRadiusMML),
-      ),
+      borderRadius: BorderRadius.all(Radius.circular(6.r)),
       borderSide: BorderSide.none,
     ),
     enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.all(
-        Radius.circular(WidgetConstants.borderRadiusMML),
-      ),
+      borderRadius: BorderRadius.all(Radius.circular(6.r)),
       borderSide: BorderSide.none,
     ),
     focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.all(
-        Radius.circular(WidgetConstants.borderRadiusMML),
-      ),
+      borderRadius: BorderRadius.all(Radius.circular(6.r)),
       borderSide: const BorderSide(color: AppColors.primary, width: 2),
     ),
     errorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.all(
-        Radius.circular(WidgetConstants.borderRadiusMML),
-      ),
+      borderRadius: BorderRadius.all(Radius.circular(6.r)),
       borderSide: const BorderSide(color: AppColors.error),
     ),
     focusedErrorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.all(
-        Radius.circular(WidgetConstants.borderRadiusMML),
-      ),
+      borderRadius: BorderRadius.all(Radius.circular(6.r)),
       borderSide: const BorderSide(color: AppColors.error, width: 2),
     ),
     disabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.all(
-        Radius.circular(WidgetConstants.borderRadiusMML),
-      ),
+      borderRadius: BorderRadius.all(Radius.circular(6.r)),
       borderSide: BorderSide.none,
     ),
     contentPadding: EdgeInsets.symmetric(
@@ -785,29 +773,31 @@ abstract class LightTheme {
   // ─── List ──────────────────────────────────────────────────────────────────
 
   static ListTileThemeData get _listTileTheme => ListTileThemeData(
+    contentPadding: .zero,
     tileColor: Colors.transparent,
-    selectedTileColor: AppColors.primaryContainer,
-    textColor: AppColors.onSurface,
-    selectedColor: AppColors.primaryDark,
-    iconColor: AppColors.neutral600,
-    titleTextStyle: getIt<AppTextStyles>().bodyLarge.copyWith(
-      color: AppColors.onSurface,
-      inherit: false,
-    ),
+    // selectedTileColor: AppColors.primaryContainer,
+    // textColor: AppColors.onSurface,
+    // selectedColor: AppColors.primaryDark,
+    // iconColor: AppColors.neutral600,
     subtitleTextStyle: getIt<AppTextStyles>().bodyMedium.copyWith(
       color: AppColors.neutral600,
       inherit: false,
     ),
     leadingAndTrailingTextStyle: getIt<AppTextStyles>().labelSmall.copyWith(
       color: AppColors.neutral600,
+      height: 1,
       inherit: false,
     ),
-    contentPadding: EdgeInsets.symmetric(horizontal: Gap.s16.w),
-    horizontalTitleGap: Gap.s16.w,
-    minVerticalPadding: Gap.s8.h,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(WidgetConstants.borderRadiusMML),
+    titleTextStyle: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
+      color: AppColors.onBackground,
+      height: 1,
     ),
+    // contentPadding: null,
+    // horizontalTitleGap: Gap.s16.w,
+    // minVerticalPadding: Gap.s8.h,
+    // shape: RoundedRectangleBorder(
+    //   borderRadius: BorderRadius.circular(WidgetConstants.borderRadiusMML),
+    // ),
   );
 
   static ExpansionTileThemeData get _expansionTileTheme =>

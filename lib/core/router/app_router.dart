@@ -6,18 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
 @RoutePage()
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text('Profile Page - Architecture marker')),
-    );
-  }
-}
-
-@RoutePage()
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({super.key});
 
@@ -62,6 +50,8 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: StoriesRoute.page),
     AutoRoute(page: DealDetailRoute.page),
     AutoRoute(page: StoryDetailRoute.page),
+    AutoRoute(page: LoginRoute.page),
+    AutoRoute(page: AuthRegistrationRoute.page),
 
     AutoRoute(
       path: '/main',
@@ -73,7 +63,15 @@ class AppRouter extends RootStackRouter {
         AutoRoute(path: 'registration', page: RegistrationRoute.page),
         AutoRoute(path: 'services', page: ServicesRoute.page),
         AutoRoute(path: 'flight_status', page: FlightStatusRoute.page),
-        AutoRoute(path: "profile", page: ProfileRoute.page),
+        AutoRoute(
+          path: 'profile',
+          page: ProfileRoute.page,
+          children: [
+            AutoRoute(path: '', page: ProfileShellRoute.page),
+            AutoRoute(path: 'personal_data', page: PersonalDataRoute.page),
+            AutoRoute(path: 'information', page: InformationRoute.page),
+          ],
+        ),
       ],
     ),
   ];

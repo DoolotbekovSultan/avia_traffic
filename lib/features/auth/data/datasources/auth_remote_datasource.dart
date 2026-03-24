@@ -10,7 +10,7 @@ class AuthRemoteDataSource implements IAuthRemoteDataSource {
   AuthRemoteDataSource(this._dio);
 
   @override
-  Future<UserModel> register({
+  Future<void> register({
     required String firstName,
     required String phone,
     required String password,
@@ -27,7 +27,26 @@ class AuthRemoteDataSource implements IAuthRemoteDataSource {
         if (email != null) 'email': email,
       },
     );
-    return UserModel.fromJson(response.data as Map<String, dynamic>);
+
+    final data = response.data as Map<String, dynamic>?;
+
+    if (data == null) {
+      throw DioException(
+        requestOptions: response.requestOptions,
+        type: DioExceptionType.badResponse,
+      );
+    }
+    if (data['response'] == false) {
+      throw DioException(
+        requestOptions: response.requestOptions,
+        response: Response(
+          requestOptions: response.requestOptions,
+          data: data,
+          statusCode: 422,
+        ),
+        type: DioExceptionType.badResponse,
+      );
+    }
   }
 
   @override

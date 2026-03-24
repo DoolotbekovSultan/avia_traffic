@@ -1,4 +1,3 @@
-import 'package:aviatraffic/core/constants/widget_constants.dart';
 import 'package:aviatraffic/core/theme/gap.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +24,7 @@ class AviaTrafficAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(right: WidgetConstants.mediumPadding),
+              padding: EdgeInsets.only(right: 16.w),
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Row(

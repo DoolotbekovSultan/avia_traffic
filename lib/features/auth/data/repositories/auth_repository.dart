@@ -13,21 +13,20 @@ class AuthRepository with DioExceptionHandler implements IAuthRepository {
   AuthRepository(this._remoteDataSource);
 
   @override
-  Future<Either<Failure, User>> register({
+  Future<Either<Failure, void>> register({
     required String firstName,
     required String phone,
     required String password,
     required String confirmPassword,
     String? email,
   }) => executeSafely(() async {
-    final model = await _remoteDataSource.register(
+    await _remoteDataSource.register(
       firstName: firstName,
       phone: phone,
       password: password,
       confirmPassword: confirmPassword,
       email: email,
     );
-    return model.toDomain();
   });
 
   @override

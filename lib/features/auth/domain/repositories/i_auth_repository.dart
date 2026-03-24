@@ -3,7 +3,7 @@ import 'package:aviatraffic/features/auth/domain/entities/user.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class IAuthRepository {
-  Future<Either<Failure, User>> register({
+  Future<Either<Failure, void>> register({
     required String firstName,
     required String phone,
     required String password,

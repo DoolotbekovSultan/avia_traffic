@@ -147,6 +147,45 @@ class AppLocalizationsKy extends AppLocalizations {
   String get infant_label => 'Ымыркай (2 жашка чейин)';
 
   @override
+  String get login => 'Кирүү';
+
+  @override
+  String get personal_data => 'Жеке маалыматтар';
+
+  @override
+  String get my_orders => 'Менин буйрутмаларым';
+
+  @override
+  String get information => 'Маалымат';
+
+  @override
+  String get full_name => 'Аты-жөнү';
+
+  @override
+  String get birth_date => 'Туулган күнү';
+
+  @override
+  String get gender => 'Жынысы';
+
+  @override
+  String get citizenship => 'Жарандыгы';
+
+  @override
+  String get passport_number => 'Паспорттун сериясы жана номери';
+
+  @override
+  String get expiry_date => 'Жарактуулук мөөнөтү';
+
+  @override
+  String get male => 'Эркек';
+
+  @override
+  String get female => 'Аял';
+
+  @override
+  String get kyrgyzstan => 'Кыргызстан';
+
+  @override
   String get january => 'январь';
 
   @override

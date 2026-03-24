@@ -1,5 +1,4 @@
 import 'dart:io' as io;
-
 import 'package:aviatraffic/core/constants/http_status_codes.dart';
 import 'package:aviatraffic/core/failure/failure.dart';
 import 'package:dartz/dartz.dart';
@@ -18,17 +17,12 @@ mixin DioExceptionHandler {
   }
 
   Failure _handleException(Object exception, StackTrace stackTrace) {
-    if (exception is Failure) {
-      return exception;
-    }
+    if (exception is Failure) return exception;
 
-    if (exception is DioException) {
-      return _handleDioException(exception);
-    }
+    if (exception is DioException) return _handleDioException(exception);
 
-    if (exception is io.SocketException) {
+    if (exception is io.SocketException)
       return const Failure.networkNoInternet();
-    }
 
     return Failure.unknown(message: exception.toString());
   }
@@ -41,8 +35,34 @@ mixin DioExceptionHandler {
         return const Failure.timeout();
 
       case DioExceptionType.badResponse:
+        final status = e.response?.statusCode ?? 0;
+        final data = e.response?.data;
+
+        if ((status == 400 || status == 422) &&
+            data is Map<String, dynamic> &&
+            data['error'] != null) {
+          try {
+            final errors = Map<String, List<String>>.from(
+              (data['error'] as Map).map(
+                (key, value) => MapEntry(
+                  key,
+                  List<String>.from(value is List ? value : [value.toString()]),
+                ),
+              ),
+            );
+            return Failure.clientValidationError(
+              message: data['message'] ?? 'Ошибка валидации',
+              errors: errors,
+            );
+          } catch (_) {
+            return Failure.clientBadRequest(
+              message: data['message'] ?? 'Ошибка',
+            );
+          }
+        }
+
         return _handleHttpStatus(
-          statusCode: e.response?.statusCode,
+          statusCode: status,
           message: e.response?.statusMessage ?? e.message,
         );
 
@@ -50,12 +70,13 @@ mixin DioExceptionHandler {
         return Failure.unknown(message: 'Request was cancelled');
 
       case DioExceptionType.unknown:
-        if (e.error is io.SocketException) {
+        if (e.error is io.SocketException)
           return const Failure.networkNoInternet();
-        }
         return Failure.network(message: e.message ?? 'Unknown network error');
+
       case DioExceptionType.connectionError:
         return const Failure.networkNoInternet();
+
       case DioExceptionType.badCertificate:
         return Failure.network(message: 'SSL certificate error');
     }
@@ -63,7 +84,6 @@ mixin DioExceptionHandler {
 
   Failure _handleHttpStatus({int? statusCode, String? message}) {
     final msg = message ?? 'HTTP error';
-
     switch (statusCode) {
       case HttpStatusCodes.badRequest:
         return Failure.clientBadRequest(message: msg);

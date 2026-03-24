@@ -44,7 +44,7 @@ class AppColors {
   static const Color neutral900 = Color(0xFF212020);
 
   static const Color background = Color(0xFFF8FAFD);
-  static const Color surface = Color(0xFFFFFFFF);
+  static const Color surface = Color(0xFFF2F6FC);
   static const Color surfaceVariant = Color(0xFFD1D8E4);
 
   static const Color onPrimary = Color(0xFFFFFFFF);

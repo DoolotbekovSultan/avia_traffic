@@ -105,106 +105,105 @@ class _DealCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
-    final l10n = context.l10n;
-
-    return Stack(
-      children: [
-        SizedBox(width: 344.w),
-        Container(
-          width: 342.w,
-          height: 144.h,
+    Positioned(
+      right: 0,
+      top: (144.h - 48.h) / 2,
+      child: GestureDetector(
+        onTap: () {
+          context.router.push(DealDetailRoute(deal: deal));
+        },
+        child: Container(
+          width: 48.w,
+          height: 48.h,
           decoration: BoxDecoration(
-            color: cs.surface,
-            borderRadius: BorderRadius.circular(16.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.06),
-                blurRadius: 12.r,
-                offset: const Offset(0, 4),
-              ),
-            ],
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [Color(0xFFF7C8C8), AppColors.primary],
+            ),
+            shape: BoxShape.circle,
           ),
-          child: Row(
-            children: [
-              SizedBox(
-                width: 204.w,
-                child: Padding(
-                  padding: EdgeInsets.all(16.r),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        deal.title,
-                        style: getIt<AppTextStyles>().titleMediumBold.copyWith(
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.onBackground,
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      InkWell(
-                        onTap: () => onClickBuyTickerBtn(deal),
-                        child: Text(
-                          l10n.buy_ticket,
-                          style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
-                            color: AppColors.onBackground,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 138.w,
-                height: double.infinity,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(16.r),
-                    bottomRight: Radius.circular(16.r),
-                  ),
-                  child: Image.network(
-                    deal.imageUrl,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, _, _) =>
-                        Container(color: AppColors.neutral200),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        Positioned(
-          right: 0,
-          top: (144.h - 48.h) / 2,
-          child: GestureDetector(
-            onTap: () {
-              context.router.push(DealDetailRoute(deal: deal));
-            },
-            child: Container(
-              width: 48.w,
-              height: 48.h,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [Color(0xFFF7C8C8), AppColors.primary],
-                ),
-                shape: BoxShape.circle,
-              ),
-              child: Center(
-                child: SvgPicture.asset(
-                  'assets/images/messange.svg',
-                  height: 24.h,
-                  width: 24.w,
-                ),
-              ),
+          child: Center(
+            child: SvgPicture.asset(
+              'assets/images/messange.svg',
+              height: 24.h,
+              width: 24.w,
             ),
           ),
         ),
-      ],
+      ),
+    );
+    final l10n = context.l10n;
+
+    return GestureDetector(
+      onTap: () {
+        context.router.push(DealDetailRoute(deal: deal));
+      },
+      child: Container(
+        width: 342.w,
+        height: 144.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16.r),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.06),
+              blurRadius: 12.r,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 204.w,
+              child: Padding(
+                padding: EdgeInsets.all(16.r),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      deal.title,
+                      style: getIt<AppTextStyles>().titleMediumBold.copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.onBackground,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    InkWell(
+                      onTap: () => onClickBuyTickerBtn(deal),
+                      child: Text(
+                        l10n.buy_ticket,
+                        style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
+                          color: AppColors.onBackground,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 138.w,
+              height: double.infinity,
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(16.r),
+                  bottomRight: Radius.circular(16.r),
+                ),
+                child: Image.network(
+                  deal.imageUrl,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, _, _) =>
+                      Container(color: AppColors.neutral200),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

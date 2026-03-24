@@ -38,6 +38,7 @@ class MainPage extends StatelessWidget {
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
+          backgroundColor: Colors.white,
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
           items: [

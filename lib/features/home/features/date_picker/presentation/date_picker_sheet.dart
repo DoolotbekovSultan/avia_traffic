@@ -1,4 +1,3 @@
-import 'package:aviatraffic/core/theme/app_colors.dart';
 import 'package:aviatraffic/core/theme/gap.dart';
 import 'package:aviatraffic/features/home/features/date_picker/presentation/bloc/date_picker_bloc.dart';
 import 'package:aviatraffic/features/home/features/date_picker/presentation/widgets/date_picker_bottom_button.dart';
@@ -64,7 +63,7 @@ class _DatePickerSheetContent extends StatelessWidget {
           builder: (context, scrollController) {
             return Container(
               decoration: BoxDecoration(
-                color: AppColors.surface,
+                color: Colors.white,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
               ),
               padding: .symmetric(horizontal: 16.w),

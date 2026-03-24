@@ -147,6 +147,45 @@ class AppLocalizationsEn extends AppLocalizations {
   String get infant_label => 'Infant (under 2)';
 
   @override
+  String get login => 'Login';
+
+  @override
+  String get personal_data => 'Personal data';
+
+  @override
+  String get my_orders => 'My orders';
+
+  @override
+  String get information => 'Information';
+
+  @override
+  String get full_name => 'Full name';
+
+  @override
+  String get birth_date => 'Birth date';
+
+  @override
+  String get gender => 'Gender';
+
+  @override
+  String get citizenship => 'Citizenship';
+
+  @override
+  String get passport_number => 'Passport number';
+
+  @override
+  String get expiry_date => 'Expiry date';
+
+  @override
+  String get male => 'Male';
+
+  @override
+  String get female => 'Female';
+
+  @override
+  String get kyrgyzstan => 'Kyrgyzstan';
+
+  @override
   String get january => 'January';
 
   @override

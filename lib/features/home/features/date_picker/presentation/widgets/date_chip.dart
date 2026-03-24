@@ -27,7 +27,7 @@ class DateChip extends StatelessWidget {
     return Container(
       height: 48.h,
       decoration: BoxDecoration(
-        color: AppColors.surface,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(6.r),
         boxShadow: [
           BoxShadow(

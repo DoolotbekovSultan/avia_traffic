@@ -50,7 +50,7 @@ class MonthCalendar extends StatelessWidget {
       builder: (context, snapshot) {
         return Container(
           decoration: BoxDecoration(
-            color: AppColors.surface,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(6.r),
             boxShadow: [
               BoxShadow(

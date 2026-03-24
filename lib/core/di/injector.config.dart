@@ -47,6 +47,8 @@ import 'package:aviatraffic/features/auth/domain/usecases/register_usecase.dart'
     as _i144;
 import 'package:aviatraffic/features/auth/domain/usecases/resend_email_usecase.dart'
     as _i324;
+import 'package:aviatraffic/features/auth/presentation/bloc/auth/auth_bloc.dart'
+    as _i62;
 import 'package:aviatraffic/features/home/features/city_picker/data/datasources/city_picker_remote_datasource.dart'
     as _i460;
 import 'package:aviatraffic/features/home/features/city_picker/data/datasources/i_city_picker_remote_datasource.dart'
@@ -236,6 +238,16 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i785.OnboardingGuard>(
       () => _i785.OnboardingGuard(gh<_i733.IsOnboardingSeenUseCase>()),
+    );
+    gh.factory<_i62.AuthBloc>(
+      () => _i62.AuthBloc(
+        gh<_i148.LoginUseCase>(),
+        gh<_i144.RegisterUseCase>(),
+        gh<_i1036.LogoutUseCase>(),
+        gh<_i1059.ForgotPasswordUseCase>(),
+        gh<_i244.ModifyPasswordUseCase>(),
+        gh<_i461.ConfirmCodeUseCase>(),
+      ),
     );
     gh.lazySingleton<_i656.GetStoriesUsecase>(
       () => _i656.GetStoriesUsecase(gh<_i520.IStoriesRepository>()),

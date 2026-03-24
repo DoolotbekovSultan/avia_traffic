@@ -203,7 +203,7 @@ class _PickerShell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.surface,
+        color: Colors.white,
         borderRadius: .vertical(top: .circular(28.r)),
       ),
       padding: .symmetric(horizontal: 16.w),

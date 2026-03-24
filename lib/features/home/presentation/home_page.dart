@@ -62,6 +62,26 @@ class _HomePageState extends State<HomePage> {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: const AviaTrafficAppBar(),
+          floatingActionButtonLocation: .endFloat,
+          floatingActionButton: Container(
+            width: 48.w,
+            height: 48.h,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Color(0xFFF7C8C8), AppColors.primary],
+              ),
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: SvgPicture.asset(
+                'assets/images/messange.svg',
+                height: 24.h,
+                width: 24.w,
+              ),
+            ),
+          ),
           body: SafeArea(
             bottom: false,
             child: LayoutBuilder(
@@ -103,7 +123,7 @@ class _HomePageState extends State<HomePage> {
     final cs = Theme.of(context).colorScheme;
 
     return Container(
-      color: cs.surfaceContainerLow,
+      color: cs.surface,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -221,38 +241,36 @@ class _SearchFormState extends State<_SearchForm> {
     required String value,
     required VoidCallback onTap,
   }) {
-    final cs = Theme.of(context).colorScheme;
     final textStyles = getIt<AppTextStyles>();
-    return Container(
-      height: 48.h,
-      padding: EdgeInsets.only(left: 16.w, right: 12.w),
-      decoration: BoxDecoration(
-        color: cs.surface,
-        borderRadius: BorderRadius.circular(6.r),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-              value.isEmpty ? label : value,
-              style: textStyles.bodyMediumSemiBold.copyWith(
-                height: 16 / 13,
-                color: value.isEmpty
-                    ? AppColors.neutral500
-                    : AppColors.onBackground,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 48.h,
+        padding: EdgeInsets.only(left: 16.w, right: 12.w),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(6.r),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                value.isEmpty ? label : value,
+                style: textStyles.bodyMediumSemiBold.copyWith(
+                  height: 16 / 13,
+                  color: value.isEmpty
+                      ? AppColors.neutral500
+                      : AppColors.onBackground,
+                ),
               ),
             ),
-          ),
-          if (label == context.l10n.when)
-            GestureDetector(
-              onTap: onTap,
-              child: SvgPicture.asset(
-                'assets/images/calendar.svg',
-                height: 24.h,
-                width: 24.w,
-              ),
+            SvgPicture.asset(
+              'assets/images/calendar.svg',
+              height: 24.h,
+              width: 24.w,
             ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -262,7 +280,6 @@ class _SearchFormState extends State<_SearchForm> {
     required VoidCallback onTap,
     required int count,
   }) {
-    final cs = Theme.of(context).colorScheme;
     final textStyles = getIt<AppTextStyles>();
     final hintTextStyle = textStyles.bodyMediumSemiBold.copyWith(
       height: 16 / 13,
@@ -275,7 +292,7 @@ class _SearchFormState extends State<_SearchForm> {
         height: 48.h,
         padding: .symmetric(horizontal: 16.w),
         decoration: BoxDecoration(
-          color: cs.surface,
+          color: Colors.white,
           borderRadius: .circular(6.r),
         ),
         child: Row(
@@ -316,8 +333,8 @@ class _SearchFormState extends State<_SearchForm> {
   }
 
   Widget _currencyField() {
-    final cs = Theme.of(context).colorScheme;
     final textStyles = getIt<AppTextStyles>();
+
     final smallHintStyle = textStyles.caption.copyWith(
       height: 16 / 13,
       color: AppColors.neutral500,
@@ -334,7 +351,7 @@ class _SearchFormState extends State<_SearchForm> {
         height: 48.h,
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         decoration: BoxDecoration(
-          color: cs.surface,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(6.r),
         ),
         child: Row(

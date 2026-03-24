@@ -376,6 +376,84 @@ abstract class AppLocalizations {
   /// **'Infant (under 2)'**
   String get infant_label;
 
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @personal_data.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal data'**
+  String get personal_data;
+
+  /// No description provided for @my_orders.
+  ///
+  /// In en, this message translates to:
+  /// **'My orders'**
+  String get my_orders;
+
+  /// No description provided for @information.
+  ///
+  /// In en, this message translates to:
+  /// **'Information'**
+  String get information;
+
+  /// No description provided for @full_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name'**
+  String get full_name;
+
+  /// No description provided for @birth_date.
+  ///
+  /// In en, this message translates to:
+  /// **'Birth date'**
+  String get birth_date;
+
+  /// No description provided for @gender.
+  ///
+  /// In en, this message translates to:
+  /// **'Gender'**
+  String get gender;
+
+  /// No description provided for @citizenship.
+  ///
+  /// In en, this message translates to:
+  /// **'Citizenship'**
+  String get citizenship;
+
+  /// No description provided for @passport_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Passport number'**
+  String get passport_number;
+
+  /// No description provided for @expiry_date.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiry date'**
+  String get expiry_date;
+
+  /// No description provided for @male.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get male;
+
+  /// No description provided for @female.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get female;
+
+  /// No description provided for @kyrgyzstan.
+  ///
+  /// In en, this message translates to:
+  /// **'Kyrgyzstan'**
+  String get kyrgyzstan;
+
   /// No description provided for @january.
   ///
   /// In en, this message translates to:

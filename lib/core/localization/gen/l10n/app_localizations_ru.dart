@@ -147,6 +147,45 @@ class AppLocalizationsRu extends AppLocalizations {
   String get infant_label => 'Младенец  (до 2)';
 
   @override
+  String get login => 'Войти';
+
+  @override
+  String get personal_data => 'Личные данные';
+
+  @override
+  String get my_orders => 'Мои заказы';
+
+  @override
+  String get information => 'Информация';
+
+  @override
+  String get full_name => 'Фамилия и имя';
+
+  @override
+  String get birth_date => 'Дата рождения';
+
+  @override
+  String get gender => 'Пол';
+
+  @override
+  String get citizenship => 'Гражданство';
+
+  @override
+  String get passport_number => 'Серия и номер паспорта';
+
+  @override
+  String get expiry_date => 'Срок действия';
+
+  @override
+  String get male => 'Мужской';
+
+  @override
+  String get female => 'Женский';
+
+  @override
+  String get kyrgyzstan => 'Кыргызстан';
+
+  @override
   String get january => 'января';
 
   @override
