@@ -33,7 +33,7 @@ class CurrencyBottomSheet extends StatelessWidget {
             borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
           ),
           child: Padding(
-            padding: .symmetric(horizontal: 16.w),
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -57,7 +57,7 @@ class CurrencyBottomSheet extends StatelessWidget {
                           Navigator.pop(context);
                         },
                         child: Padding(
-                          padding: .only(bottom: 40.h),
+                          padding: EdgeInsets.only(bottom: 40.h),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

@@ -62,7 +62,7 @@ class MonthCalendar extends StatelessWidget {
             ],
           ),
           child: Padding(
-            padding: .only(top: 20),
+            padding: EdgeInsets.only(top: 20),
             child: Column(
               children: [
                 Text(
@@ -79,7 +79,7 @@ class MonthCalendar extends StatelessWidget {
                     return Expanded(
                       child: Center(
                         child: Text(
-                          day,
+                          day.toString(),
                           style: textStyles.bodyMediumBold.copyWith(
                             color: AppColors.neutral500,
                           ),
@@ -138,8 +138,7 @@ class MonthCalendar extends StatelessWidget {
         returnDate != null && DateUtils.isSameDay(date, returnDate!);
     final isSelected = isDepart || isReturn;
 
-    final isInRange =
-        departDate != null &&
+    final isInRange = departDate != null &&
         returnDate != null &&
         date.isAfter(departDate!) &&
         date.isBefore(returnDate!);
@@ -203,8 +202,8 @@ class MonthCalendar extends StatelessWidget {
                       color: isSelected
                           ? Colors.white
                           : cell.isCurrentMonth
-                          ? AppColors.onBackground
-                          : AppColors.neutral500,
+                              ? AppColors.onBackground
+                              : AppColors.neutral500,
                     ),
                   ),
                 ),

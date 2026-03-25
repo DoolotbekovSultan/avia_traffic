@@ -12,8 +12,7 @@ part of 'modify_password_usecase.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ModifyPasswordParams {
@@ -29,19 +28,16 @@ mixin _$ModifyPasswordParams {
 
 /// @nodoc
 abstract class $ModifyPasswordParamsCopyWith<$Res> {
-  factory $ModifyPasswordParamsCopyWith(
-    ModifyPasswordParams value,
-    $Res Function(ModifyPasswordParams) then,
-  ) = _$ModifyPasswordParamsCopyWithImpl<$Res, ModifyPasswordParams>;
+  factory $ModifyPasswordParamsCopyWith(ModifyPasswordParams value,
+          $Res Function(ModifyPasswordParams) then) =
+      _$ModifyPasswordParamsCopyWithImpl<$Res, ModifyPasswordParams>;
   @useResult
   $Res call({String password, String confirmPassword});
 }
 
 /// @nodoc
-class _$ModifyPasswordParamsCopyWithImpl<
-  $Res,
-  $Val extends ModifyPasswordParams
->
+class _$ModifyPasswordParamsCopyWithImpl<$Res,
+        $Val extends ModifyPasswordParams>
     implements $ModifyPasswordParamsCopyWith<$Res> {
   _$ModifyPasswordParamsCopyWithImpl(this._value, this._then);
 
@@ -54,30 +50,29 @@ class _$ModifyPasswordParamsCopyWithImpl<
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? password = null, Object? confirmPassword = null}) {
-    return _then(
-      _value.copyWith(
-            password: null == password
-                ? _value.password
-                : password // ignore: cast_nullable_to_non_nullable
-                      as String,
-            confirmPassword: null == confirmPassword
-                ? _value.confirmPassword
-                : confirmPassword // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? password = null,
+    Object? confirmPassword = null,
+  }) {
+    return _then(_value.copyWith(
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      confirmPassword: null == confirmPassword
+          ? _value.confirmPassword
+          : confirmPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$ModifyPasswordParamsImplCopyWith<$Res>
     implements $ModifyPasswordParamsCopyWith<$Res> {
-  factory _$$ModifyPasswordParamsImplCopyWith(
-    _$ModifyPasswordParamsImpl value,
-    $Res Function(_$ModifyPasswordParamsImpl) then,
-  ) = __$$ModifyPasswordParamsImplCopyWithImpl<$Res>;
+  factory _$$ModifyPasswordParamsImplCopyWith(_$ModifyPasswordParamsImpl value,
+          $Res Function(_$ModifyPasswordParamsImpl) then) =
+      __$$ModifyPasswordParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String password, String confirmPassword});
@@ -87,38 +82,36 @@ abstract class _$$ModifyPasswordParamsImplCopyWith<$Res>
 class __$$ModifyPasswordParamsImplCopyWithImpl<$Res>
     extends _$ModifyPasswordParamsCopyWithImpl<$Res, _$ModifyPasswordParamsImpl>
     implements _$$ModifyPasswordParamsImplCopyWith<$Res> {
-  __$$ModifyPasswordParamsImplCopyWithImpl(
-    _$ModifyPasswordParamsImpl _value,
-    $Res Function(_$ModifyPasswordParamsImpl) _then,
-  ) : super(_value, _then);
+  __$$ModifyPasswordParamsImplCopyWithImpl(_$ModifyPasswordParamsImpl _value,
+      $Res Function(_$ModifyPasswordParamsImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ModifyPasswordParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? password = null, Object? confirmPassword = null}) {
-    return _then(
-      _$ModifyPasswordParamsImpl(
-        password: null == password
-            ? _value.password
-            : password // ignore: cast_nullable_to_non_nullable
-                  as String,
-        confirmPassword: null == confirmPassword
-            ? _value.confirmPassword
-            : confirmPassword // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? password = null,
+    Object? confirmPassword = null,
+  }) {
+    return _then(_$ModifyPasswordParamsImpl(
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      confirmPassword: null == confirmPassword
+          ? _value.confirmPassword
+          : confirmPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$ModifyPasswordParamsImpl implements _ModifyPasswordParams {
-  const _$ModifyPasswordParamsImpl({
-    required this.password,
-    required this.confirmPassword,
-  });
+  const _$ModifyPasswordParamsImpl(
+      {required this.password, required this.confirmPassword});
 
   @override
   final String password;
@@ -150,18 +143,15 @@ class _$ModifyPasswordParamsImpl implements _ModifyPasswordParams {
   @override
   @pragma('vm:prefer-inline')
   _$$ModifyPasswordParamsImplCopyWith<_$ModifyPasswordParamsImpl>
-  get copyWith =>
-      __$$ModifyPasswordParamsImplCopyWithImpl<_$ModifyPasswordParamsImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith =>
+          __$$ModifyPasswordParamsImplCopyWithImpl<_$ModifyPasswordParamsImpl>(
+              this, _$identity);
 }
 
 abstract class _ModifyPasswordParams implements ModifyPasswordParams {
-  const factory _ModifyPasswordParams({
-    required final String password,
-    required final String confirmPassword,
-  }) = _$ModifyPasswordParamsImpl;
+  const factory _ModifyPasswordParams(
+      {required final String password,
+      required final String confirmPassword}) = _$ModifyPasswordParamsImpl;
 
   @override
   String get password;
@@ -173,5 +163,5 @@ abstract class _ModifyPasswordParams implements ModifyPasswordParams {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ModifyPasswordParamsImplCopyWith<_$ModifyPasswordParamsImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,8 +12,7 @@ part of 'airport_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AirportModel _$AirportModelFromJson(Map<String, dynamic> json) {
   return _AirportModel.fromJson(json);
@@ -39,9 +38,8 @@ mixin _$AirportModel {
 /// @nodoc
 abstract class $AirportModelCopyWith<$Res> {
   factory $AirportModelCopyWith(
-    AirportModel value,
-    $Res Function(AirportModel) then,
-  ) = _$AirportModelCopyWithImpl<$Res, AirportModel>;
+          AirportModel value, $Res Function(AirportModel) then) =
+      _$AirportModelCopyWithImpl<$Res, AirportModel>;
   @useResult
   $Res call({int id, String name, @JsonKey(name: 'code_name') String codeName});
 }
@@ -60,24 +58,25 @@ class _$AirportModelCopyWithImpl<$Res, $Val extends AirportModel>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? name = null, Object? codeName = null}) {
-    return _then(
-      _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as int,
-            name: null == name
-                ? _value.name
-                : name // ignore: cast_nullable_to_non_nullable
-                      as String,
-            codeName: null == codeName
-                ? _value.codeName
-                : codeName // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? codeName = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeName: null == codeName
+          ? _value.codeName
+          : codeName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
   }
 }
 
@@ -85,9 +84,8 @@ class _$AirportModelCopyWithImpl<$Res, $Val extends AirportModel>
 abstract class _$$AirportModelImplCopyWith<$Res>
     implements $AirportModelCopyWith<$Res> {
   factory _$$AirportModelImplCopyWith(
-    _$AirportModelImpl value,
-    $Res Function(_$AirportModelImpl) then,
-  ) = __$$AirportModelImplCopyWithImpl<$Res>;
+          _$AirportModelImpl value, $Res Function(_$AirportModelImpl) then) =
+      __$$AirportModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, String name, @JsonKey(name: 'code_name') String codeName});
@@ -98,42 +96,43 @@ class __$$AirportModelImplCopyWithImpl<$Res>
     extends _$AirportModelCopyWithImpl<$Res, _$AirportModelImpl>
     implements _$$AirportModelImplCopyWith<$Res> {
   __$$AirportModelImplCopyWithImpl(
-    _$AirportModelImpl _value,
-    $Res Function(_$AirportModelImpl) _then,
-  ) : super(_value, _then);
+      _$AirportModelImpl _value, $Res Function(_$AirportModelImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AirportModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? name = null, Object? codeName = null}) {
-    return _then(
-      _$AirportModelImpl(
-        id: null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as int,
-        name: null == name
-            ? _value.name
-            : name // ignore: cast_nullable_to_non_nullable
-                  as String,
-        codeName: null == codeName
-            ? _value.codeName
-            : codeName // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? codeName = null,
+  }) {
+    return _then(_$AirportModelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeName: null == codeName
+          ? _value.codeName
+          : codeName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$AirportModelImpl extends _AirportModel {
-  const _$AirportModelImpl({
-    required this.id,
-    required this.name,
-    @JsonKey(name: 'code_name') required this.codeName,
-  }) : super._();
+  const _$AirportModelImpl(
+      {required this.id,
+      required this.name,
+      @JsonKey(name: 'code_name') required this.codeName})
+      : super._();
 
   factory _$AirportModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AirportModelImplFromJson(json);
@@ -176,16 +175,18 @@ class _$AirportModelImpl extends _AirportModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AirportModelImplToJson(this);
+    return _$$AirportModelImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _AirportModel extends AirportModel {
-  const factory _AirportModel({
-    required final int id,
-    required final String name,
-    @JsonKey(name: 'code_name') required final String codeName,
-  }) = _$AirportModelImpl;
+  const factory _AirportModel(
+          {required final int id,
+          required final String name,
+          @JsonKey(name: 'code_name') required final String codeName}) =
+      _$AirportModelImpl;
   const _AirportModel._() : super._();
 
   factory _AirportModel.fromJson(Map<String, dynamic> json) =

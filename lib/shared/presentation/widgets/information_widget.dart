@@ -24,17 +24,17 @@ class InformationWidget extends StatelessWidget {
         width: 343.w,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: .circular(6.r),
+          borderRadius: BorderRadius.circular(6.r),
         ),
-        padding: .symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Row(
           children: [
             Text(
               text,
               style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                color: AppColors.onBackground,
-                height: 1,
-              ),
+                    color: AppColors.onBackground,
+                    height: 1,
+                  ),
             ),
             Spacer(),
             SvgPicture.asset(

@@ -12,8 +12,7 @@ part of 'city_list_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CityListEvent {
@@ -21,42 +20,47 @@ mixin _$CityListEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() getCities,
     required TResult Function() getCountries,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getCities,
     TResult? Function()? getCountries,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getCities,
     TResult Function()? getCountries,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetCities value) getCities,
     required TResult Function(_GetCountries value) getCountries,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetCities value)? getCities,
     TResult? Function(_GetCountries value)? getCountries,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetCities value)? getCities,
     TResult Function(_GetCountries value)? getCountries,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CityListEventCopyWith<$Res> {
   factory $CityListEventCopyWith(
-    CityListEvent value,
-    $Res Function(CityListEvent) then,
-  ) = _$CityListEventCopyWithImpl<$Res, CityListEvent>;
+          CityListEvent value, $Res Function(CityListEvent) then) =
+      _$CityListEventCopyWithImpl<$Res, CityListEvent>;
 }
 
 /// @nodoc
@@ -76,9 +80,8 @@ class _$CityListEventCopyWithImpl<$Res, $Val extends CityListEvent>
 /// @nodoc
 abstract class _$$GetCitiesImplCopyWith<$Res> {
   factory _$$GetCitiesImplCopyWith(
-    _$GetCitiesImpl value,
-    $Res Function(_$GetCitiesImpl) then,
-  ) = __$$GetCitiesImplCopyWithImpl<$Res>;
+          _$GetCitiesImpl value, $Res Function(_$GetCitiesImpl) then) =
+      __$$GetCitiesImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -86,9 +89,8 @@ class __$$GetCitiesImplCopyWithImpl<$Res>
     extends _$CityListEventCopyWithImpl<$Res, _$GetCitiesImpl>
     implements _$$GetCitiesImplCopyWith<$Res> {
   __$$GetCitiesImplCopyWithImpl(
-    _$GetCitiesImpl _value,
-    $Res Function(_$GetCitiesImpl) _then,
-  ) : super(_value, _then);
+      _$GetCitiesImpl _value, $Res Function(_$GetCitiesImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityListEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -183,9 +185,8 @@ abstract class _GetCities implements CityListEvent {
 /// @nodoc
 abstract class _$$GetCountriesImplCopyWith<$Res> {
   factory _$$GetCountriesImplCopyWith(
-    _$GetCountriesImpl value,
-    $Res Function(_$GetCountriesImpl) then,
-  ) = __$$GetCountriesImplCopyWithImpl<$Res>;
+          _$GetCountriesImpl value, $Res Function(_$GetCountriesImpl) then) =
+      __$$GetCountriesImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -193,9 +194,8 @@ class __$$GetCountriesImplCopyWithImpl<$Res>
     extends _$CityListEventCopyWithImpl<$Res, _$GetCountriesImpl>
     implements _$$GetCountriesImplCopyWith<$Res> {
   __$$GetCountriesImplCopyWithImpl(
-    _$GetCountriesImpl _value,
-    $Res Function(_$GetCountriesImpl) _then,
-  ) : super(_value, _then);
+      _$GetCountriesImpl _value, $Res Function(_$GetCountriesImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityListEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -294,16 +294,18 @@ mixin _$CityListState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<City> cities, List<Country> countries)
-    loaded,
+        loaded,
     required TResult Function(Failure failure) failure,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<City> cities, List<Country> countries)? loaded,
     TResult? Function(Failure failure)? failure,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -311,21 +313,24 @@ mixin _$CityListState {
     TResult Function(List<City> cities, List<Country> countries)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Failure value) failure,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Failure value)? failure,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -333,15 +338,15 @@ mixin _$CityListState {
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CityListStateCopyWith<$Res> {
   factory $CityListStateCopyWith(
-    CityListState value,
-    $Res Function(CityListState) then,
-  ) = _$CityListStateCopyWithImpl<$Res, CityListState>;
+          CityListState value, $Res Function(CityListState) then) =
+      _$CityListStateCopyWithImpl<$Res, CityListState>;
 }
 
 /// @nodoc
@@ -361,9 +366,8 @@ class _$CityListStateCopyWithImpl<$Res, $Val extends CityListState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -371,9 +375,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$CityListStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityListState
   /// with the given fields replaced by the non-null parameter values.
@@ -404,7 +407,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<City> cities, List<Country> countries)
-    loaded,
+        loaded,
     required TResult Function(Failure failure) failure,
   }) {
     return initial();
@@ -481,9 +484,8 @@ abstract class _Initial implements CityListState {
 /// @nodoc
 abstract class _$$LoadingImplCopyWith<$Res> {
   factory _$$LoadingImplCopyWith(
-    _$LoadingImpl value,
-    $Res Function(_$LoadingImpl) then,
-  ) = __$$LoadingImplCopyWithImpl<$Res>;
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -491,9 +493,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
     extends _$CityListStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
-    _$LoadingImpl _value,
-    $Res Function(_$LoadingImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityListState
   /// with the given fields replaced by the non-null parameter values.
@@ -524,7 +525,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<City> cities, List<Country> countries)
-    loaded,
+        loaded,
     required TResult Function(Failure failure) failure,
   }) {
     return loading();
@@ -601,9 +602,8 @@ abstract class _Loading implements CityListState {
 /// @nodoc
 abstract class _$$LoadedImplCopyWith<$Res> {
   factory _$$LoadedImplCopyWith(
-    _$LoadedImpl value,
-    $Res Function(_$LoadedImpl) then,
-  ) = __$$LoadedImplCopyWithImpl<$Res>;
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<City> cities, List<Country> countries});
 }
@@ -613,38 +613,38 @@ class __$$LoadedImplCopyWithImpl<$Res>
     extends _$CityListStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
-    _$LoadedImpl _value,
-    $Res Function(_$LoadedImpl) _then,
-  ) : super(_value, _then);
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityListState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? cities = null, Object? countries = null}) {
-    return _then(
-      _$LoadedImpl(
-        cities: null == cities
-            ? _value._cities
-            : cities // ignore: cast_nullable_to_non_nullable
-                  as List<City>,
-        countries: null == countries
-            ? _value._countries
-            : countries // ignore: cast_nullable_to_non_nullable
-                  as List<Country>,
-      ),
-    );
+  $Res call({
+    Object? cities = null,
+    Object? countries = null,
+  }) {
+    return _then(_$LoadedImpl(
+      cities: null == cities
+          ? _value._cities
+          : cities // ignore: cast_nullable_to_non_nullable
+              as List<City>,
+      countries: null == countries
+          ? _value._countries
+          : countries // ignore: cast_nullable_to_non_nullable
+              as List<Country>,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl({
-    final List<City> cities = const [],
-    final List<Country> countries = const [],
-  }) : _cities = cities,
-       _countries = countries;
+  const _$LoadedImpl(
+      {final List<City> cities = const [],
+      final List<Country> countries = const []})
+      : _cities = cities,
+        _countries = countries;
 
   final List<City> _cities;
   @override
@@ -675,18 +675,15 @@ class _$LoadedImpl implements _Loaded {
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
             const DeepCollectionEquality().equals(other._cities, _cities) &&
-            const DeepCollectionEquality().equals(
-              other._countries,
-              _countries,
-            ));
+            const DeepCollectionEquality()
+                .equals(other._countries, _countries));
   }
 
   @override
   int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(_cities),
-    const DeepCollectionEquality().hash(_countries),
-  );
+      runtimeType,
+      const DeepCollectionEquality().hash(_cities),
+      const DeepCollectionEquality().hash(_countries));
 
   /// Create a copy of CityListState
   /// with the given fields replaced by the non-null parameter values.
@@ -702,7 +699,7 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<City> cities, List<Country> countries)
-    loaded,
+        loaded,
     required TResult Function(Failure failure) failure,
   }) {
     return loaded(cities, countries);
@@ -773,10 +770,8 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements CityListState {
-  const factory _Loaded({
-    final List<City> cities,
-    final List<Country> countries,
-  }) = _$LoadedImpl;
+  const factory _Loaded(
+      {final List<City> cities, final List<Country> countries}) = _$LoadedImpl;
 
   List<City> get cities;
   List<Country> get countries;
@@ -791,9 +786,8 @@ abstract class _Loaded implements CityListState {
 /// @nodoc
 abstract class _$$FailureImplCopyWith<$Res> {
   factory _$$FailureImplCopyWith(
-    _$FailureImpl value,
-    $Res Function(_$FailureImpl) then,
-  ) = __$$FailureImplCopyWithImpl<$Res>;
+          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+      __$$FailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure failure});
 
@@ -805,23 +799,22 @@ class __$$FailureImplCopyWithImpl<$Res>
     extends _$CityListStateCopyWithImpl<$Res, _$FailureImpl>
     implements _$$FailureImplCopyWith<$Res> {
   __$$FailureImplCopyWithImpl(
-    _$FailureImpl _value,
-    $Res Function(_$FailureImpl) _then,
-  ) : super(_value, _then);
+      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityListState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? failure = null}) {
-    return _then(
-      _$FailureImpl(
-        failure: null == failure
-            ? _value.failure
-            : failure // ignore: cast_nullable_to_non_nullable
-                  as Failure,
-      ),
-    );
+  $Res call({
+    Object? failure = null,
+  }) {
+    return _then(_$FailureImpl(
+      failure: null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure,
+    ));
   }
 
   /// Create a copy of CityListState
@@ -873,7 +866,7 @@ class _$FailureImpl implements _Failure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<City> cities, List<Country> countries)
-    loaded,
+        loaded,
     required TResult Function(Failure failure) failure,
   }) {
     return failure(this.failure);

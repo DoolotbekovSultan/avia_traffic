@@ -12,8 +12,7 @@ part of 'login_usecase.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LoginParams {
@@ -30,9 +29,8 @@ mixin _$LoginParams {
 /// @nodoc
 abstract class $LoginParamsCopyWith<$Res> {
   factory $LoginParamsCopyWith(
-    LoginParams value,
-    $Res Function(LoginParams) then,
-  ) = _$LoginParamsCopyWithImpl<$Res, LoginParams>;
+          LoginParams value, $Res Function(LoginParams) then) =
+      _$LoginParamsCopyWithImpl<$Res, LoginParams>;
   @useResult
   $Res call({String phone, String password});
 }
@@ -51,20 +49,20 @@ class _$LoginParamsCopyWithImpl<$Res, $Val extends LoginParams>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? phone = null, Object? password = null}) {
-    return _then(
-      _value.copyWith(
-            phone: null == phone
-                ? _value.phone
-                : phone // ignore: cast_nullable_to_non_nullable
-                      as String,
-            password: null == password
-                ? _value.password
-                : password // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? phone = null,
+    Object? password = null,
+  }) {
+    return _then(_value.copyWith(
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
   }
 }
 
@@ -72,9 +70,8 @@ class _$LoginParamsCopyWithImpl<$Res, $Val extends LoginParams>
 abstract class _$$LoginParamsImplCopyWith<$Res>
     implements $LoginParamsCopyWith<$Res> {
   factory _$$LoginParamsImplCopyWith(
-    _$LoginParamsImpl value,
-    $Res Function(_$LoginParamsImpl) then,
-  ) = __$$LoginParamsImplCopyWithImpl<$Res>;
+          _$LoginParamsImpl value, $Res Function(_$LoginParamsImpl) then) =
+      __$$LoginParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String phone, String password});
@@ -85,27 +82,27 @@ class __$$LoginParamsImplCopyWithImpl<$Res>
     extends _$LoginParamsCopyWithImpl<$Res, _$LoginParamsImpl>
     implements _$$LoginParamsImplCopyWith<$Res> {
   __$$LoginParamsImplCopyWithImpl(
-    _$LoginParamsImpl _value,
-    $Res Function(_$LoginParamsImpl) _then,
-  ) : super(_value, _then);
+      _$LoginParamsImpl _value, $Res Function(_$LoginParamsImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LoginParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? phone = null, Object? password = null}) {
-    return _then(
-      _$LoginParamsImpl(
-        phone: null == phone
-            ? _value.phone
-            : phone // ignore: cast_nullable_to_non_nullable
-                  as String,
-        password: null == password
-            ? _value.password
-            : password // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? phone = null,
+    Object? password = null,
+  }) {
+    return _then(_$LoginParamsImpl(
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -147,10 +144,9 @@ class _$LoginParamsImpl implements _LoginParams {
 }
 
 abstract class _LoginParams implements LoginParams {
-  const factory _LoginParams({
-    required final String phone,
-    required final String password,
-  }) = _$LoginParamsImpl;
+  const factory _LoginParams(
+      {required final String phone,
+      required final String password}) = _$LoginParamsImpl;
 
   @override
   String get phone;

@@ -12,8 +12,7 @@ part of 'calendar_day.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CalendarDay {
@@ -31,9 +30,8 @@ mixin _$CalendarDay {
 /// @nodoc
 abstract class $CalendarDayCopyWith<$Res> {
   factory $CalendarDayCopyWith(
-    CalendarDay value,
-    $Res Function(CalendarDay) then,
-  ) = _$CalendarDayCopyWithImpl<$Res, CalendarDay>;
+          CalendarDay value, $Res Function(CalendarDay) then) =
+      _$CalendarDayCopyWithImpl<$Res, CalendarDay>;
   @useResult
   $Res call({DateTime date, bool isCurrentMonth, int price});
 }
@@ -57,23 +55,20 @@ class _$CalendarDayCopyWithImpl<$Res, $Val extends CalendarDay>
     Object? isCurrentMonth = null,
     Object? price = null,
   }) {
-    return _then(
-      _value.copyWith(
-            date: null == date
-                ? _value.date
-                : date // ignore: cast_nullable_to_non_nullable
-                      as DateTime,
-            isCurrentMonth: null == isCurrentMonth
-                ? _value.isCurrentMonth
-                : isCurrentMonth // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            price: null == price
-                ? _value.price
-                : price // ignore: cast_nullable_to_non_nullable
-                      as int,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      isCurrentMonth: null == isCurrentMonth
+          ? _value.isCurrentMonth
+          : isCurrentMonth // ignore: cast_nullable_to_non_nullable
+              as bool,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
   }
 }
 
@@ -81,9 +76,8 @@ class _$CalendarDayCopyWithImpl<$Res, $Val extends CalendarDay>
 abstract class _$$CalendarDayImplCopyWith<$Res>
     implements $CalendarDayCopyWith<$Res> {
   factory _$$CalendarDayImplCopyWith(
-    _$CalendarDayImpl value,
-    $Res Function(_$CalendarDayImpl) then,
-  ) = __$$CalendarDayImplCopyWithImpl<$Res>;
+          _$CalendarDayImpl value, $Res Function(_$CalendarDayImpl) then) =
+      __$$CalendarDayImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({DateTime date, bool isCurrentMonth, int price});
@@ -94,9 +88,8 @@ class __$$CalendarDayImplCopyWithImpl<$Res>
     extends _$CalendarDayCopyWithImpl<$Res, _$CalendarDayImpl>
     implements _$$CalendarDayImplCopyWith<$Res> {
   __$$CalendarDayImplCopyWithImpl(
-    _$CalendarDayImpl _value,
-    $Res Function(_$CalendarDayImpl) _then,
-  ) : super(_value, _then);
+      _$CalendarDayImpl _value, $Res Function(_$CalendarDayImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CalendarDay
   /// with the given fields replaced by the non-null parameter values.
@@ -107,33 +100,28 @@ class __$$CalendarDayImplCopyWithImpl<$Res>
     Object? isCurrentMonth = null,
     Object? price = null,
   }) {
-    return _then(
-      _$CalendarDayImpl(
-        date: null == date
-            ? _value.date
-            : date // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
-        isCurrentMonth: null == isCurrentMonth
-            ? _value.isCurrentMonth
-            : isCurrentMonth // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        price: null == price
-            ? _value.price
-            : price // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
+    return _then(_$CalendarDayImpl(
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      isCurrentMonth: null == isCurrentMonth
+          ? _value.isCurrentMonth
+          : isCurrentMonth // ignore: cast_nullable_to_non_nullable
+              as bool,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$CalendarDayImpl implements _CalendarDay {
-  const _$CalendarDayImpl({
-    required this.date,
-    required this.isCurrentMonth,
-    this.price = 0,
-  });
+  const _$CalendarDayImpl(
+      {required this.date, required this.isCurrentMonth, this.price = 0});
 
   @override
   final DateTime date;
@@ -172,11 +160,10 @@ class _$CalendarDayImpl implements _CalendarDay {
 }
 
 abstract class _CalendarDay implements CalendarDay {
-  const factory _CalendarDay({
-    required final DateTime date,
-    required final bool isCurrentMonth,
-    final int price,
-  }) = _$CalendarDayImpl;
+  const factory _CalendarDay(
+      {required final DateTime date,
+      required final bool isCurrentMonth,
+      final int price}) = _$CalendarDayImpl;
 
   @override
   DateTime get date;

@@ -17,7 +17,7 @@ class StoryDetailPage extends StatelessWidget {
   final StoryBloc bloc;
 
   StoryDetailPage({super.key, required this.id})
-    : bloc = getIt<StoryBloc>()..add(StoryEvent.getStoryById(id));
+      : bloc = getIt<StoryBloc>()..add(StoryEvent.getStoryById(id));
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class StoryDetailPage extends StatelessWidget {
                         child: Image.network(
                           story.imageUrl,
                           fit: BoxFit.cover,
-                          errorBuilder: (_, _, _) =>
+                          errorBuilder: (_, __, ___) =>
                               Container(color: AppColors.neutral500),
                         ),
                       ),

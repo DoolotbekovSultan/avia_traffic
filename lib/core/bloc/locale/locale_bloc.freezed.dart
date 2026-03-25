@@ -12,8 +12,7 @@ part of 'locale_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LocaleEvent {
@@ -21,42 +20,47 @@ mixin _$LocaleEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(Locale locale) changed,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(Locale locale)? changed,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(Locale locale)? changed,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Changed value) changed,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_Changed value)? changed,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Changed value)? changed,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LocaleEventCopyWith<$Res> {
   factory $LocaleEventCopyWith(
-    LocaleEvent value,
-    $Res Function(LocaleEvent) then,
-  ) = _$LocaleEventCopyWithImpl<$Res, LocaleEvent>;
+          LocaleEvent value, $Res Function(LocaleEvent) then) =
+      _$LocaleEventCopyWithImpl<$Res, LocaleEvent>;
 }
 
 /// @nodoc
@@ -76,9 +80,8 @@ class _$LocaleEventCopyWithImpl<$Res, $Val extends LocaleEvent>
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
   factory _$$StartedImplCopyWith(
-    _$StartedImpl value,
-    $Res Function(_$StartedImpl) then,
-  ) = __$$StartedImplCopyWithImpl<$Res>;
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -86,9 +89,8 @@ class __$$StartedImplCopyWithImpl<$Res>
     extends _$LocaleEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
-    _$StartedImpl _value,
-    $Res Function(_$StartedImpl) _then,
-  ) : super(_value, _then);
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocaleEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -183,9 +185,8 @@ abstract class _Started implements LocaleEvent {
 /// @nodoc
 abstract class _$$ChangedImplCopyWith<$Res> {
   factory _$$ChangedImplCopyWith(
-    _$ChangedImpl value,
-    $Res Function(_$ChangedImpl) then,
-  ) = __$$ChangedImplCopyWithImpl<$Res>;
+          _$ChangedImpl value, $Res Function(_$ChangedImpl) then) =
+      __$$ChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Locale locale});
 }
@@ -195,23 +196,22 @@ class __$$ChangedImplCopyWithImpl<$Res>
     extends _$LocaleEventCopyWithImpl<$Res, _$ChangedImpl>
     implements _$$ChangedImplCopyWith<$Res> {
   __$$ChangedImplCopyWithImpl(
-    _$ChangedImpl _value,
-    $Res Function(_$ChangedImpl) _then,
-  ) : super(_value, _then);
+      _$ChangedImpl _value, $Res Function(_$ChangedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocaleEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? locale = null}) {
-    return _then(
-      _$ChangedImpl(
-        null == locale
-            ? _value.locale
-            : locale // ignore: cast_nullable_to_non_nullable
-                  as Locale,
-      ),
-    );
+  $Res call({
+    Object? locale = null,
+  }) {
+    return _then(_$ChangedImpl(
+      null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
+    ));
   }
 }
 
@@ -328,42 +328,47 @@ mixin _$LocaleState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(Locale locale) loaded,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(Locale locale)? loaded,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(Locale locale)? loaded,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loaded value) loaded,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loaded value)? loaded,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loaded value)? loaded,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LocaleStateCopyWith<$Res> {
   factory $LocaleStateCopyWith(
-    LocaleState value,
-    $Res Function(LocaleState) then,
-  ) = _$LocaleStateCopyWithImpl<$Res, LocaleState>;
+          LocaleState value, $Res Function(LocaleState) then) =
+      _$LocaleStateCopyWithImpl<$Res, LocaleState>;
 }
 
 /// @nodoc
@@ -383,9 +388,8 @@ class _$LocaleStateCopyWithImpl<$Res, $Val extends LocaleState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -393,9 +397,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$LocaleStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocaleState
   /// with the given fields replaced by the non-null parameter values.
@@ -490,9 +493,8 @@ abstract class _Initial implements LocaleState {
 /// @nodoc
 abstract class _$$LoadedImplCopyWith<$Res> {
   factory _$$LoadedImplCopyWith(
-    _$LoadedImpl value,
-    $Res Function(_$LoadedImpl) then,
-  ) = __$$LoadedImplCopyWithImpl<$Res>;
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Locale locale});
 }
@@ -502,23 +504,22 @@ class __$$LoadedImplCopyWithImpl<$Res>
     extends _$LocaleStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
-    _$LoadedImpl _value,
-    $Res Function(_$LoadedImpl) _then,
-  ) : super(_value, _then);
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LocaleState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? locale = null}) {
-    return _then(
-      _$LoadedImpl(
-        null == locale
-            ? _value.locale
-            : locale // ignore: cast_nullable_to_non_nullable
-                  as Locale,
-      ),
-    );
+  $Res call({
+    Object? locale = null,
+  }) {
+    return _then(_$LoadedImpl(
+      null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
+    ));
   }
 }
 

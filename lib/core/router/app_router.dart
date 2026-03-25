@@ -52,6 +52,7 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: StoryDetailRoute.page),
     AutoRoute(page: LoginRoute.page),
     AutoRoute(page: AuthRegistrationRoute.page),
+    AutoRoute(page: ConfirmCodeRoute.page),
 
     AutoRoute(
       path: '/main',

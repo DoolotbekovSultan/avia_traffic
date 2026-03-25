@@ -12,8 +12,7 @@ part of 'auth_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AuthState {
@@ -24,17 +23,17 @@ mixin _$AuthState {
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)
+        failure,
     required TResult Function() success,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -42,17 +41,17 @@ mixin _$AuthState {
     TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult? Function()? success,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -60,18 +59,18 @@ mixin _$AuthState {
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult Function()? success,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -80,7 +79,8 @@ mixin _$AuthState {
     required TResult Function(_Unauthenticated value) unauthenticated,
     required TResult Function(_Failure value) failure,
     required TResult Function(_Success value) success,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
@@ -89,7 +89,8 @@ mixin _$AuthState {
     TResult? Function(_Unauthenticated value)? unauthenticated,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_Success value)? success,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -99,7 +100,8 @@ mixin _$AuthState {
     TResult Function(_Failure value)? failure,
     TResult Function(_Success value)? success,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -125,9 +127,8 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -135,9 +136,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -170,15 +170,14 @@ class _$InitialImpl implements _Initial {
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)
+        failure,
     required TResult Function() success,
   }) {
     return initial();
@@ -192,15 +191,14 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult? Function()? success,
   }) {
     return initial?.call();
@@ -214,15 +212,14 @@ class _$InitialImpl implements _Initial {
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult Function()? success,
     required TResult orElse(),
   }) {
@@ -283,9 +280,8 @@ abstract class _Initial implements AuthState {
 /// @nodoc
 abstract class _$$LoadingImplCopyWith<$Res> {
   factory _$$LoadingImplCopyWith(
-    _$LoadingImpl value,
-    $Res Function(_$LoadingImpl) then,
-  ) = __$$LoadingImplCopyWithImpl<$Res>;
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -293,9 +289,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
-    _$LoadingImpl _value,
-    $Res Function(_$LoadingImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -328,15 +323,14 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)
+        failure,
     required TResult Function() success,
   }) {
     return loading();
@@ -350,15 +344,14 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult? Function()? success,
   }) {
     return loading?.call();
@@ -372,15 +365,14 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult Function()? success,
     required TResult orElse(),
   }) {
@@ -441,9 +433,8 @@ abstract class _Loading implements AuthState {
 /// @nodoc
 abstract class _$$AuthenticatedImplCopyWith<$Res> {
   factory _$$AuthenticatedImplCopyWith(
-    _$AuthenticatedImpl value,
-    $Res Function(_$AuthenticatedImpl) then,
-  ) = __$$AuthenticatedImplCopyWithImpl<$Res>;
+          _$AuthenticatedImpl value, $Res Function(_$AuthenticatedImpl) then) =
+      __$$AuthenticatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -451,9 +442,8 @@ class __$$AuthenticatedImplCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res, _$AuthenticatedImpl>
     implements _$$AuthenticatedImplCopyWith<$Res> {
   __$$AuthenticatedImplCopyWithImpl(
-    _$AuthenticatedImpl _value,
-    $Res Function(_$AuthenticatedImpl) _then,
-  ) : super(_value, _then);
+      _$AuthenticatedImpl _value, $Res Function(_$AuthenticatedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -486,15 +476,14 @@ class _$AuthenticatedImpl implements _Authenticated {
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)
+        failure,
     required TResult Function() success,
   }) {
     return authenticated();
@@ -508,15 +497,14 @@ class _$AuthenticatedImpl implements _Authenticated {
     TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult? Function()? success,
   }) {
     return authenticated?.call();
@@ -530,15 +518,14 @@ class _$AuthenticatedImpl implements _Authenticated {
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult Function()? success,
     required TResult orElse(),
   }) {
@@ -598,10 +585,9 @@ abstract class _Authenticated implements AuthState {
 
 /// @nodoc
 abstract class _$$UnauthenticatedImplCopyWith<$Res> {
-  factory _$$UnauthenticatedImplCopyWith(
-    _$UnauthenticatedImpl value,
-    $Res Function(_$UnauthenticatedImpl) then,
-  ) = __$$UnauthenticatedImplCopyWithImpl<$Res>;
+  factory _$$UnauthenticatedImplCopyWith(_$UnauthenticatedImpl value,
+          $Res Function(_$UnauthenticatedImpl) then) =
+      __$$UnauthenticatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -609,9 +595,8 @@ class __$$UnauthenticatedImplCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res, _$UnauthenticatedImpl>
     implements _$$UnauthenticatedImplCopyWith<$Res> {
   __$$UnauthenticatedImplCopyWithImpl(
-    _$UnauthenticatedImpl _value,
-    $Res Function(_$UnauthenticatedImpl) _then,
-  ) : super(_value, _then);
+      _$UnauthenticatedImpl _value, $Res Function(_$UnauthenticatedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -644,15 +629,14 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)
+        failure,
     required TResult Function() success,
   }) {
     return unauthenticated();
@@ -666,15 +650,14 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult? Function()? success,
   }) {
     return unauthenticated?.call();
@@ -688,15 +671,14 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult Function()? success,
     required TResult orElse(),
   }) {
@@ -757,19 +739,17 @@ abstract class _Unauthenticated implements AuthState {
 /// @nodoc
 abstract class _$$FailureImplCopyWith<$Res> {
   factory _$$FailureImplCopyWith(
-    _$FailureImpl value,
-    $Res Function(_$FailureImpl) then,
-  ) = __$$FailureImplCopyWithImpl<$Res>;
+          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+      __$$FailureImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({
-    Failure failure,
-    String? phoneError,
-    String? passwordError,
-    String? nameError,
-    String? confirmPasswordError,
-    String? emailError,
-    String? codeError,
-  });
+  $Res call(
+      {Failure failure,
+      String? phoneError,
+      String? passwordError,
+      String? nameError,
+      String? confirmPasswordError,
+      String? emailError,
+      String? codeError});
 
   $FailureCopyWith<$Res> get failure;
 }
@@ -779,9 +759,8 @@ class __$$FailureImplCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res, _$FailureImpl>
     implements _$$FailureImplCopyWith<$Res> {
   __$$FailureImplCopyWithImpl(
-    _$FailureImpl _value,
-    $Res Function(_$FailureImpl) _then,
-  ) : super(_value, _then);
+      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -796,38 +775,36 @@ class __$$FailureImplCopyWithImpl<$Res>
     Object? emailError = freezed,
     Object? codeError = freezed,
   }) {
-    return _then(
-      _$FailureImpl(
-        failure: null == failure
-            ? _value.failure
-            : failure // ignore: cast_nullable_to_non_nullable
-                  as Failure,
-        phoneError: freezed == phoneError
-            ? _value.phoneError
-            : phoneError // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        passwordError: freezed == passwordError
-            ? _value.passwordError
-            : passwordError // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        nameError: freezed == nameError
-            ? _value.nameError
-            : nameError // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        confirmPasswordError: freezed == confirmPasswordError
-            ? _value.confirmPasswordError
-            : confirmPasswordError // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        emailError: freezed == emailError
-            ? _value.emailError
-            : emailError // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        codeError: freezed == codeError
-            ? _value.codeError
-            : codeError // ignore: cast_nullable_to_non_nullable
-                  as String?,
-      ),
-    );
+    return _then(_$FailureImpl(
+      failure: null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure,
+      phoneError: freezed == phoneError
+          ? _value.phoneError
+          : phoneError // ignore: cast_nullable_to_non_nullable
+              as String?,
+      passwordError: freezed == passwordError
+          ? _value.passwordError
+          : passwordError // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nameError: freezed == nameError
+          ? _value.nameError
+          : nameError // ignore: cast_nullable_to_non_nullable
+              as String?,
+      confirmPasswordError: freezed == confirmPasswordError
+          ? _value.confirmPasswordError
+          : confirmPasswordError // ignore: cast_nullable_to_non_nullable
+              as String?,
+      emailError: freezed == emailError
+          ? _value.emailError
+          : emailError // ignore: cast_nullable_to_non_nullable
+              as String?,
+      codeError: freezed == codeError
+          ? _value.codeError
+          : codeError // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
 
   /// Create a copy of AuthState
@@ -844,15 +821,14 @@ class __$$FailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FailureImpl implements _Failure {
-  const _$FailureImpl({
-    required this.failure,
-    this.phoneError,
-    this.passwordError,
-    this.nameError,
-    this.confirmPasswordError,
-    this.emailError,
-    this.codeError,
-  });
+  const _$FailureImpl(
+      {required this.failure,
+      this.phoneError,
+      this.passwordError,
+      this.nameError,
+      this.confirmPasswordError,
+      this.emailError,
+      this.codeError});
 
   @override
   final Failure failure;
@@ -895,16 +871,8 @@ class _$FailureImpl implements _Failure {
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    failure,
-    phoneError,
-    passwordError,
-    nameError,
-    confirmPasswordError,
-    emailError,
-    codeError,
-  );
+  int get hashCode => Object.hash(runtimeType, failure, phoneError,
+      passwordError, nameError, confirmPasswordError, emailError, codeError);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -922,26 +890,18 @@ class _$FailureImpl implements _Failure {
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)
+        failure,
     required TResult Function() success,
   }) {
-    return failure(
-      this.failure,
-      phoneError,
-      passwordError,
-      nameError,
-      confirmPasswordError,
-      emailError,
-      codeError,
-    );
+    return failure(this.failure, phoneError, passwordError, nameError,
+        confirmPasswordError, emailError, codeError);
   }
 
   @override
@@ -952,26 +912,18 @@ class _$FailureImpl implements _Failure {
     TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult? Function()? success,
   }) {
-    return failure?.call(
-      this.failure,
-      phoneError,
-      passwordError,
-      nameError,
-      confirmPasswordError,
-      emailError,
-      codeError,
-    );
+    return failure?.call(this.failure, phoneError, passwordError, nameError,
+        confirmPasswordError, emailError, codeError);
   }
 
   @override
@@ -982,28 +934,20 @@ class _$FailureImpl implements _Failure {
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult Function()? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(
-        this.failure,
-        phoneError,
-        passwordError,
-        nameError,
-        confirmPasswordError,
-        emailError,
-        codeError,
-      );
+      return failure(this.failure, phoneError, passwordError, nameError,
+          confirmPasswordError, emailError, codeError);
     }
     return orElse();
   }
@@ -1053,15 +997,14 @@ class _$FailureImpl implements _Failure {
 }
 
 abstract class _Failure implements AuthState {
-  const factory _Failure({
-    required final Failure failure,
-    final String? phoneError,
-    final String? passwordError,
-    final String? nameError,
-    final String? confirmPasswordError,
-    final String? emailError,
-    final String? codeError,
-  }) = _$FailureImpl;
+  const factory _Failure(
+      {required final Failure failure,
+      final String? phoneError,
+      final String? passwordError,
+      final String? nameError,
+      final String? confirmPasswordError,
+      final String? emailError,
+      final String? codeError}) = _$FailureImpl;
 
   Failure get failure;
   String? get phoneError;
@@ -1081,9 +1024,8 @@ abstract class _Failure implements AuthState {
 /// @nodoc
 abstract class _$$SuccessImplCopyWith<$Res> {
   factory _$$SuccessImplCopyWith(
-    _$SuccessImpl value,
-    $Res Function(_$SuccessImpl) then,
-  ) = __$$SuccessImplCopyWithImpl<$Res>;
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1091,9 +1033,8 @@ class __$$SuccessImplCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
-    _$SuccessImpl _value,
-    $Res Function(_$SuccessImpl) _then,
-  ) : super(_value, _then);
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -1126,15 +1067,14 @@ class _$SuccessImpl implements _Success {
     required TResult Function() authenticated,
     required TResult Function() unauthenticated,
     required TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)
+        failure,
     required TResult Function() success,
   }) {
     return success();
@@ -1148,15 +1088,14 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
     TResult? Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult? Function()? success,
   }) {
     return success?.call();
@@ -1170,15 +1109,14 @@ class _$SuccessImpl implements _Success {
     TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     TResult Function(
-      Failure failure,
-      String? phoneError,
-      String? passwordError,
-      String? nameError,
-      String? confirmPasswordError,
-      String? emailError,
-      String? codeError,
-    )?
-    failure,
+            Failure failure,
+            String? phoneError,
+            String? passwordError,
+            String? nameError,
+            String? confirmPasswordError,
+            String? emailError,
+            String? codeError)?
+        failure,
     TResult Function()? success,
     required TResult orElse(),
   }) {

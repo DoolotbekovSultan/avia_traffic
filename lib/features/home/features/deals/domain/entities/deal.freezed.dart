@@ -12,8 +12,7 @@ part of 'deal.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Deal {
@@ -37,16 +36,15 @@ abstract class $DealCopyWith<$Res> {
   factory $DealCopyWith(Deal value, $Res Function(Deal) then) =
       _$DealCopyWithImpl<$Res, Deal>;
   @useResult
-  $Res call({
-    int id,
-    String language,
-    String codeTo,
-    String codeFrom,
-    String slug,
-    String imageUrl,
-    String title,
-    String description,
-  });
+  $Res call(
+      {int id,
+      String language,
+      String codeTo,
+      String codeFrom,
+      String slug,
+      String imageUrl,
+      String title,
+      String description});
 }
 
 /// @nodoc
@@ -73,64 +71,59 @@ class _$DealCopyWithImpl<$Res, $Val extends Deal>
     Object? title = null,
     Object? description = null,
   }) {
-    return _then(
-      _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as int,
-            language: null == language
-                ? _value.language
-                : language // ignore: cast_nullable_to_non_nullable
-                      as String,
-            codeTo: null == codeTo
-                ? _value.codeTo
-                : codeTo // ignore: cast_nullable_to_non_nullable
-                      as String,
-            codeFrom: null == codeFrom
-                ? _value.codeFrom
-                : codeFrom // ignore: cast_nullable_to_non_nullable
-                      as String,
-            slug: null == slug
-                ? _value.slug
-                : slug // ignore: cast_nullable_to_non_nullable
-                      as String,
-            imageUrl: null == imageUrl
-                ? _value.imageUrl
-                : imageUrl // ignore: cast_nullable_to_non_nullable
-                      as String,
-            title: null == title
-                ? _value.title
-                : title // ignore: cast_nullable_to_non_nullable
-                      as String,
-            description: null == description
-                ? _value.description
-                : description // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeTo: null == codeTo
+          ? _value.codeTo
+          : codeTo // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeFrom: null == codeFrom
+          ? _value.codeFrom
+          : codeFrom // ignore: cast_nullable_to_non_nullable
+              as String,
+      slug: null == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$DealImplCopyWith<$Res> implements $DealCopyWith<$Res> {
   factory _$$DealImplCopyWith(
-    _$DealImpl value,
-    $Res Function(_$DealImpl) then,
-  ) = __$$DealImplCopyWithImpl<$Res>;
+          _$DealImpl value, $Res Function(_$DealImpl) then) =
+      __$$DealImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    int id,
-    String language,
-    String codeTo,
-    String codeFrom,
-    String slug,
-    String imageUrl,
-    String title,
-    String description,
-  });
+  $Res call(
+      {int id,
+      String language,
+      String codeTo,
+      String codeFrom,
+      String slug,
+      String imageUrl,
+      String title,
+      String description});
 }
 
 /// @nodoc
@@ -138,7 +131,7 @@ class __$$DealImplCopyWithImpl<$Res>
     extends _$DealCopyWithImpl<$Res, _$DealImpl>
     implements _$$DealImplCopyWith<$Res> {
   __$$DealImplCopyWithImpl(_$DealImpl _value, $Res Function(_$DealImpl) _then)
-    : super(_value, _then);
+      : super(_value, _then);
 
   /// Create a copy of Deal
   /// with the given fields replaced by the non-null parameter values.
@@ -154,58 +147,55 @@ class __$$DealImplCopyWithImpl<$Res>
     Object? title = null,
     Object? description = null,
   }) {
-    return _then(
-      _$DealImpl(
-        id: null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as int,
-        language: null == language
-            ? _value.language
-            : language // ignore: cast_nullable_to_non_nullable
-                  as String,
-        codeTo: null == codeTo
-            ? _value.codeTo
-            : codeTo // ignore: cast_nullable_to_non_nullable
-                  as String,
-        codeFrom: null == codeFrom
-            ? _value.codeFrom
-            : codeFrom // ignore: cast_nullable_to_non_nullable
-                  as String,
-        slug: null == slug
-            ? _value.slug
-            : slug // ignore: cast_nullable_to_non_nullable
-                  as String,
-        imageUrl: null == imageUrl
-            ? _value.imageUrl
-            : imageUrl // ignore: cast_nullable_to_non_nullable
-                  as String,
-        title: null == title
-            ? _value.title
-            : title // ignore: cast_nullable_to_non_nullable
-                  as String,
-        description: null == description
-            ? _value.description
-            : description // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+    return _then(_$DealImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeTo: null == codeTo
+          ? _value.codeTo
+          : codeTo // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeFrom: null == codeFrom
+          ? _value.codeFrom
+          : codeFrom // ignore: cast_nullable_to_non_nullable
+              as String,
+      slug: null == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$DealImpl implements _Deal {
-  const _$DealImpl({
-    required this.id,
-    required this.language,
-    required this.codeTo,
-    required this.codeFrom,
-    required this.slug,
-    required this.imageUrl,
-    required this.title,
-    required this.description,
-  });
+  const _$DealImpl(
+      {required this.id,
+      required this.language,
+      required this.codeTo,
+      required this.codeFrom,
+      required this.slug,
+      required this.imageUrl,
+      required this.title,
+      required this.description});
 
   @override
   final int id;
@@ -249,17 +239,8 @@ class _$DealImpl implements _Deal {
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    id,
-    language,
-    codeTo,
-    codeFrom,
-    slug,
-    imageUrl,
-    title,
-    description,
-  );
+  int get hashCode => Object.hash(runtimeType, id, language, codeTo, codeFrom,
+      slug, imageUrl, title, description);
 
   /// Create a copy of Deal
   /// with the given fields replaced by the non-null parameter values.
@@ -271,16 +252,15 @@ class _$DealImpl implements _Deal {
 }
 
 abstract class _Deal implements Deal {
-  const factory _Deal({
-    required final int id,
-    required final String language,
-    required final String codeTo,
-    required final String codeFrom,
-    required final String slug,
-    required final String imageUrl,
-    required final String title,
-    required final String description,
-  }) = _$DealImpl;
+  const factory _Deal(
+      {required final int id,
+      required final String language,
+      required final String codeTo,
+      required final String codeFrom,
+      required final String slug,
+      required final String imageUrl,
+      required final String title,
+      required final String description}) = _$DealImpl;
 
   @override
   int get id;

@@ -66,7 +66,7 @@ class _DatePickerSheetContent extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
               ),
-              padding: .symmetric(horizontal: 16.w),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Column(
                 children: [
                   BottomSheetHeader(
@@ -122,7 +122,7 @@ class _DatePickerSheetContent extends StatelessWidget {
 
   Widget _buildDateSelector(BuildContext context, DatePickerState state) {
     return Padding(
-      padding: .only(top: 4.h, bottom: 12.h),
+      padding: EdgeInsets.only(top: 4.h, bottom: 12.h),
       child: Row(
         children: [
           Expanded(
@@ -130,8 +130,8 @@ class _DatePickerSheetContent extends StatelessWidget {
               isDepart: true,
               date: state.departDate,
               onClear: () => context.read<DatePickerBloc>().add(
-                const DatePickerEvent.resetDates(),
-              ),
+                    const DatePickerEvent.resetDates(),
+                  ),
             ),
           ),
           SizedBox(width: 1.w),

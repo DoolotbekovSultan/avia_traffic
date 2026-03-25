@@ -1,4 +1,4 @@
 class ApiConstants {
   static const String authHeaderKey = 'Authorization';
-  static const String bearerPrefix = 'Bearer';
+  static const String basicPrefix = 'Basic';
 }

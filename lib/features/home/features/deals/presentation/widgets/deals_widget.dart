@@ -43,8 +43,8 @@ class _DealsWidgetState extends StatelessWidget {
           child: Text(
             l10n.hot_deals,
             style: getIt<AppTextStyles>().titleMediumBold.copyWith(
-              color: Colors.black,
-            ),
+                  color: Colors.black,
+                ),
           ),
         ),
         SizedBox(height: 12.h),
@@ -92,9 +92,9 @@ class _EmptyDeals extends StatelessWidget {
   const _EmptyDeals();
   @override
   Widget build(BuildContext context) => Padding(
-    padding: EdgeInsets.all(16.w),
-    child: Text(context.l10n.no_deals),
-  );
+        padding: EdgeInsets.all(16.w),
+        child: Text(context.l10n.no_deals),
+      );
 }
 
 class _DealCard extends StatelessWidget {
@@ -166,9 +166,9 @@ class _DealCard extends StatelessWidget {
                     Text(
                       deal.title,
                       style: getIt<AppTextStyles>().titleMediumBold.copyWith(
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.onBackground,
-                      ),
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.onBackground,
+                          ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -177,8 +177,8 @@ class _DealCard extends StatelessWidget {
                       child: Text(
                         l10n.buy_ticket,
                         style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
-                          color: AppColors.onBackground,
-                        ),
+                              color: AppColors.onBackground,
+                            ),
                       ),
                     ),
                   ],
@@ -196,7 +196,7 @@ class _DealCard extends StatelessWidget {
                 child: Image.network(
                   deal.imageUrl,
                   fit: BoxFit.cover,
-                  errorBuilder: (_, _, _) =>
+                  errorBuilder: (_, __, ___) =>
                       Container(color: AppColors.neutral200),
                 ),
               ),

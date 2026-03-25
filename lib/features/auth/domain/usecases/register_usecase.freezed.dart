@@ -12,8 +12,7 @@ part of 'register_usecase.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$RegisterParams {
@@ -33,17 +32,15 @@ mixin _$RegisterParams {
 /// @nodoc
 abstract class $RegisterParamsCopyWith<$Res> {
   factory $RegisterParamsCopyWith(
-    RegisterParams value,
-    $Res Function(RegisterParams) then,
-  ) = _$RegisterParamsCopyWithImpl<$Res, RegisterParams>;
+          RegisterParams value, $Res Function(RegisterParams) then) =
+      _$RegisterParamsCopyWithImpl<$Res, RegisterParams>;
   @useResult
-  $Res call({
-    String email,
-    String firstName,
-    String phone,
-    String password,
-    String confirmPassword,
-  });
+  $Res call(
+      {String email,
+      String firstName,
+      String phone,
+      String password,
+      String confirmPassword});
 }
 
 /// @nodoc
@@ -67,50 +64,45 @@ class _$RegisterParamsCopyWithImpl<$Res, $Val extends RegisterParams>
     Object? password = null,
     Object? confirmPassword = null,
   }) {
-    return _then(
-      _value.copyWith(
-            email: null == email
-                ? _value.email
-                : email // ignore: cast_nullable_to_non_nullable
-                      as String,
-            firstName: null == firstName
-                ? _value.firstName
-                : firstName // ignore: cast_nullable_to_non_nullable
-                      as String,
-            phone: null == phone
-                ? _value.phone
-                : phone // ignore: cast_nullable_to_non_nullable
-                      as String,
-            password: null == password
-                ? _value.password
-                : password // ignore: cast_nullable_to_non_nullable
-                      as String,
-            confirmPassword: null == confirmPassword
-                ? _value.confirmPassword
-                : confirmPassword // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      confirmPassword: null == confirmPassword
+          ? _value.confirmPassword
+          : confirmPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$RegisterParamsImplCopyWith<$Res>
     implements $RegisterParamsCopyWith<$Res> {
-  factory _$$RegisterParamsImplCopyWith(
-    _$RegisterParamsImpl value,
-    $Res Function(_$RegisterParamsImpl) then,
-  ) = __$$RegisterParamsImplCopyWithImpl<$Res>;
+  factory _$$RegisterParamsImplCopyWith(_$RegisterParamsImpl value,
+          $Res Function(_$RegisterParamsImpl) then) =
+      __$$RegisterParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    String email,
-    String firstName,
-    String phone,
-    String password,
-    String confirmPassword,
-  });
+  $Res call(
+      {String email,
+      String firstName,
+      String phone,
+      String password,
+      String confirmPassword});
 }
 
 /// @nodoc
@@ -118,9 +110,8 @@ class __$$RegisterParamsImplCopyWithImpl<$Res>
     extends _$RegisterParamsCopyWithImpl<$Res, _$RegisterParamsImpl>
     implements _$$RegisterParamsImplCopyWith<$Res> {
   __$$RegisterParamsImplCopyWithImpl(
-    _$RegisterParamsImpl _value,
-    $Res Function(_$RegisterParamsImpl) _then,
-  ) : super(_value, _then);
+      _$RegisterParamsImpl _value, $Res Function(_$RegisterParamsImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of RegisterParams
   /// with the given fields replaced by the non-null parameter values.
@@ -133,43 +124,40 @@ class __$$RegisterParamsImplCopyWithImpl<$Res>
     Object? password = null,
     Object? confirmPassword = null,
   }) {
-    return _then(
-      _$RegisterParamsImpl(
-        email: null == email
-            ? _value.email
-            : email // ignore: cast_nullable_to_non_nullable
-                  as String,
-        firstName: null == firstName
-            ? _value.firstName
-            : firstName // ignore: cast_nullable_to_non_nullable
-                  as String,
-        phone: null == phone
-            ? _value.phone
-            : phone // ignore: cast_nullable_to_non_nullable
-                  as String,
-        password: null == password
-            ? _value.password
-            : password // ignore: cast_nullable_to_non_nullable
-                  as String,
-        confirmPassword: null == confirmPassword
-            ? _value.confirmPassword
-            : confirmPassword // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+    return _then(_$RegisterParamsImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      confirmPassword: null == confirmPassword
+          ? _value.confirmPassword
+          : confirmPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$RegisterParamsImpl implements _RegisterParams {
-  const _$RegisterParamsImpl({
-    required this.email,
-    required this.firstName,
-    required this.phone,
-    required this.password,
-    required this.confirmPassword,
-  });
+  const _$RegisterParamsImpl(
+      {required this.email,
+      required this.firstName,
+      required this.phone,
+      required this.password,
+      required this.confirmPassword});
 
   @override
   final String email;
@@ -204,13 +192,7 @@ class _$RegisterParamsImpl implements _RegisterParams {
 
   @override
   int get hashCode => Object.hash(
-    runtimeType,
-    email,
-    firstName,
-    phone,
-    password,
-    confirmPassword,
-  );
+      runtimeType, email, firstName, phone, password, confirmPassword);
 
   /// Create a copy of RegisterParams
   /// with the given fields replaced by the non-null parameter values.
@@ -219,19 +201,16 @@ class _$RegisterParamsImpl implements _RegisterParams {
   @pragma('vm:prefer-inline')
   _$$RegisterParamsImplCopyWith<_$RegisterParamsImpl> get copyWith =>
       __$$RegisterParamsImplCopyWithImpl<_$RegisterParamsImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 }
 
 abstract class _RegisterParams implements RegisterParams {
-  const factory _RegisterParams({
-    required final String email,
-    required final String firstName,
-    required final String phone,
-    required final String password,
-    required final String confirmPassword,
-  }) = _$RegisterParamsImpl;
+  const factory _RegisterParams(
+      {required final String email,
+      required final String firstName,
+      required final String phone,
+      required final String password,
+      required final String confirmPassword}) = _$RegisterParamsImpl;
 
   @override
   String get email;

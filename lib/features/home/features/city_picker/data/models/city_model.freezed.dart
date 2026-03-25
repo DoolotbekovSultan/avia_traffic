@@ -12,8 +12,7 @@ part of 'city_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CityModel _$CityModelFromJson(Map<String, dynamic> json) {
   return _CityModel.fromJson(json);
@@ -43,13 +42,12 @@ abstract class $CityModelCopyWith<$Res> {
   factory $CityModelCopyWith(CityModel value, $Res Function(CityModel) then) =
       _$CityModelCopyWithImpl<$Res, CityModel>;
   @useResult
-  $Res call({
-    int id,
-    String name,
-    @JsonKey(name: 'code_name') String codeName,
-    String? country,
-    List<AirportModel> airports,
-  });
+  $Res call(
+      {int id,
+      String name,
+      @JsonKey(name: 'code_name') String codeName,
+      String? country,
+      List<AirportModel> airports});
 }
 
 /// @nodoc
@@ -73,31 +71,28 @@ class _$CityModelCopyWithImpl<$Res, $Val extends CityModel>
     Object? country = freezed,
     Object? airports = null,
   }) {
-    return _then(
-      _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as int,
-            name: null == name
-                ? _value.name
-                : name // ignore: cast_nullable_to_non_nullable
-                      as String,
-            codeName: null == codeName
-                ? _value.codeName
-                : codeName // ignore: cast_nullable_to_non_nullable
-                      as String,
-            country: freezed == country
-                ? _value.country
-                : country // ignore: cast_nullable_to_non_nullable
-                      as String?,
-            airports: null == airports
-                ? _value.airports
-                : airports // ignore: cast_nullable_to_non_nullable
-                      as List<AirportModel>,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeName: null == codeName
+          ? _value.codeName
+          : codeName // ignore: cast_nullable_to_non_nullable
+              as String,
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
+      airports: null == airports
+          ? _value.airports
+          : airports // ignore: cast_nullable_to_non_nullable
+              as List<AirportModel>,
+    ) as $Val);
   }
 }
 
@@ -105,18 +100,16 @@ class _$CityModelCopyWithImpl<$Res, $Val extends CityModel>
 abstract class _$$CityModelImplCopyWith<$Res>
     implements $CityModelCopyWith<$Res> {
   factory _$$CityModelImplCopyWith(
-    _$CityModelImpl value,
-    $Res Function(_$CityModelImpl) then,
-  ) = __$$CityModelImplCopyWithImpl<$Res>;
+          _$CityModelImpl value, $Res Function(_$CityModelImpl) then) =
+      __$$CityModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    int id,
-    String name,
-    @JsonKey(name: 'code_name') String codeName,
-    String? country,
-    List<AirportModel> airports,
-  });
+  $Res call(
+      {int id,
+      String name,
+      @JsonKey(name: 'code_name') String codeName,
+      String? country,
+      List<AirportModel> airports});
 }
 
 /// @nodoc
@@ -124,9 +117,8 @@ class __$$CityModelImplCopyWithImpl<$Res>
     extends _$CityModelCopyWithImpl<$Res, _$CityModelImpl>
     implements _$$CityModelImplCopyWith<$Res> {
   __$$CityModelImplCopyWithImpl(
-    _$CityModelImpl _value,
-    $Res Function(_$CityModelImpl) _then,
-  ) : super(_value, _then);
+      _$CityModelImpl _value, $Res Function(_$CityModelImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityModel
   /// with the given fields replaced by the non-null parameter values.
@@ -139,44 +131,42 @@ class __$$CityModelImplCopyWithImpl<$Res>
     Object? country = freezed,
     Object? airports = null,
   }) {
-    return _then(
-      _$CityModelImpl(
-        id: null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as int,
-        name: null == name
-            ? _value.name
-            : name // ignore: cast_nullable_to_non_nullable
-                  as String,
-        codeName: null == codeName
-            ? _value.codeName
-            : codeName // ignore: cast_nullable_to_non_nullable
-                  as String,
-        country: freezed == country
-            ? _value.country
-            : country // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        airports: null == airports
-            ? _value._airports
-            : airports // ignore: cast_nullable_to_non_nullable
-                  as List<AirportModel>,
-      ),
-    );
+    return _then(_$CityModelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeName: null == codeName
+          ? _value.codeName
+          : codeName // ignore: cast_nullable_to_non_nullable
+              as String,
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
+      airports: null == airports
+          ? _value._airports
+          : airports // ignore: cast_nullable_to_non_nullable
+              as List<AirportModel>,
+    ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$CityModelImpl extends _CityModel {
-  const _$CityModelImpl({
-    required this.id,
-    required this.name,
-    @JsonKey(name: 'code_name') required this.codeName,
-    this.country,
-    required final List<AirportModel> airports,
-  }) : _airports = airports,
-       super._();
+  const _$CityModelImpl(
+      {required this.id,
+      required this.name,
+      @JsonKey(name: 'code_name') required this.codeName,
+      this.country,
+      required final List<AirportModel> airports})
+      : _airports = airports,
+        super._();
 
   factory _$CityModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CityModelImplFromJson(json);
@@ -218,14 +208,8 @@ class _$CityModelImpl extends _CityModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    id,
-    name,
-    codeName,
-    country,
-    const DeepCollectionEquality().hash(_airports),
-  );
+  int get hashCode => Object.hash(runtimeType, id, name, codeName, country,
+      const DeepCollectionEquality().hash(_airports));
 
   /// Create a copy of CityModel
   /// with the given fields replaced by the non-null parameter values.
@@ -237,18 +221,19 @@ class _$CityModelImpl extends _CityModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CityModelImplToJson(this);
+    return _$$CityModelImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _CityModel extends CityModel {
-  const factory _CityModel({
-    required final int id,
-    required final String name,
-    @JsonKey(name: 'code_name') required final String codeName,
-    final String? country,
-    required final List<AirportModel> airports,
-  }) = _$CityModelImpl;
+  const factory _CityModel(
+      {required final int id,
+      required final String name,
+      @JsonKey(name: 'code_name') required final String codeName,
+      final String? country,
+      required final List<AirportModel> airports}) = _$CityModelImpl;
   const _CityModel._() : super._();
 
   factory _CityModel.fromJson(Map<String, dynamic> json) =

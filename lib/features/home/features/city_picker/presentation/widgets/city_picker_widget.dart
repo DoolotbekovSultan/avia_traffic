@@ -24,7 +24,7 @@ class CityPickerWidget extends StatelessWidget {
         minChildSize: 0.5,
         maxChildSize: 0.95,
         expand: false,
-        builder: (_, _) => const CityPickerSheet(isFrom: true),
+        builder: (_, __) => const CityPickerSheet(isFrom: true),
       ),
     );
     if (result != null) {

@@ -204,9 +204,9 @@ class _PickerShell extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: .vertical(top: .circular(28.r)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
       ),
-      padding: .symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
         children: [
           BottomSheetHeader(
@@ -382,17 +382,17 @@ class _CountryRow extends StatelessWidget {
               Text(
                 country.name,
                 style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                  color: AppColors.onBackground,
-                  height: 1,
-                ),
+                      color: AppColors.onBackground,
+                      height: 1,
+                    ),
               ),
               SizedBox(height: 6.h),
               Text(
                 '${country.directions} направлений',
                 style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                  color: AppColors.neutral500,
-                  height: 1,
-                ),
+                      color: AppColors.neutral500,
+                      height: 1,
+                    ),
               ),
             ],
           ),

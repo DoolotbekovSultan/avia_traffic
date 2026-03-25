@@ -1,5 +1,4 @@
 import 'package:aviatraffic/core/failure/failure.dart';
-import 'package:aviatraffic/features/auth/domain/entities/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'auth_state.freezed.dart';

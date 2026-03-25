@@ -1,5 +1,6 @@
 import 'package:aviatraffic/core/common/base_usecase/safely_repository.dart';
 import 'package:aviatraffic/core/failure/failure.dart';
+import 'package:aviatraffic/features/auth/data/datasources/I_token_local_datasource.dart';
 import 'package:aviatraffic/features/auth/data/datasources/i_auth_remote_datasource.dart';
 import 'package:aviatraffic/features/auth/domain/entities/user.dart';
 import 'package:aviatraffic/features/auth/domain/repositories/i_auth_repository.dart';
@@ -9,8 +10,9 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: IAuthRepository)
 class AuthRepository with DioExceptionHandler implements IAuthRepository {
   final IAuthRemoteDataSource _remoteDataSource;
+  final ITokenLocalDatasource _tokenLocalDatasource;
 
-  AuthRepository(this._remoteDataSource);
+  AuthRepository(this._remoteDataSource, this._tokenLocalDatasource);
 
   @override
   Future<Either<Failure, void>> register({
@@ -45,9 +47,10 @@ class AuthRepository with DioExceptionHandler implements IAuthRepository {
   Future<Either<Failure, void>> confirmCode({
     required String email,
     required String code,
-  }) => executeSafely(
-    () => _remoteDataSource.confirmCode(email: email, code: code),
-  );
+  }) => executeSafely(() async {
+    final token = await _remoteDataSource.confirmCode(email: email, code: code);
+    _tokenLocalDatasource.saveToken(token);
+  });
 
   @override
   Future<Either<Failure, void>> resendEmail({required String email}) =>
@@ -85,4 +88,9 @@ class AuthRepository with DioExceptionHandler implements IAuthRepository {
   @override
   Future<Either<Failure, void>> deleteAccount() =>
       executeSafely(() => _remoteDataSource.deleteAccount());
+
+  @override
+  Future<Either<Failure, String?>> getToken() async => executeSafely(() async {
+    return await _tokenLocalDatasource.getToken();
+  });
 }

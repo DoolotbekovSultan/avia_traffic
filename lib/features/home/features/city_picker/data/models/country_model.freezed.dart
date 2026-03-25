@@ -12,8 +12,7 @@ part of 'country_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 CountryModel _$CountryModelFromJson(Map<String, dynamic> json) {
   return _CountryModel.fromJson(json);
@@ -42,18 +41,16 @@ mixin _$CountryModel {
 /// @nodoc
 abstract class $CountryModelCopyWith<$Res> {
   factory $CountryModelCopyWith(
-    CountryModel value,
-    $Res Function(CountryModel) then,
-  ) = _$CountryModelCopyWithImpl<$Res, CountryModel>;
+          CountryModel value, $Res Function(CountryModel) then) =
+      _$CountryModelCopyWithImpl<$Res, CountryModel>;
   @useResult
-  $Res call({
-    int id,
-    String name,
-    @JsonKey(name: 'code_name') String codeName,
-    String img,
-    int? directions,
-    List<CityModel> cities,
-  });
+  $Res call(
+      {int id,
+      String name,
+      @JsonKey(name: 'code_name') String codeName,
+      String img,
+      int? directions,
+      List<CityModel> cities});
 }
 
 /// @nodoc
@@ -78,35 +75,32 @@ class _$CountryModelCopyWithImpl<$Res, $Val extends CountryModel>
     Object? directions = freezed,
     Object? cities = null,
   }) {
-    return _then(
-      _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as int,
-            name: null == name
-                ? _value.name
-                : name // ignore: cast_nullable_to_non_nullable
-                      as String,
-            codeName: null == codeName
-                ? _value.codeName
-                : codeName // ignore: cast_nullable_to_non_nullable
-                      as String,
-            img: null == img
-                ? _value.img
-                : img // ignore: cast_nullable_to_non_nullable
-                      as String,
-            directions: freezed == directions
-                ? _value.directions
-                : directions // ignore: cast_nullable_to_non_nullable
-                      as int?,
-            cities: null == cities
-                ? _value.cities
-                : cities // ignore: cast_nullable_to_non_nullable
-                      as List<CityModel>,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeName: null == codeName
+          ? _value.codeName
+          : codeName // ignore: cast_nullable_to_non_nullable
+              as String,
+      img: null == img
+          ? _value.img
+          : img // ignore: cast_nullable_to_non_nullable
+              as String,
+      directions: freezed == directions
+          ? _value.directions
+          : directions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      cities: null == cities
+          ? _value.cities
+          : cities // ignore: cast_nullable_to_non_nullable
+              as List<CityModel>,
+    ) as $Val);
   }
 }
 
@@ -114,19 +108,17 @@ class _$CountryModelCopyWithImpl<$Res, $Val extends CountryModel>
 abstract class _$$CountryModelImplCopyWith<$Res>
     implements $CountryModelCopyWith<$Res> {
   factory _$$CountryModelImplCopyWith(
-    _$CountryModelImpl value,
-    $Res Function(_$CountryModelImpl) then,
-  ) = __$$CountryModelImplCopyWithImpl<$Res>;
+          _$CountryModelImpl value, $Res Function(_$CountryModelImpl) then) =
+      __$$CountryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    int id,
-    String name,
-    @JsonKey(name: 'code_name') String codeName,
-    String img,
-    int? directions,
-    List<CityModel> cities,
-  });
+  $Res call(
+      {int id,
+      String name,
+      @JsonKey(name: 'code_name') String codeName,
+      String img,
+      int? directions,
+      List<CityModel> cities});
 }
 
 /// @nodoc
@@ -134,9 +126,8 @@ class __$$CountryModelImplCopyWithImpl<$Res>
     extends _$CountryModelCopyWithImpl<$Res, _$CountryModelImpl>
     implements _$$CountryModelImplCopyWith<$Res> {
   __$$CountryModelImplCopyWithImpl(
-    _$CountryModelImpl _value,
-    $Res Function(_$CountryModelImpl) _then,
-  ) : super(_value, _then);
+      _$CountryModelImpl _value, $Res Function(_$CountryModelImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CountryModel
   /// with the given fields replaced by the non-null parameter values.
@@ -150,49 +141,47 @@ class __$$CountryModelImplCopyWithImpl<$Res>
     Object? directions = freezed,
     Object? cities = null,
   }) {
-    return _then(
-      _$CountryModelImpl(
-        id: null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as int,
-        name: null == name
-            ? _value.name
-            : name // ignore: cast_nullable_to_non_nullable
-                  as String,
-        codeName: null == codeName
-            ? _value.codeName
-            : codeName // ignore: cast_nullable_to_non_nullable
-                  as String,
-        img: null == img
-            ? _value.img
-            : img // ignore: cast_nullable_to_non_nullable
-                  as String,
-        directions: freezed == directions
-            ? _value.directions
-            : directions // ignore: cast_nullable_to_non_nullable
-                  as int?,
-        cities: null == cities
-            ? _value._cities
-            : cities // ignore: cast_nullable_to_non_nullable
-                  as List<CityModel>,
-      ),
-    );
+    return _then(_$CountryModelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeName: null == codeName
+          ? _value.codeName
+          : codeName // ignore: cast_nullable_to_non_nullable
+              as String,
+      img: null == img
+          ? _value.img
+          : img // ignore: cast_nullable_to_non_nullable
+              as String,
+      directions: freezed == directions
+          ? _value.directions
+          : directions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      cities: null == cities
+          ? _value._cities
+          : cities // ignore: cast_nullable_to_non_nullable
+              as List<CityModel>,
+    ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$CountryModelImpl extends _CountryModel {
-  const _$CountryModelImpl({
-    required this.id,
-    required this.name,
-    @JsonKey(name: 'code_name') required this.codeName,
-    required this.img,
-    this.directions,
-    required final List<CityModel> cities,
-  }) : _cities = cities,
-       super._();
+  const _$CountryModelImpl(
+      {required this.id,
+      required this.name,
+      @JsonKey(name: 'code_name') required this.codeName,
+      required this.img,
+      this.directions,
+      required final List<CityModel> cities})
+      : _cities = cities,
+        super._();
 
   factory _$CountryModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CountryModelImplFromJson(json);
@@ -238,15 +227,8 @@ class _$CountryModelImpl extends _CountryModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    id,
-    name,
-    codeName,
-    img,
-    directions,
-    const DeepCollectionEquality().hash(_cities),
-  );
+  int get hashCode => Object.hash(runtimeType, id, name, codeName, img,
+      directions, const DeepCollectionEquality().hash(_cities));
 
   /// Create a copy of CountryModel
   /// with the given fields replaced by the non-null parameter values.
@@ -258,19 +240,20 @@ class _$CountryModelImpl extends _CountryModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CountryModelImplToJson(this);
+    return _$$CountryModelImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _CountryModel extends CountryModel {
-  const factory _CountryModel({
-    required final int id,
-    required final String name,
-    @JsonKey(name: 'code_name') required final String codeName,
-    required final String img,
-    final int? directions,
-    required final List<CityModel> cities,
-  }) = _$CountryModelImpl;
+  const factory _CountryModel(
+      {required final int id,
+      required final String name,
+      @JsonKey(name: 'code_name') required final String codeName,
+      required final String img,
+      final int? directions,
+      required final List<CityModel> cities}) = _$CountryModelImpl;
   const _CountryModel._() : super._();
 
   factory _CountryModel.fromJson(Map<String, dynamic> json) =

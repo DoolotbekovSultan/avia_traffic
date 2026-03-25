@@ -63,27 +63,27 @@ class _LoginPageState extends State<LoginPage> {
           return Scaffold(
             appBar: GradientAppBar(title: 'Вход'),
             body: Container(
-              width: .infinity,
-              padding: .symmetric(horizontal: 16.w),
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: .center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: 88.h),
                     Text(
                       "🔐 Вход",
                       style: getIt<AppTextStyles>().headlineMediumBold.copyWith(
-                        color: AppColors.onBackground,
-                      ),
+                            color: AppColors.onBackground,
+                          ),
                     ),
                     Gap.v12,
                     Text(
                       'Уважаемый пользователь,\nвыполните вход в приложение',
-                      textAlign: .center,
+                      textAlign: TextAlign.center,
                       style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                        color: AppColors.onBackground,
-                        height: 24 / 15,
-                      ),
+                            color: AppColors.onBackground,
+                            height: 24 / 15,
+                          ),
                     ),
                     SizedBox(height: 43.h),
                     SizedBox(
@@ -92,6 +92,10 @@ class _LoginPageState extends State<LoginPage> {
                         keyboardType: TextInputType.phone,
                         controller: _numberTextEditingController,
                         decoration: InputDecoration(
+                          errorText: state.maybeMap(
+                            failure: (f) => f.phoneError,
+                            orElse: () => null,
+                          ),
                           labelText: 'Ваш телефон',
                           hintText: '+996 (XXX) XXXXXXX',
                           fillColor: Colors.white,
@@ -105,11 +109,15 @@ class _LoginPageState extends State<LoginPage> {
                         keyboardType: TextInputType.visiblePassword,
                         controller: _passwordTextEditingController,
                         obscuringCharacter: '*',
-                        style: getIt<AppTextStyles>().bodyLargeSemiBold
+                        style: getIt<AppTextStyles>()
+                            .bodyLargeSemiBold
                             .copyWith(color: AppColors.onBackground),
                         obscureText: isHidden,
                         textInputAction: TextInputAction.done,
                         decoration: InputDecoration(
+                          errorText: state.maybeMap(
+                              failure: (value) => value.passwordError,
+                              orElse: () => null),
                           hintText: 'Ваш пароль',
                           suffixIcon: GestureDetector(
                             onTap: () {
@@ -118,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                               });
                             },
                             child: Padding(
-                              padding: .symmetric(
+                              padding: EdgeInsets.symmetric(
                                 horizontal: 18.w,
                                 vertical: 12.h,
                               ),
@@ -136,9 +144,9 @@ class _LoginPageState extends State<LoginPage> {
                       textAlign: TextAlign.center,
                       text: TextSpan(
                         style: getIt<AppTextStyles>().caption.copyWith(
-                          color: AppColors.neutral500,
-                          height: 18 / 13,
-                        ),
+                              color: AppColors.neutral500,
+                              height: 18 / 13,
+                            ),
                         children: [
                           TextSpan(
                             text:
@@ -154,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Gap.v24,
                     Row(
-                      mainAxisAlignment: .center,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 18.h,
@@ -165,25 +173,26 @@ class _LoginPageState extends State<LoginPage> {
                         Text(
                           'Запомнить данные при повторном входе',
                           style: getIt<AppTextStyles>().caption.copyWith(
-                            color: AppColors.onBackground,
-                          ),
+                                color: AppColors.onBackground,
+                              ),
                         ),
                       ],
                     ),
                     SizedBox(height: 94.h),
                     Container(
-                      padding: .only(left: 38.w, right: 51.5.w),
+                      padding: EdgeInsets.only(left: 38.w, right: 51.5.w),
                       height: 48.h,
                       child: Row(
-                        crossAxisAlignment: .center,
-                        mainAxisAlignment: .spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             'Забыли пароль?',
-                            style: getIt<AppTextStyles>().bodyMediumSemiBold
+                            style: getIt<AppTextStyles>()
+                                .bodyMediumSemiBold
                                 .copyWith(
                                   color: Color(0xFF3B53CA),
-                                  decoration: .underline,
+                                  decoration: TextDecoration.underline,
                                   decorationColor: Color(0xFF3B53CA),
                                   decorationThickness: 2,
                                 ),
@@ -193,10 +202,11 @@ class _LoginPageState extends State<LoginPage> {
                                 context.router.push(AuthRegistrationRoute()),
                             child: Text(
                               'Регистрация',
-                              style: getIt<AppTextStyles>().bodyMediumSemiBold
+                              style: getIt<AppTextStyles>()
+                                  .bodyMediumSemiBold
                                   .copyWith(
                                     color: Color(0xFF3B53CA),
-                                    decoration: .underline,
+                                    decoration: TextDecoration.underline,
                                     decorationColor: Color(0xFF3B53CA),
                                     decorationThickness: 2,
                                   ),
@@ -208,19 +218,20 @@ class _LoginPageState extends State<LoginPage> {
                     Gap.v24,
                     SizedBox(
                       height: 56.h,
-                      width: .infinity,
+                      width: double.infinity,
                       child: ElevatedButton(
                         onPressed: state.maybeMap(
                           loading: (_) => null,
                           orElse: () => () {
                             context.read<AuthBloc>().add(
-                              AuthEvent.login(
-                                params: LoginParams(
-                                  phone: _numberTextEditingController.text,
-                                  password: _passwordTextEditingController.text,
-                                ),
-                              ),
-                            );
+                                  AuthEvent.login(
+                                    params: LoginParams(
+                                      phone: _numberTextEditingController.text,
+                                      password:
+                                          _passwordTextEditingController.text,
+                                    ),
+                                  ),
+                                );
                           },
                         ),
                         child: state.maybeMap(

@@ -12,8 +12,7 @@ part of 'airport.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Airport {
@@ -49,33 +48,33 @@ class _$AirportCopyWithImpl<$Res, $Val extends Airport>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? name = null, Object? codeName = null}) {
-    return _then(
-      _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as int,
-            name: null == name
-                ? _value.name
-                : name // ignore: cast_nullable_to_non_nullable
-                      as String,
-            codeName: null == codeName
-                ? _value.codeName
-                : codeName // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? codeName = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeName: null == codeName
+          ? _value.codeName
+          : codeName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$AirportImplCopyWith<$Res> implements $AirportCopyWith<$Res> {
   factory _$$AirportImplCopyWith(
-    _$AirportImpl value,
-    $Res Function(_$AirportImpl) then,
-  ) = __$$AirportImplCopyWithImpl<$Res>;
+          _$AirportImpl value, $Res Function(_$AirportImpl) then) =
+      __$$AirportImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, String name, String codeName});
@@ -86,42 +85,40 @@ class __$$AirportImplCopyWithImpl<$Res>
     extends _$AirportCopyWithImpl<$Res, _$AirportImpl>
     implements _$$AirportImplCopyWith<$Res> {
   __$$AirportImplCopyWithImpl(
-    _$AirportImpl _value,
-    $Res Function(_$AirportImpl) _then,
-  ) : super(_value, _then);
+      _$AirportImpl _value, $Res Function(_$AirportImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Airport
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? name = null, Object? codeName = null}) {
-    return _then(
-      _$AirportImpl(
-        id: null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as int,
-        name: null == name
-            ? _value.name
-            : name // ignore: cast_nullable_to_non_nullable
-                  as String,
-        codeName: null == codeName
-            ? _value.codeName
-            : codeName // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? codeName = null,
+  }) {
+    return _then(_$AirportImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeName: null == codeName
+          ? _value.codeName
+          : codeName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$AirportImpl implements _Airport {
-  const _$AirportImpl({
-    required this.id,
-    required this.name,
-    required this.codeName,
-  });
+  const _$AirportImpl(
+      {required this.id, required this.name, required this.codeName});
 
   @override
   final int id;
@@ -159,11 +156,10 @@ class _$AirportImpl implements _Airport {
 }
 
 abstract class _Airport implements Airport {
-  const factory _Airport({
-    required final int id,
-    required final String name,
-    required final String codeName,
-  }) = _$AirportImpl;
+  const factory _Airport(
+      {required final int id,
+      required final String name,
+      required final String codeName}) = _$AirportImpl;
 
   @override
   int get id;

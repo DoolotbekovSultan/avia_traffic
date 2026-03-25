@@ -17,11 +17,11 @@ class PersonalDataPage extends StatelessWidget {
     return Scaffold(
       appBar: GradientAppBar(title: context.l10n.personal_data),
       body: SizedBox(
-        height: .infinity,
-        width: .infinity,
+        height: double.infinity,
+        width: double.infinity,
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: .center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [Gap.v24, _EmailWidget(), Gap.v24, _PassordWidget()],
           ),
         ),
@@ -37,18 +37,19 @@ class _EmailWidget extends StatelessWidget {
       width: 343.w,
       child: Card(
         color: Color(0xFFD9E4F6),
-        shape: RoundedRectangleBorder(borderRadius: .circular(16.r)),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
         child: Padding(
-          padding: .symmetric(horizontal: 16.w, vertical: 18.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
           child: Column(
-            mainAxisAlignment: .center,
-            crossAxisAlignment: .center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 'Личные данные',
                 style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
-                  color: AppColors.onBackground,
-                ),
+                      color: AppColors.onBackground,
+                    ),
               ),
               Gap.v16,
               TextField(
@@ -63,7 +64,7 @@ class _EmailWidget extends StatelessWidget {
               Gap.v24,
               SizedBox(
                 height: 56.h,
-                width: .infinity,
+                width: double.infinity,
                 child: ElevatedButton(
                   onPressed: null,
                   child: Text('Сохранить'),
@@ -84,18 +85,19 @@ class _PassordWidget extends StatelessWidget {
       width: 343.w,
       child: Card(
         color: Color(0xFFD9E4F6),
-        shape: RoundedRectangleBorder(borderRadius: .circular(16.r)),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
         child: Padding(
-          padding: .symmetric(horizontal: 16.w, vertical: 18.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
           child: Column(
-            mainAxisAlignment: .center,
-            crossAxisAlignment: .center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 'Поменять пароль',
                 style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
-                  color: AppColors.onBackground,
-                ),
+                      color: AppColors.onBackground,
+                    ),
               ),
               Gap.v16,
               TextField(
@@ -118,7 +120,7 @@ class _PassordWidget extends StatelessWidget {
               Gap.v24,
               SizedBox(
                 height: 56.h,
-                width: .infinity,
+                width: double.infinity,
                 child: ElevatedButton(
                   onPressed: null,
                   child: Text('Изменить пароль'),

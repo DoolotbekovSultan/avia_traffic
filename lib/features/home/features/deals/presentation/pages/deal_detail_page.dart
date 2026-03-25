@@ -40,7 +40,7 @@ class DealDetailPage extends StatelessWidget {
               child: Image.network(
                 deal.imageUrl,
                 fit: BoxFit.cover,
-                errorBuilder: (_, _, _) =>
+                errorBuilder: (_, __, ___) =>
                     Container(color: AppColors.neutral500),
               ),
             ),

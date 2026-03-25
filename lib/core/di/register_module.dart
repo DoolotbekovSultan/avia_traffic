@@ -1,10 +1,17 @@
-import 'package:aviatraffic/core/network/auth_interceptor.dart';
+import 'package:aviatraffic/core/common/base_usecase/no_params.dart';
+import 'package:aviatraffic/core/di/injector.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:aviatraffic/core/network/auth_interceptor.dart';
+import 'package:aviatraffic/features/auth/domain/usecases/get_token_usecase.dart';
+
 @module
 abstract class RegisterModule {
+  final GetTokenUseCase _getTokenUseCase = getIt<GetTokenUseCase>();
+
   @lazySingleton
   Dio get dio {
     final dio = Dio(
@@ -20,15 +27,27 @@ abstract class RegisterModule {
     // должны быть проброшены из соответствующего сервиса авторизации
     dio.interceptors.add(
       AuthInterceptor(
-        dio: dio,
-        getToken: () async => null, // Замените на реальную логику
-        refreshToken: () async => null, // Замените на реальную логику
-        onTokenExpired: () async {}, // Замените на реальную логику
+        getToken: () async {
+          final result = await _getTokenUseCase(NoParams());
+          result.fold(
+            (left) {
+              return null;
+            },
+            (right) {
+              return right;
+            },
+          );
+          return null;
+        },
       ),
     );
 
     return dio;
   }
+
   @preResolve
   Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
+
+  @lazySingleton
+  FlutterSecureStorage get secureStorage => const FlutterSecureStorage();
 }

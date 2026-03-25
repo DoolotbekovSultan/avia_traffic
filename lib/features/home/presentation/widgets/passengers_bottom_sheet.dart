@@ -119,7 +119,7 @@ class _PassengersBottomSheetState extends State<PassengersBottomSheet> {
           ),
           SizedBox(height: 34.h),
           Padding(
-            padding: .fromLTRB(16.w, 0, 16.w, 16.h),
+            padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.h),
             child: SizedBox(
               height: 56.h,
               width: double.infinity,
@@ -166,7 +166,7 @@ class _PassengersRowWidgetState extends State<_PassengersRowWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: .symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Row(
         children: [
           Text(widget.text),
@@ -175,7 +175,7 @@ class _PassengersRowWidgetState extends State<_PassengersRowWidget> {
             width: 100.w,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: .spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
                   width: 24.w,
@@ -183,34 +183,32 @@ class _PassengersRowWidgetState extends State<_PassengersRowWidget> {
                   child: ElevatedButton(
                     onPressed: count > 0
                         ? () => setState(() {
-                            count--;
-                            widget.onChange(count);
-                          })
+                              count--;
+                              widget.onChange(count);
+                            })
                         : null,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: count > 0
-                          ? AppColors.primary
-                          : AppColors.neutral100,
+                      backgroundColor:
+                          count > 0 ? AppColors.primary : AppColors.neutral100,
                       shape: CircleBorder(
                         side: BorderSide(color: AppColors.neutral200, width: 1),
                       ),
                     ),
-
                     child: Text(
                       '-',
                       style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
-                        color: Colors.white,
-                        height: 1,
-                      ),
+                            color: Colors.white,
+                            height: 1,
+                          ),
                     ),
                   ),
                 ),
                 Text(
                   count.toString(),
                   style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
-                    color: AppColors.onBackground,
-                    height: 16 / 13,
-                  ),
+                        color: AppColors.onBackground,
+                        height: 16 / 13,
+                      ),
                 ),
                 SizedBox(
                   width: 24.w,
@@ -229,9 +227,9 @@ class _PassengersRowWidgetState extends State<_PassengersRowWidget> {
                     child: Text(
                       '+',
                       style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
-                        color: Colors.white,
-                        height: 1,
-                      ),
+                            color: Colors.white,
+                            height: 1,
+                          ),
                     ),
                   ),
                 ),

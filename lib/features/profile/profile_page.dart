@@ -27,27 +27,28 @@ class _ProfileLoginWidget extends StatelessWidget {
       width: 343.w,
       child: Card(
         color: Color(0xFFD9E4F6),
-        shape: RoundedRectangleBorder(borderRadius: .circular(16.r)),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
         child: Padding(
-          padding: .symmetric(horizontal: 16.w, vertical: 16.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           child: Column(
-            mainAxisAlignment: .center,
-            crossAxisAlignment: .center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 "👋Уважаемый пользователь ",
                 style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
-                  color: AppColors.onBackground,
-                ),
+                      color: AppColors.onBackground,
+                    ),
               ),
               SizedBox(height: 6.h),
               Text(
                 'Осуществите вход для просмотра\nзаказов и сохранения ваших данных',
-                textAlign: .center,
+                textAlign: TextAlign.center,
                 style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                  color: AppColors.onBackground,
-                  height: 24 / 15,
-                ),
+                      color: AppColors.onBackground,
+                      height: 24 / 15,
+                    ),
               ),
               Gap.v24,
               SizedBox(
@@ -87,13 +88,13 @@ class ProfileShellPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         appBar: const AviaTrafficAppBar(),
         body: Container(
-          height: .infinity,
-          width: .infinity,
+          height: double.infinity,
+          width: double.infinity,
           color: AppColors.surface,
           child: Column(
             children: [
               Padding(
-                padding: .symmetric(vertical: 24.h),
+                padding: EdgeInsets.symmetric(vertical: 24.h),
                 child: _ProfileLoginWidget(),
               ),
               GestureDetector(
@@ -102,17 +103,18 @@ class ProfileShellPage extends StatelessWidget {
                 },
                 child: Container(
                   height: 44.h,
-                  padding: .symmetric(horizontal: 16.w),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Row(
                     children: [
                       Text(
                         context.l10n.personal_data,
-                        style: getIt<AppTextStyles>().bodyMediumSemiBold
+                        style: getIt<AppTextStyles>()
+                            .bodyMediumSemiBold
                             .copyWith(color: AppColors.onBackground, height: 1),
                       ),
                       Spacer(),
                       Padding(
-                        padding: .only(right: 16.w),
+                        padding: EdgeInsets.only(right: 16.w),
                         child: SvgPicture.asset(
                           'assets/images/arrow.svg',
                           width: 16.w,
@@ -126,19 +128,19 @@ class ProfileShellPage extends StatelessWidget {
               Divider(color: Color(0xFFD9E4F6)),
               Container(
                 height: 44.h,
-                padding: .symmetric(horizontal: 16.w),
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Row(
                   children: [
                     Text(
                       'Мои заказы',
                       style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                        color: AppColors.onBackground,
-                        height: 1,
-                      ),
+                            color: AppColors.onBackground,
+                            height: 1,
+                          ),
                     ),
                     Spacer(),
                     Padding(
-                      padding: .only(right: 16.w),
+                      padding: EdgeInsets.only(right: 16.w),
                       child: SvgPicture.asset(
                         'assets/images/arrow.svg',
                         width: 16.w,
@@ -155,17 +157,18 @@ class ProfileShellPage extends StatelessWidget {
                 },
                 child: Container(
                   height: 44.h,
-                  padding: .symmetric(horizontal: 16.w),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Row(
                     children: [
                       Text(
                         'Информация',
-                        style: getIt<AppTextStyles>().bodyMediumSemiBold
+                        style: getIt<AppTextStyles>()
+                            .bodyMediumSemiBold
                             .copyWith(color: AppColors.onBackground, height: 1),
                       ),
                       Spacer(),
                       Padding(
-                        padding: .only(right: 16.w),
+                        padding: EdgeInsets.only(right: 16.w),
                         child: SvgPicture.asset(
                           'assets/images/arrow.svg',
                           width: 16.w,

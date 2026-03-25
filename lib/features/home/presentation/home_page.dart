@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: const AviaTrafficAppBar(),
-          floatingActionButtonLocation: .endFloat,
+          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
           floatingActionButton: Container(
             width: 48.w,
             height: 48.h,
@@ -152,8 +152,8 @@ class _HomePageState extends State<HomePage> {
               );
 
               context.read<CityPickerBloc>().add(
-                CityPickerEvent.setCities(from: cityFrom, to: cityTo),
-              );
+                    CityPickerEvent.setCities(from: cityFrom, to: cityTo),
+                  );
 
               _scrollController.animateTo(
                 0,
@@ -290,10 +290,10 @@ class _SearchFormState extends State<_SearchForm> {
       onTap: onTap,
       child: Container(
         height: 48.h,
-        padding: .symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: .circular(6.r),
+          borderRadius: BorderRadius.circular(6.r),
         ),
         child: Row(
           children: [

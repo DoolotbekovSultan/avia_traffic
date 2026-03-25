@@ -12,8 +12,7 @@ part of 'auth_event.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AuthEvent {
@@ -25,7 +24,8 @@ mixin _$AuthEvent {
     required TResult Function(String email) forgotPassword,
     required TResult Function(ModifyPasswordParams params) modifyPassword,
     required TResult Function(ConfirmCodeParams params) confirmCode,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginParams params)? login,
@@ -34,7 +34,8 @@ mixin _$AuthEvent {
     TResult? Function(String email)? forgotPassword,
     TResult? Function(ModifyPasswordParams params)? modifyPassword,
     TResult? Function(ConfirmCodeParams params)? confirmCode,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginParams params)? login,
@@ -44,7 +45,8 @@ mixin _$AuthEvent {
     TResult Function(ModifyPasswordParams params)? modifyPassword,
     TResult Function(ConfirmCodeParams params)? confirmCode,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AuthLogin value) login,
@@ -53,7 +55,8 @@ mixin _$AuthEvent {
     required TResult Function(AuthForgotPassword value) forgotPassword,
     required TResult Function(AuthModifyPassword value) modifyPassword,
     required TResult Function(AuthConfirmCode value) confirmCode,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AuthLogin value)? login,
@@ -62,7 +65,8 @@ mixin _$AuthEvent {
     TResult? Function(AuthForgotPassword value)? forgotPassword,
     TResult? Function(AuthModifyPassword value)? modifyPassword,
     TResult? Function(AuthConfirmCode value)? confirmCode,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthLogin value)? login,
@@ -72,7 +76,8 @@ mixin _$AuthEvent {
     TResult Function(AuthModifyPassword value)? modifyPassword,
     TResult Function(AuthConfirmCode value)? confirmCode,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -98,9 +103,8 @@ class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
 /// @nodoc
 abstract class _$$AuthLoginImplCopyWith<$Res> {
   factory _$$AuthLoginImplCopyWith(
-    _$AuthLoginImpl value,
-    $Res Function(_$AuthLoginImpl) then,
-  ) = __$$AuthLoginImplCopyWithImpl<$Res>;
+          _$AuthLoginImpl value, $Res Function(_$AuthLoginImpl) then) =
+      __$$AuthLoginImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LoginParams params});
 
@@ -112,23 +116,22 @@ class __$$AuthLoginImplCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res, _$AuthLoginImpl>
     implements _$$AuthLoginImplCopyWith<$Res> {
   __$$AuthLoginImplCopyWithImpl(
-    _$AuthLoginImpl _value,
-    $Res Function(_$AuthLoginImpl) _then,
-  ) : super(_value, _then);
+      _$AuthLoginImpl _value, $Res Function(_$AuthLoginImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? params = null}) {
-    return _then(
-      _$AuthLoginImpl(
-        params: null == params
-            ? _value.params
-            : params // ignore: cast_nullable_to_non_nullable
-                  as LoginParams,
-      ),
-    );
+  $Res call({
+    Object? params = null,
+  }) {
+    return _then(_$AuthLoginImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as LoginParams,
+    ));
   }
 
   /// Create a copy of AuthEvent
@@ -277,9 +280,8 @@ abstract class AuthLogin implements AuthEvent {
 /// @nodoc
 abstract class _$$AuthRegisterImplCopyWith<$Res> {
   factory _$$AuthRegisterImplCopyWith(
-    _$AuthRegisterImpl value,
-    $Res Function(_$AuthRegisterImpl) then,
-  ) = __$$AuthRegisterImplCopyWithImpl<$Res>;
+          _$AuthRegisterImpl value, $Res Function(_$AuthRegisterImpl) then) =
+      __$$AuthRegisterImplCopyWithImpl<$Res>;
   @useResult
   $Res call({RegisterParams params});
 
@@ -291,23 +293,22 @@ class __$$AuthRegisterImplCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res, _$AuthRegisterImpl>
     implements _$$AuthRegisterImplCopyWith<$Res> {
   __$$AuthRegisterImplCopyWithImpl(
-    _$AuthRegisterImpl _value,
-    $Res Function(_$AuthRegisterImpl) _then,
-  ) : super(_value, _then);
+      _$AuthRegisterImpl _value, $Res Function(_$AuthRegisterImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? params = null}) {
-    return _then(
-      _$AuthRegisterImpl(
-        params: null == params
-            ? _value.params
-            : params // ignore: cast_nullable_to_non_nullable
-                  as RegisterParams,
-      ),
-    );
+  $Res call({
+    Object? params = null,
+  }) {
+    return _then(_$AuthRegisterImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as RegisterParams,
+    ));
   }
 
   /// Create a copy of AuthEvent
@@ -456,9 +457,8 @@ abstract class AuthRegister implements AuthEvent {
 /// @nodoc
 abstract class _$$AuthLogoutImplCopyWith<$Res> {
   factory _$$AuthLogoutImplCopyWith(
-    _$AuthLogoutImpl value,
-    $Res Function(_$AuthLogoutImpl) then,
-  ) = __$$AuthLogoutImplCopyWithImpl<$Res>;
+          _$AuthLogoutImpl value, $Res Function(_$AuthLogoutImpl) then) =
+      __$$AuthLogoutImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -466,9 +466,8 @@ class __$$AuthLogoutImplCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res, _$AuthLogoutImpl>
     implements _$$AuthLogoutImplCopyWith<$Res> {
   __$$AuthLogoutImplCopyWithImpl(
-    _$AuthLogoutImpl _value,
-    $Res Function(_$AuthLogoutImpl) _then,
-  ) : super(_value, _then);
+      _$AuthLogoutImpl _value, $Res Function(_$AuthLogoutImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -586,10 +585,9 @@ abstract class AuthLogout implements AuthEvent {
 
 /// @nodoc
 abstract class _$$AuthForgotPasswordImplCopyWith<$Res> {
-  factory _$$AuthForgotPasswordImplCopyWith(
-    _$AuthForgotPasswordImpl value,
-    $Res Function(_$AuthForgotPasswordImpl) then,
-  ) = __$$AuthForgotPasswordImplCopyWithImpl<$Res>;
+  factory _$$AuthForgotPasswordImplCopyWith(_$AuthForgotPasswordImpl value,
+          $Res Function(_$AuthForgotPasswordImpl) then) =
+      __$$AuthForgotPasswordImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String email});
 }
@@ -598,24 +596,23 @@ abstract class _$$AuthForgotPasswordImplCopyWith<$Res> {
 class __$$AuthForgotPasswordImplCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res, _$AuthForgotPasswordImpl>
     implements _$$AuthForgotPasswordImplCopyWith<$Res> {
-  __$$AuthForgotPasswordImplCopyWithImpl(
-    _$AuthForgotPasswordImpl _value,
-    $Res Function(_$AuthForgotPasswordImpl) _then,
-  ) : super(_value, _then);
+  __$$AuthForgotPasswordImplCopyWithImpl(_$AuthForgotPasswordImpl _value,
+      $Res Function(_$AuthForgotPasswordImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? email = null}) {
-    return _then(
-      _$AuthForgotPasswordImpl(
-        email: null == email
-            ? _value.email
-            : email // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? email = null,
+  }) {
+    return _then(_$AuthForgotPasswordImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -650,9 +647,7 @@ class _$AuthForgotPasswordImpl implements AuthForgotPassword {
   @pragma('vm:prefer-inline')
   _$$AuthForgotPasswordImplCopyWith<_$AuthForgotPasswordImpl> get copyWith =>
       __$$AuthForgotPasswordImplCopyWithImpl<_$AuthForgotPasswordImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -756,10 +751,9 @@ abstract class AuthForgotPassword implements AuthEvent {
 
 /// @nodoc
 abstract class _$$AuthModifyPasswordImplCopyWith<$Res> {
-  factory _$$AuthModifyPasswordImplCopyWith(
-    _$AuthModifyPasswordImpl value,
-    $Res Function(_$AuthModifyPasswordImpl) then,
-  ) = __$$AuthModifyPasswordImplCopyWithImpl<$Res>;
+  factory _$$AuthModifyPasswordImplCopyWith(_$AuthModifyPasswordImpl value,
+          $Res Function(_$AuthModifyPasswordImpl) then) =
+      __$$AuthModifyPasswordImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ModifyPasswordParams params});
 
@@ -770,24 +764,23 @@ abstract class _$$AuthModifyPasswordImplCopyWith<$Res> {
 class __$$AuthModifyPasswordImplCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res, _$AuthModifyPasswordImpl>
     implements _$$AuthModifyPasswordImplCopyWith<$Res> {
-  __$$AuthModifyPasswordImplCopyWithImpl(
-    _$AuthModifyPasswordImpl _value,
-    $Res Function(_$AuthModifyPasswordImpl) _then,
-  ) : super(_value, _then);
+  __$$AuthModifyPasswordImplCopyWithImpl(_$AuthModifyPasswordImpl _value,
+      $Res Function(_$AuthModifyPasswordImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? params = null}) {
-    return _then(
-      _$AuthModifyPasswordImpl(
-        params: null == params
-            ? _value.params
-            : params // ignore: cast_nullable_to_non_nullable
-                  as ModifyPasswordParams,
-      ),
-    );
+  $Res call({
+    Object? params = null,
+  }) {
+    return _then(_$AuthModifyPasswordImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as ModifyPasswordParams,
+    ));
   }
 
   /// Create a copy of AuthEvent
@@ -832,9 +825,7 @@ class _$AuthModifyPasswordImpl implements AuthModifyPassword {
   @pragma('vm:prefer-inline')
   _$$AuthModifyPasswordImplCopyWith<_$AuthModifyPasswordImpl> get copyWith =>
       __$$AuthModifyPasswordImplCopyWithImpl<_$AuthModifyPasswordImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -924,9 +915,8 @@ class _$AuthModifyPasswordImpl implements AuthModifyPassword {
 }
 
 abstract class AuthModifyPassword implements AuthEvent {
-  const factory AuthModifyPassword({
-    required final ModifyPasswordParams params,
-  }) = _$AuthModifyPasswordImpl;
+  const factory AuthModifyPassword(
+      {required final ModifyPasswordParams params}) = _$AuthModifyPasswordImpl;
 
   ModifyPasswordParams get params;
 
@@ -939,10 +929,9 @@ abstract class AuthModifyPassword implements AuthEvent {
 
 /// @nodoc
 abstract class _$$AuthConfirmCodeImplCopyWith<$Res> {
-  factory _$$AuthConfirmCodeImplCopyWith(
-    _$AuthConfirmCodeImpl value,
-    $Res Function(_$AuthConfirmCodeImpl) then,
-  ) = __$$AuthConfirmCodeImplCopyWithImpl<$Res>;
+  factory _$$AuthConfirmCodeImplCopyWith(_$AuthConfirmCodeImpl value,
+          $Res Function(_$AuthConfirmCodeImpl) then) =
+      __$$AuthConfirmCodeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ConfirmCodeParams params});
 
@@ -954,23 +943,22 @@ class __$$AuthConfirmCodeImplCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res, _$AuthConfirmCodeImpl>
     implements _$$AuthConfirmCodeImplCopyWith<$Res> {
   __$$AuthConfirmCodeImplCopyWithImpl(
-    _$AuthConfirmCodeImpl _value,
-    $Res Function(_$AuthConfirmCodeImpl) _then,
-  ) : super(_value, _then);
+      _$AuthConfirmCodeImpl _value, $Res Function(_$AuthConfirmCodeImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? params = null}) {
-    return _then(
-      _$AuthConfirmCodeImpl(
-        params: null == params
-            ? _value.params
-            : params // ignore: cast_nullable_to_non_nullable
-                  as ConfirmCodeParams,
-      ),
-    );
+  $Res call({
+    Object? params = null,
+  }) {
+    return _then(_$AuthConfirmCodeImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as ConfirmCodeParams,
+    ));
   }
 
   /// Create a copy of AuthEvent
@@ -1015,9 +1003,7 @@ class _$AuthConfirmCodeImpl implements AuthConfirmCode {
   @pragma('vm:prefer-inline')
   _$$AuthConfirmCodeImplCopyWith<_$AuthConfirmCodeImpl> get copyWith =>
       __$$AuthConfirmCodeImplCopyWithImpl<_$AuthConfirmCodeImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs

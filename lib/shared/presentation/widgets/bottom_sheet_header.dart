@@ -47,12 +47,12 @@ class DragHandle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: .only(top: 7.h, bottom: 8.h),
+      margin: EdgeInsets.only(top: 7.h, bottom: 8.h),
       width: 36.w,
       height: 5.h,
       decoration: BoxDecoration(
         color: AppColors.neutral200,
-        borderRadius: .circular(2.r),
+        borderRadius: BorderRadius.circular(2.r),
       ),
     );
   }

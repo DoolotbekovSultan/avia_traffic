@@ -40,4 +40,6 @@ abstract class IAuthRepository {
   Future<Either<Failure, User>> getPersonalInfo();
 
   Future<Either<Failure, void>> deleteAccount();
+
+  Future<Either<Failure, String?>> getToken();
 }

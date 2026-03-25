@@ -15,9 +15,9 @@ class InformationPage extends StatelessWidget {
     return Scaffold(
       appBar: _InformationAppBar(),
       body: SizedBox(
-        width: .infinity,
+        width: double.infinity,
         child: Column(
-          crossAxisAlignment: .center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Gap.v24,
             InformationWidget(text: 'Правила Авиакомпании', onClick: () {}),
@@ -40,7 +40,7 @@ class _InformationAppBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: .min,
+      mainAxisSize: MainAxisSize.min,
       children: [
         GradientAppBar(title: 'Информация'),
         Container(
@@ -52,18 +52,18 @@ class _InformationAppBar extends StatelessWidget
               stops: const [0.0, 1.0],
             ),
           ),
-          alignment: .center,
+          alignment: Alignment.center,
           child: Padding(
-            padding: .symmetric(horizontal: 16.w, vertical: 16.h),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
             child: SizedBox(
               height: 48.h,
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Поиск',
-                  contentPadding: .symmetric(horizontal: 16.w),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
                   prefixIcon: SizedBox(
                     child: Padding(
-                      padding: .only(top: 12.h, bottom: 12.h),
+                      padding: EdgeInsets.only(top: 12.h, bottom: 12.h),
                       child: Image.asset(
                         'assets/images/search.png',
                         height: 24.h,
@@ -72,7 +72,8 @@ class _InformationAppBar extends StatelessWidget
                     ),
                   ),
                   fillColor: Colors.white,
-                  border: OutlineInputBorder(borderRadius: .circular(6.r)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(6.r)),
                 ),
               ),
             ),

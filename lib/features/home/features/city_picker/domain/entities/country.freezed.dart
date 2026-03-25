@@ -12,8 +12,7 @@ part of 'country.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Country {
@@ -35,14 +34,13 @@ abstract class $CountryCopyWith<$Res> {
   factory $CountryCopyWith(Country value, $Res Function(Country) then) =
       _$CountryCopyWithImpl<$Res, Country>;
   @useResult
-  $Res call({
-    int id,
-    String name,
-    String codeName,
-    String img,
-    int directions,
-    List<City> cities,
-  });
+  $Res call(
+      {int id,
+      String name,
+      String codeName,
+      String img,
+      int directions,
+      List<City> cities});
 }
 
 /// @nodoc
@@ -67,54 +65,49 @@ class _$CountryCopyWithImpl<$Res, $Val extends Country>
     Object? directions = null,
     Object? cities = null,
   }) {
-    return _then(
-      _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as int,
-            name: null == name
-                ? _value.name
-                : name // ignore: cast_nullable_to_non_nullable
-                      as String,
-            codeName: null == codeName
-                ? _value.codeName
-                : codeName // ignore: cast_nullable_to_non_nullable
-                      as String,
-            img: null == img
-                ? _value.img
-                : img // ignore: cast_nullable_to_non_nullable
-                      as String,
-            directions: null == directions
-                ? _value.directions
-                : directions // ignore: cast_nullable_to_non_nullable
-                      as int,
-            cities: null == cities
-                ? _value.cities
-                : cities // ignore: cast_nullable_to_non_nullable
-                      as List<City>,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeName: null == codeName
+          ? _value.codeName
+          : codeName // ignore: cast_nullable_to_non_nullable
+              as String,
+      img: null == img
+          ? _value.img
+          : img // ignore: cast_nullable_to_non_nullable
+              as String,
+      directions: null == directions
+          ? _value.directions
+          : directions // ignore: cast_nullable_to_non_nullable
+              as int,
+      cities: null == cities
+          ? _value.cities
+          : cities // ignore: cast_nullable_to_non_nullable
+              as List<City>,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$CountryImplCopyWith<$Res> implements $CountryCopyWith<$Res> {
   factory _$$CountryImplCopyWith(
-    _$CountryImpl value,
-    $Res Function(_$CountryImpl) then,
-  ) = __$$CountryImplCopyWithImpl<$Res>;
+          _$CountryImpl value, $Res Function(_$CountryImpl) then) =
+      __$$CountryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    int id,
-    String name,
-    String codeName,
-    String img,
-    int directions,
-    List<City> cities,
-  });
+  $Res call(
+      {int id,
+      String name,
+      String codeName,
+      String img,
+      int directions,
+      List<City> cities});
 }
 
 /// @nodoc
@@ -122,9 +115,8 @@ class __$$CountryImplCopyWithImpl<$Res>
     extends _$CountryCopyWithImpl<$Res, _$CountryImpl>
     implements _$$CountryImplCopyWith<$Res> {
   __$$CountryImplCopyWithImpl(
-    _$CountryImpl _value,
-    $Res Function(_$CountryImpl) _then,
-  ) : super(_value, _then);
+      _$CountryImpl _value, $Res Function(_$CountryImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Country
   /// with the given fields replaced by the non-null parameter values.
@@ -138,48 +130,46 @@ class __$$CountryImplCopyWithImpl<$Res>
     Object? directions = null,
     Object? cities = null,
   }) {
-    return _then(
-      _$CountryImpl(
-        id: null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as int,
-        name: null == name
-            ? _value.name
-            : name // ignore: cast_nullable_to_non_nullable
-                  as String,
-        codeName: null == codeName
-            ? _value.codeName
-            : codeName // ignore: cast_nullable_to_non_nullable
-                  as String,
-        img: null == img
-            ? _value.img
-            : img // ignore: cast_nullable_to_non_nullable
-                  as String,
-        directions: null == directions
-            ? _value.directions
-            : directions // ignore: cast_nullable_to_non_nullable
-                  as int,
-        cities: null == cities
-            ? _value._cities
-            : cities // ignore: cast_nullable_to_non_nullable
-                  as List<City>,
-      ),
-    );
+    return _then(_$CountryImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeName: null == codeName
+          ? _value.codeName
+          : codeName // ignore: cast_nullable_to_non_nullable
+              as String,
+      img: null == img
+          ? _value.img
+          : img // ignore: cast_nullable_to_non_nullable
+              as String,
+      directions: null == directions
+          ? _value.directions
+          : directions // ignore: cast_nullable_to_non_nullable
+              as int,
+      cities: null == cities
+          ? _value._cities
+          : cities // ignore: cast_nullable_to_non_nullable
+              as List<City>,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$CountryImpl implements _Country {
-  const _$CountryImpl({
-    required this.id,
-    required this.name,
-    required this.codeName,
-    required this.img,
-    required this.directions,
-    required final List<City> cities,
-  }) : _cities = cities;
+  const _$CountryImpl(
+      {required this.id,
+      required this.name,
+      required this.codeName,
+      required this.img,
+      required this.directions,
+      required final List<City> cities})
+      : _cities = cities;
 
   @override
   final int id;
@@ -220,15 +210,8 @@ class _$CountryImpl implements _Country {
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    id,
-    name,
-    codeName,
-    img,
-    directions,
-    const DeepCollectionEquality().hash(_cities),
-  );
+  int get hashCode => Object.hash(runtimeType, id, name, codeName, img,
+      directions, const DeepCollectionEquality().hash(_cities));
 
   /// Create a copy of Country
   /// with the given fields replaced by the non-null parameter values.
@@ -240,14 +223,13 @@ class _$CountryImpl implements _Country {
 }
 
 abstract class _Country implements Country {
-  const factory _Country({
-    required final int id,
-    required final String name,
-    required final String codeName,
-    required final String img,
-    required final int directions,
-    required final List<City> cities,
-  }) = _$CountryImpl;
+  const factory _Country(
+      {required final int id,
+      required final String name,
+      required final String codeName,
+      required final String img,
+      required final int directions,
+      required final List<City> cities}) = _$CountryImpl;
 
   @override
   int get id;

@@ -37,8 +37,8 @@ class _StoriesWidgetState extends StatelessWidget {
           child: Text(
             'Последние новости',
             style: getIt<AppTextStyles>().titleMediumBold.copyWith(
-              color: Colors.black,
-            ),
+                  color: Colors.black,
+                ),
           ),
         ),
         Gap.v12,
@@ -136,7 +136,7 @@ class _StoriesListState extends State<_StoriesList> {
     return ListView.builder(
       controller: _scrollController,
       scrollDirection: Axis.horizontal,
-      padding: .symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       itemCount: widget.stories.length,
       itemBuilder: (context, i) => Padding(
         padding: EdgeInsets.only(
@@ -168,7 +168,7 @@ class _StoryCard extends StatelessWidget {
     return Container(
       width: 107.w,
       height: 107.h,
-      padding: .symmetric(horizontal: 2.w, vertical: 2.h),
+      padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
@@ -184,7 +184,8 @@ class _StoryCard extends StatelessWidget {
             Image.network(
               item.imageUrl,
               fit: BoxFit.cover,
-              errorBuilder: (_, _, _) => Container(color: AppColors.neutral200),
+              errorBuilder: (_, __, ___) =>
+                  Container(color: AppColors.neutral200),
             ),
             Container(
               decoration: BoxDecoration(
@@ -207,9 +208,9 @@ class _StoryCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: getIt<AppTextStyles>().caption.copyWith(
-                  height: 16 / 13,
-                  color: Colors.white,
-                ),
+                      height: 16 / 13,
+                      color: Colors.white,
+                    ),
               ),
             ),
           ],

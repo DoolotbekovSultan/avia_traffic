@@ -12,8 +12,7 @@ part of 'onboarding_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$OnboardingEvent {
@@ -24,7 +23,8 @@ mixin _$OnboardingEvent {
     required TResult Function() previousPage,
     required TResult Function() skipOnboarding,
     required TResult Function(int index) goToPage,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
@@ -32,7 +32,8 @@ mixin _$OnboardingEvent {
     TResult? Function()? previousPage,
     TResult? Function()? skipOnboarding,
     TResult? Function(int index)? goToPage,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
@@ -41,7 +42,8 @@ mixin _$OnboardingEvent {
     TResult Function()? skipOnboarding,
     TResult Function(int index)? goToPage,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
@@ -49,7 +51,8 @@ mixin _$OnboardingEvent {
     required TResult Function(_PreviousPage value) previousPage,
     required TResult Function(_SkipOnboarding value) skipOnboarding,
     required TResult Function(_GoToPage value) goToPage,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -57,7 +60,8 @@ mixin _$OnboardingEvent {
     TResult? Function(_PreviousPage value)? previousPage,
     TResult? Function(_SkipOnboarding value)? skipOnboarding,
     TResult? Function(_GoToPage value)? goToPage,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
@@ -66,15 +70,15 @@ mixin _$OnboardingEvent {
     TResult Function(_SkipOnboarding value)? skipOnboarding,
     TResult Function(_GoToPage value)? goToPage,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OnboardingEventCopyWith<$Res> {
   factory $OnboardingEventCopyWith(
-    OnboardingEvent value,
-    $Res Function(OnboardingEvent) then,
-  ) = _$OnboardingEventCopyWithImpl<$Res, OnboardingEvent>;
+          OnboardingEvent value, $Res Function(OnboardingEvent) then) =
+      _$OnboardingEventCopyWithImpl<$Res, OnboardingEvent>;
 }
 
 /// @nodoc
@@ -94,9 +98,8 @@ class _$OnboardingEventCopyWithImpl<$Res, $Val extends OnboardingEvent>
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
   factory _$$StartedImplCopyWith(
-    _$StartedImpl value,
-    $Res Function(_$StartedImpl) then,
-  ) = __$$StartedImplCopyWithImpl<$Res>;
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -104,9 +107,8 @@ class __$$StartedImplCopyWithImpl<$Res>
     extends _$OnboardingEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
-    _$StartedImpl _value,
-    $Res Function(_$StartedImpl) _then,
-  ) : super(_value, _then);
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of OnboardingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -219,9 +221,8 @@ abstract class _Started implements OnboardingEvent {
 /// @nodoc
 abstract class _$$NextPageImplCopyWith<$Res> {
   factory _$$NextPageImplCopyWith(
-    _$NextPageImpl value,
-    $Res Function(_$NextPageImpl) then,
-  ) = __$$NextPageImplCopyWithImpl<$Res>;
+          _$NextPageImpl value, $Res Function(_$NextPageImpl) then) =
+      __$$NextPageImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -229,9 +230,8 @@ class __$$NextPageImplCopyWithImpl<$Res>
     extends _$OnboardingEventCopyWithImpl<$Res, _$NextPageImpl>
     implements _$$NextPageImplCopyWith<$Res> {
   __$$NextPageImplCopyWithImpl(
-    _$NextPageImpl _value,
-    $Res Function(_$NextPageImpl) _then,
-  ) : super(_value, _then);
+      _$NextPageImpl _value, $Res Function(_$NextPageImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of OnboardingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -344,9 +344,8 @@ abstract class _NextPage implements OnboardingEvent {
 /// @nodoc
 abstract class _$$PreviousPageImplCopyWith<$Res> {
   factory _$$PreviousPageImplCopyWith(
-    _$PreviousPageImpl value,
-    $Res Function(_$PreviousPageImpl) then,
-  ) = __$$PreviousPageImplCopyWithImpl<$Res>;
+          _$PreviousPageImpl value, $Res Function(_$PreviousPageImpl) then) =
+      __$$PreviousPageImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -354,9 +353,8 @@ class __$$PreviousPageImplCopyWithImpl<$Res>
     extends _$OnboardingEventCopyWithImpl<$Res, _$PreviousPageImpl>
     implements _$$PreviousPageImplCopyWith<$Res> {
   __$$PreviousPageImplCopyWithImpl(
-    _$PreviousPageImpl _value,
-    $Res Function(_$PreviousPageImpl) _then,
-  ) : super(_value, _then);
+      _$PreviousPageImpl _value, $Res Function(_$PreviousPageImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of OnboardingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -468,10 +466,9 @@ abstract class _PreviousPage implements OnboardingEvent {
 
 /// @nodoc
 abstract class _$$SkipOnboardingImplCopyWith<$Res> {
-  factory _$$SkipOnboardingImplCopyWith(
-    _$SkipOnboardingImpl value,
-    $Res Function(_$SkipOnboardingImpl) then,
-  ) = __$$SkipOnboardingImplCopyWithImpl<$Res>;
+  factory _$$SkipOnboardingImplCopyWith(_$SkipOnboardingImpl value,
+          $Res Function(_$SkipOnboardingImpl) then) =
+      __$$SkipOnboardingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -479,9 +476,8 @@ class __$$SkipOnboardingImplCopyWithImpl<$Res>
     extends _$OnboardingEventCopyWithImpl<$Res, _$SkipOnboardingImpl>
     implements _$$SkipOnboardingImplCopyWith<$Res> {
   __$$SkipOnboardingImplCopyWithImpl(
-    _$SkipOnboardingImpl _value,
-    $Res Function(_$SkipOnboardingImpl) _then,
-  ) : super(_value, _then);
+      _$SkipOnboardingImpl _value, $Res Function(_$SkipOnboardingImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of OnboardingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -594,9 +590,8 @@ abstract class _SkipOnboarding implements OnboardingEvent {
 /// @nodoc
 abstract class _$$GoToPageImplCopyWith<$Res> {
   factory _$$GoToPageImplCopyWith(
-    _$GoToPageImpl value,
-    $Res Function(_$GoToPageImpl) then,
-  ) = __$$GoToPageImplCopyWithImpl<$Res>;
+          _$GoToPageImpl value, $Res Function(_$GoToPageImpl) then) =
+      __$$GoToPageImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int index});
 }
@@ -606,23 +601,22 @@ class __$$GoToPageImplCopyWithImpl<$Res>
     extends _$OnboardingEventCopyWithImpl<$Res, _$GoToPageImpl>
     implements _$$GoToPageImplCopyWith<$Res> {
   __$$GoToPageImplCopyWithImpl(
-    _$GoToPageImpl _value,
-    $Res Function(_$GoToPageImpl) _then,
-  ) : super(_value, _then);
+      _$GoToPageImpl _value, $Res Function(_$GoToPageImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of OnboardingEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? index = null}) {
-    return _then(
-      _$GoToPageImpl(
-        null == index
-            ? _value.index
-            : index // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$GoToPageImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
@@ -760,7 +754,8 @@ mixin _$OnboardingState {
     required TResult Function(List<Page> pages, int currentPageIndex) loaded,
     required TResult Function(Failure failure) failure,
     required TResult Function() completed,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -768,7 +763,8 @@ mixin _$OnboardingState {
     TResult? Function(List<Page> pages, int currentPageIndex)? loaded,
     TResult? Function(Failure failure)? failure,
     TResult? Function()? completed,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -777,7 +773,8 @@ mixin _$OnboardingState {
     TResult Function(Failure failure)? failure,
     TResult Function()? completed,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -785,7 +782,8 @@ mixin _$OnboardingState {
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Failure value) failure,
     required TResult Function(_Completed value) completed,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
@@ -793,7 +791,8 @@ mixin _$OnboardingState {
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Failure value)? failure,
     TResult? Function(_Completed value)? completed,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -802,15 +801,15 @@ mixin _$OnboardingState {
     TResult Function(_Failure value)? failure,
     TResult Function(_Completed value)? completed,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OnboardingStateCopyWith<$Res> {
   factory $OnboardingStateCopyWith(
-    OnboardingState value,
-    $Res Function(OnboardingState) then,
-  ) = _$OnboardingStateCopyWithImpl<$Res, OnboardingState>;
+          OnboardingState value, $Res Function(OnboardingState) then) =
+      _$OnboardingStateCopyWithImpl<$Res, OnboardingState>;
 }
 
 /// @nodoc
@@ -830,9 +829,8 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -840,9 +838,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$OnboardingStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of OnboardingState
   /// with the given fields replaced by the non-null parameter values.
@@ -955,9 +952,8 @@ abstract class _Initial implements OnboardingState {
 /// @nodoc
 abstract class _$$LoadingImplCopyWith<$Res> {
   factory _$$LoadingImplCopyWith(
-    _$LoadingImpl value,
-    $Res Function(_$LoadingImpl) then,
-  ) = __$$LoadingImplCopyWithImpl<$Res>;
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -965,9 +961,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
     extends _$OnboardingStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
-    _$LoadingImpl _value,
-    $Res Function(_$LoadingImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of OnboardingState
   /// with the given fields replaced by the non-null parameter values.
@@ -1080,9 +1075,8 @@ abstract class _Loading implements OnboardingState {
 /// @nodoc
 abstract class _$$LoadedImplCopyWith<$Res> {
   factory _$$LoadedImplCopyWith(
-    _$LoadedImpl value,
-    $Res Function(_$LoadedImpl) then,
-  ) = __$$LoadedImplCopyWithImpl<$Res>;
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Page> pages, int currentPageIndex});
 }
@@ -1092,37 +1086,36 @@ class __$$LoadedImplCopyWithImpl<$Res>
     extends _$OnboardingStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
-    _$LoadedImpl _value,
-    $Res Function(_$LoadedImpl) _then,
-  ) : super(_value, _then);
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of OnboardingState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? pages = null, Object? currentPageIndex = null}) {
-    return _then(
-      _$LoadedImpl(
-        pages: null == pages
-            ? _value._pages
-            : pages // ignore: cast_nullable_to_non_nullable
-                  as List<Page>,
-        currentPageIndex: null == currentPageIndex
-            ? _value.currentPageIndex
-            : currentPageIndex // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
+  $Res call({
+    Object? pages = null,
+    Object? currentPageIndex = null,
+  }) {
+    return _then(_$LoadedImpl(
+      pages: null == pages
+          ? _value._pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as List<Page>,
+      currentPageIndex: null == currentPageIndex
+          ? _value.currentPageIndex
+          : currentPageIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl({
-    required final List<Page> pages,
-    required this.currentPageIndex,
-  }) : _pages = pages;
+  const _$LoadedImpl(
+      {required final List<Page> pages, required this.currentPageIndex})
+      : _pages = pages;
 
   final List<Page> _pages;
   @override
@@ -1151,11 +1144,8 @@ class _$LoadedImpl implements _Loaded {
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(_pages),
-    currentPageIndex,
-  );
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_pages), currentPageIndex);
 
   /// Create a copy of OnboardingState
   /// with the given fields replaced by the non-null parameter values.
@@ -1247,10 +1237,9 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements OnboardingState {
-  const factory _Loaded({
-    required final List<Page> pages,
-    required final int currentPageIndex,
-  }) = _$LoadedImpl;
+  const factory _Loaded(
+      {required final List<Page> pages,
+      required final int currentPageIndex}) = _$LoadedImpl;
 
   List<Page> get pages;
   int get currentPageIndex;
@@ -1265,9 +1254,8 @@ abstract class _Loaded implements OnboardingState {
 /// @nodoc
 abstract class _$$FailureImplCopyWith<$Res> {
   factory _$$FailureImplCopyWith(
-    _$FailureImpl value,
-    $Res Function(_$FailureImpl) then,
-  ) = __$$FailureImplCopyWithImpl<$Res>;
+          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+      __$$FailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure failure});
 
@@ -1279,23 +1267,22 @@ class __$$FailureImplCopyWithImpl<$Res>
     extends _$OnboardingStateCopyWithImpl<$Res, _$FailureImpl>
     implements _$$FailureImplCopyWith<$Res> {
   __$$FailureImplCopyWithImpl(
-    _$FailureImpl _value,
-    $Res Function(_$FailureImpl) _then,
-  ) : super(_value, _then);
+      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of OnboardingState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? failure = null}) {
-    return _then(
-      _$FailureImpl(
-        failure: null == failure
-            ? _value.failure
-            : failure // ignore: cast_nullable_to_non_nullable
-                  as Failure,
-      ),
-    );
+  $Res call({
+    Object? failure = null,
+  }) {
+    return _then(_$FailureImpl(
+      failure: null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure,
+    ));
   }
 
   /// Create a copy of OnboardingState
@@ -1437,9 +1424,8 @@ abstract class _Failure implements OnboardingState {
 /// @nodoc
 abstract class _$$CompletedImplCopyWith<$Res> {
   factory _$$CompletedImplCopyWith(
-    _$CompletedImpl value,
-    $Res Function(_$CompletedImpl) then,
-  ) = __$$CompletedImplCopyWithImpl<$Res>;
+          _$CompletedImpl value, $Res Function(_$CompletedImpl) then) =
+      __$$CompletedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1447,9 +1433,8 @@ class __$$CompletedImplCopyWithImpl<$Res>
     extends _$OnboardingStateCopyWithImpl<$Res, _$CompletedImpl>
     implements _$$CompletedImplCopyWith<$Res> {
   __$$CompletedImplCopyWithImpl(
-    _$CompletedImpl _value,
-    $Res Function(_$CompletedImpl) _then,
-  ) : super(_value, _then);
+      _$CompletedImpl _value, $Res Function(_$CompletedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of OnboardingState
   /// with the given fields replaced by the non-null parameter values.

@@ -12,8 +12,7 @@ part of 'failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Failure {
@@ -22,9 +21,9 @@ mixin _$Failure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -37,26 +36,23 @@ mixin _$Failure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, String code)? network,
@@ -75,7 +71,7 @@ mixin _$Failure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -83,11 +79,12 @@ mixin _$Failure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, String code)? network,
@@ -106,7 +103,7 @@ mixin _$Failure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -114,12 +111,13 @@ mixin _$Failure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NetworkFailure value) network,
@@ -134,27 +132,28 @@ mixin _$Failure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NetworkFailure value)? network,
@@ -169,13 +168,13 @@ mixin _$Failure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -185,7 +184,8 @@ mixin _$Failure {
     TResult? Function(AuthUnauthorizedFailure value)? authUnauthorized,
     TResult? Function(AuthForbiddenFailure value)? authForbidden,
     TResult? Function(AuthExpiredFailure value)? authExpired,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NetworkFailure value)? network,
@@ -215,7 +215,8 @@ mixin _$Failure {
     TResult Function(AuthForbiddenFailure value)? authForbidden,
     TResult Function(AuthExpiredFailure value)? authExpired,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -240,10 +241,9 @@ class _$FailureCopyWithImpl<$Res, $Val extends Failure>
 
 /// @nodoc
 abstract class _$$NetworkFailureImplCopyWith<$Res> {
-  factory _$$NetworkFailureImplCopyWith(
-    _$NetworkFailureImpl value,
-    $Res Function(_$NetworkFailureImpl) then,
-  ) = __$$NetworkFailureImplCopyWithImpl<$Res>;
+  factory _$$NetworkFailureImplCopyWith(_$NetworkFailureImpl value,
+          $Res Function(_$NetworkFailureImpl) then) =
+      __$$NetworkFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, String code});
 }
@@ -253,37 +253,36 @@ class __$$NetworkFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$NetworkFailureImpl>
     implements _$$NetworkFailureImplCopyWith<$Res> {
   __$$NetworkFailureImplCopyWithImpl(
-    _$NetworkFailureImpl _value,
-    $Res Function(_$NetworkFailureImpl) _then,
-  ) : super(_value, _then);
+      _$NetworkFailureImpl _value, $Res Function(_$NetworkFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = null, Object? code = null}) {
-    return _then(
-      _$NetworkFailureImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? message = null,
+    Object? code = null,
+  }) {
+    return _then(_$NetworkFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$NetworkFailureImpl extends NetworkFailure {
-  const _$NetworkFailureImpl({
-    this.message = 'Ошибка сети',
-    this.code = 'NETWORK_ERROR',
-  }) : super._();
+  const _$NetworkFailureImpl(
+      {this.message = 'Ошибка сети', this.code = 'NETWORK_ERROR'})
+      : super._();
 
   @override
   @JsonKey()
@@ -316,9 +315,7 @@ class _$NetworkFailureImpl extends NetworkFailure {
   @pragma('vm:prefer-inline')
   _$$NetworkFailureImplCopyWith<_$NetworkFailureImpl> get copyWith =>
       __$$NetworkFailureImplCopyWithImpl<_$NetworkFailureImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -326,9 +323,9 @@ class _$NetworkFailureImpl extends NetworkFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -341,22 +338,18 @@ class _$NetworkFailureImpl extends NetworkFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -383,7 +376,7 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -391,7 +384,7 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -418,7 +411,7 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -426,7 +419,7 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -453,23 +446,23 @@ class _$NetworkFailureImpl extends NetworkFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -492,13 +485,13 @@ class _$NetworkFailureImpl extends NetworkFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -567,10 +560,9 @@ abstract class NetworkFailure extends Failure {
 
 /// @nodoc
 abstract class _$$TimeoutFailureImplCopyWith<$Res> {
-  factory _$$TimeoutFailureImplCopyWith(
-    _$TimeoutFailureImpl value,
-    $Res Function(_$TimeoutFailureImpl) then,
-  ) = __$$TimeoutFailureImplCopyWithImpl<$Res>;
+  factory _$$TimeoutFailureImplCopyWith(_$TimeoutFailureImpl value,
+          $Res Function(_$TimeoutFailureImpl) then) =
+      __$$TimeoutFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, String code});
 }
@@ -580,37 +572,36 @@ class __$$TimeoutFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$TimeoutFailureImpl>
     implements _$$TimeoutFailureImplCopyWith<$Res> {
   __$$TimeoutFailureImplCopyWithImpl(
-    _$TimeoutFailureImpl _value,
-    $Res Function(_$TimeoutFailureImpl) _then,
-  ) : super(_value, _then);
+      _$TimeoutFailureImpl _value, $Res Function(_$TimeoutFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = null, Object? code = null}) {
-    return _then(
-      _$TimeoutFailureImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? message = null,
+    Object? code = null,
+  }) {
+    return _then(_$TimeoutFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$TimeoutFailureImpl extends TimeoutFailure {
-  const _$TimeoutFailureImpl({
-    this.message = 'Превышено время ожидания',
-    this.code = 'TIMEOUT_ERROR',
-  }) : super._();
+  const _$TimeoutFailureImpl(
+      {this.message = 'Превышено время ожидания', this.code = 'TIMEOUT_ERROR'})
+      : super._();
 
   @override
   @JsonKey()
@@ -643,9 +634,7 @@ class _$TimeoutFailureImpl extends TimeoutFailure {
   @pragma('vm:prefer-inline')
   _$$TimeoutFailureImplCopyWith<_$TimeoutFailureImpl> get copyWith =>
       __$$TimeoutFailureImplCopyWithImpl<_$TimeoutFailureImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -653,9 +642,9 @@ class _$TimeoutFailureImpl extends TimeoutFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -668,22 +657,18 @@ class _$TimeoutFailureImpl extends TimeoutFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -710,7 +695,7 @@ class _$TimeoutFailureImpl extends TimeoutFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -718,7 +703,7 @@ class _$TimeoutFailureImpl extends TimeoutFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -745,7 +730,7 @@ class _$TimeoutFailureImpl extends TimeoutFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -753,7 +738,7 @@ class _$TimeoutFailureImpl extends TimeoutFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -780,23 +765,23 @@ class _$TimeoutFailureImpl extends TimeoutFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -819,13 +804,13 @@ class _$TimeoutFailureImpl extends TimeoutFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -895,9 +880,8 @@ abstract class TimeoutFailure extends Failure {
 /// @nodoc
 abstract class _$$ServerFailureImplCopyWith<$Res> {
   factory _$$ServerFailureImplCopyWith(
-    _$ServerFailureImpl value,
-    $Res Function(_$ServerFailureImpl) then,
-  ) = __$$ServerFailureImplCopyWithImpl<$Res>;
+          _$ServerFailureImpl value, $Res Function(_$ServerFailureImpl) then) =
+      __$$ServerFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, String code, int? statusCode});
 }
@@ -907,9 +891,8 @@ class __$$ServerFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ServerFailureImpl>
     implements _$$ServerFailureImplCopyWith<$Res> {
   __$$ServerFailureImplCopyWithImpl(
-    _$ServerFailureImpl _value,
-    $Res Function(_$ServerFailureImpl) _then,
-  ) : super(_value, _then);
+      _$ServerFailureImpl _value, $Res Function(_$ServerFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -920,33 +903,31 @@ class __$$ServerFailureImplCopyWithImpl<$Res>
     Object? code = null,
     Object? statusCode = freezed,
   }) {
-    return _then(
-      _$ServerFailureImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-        statusCode: freezed == statusCode
-            ? _value.statusCode
-            : statusCode // ignore: cast_nullable_to_non_nullable
-                  as int?,
-      ),
-    );
+    return _then(_$ServerFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      statusCode: freezed == statusCode
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$ServerFailureImpl extends ServerFailure {
-  const _$ServerFailureImpl({
-    this.message = 'Ошибка сервера',
-    this.code = 'SERVER_ERROR',
-    this.statusCode,
-  }) : super._();
+  const _$ServerFailureImpl(
+      {this.message = 'Ошибка сервера',
+      this.code = 'SERVER_ERROR',
+      this.statusCode})
+      : super._();
 
   @override
   @JsonKey()
@@ -990,9 +971,9 @@ class _$ServerFailureImpl extends ServerFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -1005,22 +986,18 @@ class _$ServerFailureImpl extends ServerFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -1047,7 +1024,7 @@ class _$ServerFailureImpl extends ServerFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -1055,7 +1032,7 @@ class _$ServerFailureImpl extends ServerFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -1082,7 +1059,7 @@ class _$ServerFailureImpl extends ServerFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -1090,7 +1067,7 @@ class _$ServerFailureImpl extends ServerFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -1117,23 +1094,23 @@ class _$ServerFailureImpl extends ServerFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -1156,13 +1133,13 @@ class _$ServerFailureImpl extends ServerFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -1215,11 +1192,10 @@ class _$ServerFailureImpl extends ServerFailure {
 }
 
 abstract class ServerFailure extends Failure {
-  const factory ServerFailure({
-    final String message,
-    final String code,
-    final int? statusCode,
-  }) = _$ServerFailureImpl;
+  const factory ServerFailure(
+      {final String message,
+      final String code,
+      final int? statusCode}) = _$ServerFailureImpl;
   const ServerFailure._() : super._();
 
   String get message;
@@ -1236,9 +1212,8 @@ abstract class ServerFailure extends Failure {
 /// @nodoc
 abstract class _$$ClientFailureImplCopyWith<$Res> {
   factory _$$ClientFailureImplCopyWith(
-    _$ClientFailureImpl value,
-    $Res Function(_$ClientFailureImpl) then,
-  ) = __$$ClientFailureImplCopyWithImpl<$Res>;
+          _$ClientFailureImpl value, $Res Function(_$ClientFailureImpl) then) =
+      __$$ClientFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, String code, int? statusCode});
 }
@@ -1248,9 +1223,8 @@ class __$$ClientFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ClientFailureImpl>
     implements _$$ClientFailureImplCopyWith<$Res> {
   __$$ClientFailureImplCopyWithImpl(
-    _$ClientFailureImpl _value,
-    $Res Function(_$ClientFailureImpl) _then,
-  ) : super(_value, _then);
+      _$ClientFailureImpl _value, $Res Function(_$ClientFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -1261,33 +1235,31 @@ class __$$ClientFailureImplCopyWithImpl<$Res>
     Object? code = null,
     Object? statusCode = freezed,
   }) {
-    return _then(
-      _$ClientFailureImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-        statusCode: freezed == statusCode
-            ? _value.statusCode
-            : statusCode // ignore: cast_nullable_to_non_nullable
-                  as int?,
-      ),
-    );
+    return _then(_$ClientFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      statusCode: freezed == statusCode
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$ClientFailureImpl extends ClientFailure {
-  const _$ClientFailureImpl({
-    this.message = 'Ошибка клиента',
-    this.code = 'CLIENT_ERROR',
-    this.statusCode,
-  }) : super._();
+  const _$ClientFailureImpl(
+      {this.message = 'Ошибка клиента',
+      this.code = 'CLIENT_ERROR',
+      this.statusCode})
+      : super._();
 
   @override
   @JsonKey()
@@ -1331,9 +1303,9 @@ class _$ClientFailureImpl extends ClientFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -1346,22 +1318,18 @@ class _$ClientFailureImpl extends ClientFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -1388,7 +1356,7 @@ class _$ClientFailureImpl extends ClientFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -1396,7 +1364,7 @@ class _$ClientFailureImpl extends ClientFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -1423,7 +1391,7 @@ class _$ClientFailureImpl extends ClientFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -1431,7 +1399,7 @@ class _$ClientFailureImpl extends ClientFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -1458,23 +1426,23 @@ class _$ClientFailureImpl extends ClientFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -1497,13 +1465,13 @@ class _$ClientFailureImpl extends ClientFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -1556,11 +1524,10 @@ class _$ClientFailureImpl extends ClientFailure {
 }
 
 abstract class ClientFailure extends Failure {
-  const factory ClientFailure({
-    final String message,
-    final String code,
-    final int? statusCode,
-  }) = _$ClientFailureImpl;
+  const factory ClientFailure(
+      {final String message,
+      final String code,
+      final int? statusCode}) = _$ClientFailureImpl;
   const ClientFailure._() : super._();
 
   String get message;
@@ -1577,9 +1544,8 @@ abstract class ClientFailure extends Failure {
 /// @nodoc
 abstract class _$$AuthFailureImplCopyWith<$Res> {
   factory _$$AuthFailureImplCopyWith(
-    _$AuthFailureImpl value,
-    $Res Function(_$AuthFailureImpl) then,
-  ) = __$$AuthFailureImplCopyWithImpl<$Res>;
+          _$AuthFailureImpl value, $Res Function(_$AuthFailureImpl) then) =
+      __$$AuthFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, String code});
 }
@@ -1589,37 +1555,36 @@ class __$$AuthFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$AuthFailureImpl>
     implements _$$AuthFailureImplCopyWith<$Res> {
   __$$AuthFailureImplCopyWithImpl(
-    _$AuthFailureImpl _value,
-    $Res Function(_$AuthFailureImpl) _then,
-  ) : super(_value, _then);
+      _$AuthFailureImpl _value, $Res Function(_$AuthFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = null, Object? code = null}) {
-    return _then(
-      _$AuthFailureImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? message = null,
+    Object? code = null,
+  }) {
+    return _then(_$AuthFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$AuthFailureImpl extends AuthFailure {
-  const _$AuthFailureImpl({
-    this.message = 'Ошибка доступа',
-    this.code = 'AUTH_ERROR',
-  }) : super._();
+  const _$AuthFailureImpl(
+      {this.message = 'Ошибка доступа', this.code = 'AUTH_ERROR'})
+      : super._();
 
   @override
   @JsonKey()
@@ -1659,9 +1624,9 @@ class _$AuthFailureImpl extends AuthFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -1674,22 +1639,18 @@ class _$AuthFailureImpl extends AuthFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -1716,7 +1677,7 @@ class _$AuthFailureImpl extends AuthFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -1724,7 +1685,7 @@ class _$AuthFailureImpl extends AuthFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -1751,7 +1712,7 @@ class _$AuthFailureImpl extends AuthFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -1759,7 +1720,7 @@ class _$AuthFailureImpl extends AuthFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -1786,23 +1747,23 @@ class _$AuthFailureImpl extends AuthFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -1825,13 +1786,13 @@ class _$AuthFailureImpl extends AuthFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -1900,10 +1861,9 @@ abstract class AuthFailure extends Failure {
 
 /// @nodoc
 abstract class _$$LocalStorageFailureImplCopyWith<$Res> {
-  factory _$$LocalStorageFailureImplCopyWith(
-    _$LocalStorageFailureImpl value,
-    $Res Function(_$LocalStorageFailureImpl) then,
-  ) = __$$LocalStorageFailureImplCopyWithImpl<$Res>;
+  factory _$$LocalStorageFailureImplCopyWith(_$LocalStorageFailureImpl value,
+          $Res Function(_$LocalStorageFailureImpl) then) =
+      __$$LocalStorageFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, String code});
 }
@@ -1912,38 +1872,38 @@ abstract class _$$LocalStorageFailureImplCopyWith<$Res> {
 class __$$LocalStorageFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$LocalStorageFailureImpl>
     implements _$$LocalStorageFailureImplCopyWith<$Res> {
-  __$$LocalStorageFailureImplCopyWithImpl(
-    _$LocalStorageFailureImpl _value,
-    $Res Function(_$LocalStorageFailureImpl) _then,
-  ) : super(_value, _then);
+  __$$LocalStorageFailureImplCopyWithImpl(_$LocalStorageFailureImpl _value,
+      $Res Function(_$LocalStorageFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = null, Object? code = null}) {
-    return _then(
-      _$LocalStorageFailureImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? message = null,
+    Object? code = null,
+  }) {
+    return _then(_$LocalStorageFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$LocalStorageFailureImpl extends LocalStorageFailure {
-  const _$LocalStorageFailureImpl({
-    this.message = 'Ошибка локального хранилища',
-    this.code = 'LOCAL_STORAGE_ERROR',
-  }) : super._();
+  const _$LocalStorageFailureImpl(
+      {this.message = 'Ошибка локального хранилища',
+      this.code = 'LOCAL_STORAGE_ERROR'})
+      : super._();
 
   @override
   @JsonKey()
@@ -1976,9 +1936,7 @@ class _$LocalStorageFailureImpl extends LocalStorageFailure {
   @pragma('vm:prefer-inline')
   _$$LocalStorageFailureImplCopyWith<_$LocalStorageFailureImpl> get copyWith =>
       __$$LocalStorageFailureImplCopyWithImpl<_$LocalStorageFailureImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1986,9 +1944,9 @@ class _$LocalStorageFailureImpl extends LocalStorageFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -2001,22 +1959,18 @@ class _$LocalStorageFailureImpl extends LocalStorageFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -2043,7 +1997,7 @@ class _$LocalStorageFailureImpl extends LocalStorageFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -2051,7 +2005,7 @@ class _$LocalStorageFailureImpl extends LocalStorageFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -2078,7 +2032,7 @@ class _$LocalStorageFailureImpl extends LocalStorageFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -2086,7 +2040,7 @@ class _$LocalStorageFailureImpl extends LocalStorageFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -2113,23 +2067,23 @@ class _$LocalStorageFailureImpl extends LocalStorageFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -2152,13 +2106,13 @@ class _$LocalStorageFailureImpl extends LocalStorageFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -2228,9 +2182,8 @@ abstract class LocalStorageFailure extends Failure {
 /// @nodoc
 abstract class _$$CacheFailureImplCopyWith<$Res> {
   factory _$$CacheFailureImplCopyWith(
-    _$CacheFailureImpl value,
-    $Res Function(_$CacheFailureImpl) then,
-  ) = __$$CacheFailureImplCopyWithImpl<$Res>;
+          _$CacheFailureImpl value, $Res Function(_$CacheFailureImpl) then) =
+      __$$CacheFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, String code});
 }
@@ -2240,37 +2193,36 @@ class __$$CacheFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$CacheFailureImpl>
     implements _$$CacheFailureImplCopyWith<$Res> {
   __$$CacheFailureImplCopyWithImpl(
-    _$CacheFailureImpl _value,
-    $Res Function(_$CacheFailureImpl) _then,
-  ) : super(_value, _then);
+      _$CacheFailureImpl _value, $Res Function(_$CacheFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = null, Object? code = null}) {
-    return _then(
-      _$CacheFailureImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? message = null,
+    Object? code = null,
+  }) {
+    return _then(_$CacheFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$CacheFailureImpl extends CacheFailure {
-  const _$CacheFailureImpl({
-    this.message = 'Ошибка кэша',
-    this.code = 'CACHE_ERROR',
-  }) : super._();
+  const _$CacheFailureImpl(
+      {this.message = 'Ошибка кэша', this.code = 'CACHE_ERROR'})
+      : super._();
 
   @override
   @JsonKey()
@@ -2310,9 +2262,9 @@ class _$CacheFailureImpl extends CacheFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -2325,22 +2277,18 @@ class _$CacheFailureImpl extends CacheFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -2367,7 +2315,7 @@ class _$CacheFailureImpl extends CacheFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -2375,7 +2323,7 @@ class _$CacheFailureImpl extends CacheFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -2402,7 +2350,7 @@ class _$CacheFailureImpl extends CacheFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -2410,7 +2358,7 @@ class _$CacheFailureImpl extends CacheFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -2437,23 +2385,23 @@ class _$CacheFailureImpl extends CacheFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -2476,13 +2424,13 @@ class _$CacheFailureImpl extends CacheFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -2551,10 +2499,9 @@ abstract class CacheFailure extends Failure {
 
 /// @nodoc
 abstract class _$$DatabaseFailureImplCopyWith<$Res> {
-  factory _$$DatabaseFailureImplCopyWith(
-    _$DatabaseFailureImpl value,
-    $Res Function(_$DatabaseFailureImpl) then,
-  ) = __$$DatabaseFailureImplCopyWithImpl<$Res>;
+  factory _$$DatabaseFailureImplCopyWith(_$DatabaseFailureImpl value,
+          $Res Function(_$DatabaseFailureImpl) then) =
+      __$$DatabaseFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, String code});
 }
@@ -2564,37 +2511,36 @@ class __$$DatabaseFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$DatabaseFailureImpl>
     implements _$$DatabaseFailureImplCopyWith<$Res> {
   __$$DatabaseFailureImplCopyWithImpl(
-    _$DatabaseFailureImpl _value,
-    $Res Function(_$DatabaseFailureImpl) _then,
-  ) : super(_value, _then);
+      _$DatabaseFailureImpl _value, $Res Function(_$DatabaseFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = null, Object? code = null}) {
-    return _then(
-      _$DatabaseFailureImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? message = null,
+    Object? code = null,
+  }) {
+    return _then(_$DatabaseFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$DatabaseFailureImpl extends DatabaseFailure {
-  const _$DatabaseFailureImpl({
-    this.message = 'Ошибка базы данных',
-    this.code = 'DATABASE_ERROR',
-  }) : super._();
+  const _$DatabaseFailureImpl(
+      {this.message = 'Ошибка базы данных', this.code = 'DATABASE_ERROR'})
+      : super._();
 
   @override
   @JsonKey()
@@ -2627,9 +2573,7 @@ class _$DatabaseFailureImpl extends DatabaseFailure {
   @pragma('vm:prefer-inline')
   _$$DatabaseFailureImplCopyWith<_$DatabaseFailureImpl> get copyWith =>
       __$$DatabaseFailureImplCopyWithImpl<_$DatabaseFailureImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2637,9 +2581,9 @@ class _$DatabaseFailureImpl extends DatabaseFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -2652,22 +2596,18 @@ class _$DatabaseFailureImpl extends DatabaseFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -2694,7 +2634,7 @@ class _$DatabaseFailureImpl extends DatabaseFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -2702,7 +2642,7 @@ class _$DatabaseFailureImpl extends DatabaseFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -2729,7 +2669,7 @@ class _$DatabaseFailureImpl extends DatabaseFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -2737,7 +2677,7 @@ class _$DatabaseFailureImpl extends DatabaseFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -2764,23 +2704,23 @@ class _$DatabaseFailureImpl extends DatabaseFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -2803,13 +2743,13 @@ class _$DatabaseFailureImpl extends DatabaseFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -2878,10 +2818,9 @@ abstract class DatabaseFailure extends Failure {
 
 /// @nodoc
 abstract class _$$ValidationFailureImplCopyWith<$Res> {
-  factory _$$ValidationFailureImplCopyWith(
-    _$ValidationFailureImpl value,
-    $Res Function(_$ValidationFailureImpl) then,
-  ) = __$$ValidationFailureImplCopyWithImpl<$Res>;
+  factory _$$ValidationFailureImplCopyWith(_$ValidationFailureImpl value,
+          $Res Function(_$ValidationFailureImpl) then) =
+      __$$ValidationFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, String code});
 }
@@ -2890,38 +2829,37 @@ abstract class _$$ValidationFailureImplCopyWith<$Res> {
 class __$$ValidationFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ValidationFailureImpl>
     implements _$$ValidationFailureImplCopyWith<$Res> {
-  __$$ValidationFailureImplCopyWithImpl(
-    _$ValidationFailureImpl _value,
-    $Res Function(_$ValidationFailureImpl) _then,
-  ) : super(_value, _then);
+  __$$ValidationFailureImplCopyWithImpl(_$ValidationFailureImpl _value,
+      $Res Function(_$ValidationFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = null, Object? code = null}) {
-    return _then(
-      _$ValidationFailureImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? message = null,
+    Object? code = null,
+  }) {
+    return _then(_$ValidationFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$ValidationFailureImpl extends ValidationFailure {
-  const _$ValidationFailureImpl({
-    this.message = 'Ошибка валидации',
-    this.code = 'VALIDATION_ERROR',
-  }) : super._();
+  const _$ValidationFailureImpl(
+      {this.message = 'Ошибка валидации', this.code = 'VALIDATION_ERROR'})
+      : super._();
 
   @override
   @JsonKey()
@@ -2954,9 +2892,7 @@ class _$ValidationFailureImpl extends ValidationFailure {
   @pragma('vm:prefer-inline')
   _$$ValidationFailureImplCopyWith<_$ValidationFailureImpl> get copyWith =>
       __$$ValidationFailureImplCopyWithImpl<_$ValidationFailureImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2964,9 +2900,9 @@ class _$ValidationFailureImpl extends ValidationFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -2979,22 +2915,18 @@ class _$ValidationFailureImpl extends ValidationFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -3021,7 +2953,7 @@ class _$ValidationFailureImpl extends ValidationFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -3029,7 +2961,7 @@ class _$ValidationFailureImpl extends ValidationFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -3056,7 +2988,7 @@ class _$ValidationFailureImpl extends ValidationFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -3064,7 +2996,7 @@ class _$ValidationFailureImpl extends ValidationFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -3091,23 +3023,23 @@ class _$ValidationFailureImpl extends ValidationFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -3130,13 +3062,13 @@ class _$ValidationFailureImpl extends ValidationFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -3205,10 +3137,9 @@ abstract class ValidationFailure extends Failure {
 
 /// @nodoc
 abstract class _$$UnknownFailureImplCopyWith<$Res> {
-  factory _$$UnknownFailureImplCopyWith(
-    _$UnknownFailureImpl value,
-    $Res Function(_$UnknownFailureImpl) then,
-  ) = __$$UnknownFailureImplCopyWithImpl<$Res>;
+  factory _$$UnknownFailureImplCopyWith(_$UnknownFailureImpl value,
+          $Res Function(_$UnknownFailureImpl) then) =
+      __$$UnknownFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, String code});
 }
@@ -3218,37 +3149,36 @@ class __$$UnknownFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$UnknownFailureImpl>
     implements _$$UnknownFailureImplCopyWith<$Res> {
   __$$UnknownFailureImplCopyWithImpl(
-    _$UnknownFailureImpl _value,
-    $Res Function(_$UnknownFailureImpl) _then,
-  ) : super(_value, _then);
+      _$UnknownFailureImpl _value, $Res Function(_$UnknownFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = null, Object? code = null}) {
-    return _then(
-      _$UnknownFailureImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? message = null,
+    Object? code = null,
+  }) {
+    return _then(_$UnknownFailureImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$UnknownFailureImpl extends UnknownFailure {
-  const _$UnknownFailureImpl({
-    this.message = 'Неизвестная ошибка',
-    this.code = 'UNKNOWN_ERROR',
-  }) : super._();
+  const _$UnknownFailureImpl(
+      {this.message = 'Неизвестная ошибка', this.code = 'UNKNOWN_ERROR'})
+      : super._();
 
   @override
   @JsonKey()
@@ -3281,9 +3211,7 @@ class _$UnknownFailureImpl extends UnknownFailure {
   @pragma('vm:prefer-inline')
   _$$UnknownFailureImplCopyWith<_$UnknownFailureImpl> get copyWith =>
       __$$UnknownFailureImplCopyWithImpl<_$UnknownFailureImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3291,9 +3219,9 @@ class _$UnknownFailureImpl extends UnknownFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -3306,22 +3234,18 @@ class _$UnknownFailureImpl extends UnknownFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -3348,7 +3272,7 @@ class _$UnknownFailureImpl extends UnknownFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -3356,7 +3280,7 @@ class _$UnknownFailureImpl extends UnknownFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -3383,7 +3307,7 @@ class _$UnknownFailureImpl extends UnknownFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -3391,7 +3315,7 @@ class _$UnknownFailureImpl extends UnknownFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -3418,23 +3342,23 @@ class _$UnknownFailureImpl extends UnknownFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -3457,13 +3381,13 @@ class _$UnknownFailureImpl extends UnknownFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -3533,9 +3457,9 @@ abstract class UnknownFailure extends Failure {
 /// @nodoc
 abstract class _$$NetworkNoInternetFailureImplCopyWith<$Res> {
   factory _$$NetworkNoInternetFailureImplCopyWith(
-    _$NetworkNoInternetFailureImpl value,
-    $Res Function(_$NetworkNoInternetFailureImpl) then,
-  ) = __$$NetworkNoInternetFailureImplCopyWithImpl<$Res>;
+          _$NetworkNoInternetFailureImpl value,
+          $Res Function(_$NetworkNoInternetFailureImpl) then) =
+      __$$NetworkNoInternetFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -3543,9 +3467,9 @@ class __$$NetworkNoInternetFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$NetworkNoInternetFailureImpl>
     implements _$$NetworkNoInternetFailureImplCopyWith<$Res> {
   __$$NetworkNoInternetFailureImplCopyWithImpl(
-    _$NetworkNoInternetFailureImpl _value,
-    $Res Function(_$NetworkNoInternetFailureImpl) _then,
-  ) : super(_value, _then);
+      _$NetworkNoInternetFailureImpl _value,
+      $Res Function(_$NetworkNoInternetFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -3577,9 +3501,9 @@ class _$NetworkNoInternetFailureImpl extends NetworkNoInternetFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -3592,22 +3516,18 @@ class _$NetworkNoInternetFailureImpl extends NetworkNoInternetFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -3634,7 +3554,7 @@ class _$NetworkNoInternetFailureImpl extends NetworkNoInternetFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -3642,7 +3562,7 @@ class _$NetworkNoInternetFailureImpl extends NetworkNoInternetFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -3669,7 +3589,7 @@ class _$NetworkNoInternetFailureImpl extends NetworkNoInternetFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -3677,7 +3597,7 @@ class _$NetworkNoInternetFailureImpl extends NetworkNoInternetFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -3704,23 +3624,23 @@ class _$NetworkNoInternetFailureImpl extends NetworkNoInternetFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -3743,13 +3663,13 @@ class _$NetworkNoInternetFailureImpl extends NetworkNoInternetFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -3809,9 +3729,9 @@ abstract class NetworkNoInternetFailure extends Failure {
 /// @nodoc
 abstract class _$$NetworkBadCertificateFailureImplCopyWith<$Res> {
   factory _$$NetworkBadCertificateFailureImplCopyWith(
-    _$NetworkBadCertificateFailureImpl value,
-    $Res Function(_$NetworkBadCertificateFailureImpl) then,
-  ) = __$$NetworkBadCertificateFailureImplCopyWithImpl<$Res>;
+          _$NetworkBadCertificateFailureImpl value,
+          $Res Function(_$NetworkBadCertificateFailureImpl) then) =
+      __$$NetworkBadCertificateFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -3819,9 +3739,9 @@ class __$$NetworkBadCertificateFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$NetworkBadCertificateFailureImpl>
     implements _$$NetworkBadCertificateFailureImplCopyWith<$Res> {
   __$$NetworkBadCertificateFailureImplCopyWithImpl(
-    _$NetworkBadCertificateFailureImpl _value,
-    $Res Function(_$NetworkBadCertificateFailureImpl) _then,
-  ) : super(_value, _then);
+      _$NetworkBadCertificateFailureImpl _value,
+      $Res Function(_$NetworkBadCertificateFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -3853,9 +3773,9 @@ class _$NetworkBadCertificateFailureImpl extends NetworkBadCertificateFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -3868,22 +3788,18 @@ class _$NetworkBadCertificateFailureImpl extends NetworkBadCertificateFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -3910,7 +3826,7 @@ class _$NetworkBadCertificateFailureImpl extends NetworkBadCertificateFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -3918,7 +3834,7 @@ class _$NetworkBadCertificateFailureImpl extends NetworkBadCertificateFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -3945,7 +3861,7 @@ class _$NetworkBadCertificateFailureImpl extends NetworkBadCertificateFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -3953,7 +3869,7 @@ class _$NetworkBadCertificateFailureImpl extends NetworkBadCertificateFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -3980,23 +3896,23 @@ class _$NetworkBadCertificateFailureImpl extends NetworkBadCertificateFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -4019,13 +3935,13 @@ class _$NetworkBadCertificateFailureImpl extends NetworkBadCertificateFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -4086,9 +4002,9 @@ abstract class NetworkBadCertificateFailure extends Failure {
 /// @nodoc
 abstract class _$$NetworkCancelledFailureImplCopyWith<$Res> {
   factory _$$NetworkCancelledFailureImplCopyWith(
-    _$NetworkCancelledFailureImpl value,
-    $Res Function(_$NetworkCancelledFailureImpl) then,
-  ) = __$$NetworkCancelledFailureImplCopyWithImpl<$Res>;
+          _$NetworkCancelledFailureImpl value,
+          $Res Function(_$NetworkCancelledFailureImpl) then) =
+      __$$NetworkCancelledFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -4096,9 +4012,9 @@ class __$$NetworkCancelledFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$NetworkCancelledFailureImpl>
     implements _$$NetworkCancelledFailureImplCopyWith<$Res> {
   __$$NetworkCancelledFailureImplCopyWithImpl(
-    _$NetworkCancelledFailureImpl _value,
-    $Res Function(_$NetworkCancelledFailureImpl) _then,
-  ) : super(_value, _then);
+      _$NetworkCancelledFailureImpl _value,
+      $Res Function(_$NetworkCancelledFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -4130,9 +4046,9 @@ class _$NetworkCancelledFailureImpl extends NetworkCancelledFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -4145,22 +4061,18 @@ class _$NetworkCancelledFailureImpl extends NetworkCancelledFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -4187,7 +4099,7 @@ class _$NetworkCancelledFailureImpl extends NetworkCancelledFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -4195,7 +4107,7 @@ class _$NetworkCancelledFailureImpl extends NetworkCancelledFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -4222,7 +4134,7 @@ class _$NetworkCancelledFailureImpl extends NetworkCancelledFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -4230,7 +4142,7 @@ class _$NetworkCancelledFailureImpl extends NetworkCancelledFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -4257,23 +4169,23 @@ class _$NetworkCancelledFailureImpl extends NetworkCancelledFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -4296,13 +4208,13 @@ class _$NetworkCancelledFailureImpl extends NetworkCancelledFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -4362,9 +4274,9 @@ abstract class NetworkCancelledFailure extends Failure {
 /// @nodoc
 abstract class _$$ServerBadRequestFailureImplCopyWith<$Res> {
   factory _$$ServerBadRequestFailureImplCopyWith(
-    _$ServerBadRequestFailureImpl value,
-    $Res Function(_$ServerBadRequestFailureImpl) then,
-  ) = __$$ServerBadRequestFailureImplCopyWithImpl<$Res>;
+          _$ServerBadRequestFailureImpl value,
+          $Res Function(_$ServerBadRequestFailureImpl) then) =
+      __$$ServerBadRequestFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
@@ -4374,23 +4286,23 @@ class __$$ServerBadRequestFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ServerBadRequestFailureImpl>
     implements _$$ServerBadRequestFailureImplCopyWith<$Res> {
   __$$ServerBadRequestFailureImplCopyWithImpl(
-    _$ServerBadRequestFailureImpl _value,
-    $Res Function(_$ServerBadRequestFailureImpl) _then,
-  ) : super(_value, _then);
+      _$ServerBadRequestFailureImpl _value,
+      $Res Function(_$ServerBadRequestFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = freezed}) {
-    return _then(
-      _$ServerBadRequestFailureImpl(
-        message: freezed == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String?,
-      ),
-    );
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$ServerBadRequestFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
 }
 
@@ -4424,10 +4336,8 @@ class _$ServerBadRequestFailureImpl extends ServerBadRequestFailure {
   @override
   @pragma('vm:prefer-inline')
   _$$ServerBadRequestFailureImplCopyWith<_$ServerBadRequestFailureImpl>
-  get copyWith =>
-      __$$ServerBadRequestFailureImplCopyWithImpl<
-        _$ServerBadRequestFailureImpl
-      >(this, _$identity);
+      get copyWith => __$$ServerBadRequestFailureImplCopyWithImpl<
+          _$ServerBadRequestFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4435,9 +4345,9 @@ class _$ServerBadRequestFailureImpl extends ServerBadRequestFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -4450,22 +4360,18 @@ class _$ServerBadRequestFailureImpl extends ServerBadRequestFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -4492,7 +4398,7 @@ class _$ServerBadRequestFailureImpl extends ServerBadRequestFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -4500,7 +4406,7 @@ class _$ServerBadRequestFailureImpl extends ServerBadRequestFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -4527,7 +4433,7 @@ class _$ServerBadRequestFailureImpl extends ServerBadRequestFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -4535,7 +4441,7 @@ class _$ServerBadRequestFailureImpl extends ServerBadRequestFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -4562,23 +4468,23 @@ class _$ServerBadRequestFailureImpl extends ServerBadRequestFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -4601,13 +4507,13 @@ class _$ServerBadRequestFailureImpl extends ServerBadRequestFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -4670,15 +4576,15 @@ abstract class ServerBadRequestFailure extends Failure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ServerBadRequestFailureImplCopyWith<_$ServerBadRequestFailureImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ServerNotFoundFailureImplCopyWith<$Res> {
   factory _$$ServerNotFoundFailureImplCopyWith(
-    _$ServerNotFoundFailureImpl value,
-    $Res Function(_$ServerNotFoundFailureImpl) then,
-  ) = __$$ServerNotFoundFailureImplCopyWithImpl<$Res>;
+          _$ServerNotFoundFailureImpl value,
+          $Res Function(_$ServerNotFoundFailureImpl) then) =
+      __$$ServerNotFoundFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
@@ -4687,24 +4593,23 @@ abstract class _$$ServerNotFoundFailureImplCopyWith<$Res> {
 class __$$ServerNotFoundFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ServerNotFoundFailureImpl>
     implements _$$ServerNotFoundFailureImplCopyWith<$Res> {
-  __$$ServerNotFoundFailureImplCopyWithImpl(
-    _$ServerNotFoundFailureImpl _value,
-    $Res Function(_$ServerNotFoundFailureImpl) _then,
-  ) : super(_value, _then);
+  __$$ServerNotFoundFailureImplCopyWithImpl(_$ServerNotFoundFailureImpl _value,
+      $Res Function(_$ServerNotFoundFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = freezed}) {
-    return _then(
-      _$ServerNotFoundFailureImpl(
-        message: freezed == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String?,
-      ),
-    );
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$ServerNotFoundFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
 }
 
@@ -4738,11 +4643,8 @@ class _$ServerNotFoundFailureImpl extends ServerNotFoundFailure {
   @override
   @pragma('vm:prefer-inline')
   _$$ServerNotFoundFailureImplCopyWith<_$ServerNotFoundFailureImpl>
-  get copyWith =>
-      __$$ServerNotFoundFailureImplCopyWithImpl<_$ServerNotFoundFailureImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$ServerNotFoundFailureImplCopyWithImpl<
+          _$ServerNotFoundFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4750,9 +4652,9 @@ class _$ServerNotFoundFailureImpl extends ServerNotFoundFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -4765,22 +4667,18 @@ class _$ServerNotFoundFailureImpl extends ServerNotFoundFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -4807,7 +4705,7 @@ class _$ServerNotFoundFailureImpl extends ServerNotFoundFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -4815,7 +4713,7 @@ class _$ServerNotFoundFailureImpl extends ServerNotFoundFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -4842,7 +4740,7 @@ class _$ServerNotFoundFailureImpl extends ServerNotFoundFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -4850,7 +4748,7 @@ class _$ServerNotFoundFailureImpl extends ServerNotFoundFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -4877,23 +4775,23 @@ class _$ServerNotFoundFailureImpl extends ServerNotFoundFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -4916,13 +4814,13 @@ class _$ServerNotFoundFailureImpl extends ServerNotFoundFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -4985,15 +4883,15 @@ abstract class ServerNotFoundFailure extends Failure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ServerNotFoundFailureImplCopyWith<_$ServerNotFoundFailureImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ServerValidationFailureImplCopyWith<$Res> {
   factory _$$ServerValidationFailureImplCopyWith(
-    _$ServerValidationFailureImpl value,
-    $Res Function(_$ServerValidationFailureImpl) then,
-  ) = __$$ServerValidationFailureImplCopyWithImpl<$Res>;
+          _$ServerValidationFailureImpl value,
+          $Res Function(_$ServerValidationFailureImpl) then) =
+      __$$ServerValidationFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message, Map<String, List<String>>? errors});
 }
@@ -5003,38 +4901,38 @@ class __$$ServerValidationFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ServerValidationFailureImpl>
     implements _$$ServerValidationFailureImplCopyWith<$Res> {
   __$$ServerValidationFailureImplCopyWithImpl(
-    _$ServerValidationFailureImpl _value,
-    $Res Function(_$ServerValidationFailureImpl) _then,
-  ) : super(_value, _then);
+      _$ServerValidationFailureImpl _value,
+      $Res Function(_$ServerValidationFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = freezed, Object? errors = freezed}) {
-    return _then(
-      _$ServerValidationFailureImpl(
-        message: freezed == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        errors: freezed == errors
-            ? _value._errors
-            : errors // ignore: cast_nullable_to_non_nullable
-                  as Map<String, List<String>>?,
-      ),
-    );
+  $Res call({
+    Object? message = freezed,
+    Object? errors = freezed,
+  }) {
+    return _then(_$ServerValidationFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      errors: freezed == errors
+          ? _value._errors
+          : errors // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>?,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$ServerValidationFailureImpl extends ServerValidationFailure {
-  const _$ServerValidationFailureImpl({
-    this.message,
-    final Map<String, List<String>>? errors,
-  }) : _errors = errors,
-       super._();
+  const _$ServerValidationFailureImpl(
+      {this.message, final Map<String, List<String>>? errors})
+      : _errors = errors,
+        super._();
 
   @override
   final String? message;
@@ -5064,10 +4962,7 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
 
   @override
   int get hashCode => Object.hash(
-    runtimeType,
-    message,
-    const DeepCollectionEquality().hash(_errors),
-  );
+      runtimeType, message, const DeepCollectionEquality().hash(_errors));
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -5075,10 +4970,8 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
   @override
   @pragma('vm:prefer-inline')
   _$$ServerValidationFailureImplCopyWith<_$ServerValidationFailureImpl>
-  get copyWith =>
-      __$$ServerValidationFailureImplCopyWithImpl<
-        _$ServerValidationFailureImpl
-      >(this, _$identity);
+      get copyWith => __$$ServerValidationFailureImplCopyWithImpl<
+          _$ServerValidationFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5086,9 +4979,9 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -5101,22 +4994,18 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -5143,7 +5032,7 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -5151,7 +5040,7 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -5178,7 +5067,7 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -5186,7 +5075,7 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -5213,23 +5102,23 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -5252,13 +5141,13 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -5311,10 +5200,9 @@ class _$ServerValidationFailureImpl extends ServerValidationFailure {
 }
 
 abstract class ServerValidationFailure extends Failure {
-  const factory ServerValidationFailure({
-    final String? message,
-    final Map<String, List<String>>? errors,
-  }) = _$ServerValidationFailureImpl;
+  const factory ServerValidationFailure(
+      {final String? message,
+      final Map<String, List<String>>? errors}) = _$ServerValidationFailureImpl;
   const ServerValidationFailure._() : super._();
 
   String? get message;
@@ -5324,15 +5212,15 @@ abstract class ServerValidationFailure extends Failure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ServerValidationFailureImplCopyWith<_$ServerValidationFailureImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ServerTooManyRequestsFailureImplCopyWith<$Res> {
   factory _$$ServerTooManyRequestsFailureImplCopyWith(
-    _$ServerTooManyRequestsFailureImpl value,
-    $Res Function(_$ServerTooManyRequestsFailureImpl) then,
-  ) = __$$ServerTooManyRequestsFailureImplCopyWithImpl<$Res>;
+          _$ServerTooManyRequestsFailureImpl value,
+          $Res Function(_$ServerTooManyRequestsFailureImpl) then) =
+      __$$ServerTooManyRequestsFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -5340,9 +5228,9 @@ class __$$ServerTooManyRequestsFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ServerTooManyRequestsFailureImpl>
     implements _$$ServerTooManyRequestsFailureImplCopyWith<$Res> {
   __$$ServerTooManyRequestsFailureImplCopyWithImpl(
-    _$ServerTooManyRequestsFailureImpl _value,
-    $Res Function(_$ServerTooManyRequestsFailureImpl) _then,
-  ) : super(_value, _then);
+      _$ServerTooManyRequestsFailureImpl _value,
+      $Res Function(_$ServerTooManyRequestsFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -5374,9 +5262,9 @@ class _$ServerTooManyRequestsFailureImpl extends ServerTooManyRequestsFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -5389,22 +5277,18 @@ class _$ServerTooManyRequestsFailureImpl extends ServerTooManyRequestsFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -5431,7 +5315,7 @@ class _$ServerTooManyRequestsFailureImpl extends ServerTooManyRequestsFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -5439,7 +5323,7 @@ class _$ServerTooManyRequestsFailureImpl extends ServerTooManyRequestsFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -5466,7 +5350,7 @@ class _$ServerTooManyRequestsFailureImpl extends ServerTooManyRequestsFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -5474,7 +5358,7 @@ class _$ServerTooManyRequestsFailureImpl extends ServerTooManyRequestsFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -5501,23 +5385,23 @@ class _$ServerTooManyRequestsFailureImpl extends ServerTooManyRequestsFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -5540,13 +5424,13 @@ class _$ServerTooManyRequestsFailureImpl extends ServerTooManyRequestsFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -5607,9 +5491,9 @@ abstract class ServerTooManyRequestsFailure extends Failure {
 /// @nodoc
 abstract class _$$ServerInternalErrorFailureImplCopyWith<$Res> {
   factory _$$ServerInternalErrorFailureImplCopyWith(
-    _$ServerInternalErrorFailureImpl value,
-    $Res Function(_$ServerInternalErrorFailureImpl) then,
-  ) = __$$ServerInternalErrorFailureImplCopyWithImpl<$Res>;
+          _$ServerInternalErrorFailureImpl value,
+          $Res Function(_$ServerInternalErrorFailureImpl) then) =
+      __$$ServerInternalErrorFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message, int statusCode});
 }
@@ -5619,37 +5503,37 @@ class __$$ServerInternalErrorFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ServerInternalErrorFailureImpl>
     implements _$$ServerInternalErrorFailureImplCopyWith<$Res> {
   __$$ServerInternalErrorFailureImplCopyWithImpl(
-    _$ServerInternalErrorFailureImpl _value,
-    $Res Function(_$ServerInternalErrorFailureImpl) _then,
-  ) : super(_value, _then);
+      _$ServerInternalErrorFailureImpl _value,
+      $Res Function(_$ServerInternalErrorFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = freezed, Object? statusCode = null}) {
-    return _then(
-      _$ServerInternalErrorFailureImpl(
-        message: freezed == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        statusCode: null == statusCode
-            ? _value.statusCode
-            : statusCode // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
+  $Res call({
+    Object? message = freezed,
+    Object? statusCode = null,
+  }) {
+    return _then(_$ServerInternalErrorFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusCode: null == statusCode
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
-  const _$ServerInternalErrorFailureImpl({
-    this.message,
-    required this.statusCode,
-  }) : super._();
+  const _$ServerInternalErrorFailureImpl(
+      {this.message, required this.statusCode})
+      : super._();
 
   @override
   final String? message;
@@ -5680,10 +5564,8 @@ class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
   @override
   @pragma('vm:prefer-inline')
   _$$ServerInternalErrorFailureImplCopyWith<_$ServerInternalErrorFailureImpl>
-  get copyWith =>
-      __$$ServerInternalErrorFailureImplCopyWithImpl<
-        _$ServerInternalErrorFailureImpl
-      >(this, _$identity);
+      get copyWith => __$$ServerInternalErrorFailureImplCopyWithImpl<
+          _$ServerInternalErrorFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5691,9 +5573,9 @@ class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -5706,22 +5588,18 @@ class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -5748,7 +5626,7 @@ class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -5756,7 +5634,7 @@ class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -5783,7 +5661,7 @@ class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -5791,7 +5669,7 @@ class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -5818,23 +5696,23 @@ class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -5857,13 +5735,13 @@ class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -5916,10 +5794,9 @@ class _$ServerInternalErrorFailureImpl extends ServerInternalErrorFailure {
 }
 
 abstract class ServerInternalErrorFailure extends Failure {
-  const factory ServerInternalErrorFailure({
-    final String? message,
-    required final int statusCode,
-  }) = _$ServerInternalErrorFailureImpl;
+  const factory ServerInternalErrorFailure(
+      {final String? message,
+      required final int statusCode}) = _$ServerInternalErrorFailureImpl;
   const ServerInternalErrorFailure._() : super._();
 
   String? get message;
@@ -5929,15 +5806,15 @@ abstract class ServerInternalErrorFailure extends Failure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ServerInternalErrorFailureImplCopyWith<_$ServerInternalErrorFailureImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ClientBadRequestFailureImplCopyWith<$Res> {
   factory _$$ClientBadRequestFailureImplCopyWith(
-    _$ClientBadRequestFailureImpl value,
-    $Res Function(_$ClientBadRequestFailureImpl) then,
-  ) = __$$ClientBadRequestFailureImplCopyWithImpl<$Res>;
+          _$ClientBadRequestFailureImpl value,
+          $Res Function(_$ClientBadRequestFailureImpl) then) =
+      __$$ClientBadRequestFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
@@ -5947,23 +5824,23 @@ class __$$ClientBadRequestFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ClientBadRequestFailureImpl>
     implements _$$ClientBadRequestFailureImplCopyWith<$Res> {
   __$$ClientBadRequestFailureImplCopyWithImpl(
-    _$ClientBadRequestFailureImpl _value,
-    $Res Function(_$ClientBadRequestFailureImpl) _then,
-  ) : super(_value, _then);
+      _$ClientBadRequestFailureImpl _value,
+      $Res Function(_$ClientBadRequestFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = freezed}) {
-    return _then(
-      _$ClientBadRequestFailureImpl(
-        message: freezed == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String?,
-      ),
-    );
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$ClientBadRequestFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
 }
 
@@ -5997,10 +5874,8 @@ class _$ClientBadRequestFailureImpl extends ClientBadRequestFailure {
   @override
   @pragma('vm:prefer-inline')
   _$$ClientBadRequestFailureImplCopyWith<_$ClientBadRequestFailureImpl>
-  get copyWith =>
-      __$$ClientBadRequestFailureImplCopyWithImpl<
-        _$ClientBadRequestFailureImpl
-      >(this, _$identity);
+      get copyWith => __$$ClientBadRequestFailureImplCopyWithImpl<
+          _$ClientBadRequestFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6008,9 +5883,9 @@ class _$ClientBadRequestFailureImpl extends ClientBadRequestFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -6023,22 +5898,18 @@ class _$ClientBadRequestFailureImpl extends ClientBadRequestFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -6065,7 +5936,7 @@ class _$ClientBadRequestFailureImpl extends ClientBadRequestFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -6073,7 +5944,7 @@ class _$ClientBadRequestFailureImpl extends ClientBadRequestFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -6100,7 +5971,7 @@ class _$ClientBadRequestFailureImpl extends ClientBadRequestFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -6108,7 +5979,7 @@ class _$ClientBadRequestFailureImpl extends ClientBadRequestFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -6135,23 +6006,23 @@ class _$ClientBadRequestFailureImpl extends ClientBadRequestFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -6174,13 +6045,13 @@ class _$ClientBadRequestFailureImpl extends ClientBadRequestFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -6243,15 +6114,15 @@ abstract class ClientBadRequestFailure extends Failure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ClientBadRequestFailureImplCopyWith<_$ClientBadRequestFailureImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ClientUnauthorizedFailureImplCopyWith<$Res> {
   factory _$$ClientUnauthorizedFailureImplCopyWith(
-    _$ClientUnauthorizedFailureImpl value,
-    $Res Function(_$ClientUnauthorizedFailureImpl) then,
-  ) = __$$ClientUnauthorizedFailureImplCopyWithImpl<$Res>;
+          _$ClientUnauthorizedFailureImpl value,
+          $Res Function(_$ClientUnauthorizedFailureImpl) then) =
+      __$$ClientUnauthorizedFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -6259,9 +6130,9 @@ class __$$ClientUnauthorizedFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ClientUnauthorizedFailureImpl>
     implements _$$ClientUnauthorizedFailureImplCopyWith<$Res> {
   __$$ClientUnauthorizedFailureImplCopyWithImpl(
-    _$ClientUnauthorizedFailureImpl _value,
-    $Res Function(_$ClientUnauthorizedFailureImpl) _then,
-  ) : super(_value, _then);
+      _$ClientUnauthorizedFailureImpl _value,
+      $Res Function(_$ClientUnauthorizedFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -6293,9 +6164,9 @@ class _$ClientUnauthorizedFailureImpl extends ClientUnauthorizedFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -6308,22 +6179,18 @@ class _$ClientUnauthorizedFailureImpl extends ClientUnauthorizedFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -6350,7 +6217,7 @@ class _$ClientUnauthorizedFailureImpl extends ClientUnauthorizedFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -6358,7 +6225,7 @@ class _$ClientUnauthorizedFailureImpl extends ClientUnauthorizedFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -6385,7 +6252,7 @@ class _$ClientUnauthorizedFailureImpl extends ClientUnauthorizedFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -6393,7 +6260,7 @@ class _$ClientUnauthorizedFailureImpl extends ClientUnauthorizedFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -6420,23 +6287,23 @@ class _$ClientUnauthorizedFailureImpl extends ClientUnauthorizedFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -6459,13 +6326,13 @@ class _$ClientUnauthorizedFailureImpl extends ClientUnauthorizedFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -6525,9 +6392,9 @@ abstract class ClientUnauthorizedFailure extends Failure {
 /// @nodoc
 abstract class _$$ClientForbiddenFailureImplCopyWith<$Res> {
   factory _$$ClientForbiddenFailureImplCopyWith(
-    _$ClientForbiddenFailureImpl value,
-    $Res Function(_$ClientForbiddenFailureImpl) then,
-  ) = __$$ClientForbiddenFailureImplCopyWithImpl<$Res>;
+          _$ClientForbiddenFailureImpl value,
+          $Res Function(_$ClientForbiddenFailureImpl) then) =
+      __$$ClientForbiddenFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -6535,9 +6402,9 @@ class __$$ClientForbiddenFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ClientForbiddenFailureImpl>
     implements _$$ClientForbiddenFailureImplCopyWith<$Res> {
   __$$ClientForbiddenFailureImplCopyWithImpl(
-    _$ClientForbiddenFailureImpl _value,
-    $Res Function(_$ClientForbiddenFailureImpl) _then,
-  ) : super(_value, _then);
+      _$ClientForbiddenFailureImpl _value,
+      $Res Function(_$ClientForbiddenFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -6569,9 +6436,9 @@ class _$ClientForbiddenFailureImpl extends ClientForbiddenFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -6584,22 +6451,18 @@ class _$ClientForbiddenFailureImpl extends ClientForbiddenFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -6626,7 +6489,7 @@ class _$ClientForbiddenFailureImpl extends ClientForbiddenFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -6634,7 +6497,7 @@ class _$ClientForbiddenFailureImpl extends ClientForbiddenFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -6661,7 +6524,7 @@ class _$ClientForbiddenFailureImpl extends ClientForbiddenFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -6669,7 +6532,7 @@ class _$ClientForbiddenFailureImpl extends ClientForbiddenFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -6696,23 +6559,23 @@ class _$ClientForbiddenFailureImpl extends ClientForbiddenFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -6735,13 +6598,13 @@ class _$ClientForbiddenFailureImpl extends ClientForbiddenFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -6801,9 +6664,9 @@ abstract class ClientForbiddenFailure extends Failure {
 /// @nodoc
 abstract class _$$ClientNotFoundFailureImplCopyWith<$Res> {
   factory _$$ClientNotFoundFailureImplCopyWith(
-    _$ClientNotFoundFailureImpl value,
-    $Res Function(_$ClientNotFoundFailureImpl) then,
-  ) = __$$ClientNotFoundFailureImplCopyWithImpl<$Res>;
+          _$ClientNotFoundFailureImpl value,
+          $Res Function(_$ClientNotFoundFailureImpl) then) =
+      __$$ClientNotFoundFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
@@ -6812,24 +6675,23 @@ abstract class _$$ClientNotFoundFailureImplCopyWith<$Res> {
 class __$$ClientNotFoundFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ClientNotFoundFailureImpl>
     implements _$$ClientNotFoundFailureImplCopyWith<$Res> {
-  __$$ClientNotFoundFailureImplCopyWithImpl(
-    _$ClientNotFoundFailureImpl _value,
-    $Res Function(_$ClientNotFoundFailureImpl) _then,
-  ) : super(_value, _then);
+  __$$ClientNotFoundFailureImplCopyWithImpl(_$ClientNotFoundFailureImpl _value,
+      $Res Function(_$ClientNotFoundFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = freezed}) {
-    return _then(
-      _$ClientNotFoundFailureImpl(
-        message: freezed == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String?,
-      ),
-    );
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$ClientNotFoundFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
 }
 
@@ -6863,11 +6725,8 @@ class _$ClientNotFoundFailureImpl extends ClientNotFoundFailure {
   @override
   @pragma('vm:prefer-inline')
   _$$ClientNotFoundFailureImplCopyWith<_$ClientNotFoundFailureImpl>
-  get copyWith =>
-      __$$ClientNotFoundFailureImplCopyWithImpl<_$ClientNotFoundFailureImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith => __$$ClientNotFoundFailureImplCopyWithImpl<
+          _$ClientNotFoundFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6875,9 +6734,9 @@ class _$ClientNotFoundFailureImpl extends ClientNotFoundFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -6890,22 +6749,18 @@ class _$ClientNotFoundFailureImpl extends ClientNotFoundFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -6932,7 +6787,7 @@ class _$ClientNotFoundFailureImpl extends ClientNotFoundFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -6940,7 +6795,7 @@ class _$ClientNotFoundFailureImpl extends ClientNotFoundFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -6967,7 +6822,7 @@ class _$ClientNotFoundFailureImpl extends ClientNotFoundFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -6975,7 +6830,7 @@ class _$ClientNotFoundFailureImpl extends ClientNotFoundFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -7002,23 +6857,23 @@ class _$ClientNotFoundFailureImpl extends ClientNotFoundFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -7041,13 +6896,13 @@ class _$ClientNotFoundFailureImpl extends ClientNotFoundFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -7110,15 +6965,15 @@ abstract class ClientNotFoundFailure extends Failure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ClientNotFoundFailureImplCopyWith<_$ClientNotFoundFailureImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ClientValidationFailureImplCopyWith<$Res> {
   factory _$$ClientValidationFailureImplCopyWith(
-    _$ClientValidationFailureImpl value,
-    $Res Function(_$ClientValidationFailureImpl) then,
-  ) = __$$ClientValidationFailureImplCopyWithImpl<$Res>;
+          _$ClientValidationFailureImpl value,
+          $Res Function(_$ClientValidationFailureImpl) then) =
+      __$$ClientValidationFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message, Map<String, List<String>>? errors});
 }
@@ -7128,38 +6983,38 @@ class __$$ClientValidationFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$ClientValidationFailureImpl>
     implements _$$ClientValidationFailureImplCopyWith<$Res> {
   __$$ClientValidationFailureImplCopyWithImpl(
-    _$ClientValidationFailureImpl _value,
-    $Res Function(_$ClientValidationFailureImpl) _then,
-  ) : super(_value, _then);
+      _$ClientValidationFailureImpl _value,
+      $Res Function(_$ClientValidationFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = freezed, Object? errors = freezed}) {
-    return _then(
-      _$ClientValidationFailureImpl(
-        message: freezed == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String?,
-        errors: freezed == errors
-            ? _value._errors
-            : errors // ignore: cast_nullable_to_non_nullable
-                  as Map<String, List<String>>?,
-      ),
-    );
+  $Res call({
+    Object? message = freezed,
+    Object? errors = freezed,
+  }) {
+    return _then(_$ClientValidationFailureImpl(
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      errors: freezed == errors
+          ? _value._errors
+          : errors // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>?,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$ClientValidationFailureImpl extends ClientValidationFailure {
-  const _$ClientValidationFailureImpl({
-    this.message,
-    final Map<String, List<String>>? errors,
-  }) : _errors = errors,
-       super._();
+  const _$ClientValidationFailureImpl(
+      {this.message, final Map<String, List<String>>? errors})
+      : _errors = errors,
+        super._();
 
   @override
   final String? message;
@@ -7189,10 +7044,7 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
 
   @override
   int get hashCode => Object.hash(
-    runtimeType,
-    message,
-    const DeepCollectionEquality().hash(_errors),
-  );
+      runtimeType, message, const DeepCollectionEquality().hash(_errors));
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -7200,10 +7052,8 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
   @override
   @pragma('vm:prefer-inline')
   _$$ClientValidationFailureImplCopyWith<_$ClientValidationFailureImpl>
-  get copyWith =>
-      __$$ClientValidationFailureImplCopyWithImpl<
-        _$ClientValidationFailureImpl
-      >(this, _$identity);
+      get copyWith => __$$ClientValidationFailureImplCopyWithImpl<
+          _$ClientValidationFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -7211,9 +7061,9 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -7226,22 +7076,18 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -7268,7 +7114,7 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -7276,7 +7122,7 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -7303,7 +7149,7 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -7311,7 +7157,7 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -7338,23 +7184,23 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -7377,13 +7223,13 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -7436,10 +7282,9 @@ class _$ClientValidationFailureImpl extends ClientValidationFailure {
 }
 
 abstract class ClientValidationFailure extends Failure {
-  const factory ClientValidationFailure({
-    final String? message,
-    final Map<String, List<String>>? errors,
-  }) = _$ClientValidationFailureImpl;
+  const factory ClientValidationFailure(
+      {final String? message,
+      final Map<String, List<String>>? errors}) = _$ClientValidationFailureImpl;
   const ClientValidationFailure._() : super._();
 
   String? get message;
@@ -7449,15 +7294,15 @@ abstract class ClientValidationFailure extends Failure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ClientValidationFailureImplCopyWith<_$ClientValidationFailureImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AuthUnauthorizedFailureImplCopyWith<$Res> {
   factory _$$AuthUnauthorizedFailureImplCopyWith(
-    _$AuthUnauthorizedFailureImpl value,
-    $Res Function(_$AuthUnauthorizedFailureImpl) then,
-  ) = __$$AuthUnauthorizedFailureImplCopyWithImpl<$Res>;
+          _$AuthUnauthorizedFailureImpl value,
+          $Res Function(_$AuthUnauthorizedFailureImpl) then) =
+      __$$AuthUnauthorizedFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -7465,9 +7310,9 @@ class __$$AuthUnauthorizedFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$AuthUnauthorizedFailureImpl>
     implements _$$AuthUnauthorizedFailureImplCopyWith<$Res> {
   __$$AuthUnauthorizedFailureImplCopyWithImpl(
-    _$AuthUnauthorizedFailureImpl _value,
-    $Res Function(_$AuthUnauthorizedFailureImpl) _then,
-  ) : super(_value, _then);
+      _$AuthUnauthorizedFailureImpl _value,
+      $Res Function(_$AuthUnauthorizedFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -7499,9 +7344,9 @@ class _$AuthUnauthorizedFailureImpl extends AuthUnauthorizedFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -7514,22 +7359,18 @@ class _$AuthUnauthorizedFailureImpl extends AuthUnauthorizedFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -7556,7 +7397,7 @@ class _$AuthUnauthorizedFailureImpl extends AuthUnauthorizedFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -7564,7 +7405,7 @@ class _$AuthUnauthorizedFailureImpl extends AuthUnauthorizedFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -7591,7 +7432,7 @@ class _$AuthUnauthorizedFailureImpl extends AuthUnauthorizedFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -7599,7 +7440,7 @@ class _$AuthUnauthorizedFailureImpl extends AuthUnauthorizedFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -7626,23 +7467,23 @@ class _$AuthUnauthorizedFailureImpl extends AuthUnauthorizedFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -7665,13 +7506,13 @@ class _$AuthUnauthorizedFailureImpl extends AuthUnauthorizedFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -7730,20 +7571,18 @@ abstract class AuthUnauthorizedFailure extends Failure {
 
 /// @nodoc
 abstract class _$$AuthForbiddenFailureImplCopyWith<$Res> {
-  factory _$$AuthForbiddenFailureImplCopyWith(
-    _$AuthForbiddenFailureImpl value,
-    $Res Function(_$AuthForbiddenFailureImpl) then,
-  ) = __$$AuthForbiddenFailureImplCopyWithImpl<$Res>;
+  factory _$$AuthForbiddenFailureImplCopyWith(_$AuthForbiddenFailureImpl value,
+          $Res Function(_$AuthForbiddenFailureImpl) then) =
+      __$$AuthForbiddenFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$AuthForbiddenFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$AuthForbiddenFailureImpl>
     implements _$$AuthForbiddenFailureImplCopyWith<$Res> {
-  __$$AuthForbiddenFailureImplCopyWithImpl(
-    _$AuthForbiddenFailureImpl _value,
-    $Res Function(_$AuthForbiddenFailureImpl) _then,
-  ) : super(_value, _then);
+  __$$AuthForbiddenFailureImplCopyWithImpl(_$AuthForbiddenFailureImpl _value,
+      $Res Function(_$AuthForbiddenFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -7775,9 +7614,9 @@ class _$AuthForbiddenFailureImpl extends AuthForbiddenFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -7790,22 +7629,18 @@ class _$AuthForbiddenFailureImpl extends AuthForbiddenFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -7832,7 +7667,7 @@ class _$AuthForbiddenFailureImpl extends AuthForbiddenFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -7840,7 +7675,7 @@ class _$AuthForbiddenFailureImpl extends AuthForbiddenFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -7867,7 +7702,7 @@ class _$AuthForbiddenFailureImpl extends AuthForbiddenFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -7875,7 +7710,7 @@ class _$AuthForbiddenFailureImpl extends AuthForbiddenFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -7902,23 +7737,23 @@ class _$AuthForbiddenFailureImpl extends AuthForbiddenFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -7941,13 +7776,13 @@ class _$AuthForbiddenFailureImpl extends AuthForbiddenFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,
@@ -8006,20 +7841,18 @@ abstract class AuthForbiddenFailure extends Failure {
 
 /// @nodoc
 abstract class _$$AuthExpiredFailureImplCopyWith<$Res> {
-  factory _$$AuthExpiredFailureImplCopyWith(
-    _$AuthExpiredFailureImpl value,
-    $Res Function(_$AuthExpiredFailureImpl) then,
-  ) = __$$AuthExpiredFailureImplCopyWithImpl<$Res>;
+  factory _$$AuthExpiredFailureImplCopyWith(_$AuthExpiredFailureImpl value,
+          $Res Function(_$AuthExpiredFailureImpl) then) =
+      __$$AuthExpiredFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$AuthExpiredFailureImplCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res, _$AuthExpiredFailureImpl>
     implements _$$AuthExpiredFailureImplCopyWith<$Res> {
-  __$$AuthExpiredFailureImplCopyWithImpl(
-    _$AuthExpiredFailureImpl _value,
-    $Res Function(_$AuthExpiredFailureImpl) _then,
-  ) : super(_value, _then);
+  __$$AuthExpiredFailureImplCopyWithImpl(_$AuthExpiredFailureImpl _value,
+      $Res Function(_$AuthExpiredFailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Failure
   /// with the given fields replaced by the non-null parameter values.
@@ -8050,9 +7883,9 @@ class _$AuthExpiredFailureImpl extends AuthExpiredFailure {
     required TResult Function(String message, String code) network,
     required TResult Function(String message, String code) timeout,
     required TResult Function(String message, String code, int? statusCode)
-    server,
+        server,
     required TResult Function(String message, String code, int? statusCode)
-    client,
+        client,
     required TResult Function(String message, String code) auth,
     required TResult Function(String message, String code) localStorage,
     required TResult Function(String message, String code) cache,
@@ -8065,22 +7898,18 @@ class _$AuthExpiredFailureImpl extends AuthExpiredFailure {
     required TResult Function(String? message) serverBadRequest,
     required TResult Function(String? message) serverNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    serverValidationError,
+            String? message, Map<String, List<String>>? errors)
+        serverValidationError,
     required TResult Function() serverTooManyRequests,
     required TResult Function(String? message, int statusCode)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(String? message) clientBadRequest,
     required TResult Function() clientUnauthorized,
     required TResult Function() clientForbidden,
     required TResult Function(String? message) clientNotFound,
     required TResult Function(
-      String? message,
-      Map<String, List<String>>? errors,
-    )
-    clientValidationError,
+            String? message, Map<String, List<String>>? errors)
+        clientValidationError,
     required TResult Function() authUnauthorized,
     required TResult Function() authForbidden,
     required TResult Function() authExpired,
@@ -8107,7 +7936,7 @@ class _$AuthExpiredFailureImpl extends AuthExpiredFailure {
     TResult? Function(String? message)? serverBadRequest,
     TResult? Function(String? message)? serverNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult? Function()? serverTooManyRequests,
     TResult? Function(String? message, int statusCode)? serverInternalError,
     TResult? Function(String? message)? clientBadRequest,
@@ -8115,7 +7944,7 @@ class _$AuthExpiredFailureImpl extends AuthExpiredFailure {
     TResult? Function()? clientForbidden,
     TResult? Function(String? message)? clientNotFound,
     TResult? Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult? Function()? authUnauthorized,
     TResult? Function()? authForbidden,
     TResult? Function()? authExpired,
@@ -8142,7 +7971,7 @@ class _$AuthExpiredFailureImpl extends AuthExpiredFailure {
     TResult Function(String? message)? serverBadRequest,
     TResult Function(String? message)? serverNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    serverValidationError,
+        serverValidationError,
     TResult Function()? serverTooManyRequests,
     TResult Function(String? message, int statusCode)? serverInternalError,
     TResult Function(String? message)? clientBadRequest,
@@ -8150,7 +7979,7 @@ class _$AuthExpiredFailureImpl extends AuthExpiredFailure {
     TResult Function()? clientForbidden,
     TResult Function(String? message)? clientNotFound,
     TResult Function(String? message, Map<String, List<String>>? errors)?
-    clientValidationError,
+        clientValidationError,
     TResult Function()? authUnauthorized,
     TResult Function()? authForbidden,
     TResult Function()? authExpired,
@@ -8177,23 +8006,23 @@ class _$AuthExpiredFailureImpl extends AuthExpiredFailure {
     required TResult Function(UnknownFailure value) unknown,
     required TResult Function(NetworkNoInternetFailure value) networkNoInternet,
     required TResult Function(NetworkBadCertificateFailure value)
-    networkBadCertificate,
+        networkBadCertificate,
     required TResult Function(NetworkCancelledFailure value) networkCancelled,
     required TResult Function(ServerBadRequestFailure value) serverBadRequest,
     required TResult Function(ServerNotFoundFailure value) serverNotFound,
     required TResult Function(ServerValidationFailure value)
-    serverValidationError,
+        serverValidationError,
     required TResult Function(ServerTooManyRequestsFailure value)
-    serverTooManyRequests,
+        serverTooManyRequests,
     required TResult Function(ServerInternalErrorFailure value)
-    serverInternalError,
+        serverInternalError,
     required TResult Function(ClientBadRequestFailure value) clientBadRequest,
     required TResult Function(ClientUnauthorizedFailure value)
-    clientUnauthorized,
+        clientUnauthorized,
     required TResult Function(ClientForbiddenFailure value) clientForbidden,
     required TResult Function(ClientNotFoundFailure value) clientNotFound,
     required TResult Function(ClientValidationFailure value)
-    clientValidationError,
+        clientValidationError,
     required TResult Function(AuthUnauthorizedFailure value) authUnauthorized,
     required TResult Function(AuthForbiddenFailure value) authForbidden,
     required TResult Function(AuthExpiredFailure value) authExpired,
@@ -8216,13 +8045,13 @@ class _$AuthExpiredFailureImpl extends AuthExpiredFailure {
     TResult? Function(UnknownFailure value)? unknown,
     TResult? Function(NetworkNoInternetFailure value)? networkNoInternet,
     TResult? Function(NetworkBadCertificateFailure value)?
-    networkBadCertificate,
+        networkBadCertificate,
     TResult? Function(NetworkCancelledFailure value)? networkCancelled,
     TResult? Function(ServerBadRequestFailure value)? serverBadRequest,
     TResult? Function(ServerNotFoundFailure value)? serverNotFound,
     TResult? Function(ServerValidationFailure value)? serverValidationError,
     TResult? Function(ServerTooManyRequestsFailure value)?
-    serverTooManyRequests,
+        serverTooManyRequests,
     TResult? Function(ServerInternalErrorFailure value)? serverInternalError,
     TResult? Function(ClientBadRequestFailure value)? clientBadRequest,
     TResult? Function(ClientUnauthorizedFailure value)? clientUnauthorized,

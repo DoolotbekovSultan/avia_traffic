@@ -12,8 +12,7 @@ part of 'confirm_code_usecase.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ConfirmCodeParams {
@@ -30,9 +29,8 @@ mixin _$ConfirmCodeParams {
 /// @nodoc
 abstract class $ConfirmCodeParamsCopyWith<$Res> {
   factory $ConfirmCodeParamsCopyWith(
-    ConfirmCodeParams value,
-    $Res Function(ConfirmCodeParams) then,
-  ) = _$ConfirmCodeParamsCopyWithImpl<$Res, ConfirmCodeParams>;
+          ConfirmCodeParams value, $Res Function(ConfirmCodeParams) then) =
+      _$ConfirmCodeParamsCopyWithImpl<$Res, ConfirmCodeParams>;
   @useResult
   $Res call({String email, String code});
 }
@@ -51,30 +49,29 @@ class _$ConfirmCodeParamsCopyWithImpl<$Res, $Val extends ConfirmCodeParams>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? email = null, Object? code = null}) {
-    return _then(
-      _value.copyWith(
-            email: null == email
-                ? _value.email
-                : email // ignore: cast_nullable_to_non_nullable
-                      as String,
-            code: null == code
-                ? _value.code
-                : code // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? email = null,
+    Object? code = null,
+  }) {
+    return _then(_value.copyWith(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$ConfirmCodeParamsImplCopyWith<$Res>
     implements $ConfirmCodeParamsCopyWith<$Res> {
-  factory _$$ConfirmCodeParamsImplCopyWith(
-    _$ConfirmCodeParamsImpl value,
-    $Res Function(_$ConfirmCodeParamsImpl) then,
-  ) = __$$ConfirmCodeParamsImplCopyWithImpl<$Res>;
+  factory _$$ConfirmCodeParamsImplCopyWith(_$ConfirmCodeParamsImpl value,
+          $Res Function(_$ConfirmCodeParamsImpl) then) =
+      __$$ConfirmCodeParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email, String code});
@@ -84,28 +81,28 @@ abstract class _$$ConfirmCodeParamsImplCopyWith<$Res>
 class __$$ConfirmCodeParamsImplCopyWithImpl<$Res>
     extends _$ConfirmCodeParamsCopyWithImpl<$Res, _$ConfirmCodeParamsImpl>
     implements _$$ConfirmCodeParamsImplCopyWith<$Res> {
-  __$$ConfirmCodeParamsImplCopyWithImpl(
-    _$ConfirmCodeParamsImpl _value,
-    $Res Function(_$ConfirmCodeParamsImpl) _then,
-  ) : super(_value, _then);
+  __$$ConfirmCodeParamsImplCopyWithImpl(_$ConfirmCodeParamsImpl _value,
+      $Res Function(_$ConfirmCodeParamsImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ConfirmCodeParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? email = null, Object? code = null}) {
-    return _then(
-      _$ConfirmCodeParamsImpl(
-        email: null == email
-            ? _value.email
-            : email // ignore: cast_nullable_to_non_nullable
-                  as String,
-        code: null == code
-            ? _value.code
-            : code // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? email = null,
+    Object? code = null,
+  }) {
+    return _then(_$ConfirmCodeParamsImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -143,16 +140,13 @@ class _$ConfirmCodeParamsImpl implements _ConfirmCodeParams {
   @pragma('vm:prefer-inline')
   _$$ConfirmCodeParamsImplCopyWith<_$ConfirmCodeParamsImpl> get copyWith =>
       __$$ConfirmCodeParamsImplCopyWithImpl<_$ConfirmCodeParamsImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 }
 
 abstract class _ConfirmCodeParams implements ConfirmCodeParams {
-  const factory _ConfirmCodeParams({
-    required final String email,
-    required final String code,
-  }) = _$ConfirmCodeParamsImpl;
+  const factory _ConfirmCodeParams(
+      {required final String email,
+      required final String code}) = _$ConfirmCodeParamsImpl;
 
   @override
   String get email;

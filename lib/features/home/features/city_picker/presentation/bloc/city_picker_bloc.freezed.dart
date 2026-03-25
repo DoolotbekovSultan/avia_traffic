@@ -12,8 +12,7 @@ part of 'city_picker_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CityPickerEvent {
@@ -23,14 +22,16 @@ mixin _$CityPickerEvent {
     required TResult Function(City to) setTo,
     required TResult Function(City? from, City? to) setCities,
     required TResult Function() swap,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(City from)? setFrom,
     TResult? Function(City to)? setTo,
     TResult? Function(City? from, City? to)? setCities,
     TResult? Function()? swap,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(City from)? setFrom,
@@ -38,21 +39,24 @@ mixin _$CityPickerEvent {
     TResult Function(City? from, City? to)? setCities,
     TResult Function()? swap,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetFrom value) setFrom,
     required TResult Function(_SetTo value) setTo,
     required TResult Function(_SetCities value) setCities,
     required TResult Function(_Swap value) swap,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SetFrom value)? setFrom,
     TResult? Function(_SetTo value)? setTo,
     TResult? Function(_SetCities value)? setCities,
     TResult? Function(_Swap value)? swap,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetFrom value)? setFrom,
@@ -60,15 +64,15 @@ mixin _$CityPickerEvent {
     TResult Function(_SetCities value)? setCities,
     TResult Function(_Swap value)? swap,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CityPickerEventCopyWith<$Res> {
   factory $CityPickerEventCopyWith(
-    CityPickerEvent value,
-    $Res Function(CityPickerEvent) then,
-  ) = _$CityPickerEventCopyWithImpl<$Res, CityPickerEvent>;
+          CityPickerEvent value, $Res Function(CityPickerEvent) then) =
+      _$CityPickerEventCopyWithImpl<$Res, CityPickerEvent>;
 }
 
 /// @nodoc
@@ -88,9 +92,8 @@ class _$CityPickerEventCopyWithImpl<$Res, $Val extends CityPickerEvent>
 /// @nodoc
 abstract class _$$SetFromImplCopyWith<$Res> {
   factory _$$SetFromImplCopyWith(
-    _$SetFromImpl value,
-    $Res Function(_$SetFromImpl) then,
-  ) = __$$SetFromImplCopyWithImpl<$Res>;
+          _$SetFromImpl value, $Res Function(_$SetFromImpl) then) =
+      __$$SetFromImplCopyWithImpl<$Res>;
   @useResult
   $Res call({City from});
 
@@ -102,23 +105,22 @@ class __$$SetFromImplCopyWithImpl<$Res>
     extends _$CityPickerEventCopyWithImpl<$Res, _$SetFromImpl>
     implements _$$SetFromImplCopyWith<$Res> {
   __$$SetFromImplCopyWithImpl(
-    _$SetFromImpl _value,
-    $Res Function(_$SetFromImpl) _then,
-  ) : super(_value, _then);
+      _$SetFromImpl _value, $Res Function(_$SetFromImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityPickerEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? from = null}) {
-    return _then(
-      _$SetFromImpl(
-        from: null == from
-            ? _value.from
-            : from // ignore: cast_nullable_to_non_nullable
-                  as City,
-      ),
-    );
+  $Res call({
+    Object? from = null,
+  }) {
+    return _then(_$SetFromImpl(
+      from: null == from
+          ? _value.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as City,
+    ));
   }
 
   /// Create a copy of CityPickerEvent
@@ -254,9 +256,8 @@ abstract class _SetFrom implements CityPickerEvent {
 /// @nodoc
 abstract class _$$SetToImplCopyWith<$Res> {
   factory _$$SetToImplCopyWith(
-    _$SetToImpl value,
-    $Res Function(_$SetToImpl) then,
-  ) = __$$SetToImplCopyWithImpl<$Res>;
+          _$SetToImpl value, $Res Function(_$SetToImpl) then) =
+      __$$SetToImplCopyWithImpl<$Res>;
   @useResult
   $Res call({City to});
 
@@ -268,23 +269,22 @@ class __$$SetToImplCopyWithImpl<$Res>
     extends _$CityPickerEventCopyWithImpl<$Res, _$SetToImpl>
     implements _$$SetToImplCopyWith<$Res> {
   __$$SetToImplCopyWithImpl(
-    _$SetToImpl _value,
-    $Res Function(_$SetToImpl) _then,
-  ) : super(_value, _then);
+      _$SetToImpl _value, $Res Function(_$SetToImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityPickerEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? to = null}) {
-    return _then(
-      _$SetToImpl(
-        to: null == to
-            ? _value.to
-            : to // ignore: cast_nullable_to_non_nullable
-                  as City,
-      ),
-    );
+  $Res call({
+    Object? to = null,
+  }) {
+    return _then(_$SetToImpl(
+      to: null == to
+          ? _value.to
+          : to // ignore: cast_nullable_to_non_nullable
+              as City,
+    ));
   }
 
   /// Create a copy of CityPickerEvent
@@ -420,9 +420,8 @@ abstract class _SetTo implements CityPickerEvent {
 /// @nodoc
 abstract class _$$SetCitiesImplCopyWith<$Res> {
   factory _$$SetCitiesImplCopyWith(
-    _$SetCitiesImpl value,
-    $Res Function(_$SetCitiesImpl) then,
-  ) = __$$SetCitiesImplCopyWithImpl<$Res>;
+          _$SetCitiesImpl value, $Res Function(_$SetCitiesImpl) then) =
+      __$$SetCitiesImplCopyWithImpl<$Res>;
   @useResult
   $Res call({City? from, City? to});
 
@@ -435,27 +434,27 @@ class __$$SetCitiesImplCopyWithImpl<$Res>
     extends _$CityPickerEventCopyWithImpl<$Res, _$SetCitiesImpl>
     implements _$$SetCitiesImplCopyWith<$Res> {
   __$$SetCitiesImplCopyWithImpl(
-    _$SetCitiesImpl _value,
-    $Res Function(_$SetCitiesImpl) _then,
-  ) : super(_value, _then);
+      _$SetCitiesImpl _value, $Res Function(_$SetCitiesImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityPickerEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? from = freezed, Object? to = freezed}) {
-    return _then(
-      _$SetCitiesImpl(
-        from: freezed == from
-            ? _value.from
-            : from // ignore: cast_nullable_to_non_nullable
-                  as City?,
-        to: freezed == to
-            ? _value.to
-            : to // ignore: cast_nullable_to_non_nullable
-                  as City?,
-      ),
-    );
+  $Res call({
+    Object? from = freezed,
+    Object? to = freezed,
+  }) {
+    return _then(_$SetCitiesImpl(
+      from: freezed == from
+          ? _value.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as City?,
+      to: freezed == to
+          ? _value.to
+          : to // ignore: cast_nullable_to_non_nullable
+              as City?,
+    ));
   }
 
   /// Create a copy of CityPickerEvent
@@ -614,9 +613,8 @@ abstract class _SetCities implements CityPickerEvent {
 /// @nodoc
 abstract class _$$SwapImplCopyWith<$Res> {
   factory _$$SwapImplCopyWith(
-    _$SwapImpl value,
-    $Res Function(_$SwapImpl) then,
-  ) = __$$SwapImplCopyWithImpl<$Res>;
+          _$SwapImpl value, $Res Function(_$SwapImpl) then) =
+      __$$SwapImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -624,7 +622,7 @@ class __$$SwapImplCopyWithImpl<$Res>
     extends _$CityPickerEventCopyWithImpl<$Res, _$SwapImpl>
     implements _$$SwapImplCopyWith<$Res> {
   __$$SwapImplCopyWithImpl(_$SwapImpl _value, $Res Function(_$SwapImpl) _then)
-    : super(_value, _then);
+      : super(_value, _then);
 
   /// Create a copy of CityPickerEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -735,29 +733,35 @@ mixin _$CityPickerState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(City? from, City? to) initial,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(City? from, City? to)? initial,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(City? from, City? to)? initial,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 
   /// Create a copy of CityPickerState
   /// with the given fields replaced by the non-null parameter values.
@@ -769,9 +773,8 @@ mixin _$CityPickerState {
 /// @nodoc
 abstract class $CityPickerStateCopyWith<$Res> {
   factory $CityPickerStateCopyWith(
-    CityPickerState value,
-    $Res Function(CityPickerState) then,
-  ) = _$CityPickerStateCopyWithImpl<$Res, CityPickerState>;
+          CityPickerState value, $Res Function(CityPickerState) then) =
+      _$CityPickerStateCopyWithImpl<$Res, CityPickerState>;
   @useResult
   $Res call({City? from, City? to});
 
@@ -793,20 +796,20 @@ class _$CityPickerStateCopyWithImpl<$Res, $Val extends CityPickerState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? from = freezed, Object? to = freezed}) {
-    return _then(
-      _value.copyWith(
-            from: freezed == from
-                ? _value.from
-                : from // ignore: cast_nullable_to_non_nullable
-                      as City?,
-            to: freezed == to
-                ? _value.to
-                : to // ignore: cast_nullable_to_non_nullable
-                      as City?,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? from = freezed,
+    Object? to = freezed,
+  }) {
+    return _then(_value.copyWith(
+      from: freezed == from
+          ? _value.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as City?,
+      to: freezed == to
+          ? _value.to
+          : to // ignore: cast_nullable_to_non_nullable
+              as City?,
+    ) as $Val);
   }
 
   /// Create a copy of CityPickerState
@@ -842,9 +845,8 @@ class _$CityPickerStateCopyWithImpl<$Res, $Val extends CityPickerState>
 abstract class _$$InitialImplCopyWith<$Res>
     implements $CityPickerStateCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({City? from, City? to});
@@ -860,27 +862,27 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$CityPickerStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of CityPickerState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? from = freezed, Object? to = freezed}) {
-    return _then(
-      _$InitialImpl(
-        from: freezed == from
-            ? _value.from
-            : from // ignore: cast_nullable_to_non_nullable
-                  as City?,
-        to: freezed == to
-            ? _value.to
-            : to // ignore: cast_nullable_to_non_nullable
-                  as City?,
-      ),
-    );
+  $Res call({
+    Object? from = freezed,
+    Object? to = freezed,
+  }) {
+    return _then(_$InitialImpl(
+      from: freezed == from
+          ? _value.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as City?,
+      to: freezed == to
+          ? _value.to
+          : to // ignore: cast_nullable_to_non_nullable
+              as City?,
+    ));
   }
 }
 

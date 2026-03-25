@@ -64,41 +64,46 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
       child: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           state.maybeMap(
-            authenticated: (_) =>
-                context.router.replaceAll([const MainRoute()]),
+            authenticated: (_) => context.router.push(
+              ConfirmCodeRoute(email: _emailTextEditingController.text),
+            ),
             failure: (f) {},
             orElse: () {},
           );
         },
         builder: (context, state) {
           return Scaffold(
-            appBar: GradientAppBar(title: 'Вход'),
+            appBar: GradientAppBar(title: 'Регистрация'),
             body: Container(
-              width: .infinity,
-              padding: .symmetric(horizontal: 16.w),
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: .center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: 88.h),
                     Text(
                       "Регистрация",
                       style: getIt<AppTextStyles>().headlineMediumBold.copyWith(
-                        color: AppColors.onBackground,
-                      ),
+                            color: AppColors.onBackground,
+                          ),
                     ),
                     Gap.v12,
                     Text(
                       'Уважаемый пользователь,\nвыполните вход в приложение',
-                      textAlign: .center,
+                      textAlign: TextAlign.center,
                       style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                        color: AppColors.onBackground,
-                        height: 24 / 15,
-                      ),
+                            color: AppColors.onBackground,
+                            height: 24 / 15,
+                          ),
                     ),
                     SizedBox(height: 43.h),
                     TextField(
                       keyboardType: TextInputType.name,
+                      readOnly: state.maybeMap(
+                        authenticated: (_) => true,
+                        orElse: () => false,
+                      ),
                       controller: _nameTextEditingController,
                       decoration: InputDecoration(
                         hintText: 'Ваше имя',
@@ -109,11 +114,14 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
                         ),
                       ),
                     ),
-
                     Gap.v24,
                     TextField(
                       controller: _emailTextEditingController,
                       keyboardType: TextInputType.emailAddress,
+                      readOnly: state.maybeMap(
+                        authenticated: (_) => true,
+                        orElse: () => false,
+                      ),
                       decoration: InputDecoration(
                         hintText: 'Ваш Email',
                         fillColor: Colors.white,
@@ -123,10 +131,13 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
                         ),
                       ),
                     ),
-
                     Gap.v24,
                     TextField(
                       keyboardType: TextInputType.phone,
+                      readOnly: state.maybeMap(
+                        authenticated: (_) => true,
+                        orElse: () => false,
+                      ),
                       controller: _numberTextEditingController,
                       decoration: InputDecoration(
                         labelText: 'Ваш телефон',
@@ -138,15 +149,18 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
                         ),
                       ),
                     ),
-
                     Gap.v24,
                     TextField(
                       keyboardType: TextInputType.visiblePassword,
+                      readOnly: state.maybeMap(
+                        authenticated: (_) => true,
+                        orElse: () => false,
+                      ),
                       controller: _invesionPasswordTextEditingController,
                       obscuringCharacter: '*',
                       style: getIt<AppTextStyles>().bodyLargeSemiBold.copyWith(
-                        color: AppColors.onBackground,
-                      ),
+                            color: AppColors.onBackground,
+                          ),
                       obscureText: isInvesionHidden,
                       textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
@@ -158,7 +172,7 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
                             });
                           },
                           child: Padding(
-                            padding: .symmetric(
+                            padding: EdgeInsets.symmetric(
                               horizontal: 18.w,
                               vertical: 12.h,
                             ),
@@ -176,15 +190,18 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
                         fillColor: Colors.white,
                       ),
                     ),
-
                     Gap.v24,
                     TextField(
                       keyboardType: TextInputType.visiblePassword,
+                      readOnly: state.maybeMap(
+                        authenticated: (_) => true,
+                        orElse: () => false,
+                      ),
                       controller: _repeatPasswordTextEditingController,
                       obscuringCharacter: '*',
                       style: getIt<AppTextStyles>().bodyLargeSemiBold.copyWith(
-                        color: AppColors.onBackground,
-                      ),
+                            color: AppColors.onBackground,
+                          ),
                       obscureText: isRepeatHidden,
                       textInputAction: TextInputAction.done,
                       decoration: InputDecoration(
@@ -196,7 +213,7 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
                             });
                           },
                           child: Padding(
-                            padding: .symmetric(
+                            padding: EdgeInsets.symmetric(
                               horizontal: 18.w,
                               vertical: 12.h,
                             ),
@@ -214,15 +231,14 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
                         fillColor: Colors.white,
                       ),
                     ),
-
                     Gap.v24,
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
                         style: getIt<AppTextStyles>().caption.copyWith(
-                          color: AppColors.neutral500,
-                          height: 18 / 13,
-                        ),
+                              color: AppColors.neutral500,
+                              height: 18 / 13,
+                            ),
                         children: [
                           TextSpan(
                             text:
@@ -239,7 +255,7 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
                     SizedBox(height: 70.h),
                     SizedBox(
                       height: 56.h,
-                      width: .infinity,
+                      width: double.infinity,
                       child: ElevatedButton(
                         onPressed: state.maybeMap(
                           loading: (_) => null,

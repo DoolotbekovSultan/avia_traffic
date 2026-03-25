@@ -13,7 +13,7 @@ abstract class IAuthRemoteDataSource {
 
   Future<void> logout();
 
-  Future<void> confirmCode({required String email, required String code});
+  Future<String> confirmCode({required String email, required String code});
 
   Future<void> resendEmail({required String email});
 

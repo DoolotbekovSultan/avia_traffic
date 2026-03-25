@@ -12,8 +12,7 @@ part of 'story_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$StoryEvent {
@@ -21,29 +20,35 @@ mixin _$StoryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int id) getStoryById,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? getStoryById,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? getStoryById,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetStoryById value) getStoryById,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetStoryById value)? getStoryById,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetStoryById value)? getStoryById,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 
   /// Create a copy of StoryEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -55,9 +60,8 @@ mixin _$StoryEvent {
 /// @nodoc
 abstract class $StoryEventCopyWith<$Res> {
   factory $StoryEventCopyWith(
-    StoryEvent value,
-    $Res Function(StoryEvent) then,
-  ) = _$StoryEventCopyWithImpl<$Res, StoryEvent>;
+          StoryEvent value, $Res Function(StoryEvent) then) =
+      _$StoryEventCopyWithImpl<$Res, StoryEvent>;
   @useResult
   $Res call({int id});
 }
@@ -76,16 +80,15 @@ class _$StoryEventCopyWithImpl<$Res, $Val extends StoryEvent>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null}) {
-    return _then(
-      _value.copyWith(
-            id: null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                      as int,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
   }
 }
 
@@ -93,9 +96,8 @@ class _$StoryEventCopyWithImpl<$Res, $Val extends StoryEvent>
 abstract class _$$GetStoryByIdImplCopyWith<$Res>
     implements $StoryEventCopyWith<$Res> {
   factory _$$GetStoryByIdImplCopyWith(
-    _$GetStoryByIdImpl value,
-    $Res Function(_$GetStoryByIdImpl) then,
-  ) = __$$GetStoryByIdImplCopyWithImpl<$Res>;
+          _$GetStoryByIdImpl value, $Res Function(_$GetStoryByIdImpl) then) =
+      __$$GetStoryByIdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id});
@@ -106,23 +108,22 @@ class __$$GetStoryByIdImplCopyWithImpl<$Res>
     extends _$StoryEventCopyWithImpl<$Res, _$GetStoryByIdImpl>
     implements _$$GetStoryByIdImplCopyWith<$Res> {
   __$$GetStoryByIdImplCopyWithImpl(
-    _$GetStoryByIdImpl _value,
-    $Res Function(_$GetStoryByIdImpl) _then,
-  ) : super(_value, _then);
+      _$GetStoryByIdImpl _value, $Res Function(_$GetStoryByIdImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of StoryEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null}) {
-    return _then(
-      _$GetStoryByIdImpl(
-        null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as int,
-      ),
-    );
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetStoryByIdImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
@@ -237,14 +238,16 @@ mixin _$StoryState {
     required TResult Function() loading,
     required TResult Function(StoryItem story) loaded,
     required TResult Function(Failure failure) failure,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(StoryItem story)? loaded,
     TResult? Function(Failure failure)? failure,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -252,21 +255,24 @@ mixin _$StoryState {
     TResult Function(StoryItem story)? loaded,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Failure value) failure,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Failure value)? failure,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -274,15 +280,15 @@ mixin _$StoryState {
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StoryStateCopyWith<$Res> {
   factory $StoryStateCopyWith(
-    StoryState value,
-    $Res Function(StoryState) then,
-  ) = _$StoryStateCopyWithImpl<$Res, StoryState>;
+          StoryState value, $Res Function(StoryState) then) =
+      _$StoryStateCopyWithImpl<$Res, StoryState>;
 }
 
 /// @nodoc
@@ -302,9 +308,8 @@ class _$StoryStateCopyWithImpl<$Res, $Val extends StoryState>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -312,9 +317,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$StoryStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of StoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -421,9 +425,8 @@ abstract class _Initial implements StoryState {
 /// @nodoc
 abstract class _$$LoadingImplCopyWith<$Res> {
   factory _$$LoadingImplCopyWith(
-    _$LoadingImpl value,
-    $Res Function(_$LoadingImpl) then,
-  ) = __$$LoadingImplCopyWithImpl<$Res>;
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -431,9 +434,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
     extends _$StoryStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
-    _$LoadingImpl _value,
-    $Res Function(_$LoadingImpl) _then,
-  ) : super(_value, _then);
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of StoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -540,9 +542,8 @@ abstract class _Loading implements StoryState {
 /// @nodoc
 abstract class _$$LoadedImplCopyWith<$Res> {
   factory _$$LoadedImplCopyWith(
-    _$LoadedImpl value,
-    $Res Function(_$LoadedImpl) then,
-  ) = __$$LoadedImplCopyWithImpl<$Res>;
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({StoryItem story});
 }
@@ -552,23 +553,22 @@ class __$$LoadedImplCopyWithImpl<$Res>
     extends _$StoryStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
-    _$LoadedImpl _value,
-    $Res Function(_$LoadedImpl) _then,
-  ) : super(_value, _then);
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of StoryState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? story = null}) {
-    return _then(
-      _$LoadedImpl(
-        story: null == story
-            ? _value.story
-            : story // ignore: cast_nullable_to_non_nullable
-                  as StoryItem,
-      ),
-    );
+  $Res call({
+    Object? story = null,
+  }) {
+    return _then(_$LoadedImpl(
+      story: null == story
+          ? _value.story
+          : story // ignore: cast_nullable_to_non_nullable
+              as StoryItem,
+    ));
   }
 }
 
@@ -694,9 +694,8 @@ abstract class _Loaded implements StoryState {
 /// @nodoc
 abstract class _$$FailureImplCopyWith<$Res> {
   factory _$$FailureImplCopyWith(
-    _$FailureImpl value,
-    $Res Function(_$FailureImpl) then,
-  ) = __$$FailureImplCopyWithImpl<$Res>;
+          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+      __$$FailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure failure});
 
@@ -708,23 +707,22 @@ class __$$FailureImplCopyWithImpl<$Res>
     extends _$StoryStateCopyWithImpl<$Res, _$FailureImpl>
     implements _$$FailureImplCopyWith<$Res> {
   __$$FailureImplCopyWithImpl(
-    _$FailureImpl _value,
-    $Res Function(_$FailureImpl) _then,
-  ) : super(_value, _then);
+      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of StoryState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? failure = null}) {
-    return _then(
-      _$FailureImpl(
-        failure: null == failure
-            ? _value.failure
-            : failure // ignore: cast_nullable_to_non_nullable
-                  as Failure,
-      ),
-    );
+  $Res call({
+    Object? failure = null,
+  }) {
+    return _then(_$FailureImpl(
+      failure: null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure,
+    ));
   }
 
   /// Create a copy of StoryState

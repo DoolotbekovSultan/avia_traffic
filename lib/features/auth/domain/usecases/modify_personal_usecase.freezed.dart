@@ -12,8 +12,7 @@ part of 'modify_personal_usecase.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ModifyPersonalParams {
@@ -29,19 +28,16 @@ mixin _$ModifyPersonalParams {
 
 /// @nodoc
 abstract class $ModifyPersonalParamsCopyWith<$Res> {
-  factory $ModifyPersonalParamsCopyWith(
-    ModifyPersonalParams value,
-    $Res Function(ModifyPersonalParams) then,
-  ) = _$ModifyPersonalParamsCopyWithImpl<$Res, ModifyPersonalParams>;
+  factory $ModifyPersonalParamsCopyWith(ModifyPersonalParams value,
+          $Res Function(ModifyPersonalParams) then) =
+      _$ModifyPersonalParamsCopyWithImpl<$Res, ModifyPersonalParams>;
   @useResult
   $Res call({String email, String? firstName});
 }
 
 /// @nodoc
-class _$ModifyPersonalParamsCopyWithImpl<
-  $Res,
-  $Val extends ModifyPersonalParams
->
+class _$ModifyPersonalParamsCopyWithImpl<$Res,
+        $Val extends ModifyPersonalParams>
     implements $ModifyPersonalParamsCopyWith<$Res> {
   _$ModifyPersonalParamsCopyWithImpl(this._value, this._then);
 
@@ -54,30 +50,29 @@ class _$ModifyPersonalParamsCopyWithImpl<
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? email = null, Object? firstName = freezed}) {
-    return _then(
-      _value.copyWith(
-            email: null == email
-                ? _value.email
-                : email // ignore: cast_nullable_to_non_nullable
-                      as String,
-            firstName: freezed == firstName
-                ? _value.firstName
-                : firstName // ignore: cast_nullable_to_non_nullable
-                      as String?,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? email = null,
+    Object? firstName = freezed,
+  }) {
+    return _then(_value.copyWith(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: freezed == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$ModifyPersonalParamsImplCopyWith<$Res>
     implements $ModifyPersonalParamsCopyWith<$Res> {
-  factory _$$ModifyPersonalParamsImplCopyWith(
-    _$ModifyPersonalParamsImpl value,
-    $Res Function(_$ModifyPersonalParamsImpl) then,
-  ) = __$$ModifyPersonalParamsImplCopyWithImpl<$Res>;
+  factory _$$ModifyPersonalParamsImplCopyWith(_$ModifyPersonalParamsImpl value,
+          $Res Function(_$ModifyPersonalParamsImpl) then) =
+      __$$ModifyPersonalParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email, String? firstName});
@@ -87,28 +82,28 @@ abstract class _$$ModifyPersonalParamsImplCopyWith<$Res>
 class __$$ModifyPersonalParamsImplCopyWithImpl<$Res>
     extends _$ModifyPersonalParamsCopyWithImpl<$Res, _$ModifyPersonalParamsImpl>
     implements _$$ModifyPersonalParamsImplCopyWith<$Res> {
-  __$$ModifyPersonalParamsImplCopyWithImpl(
-    _$ModifyPersonalParamsImpl _value,
-    $Res Function(_$ModifyPersonalParamsImpl) _then,
-  ) : super(_value, _then);
+  __$$ModifyPersonalParamsImplCopyWithImpl(_$ModifyPersonalParamsImpl _value,
+      $Res Function(_$ModifyPersonalParamsImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ModifyPersonalParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? email = null, Object? firstName = freezed}) {
-    return _then(
-      _$ModifyPersonalParamsImpl(
-        email: null == email
-            ? _value.email
-            : email // ignore: cast_nullable_to_non_nullable
-                  as String,
-        firstName: freezed == firstName
-            ? _value.firstName
-            : firstName // ignore: cast_nullable_to_non_nullable
-                  as String?,
-      ),
-    );
+  $Res call({
+    Object? email = null,
+    Object? firstName = freezed,
+  }) {
+    return _then(_$ModifyPersonalParamsImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: freezed == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
 }
 
@@ -146,18 +141,15 @@ class _$ModifyPersonalParamsImpl implements _ModifyPersonalParams {
   @override
   @pragma('vm:prefer-inline')
   _$$ModifyPersonalParamsImplCopyWith<_$ModifyPersonalParamsImpl>
-  get copyWith =>
-      __$$ModifyPersonalParamsImplCopyWithImpl<_$ModifyPersonalParamsImpl>(
-        this,
-        _$identity,
-      );
+      get copyWith =>
+          __$$ModifyPersonalParamsImplCopyWithImpl<_$ModifyPersonalParamsImpl>(
+              this, _$identity);
 }
 
 abstract class _ModifyPersonalParams implements ModifyPersonalParams {
-  const factory _ModifyPersonalParams({
-    required final String email,
-    final String? firstName,
-  }) = _$ModifyPersonalParamsImpl;
+  const factory _ModifyPersonalParams(
+      {required final String email,
+      final String? firstName}) = _$ModifyPersonalParamsImpl;
 
   @override
   String get email;
@@ -169,5 +161,5 @@ abstract class _ModifyPersonalParams implements ModifyPersonalParams {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ModifyPersonalParamsImplCopyWith<_$ModifyPersonalParamsImpl>
-  get copyWith => throw _privateConstructorUsedError;
+      get copyWith => throw _privateConstructorUsedError;
 }

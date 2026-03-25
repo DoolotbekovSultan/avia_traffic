@@ -7,12 +7,12 @@ part of 'story_model.dart';
 // **************************************************************************
 
 StoryModel _$StoryModelFromJson(Map<String, dynamic> json) => StoryModel(
-  id: (json['id'] as num).toInt(),
-  title: json['title'] as String,
-  description: json['description'] as String,
-  imageUrl: json['img_mb'] as String,
-  detailed: json['detailed'] as String,
-);
+      id: (json['id'] as num).toInt(),
+      title: json['title'] as String,
+      description: json['description'] as String,
+      imageUrl: json['img_mb'] as String,
+      detailed: json['detailed'] as String,
+    );
 
 Map<String, dynamic> _$StoryModelToJson(StoryModel instance) =>
     <String, dynamic>{

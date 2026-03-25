@@ -50,11 +50,35 @@ class AuthRemoteDataSource implements IAuthRemoteDataSource {
   }
 
   @override
-  Future<void> login({required String phone, required String password}) async {
-    await _dio.post(
+  Future<String> login(
+      {required String phone, required String password}) async {
+    final response = await _dio.post(
       '/auth/user/login',
       data: {'phone': phone, 'password': password},
     );
+
+    final json = response.data as Map<String, dynamic>?;
+
+    if (json == null) {
+      throw DioException(
+        requestOptions: response.requestOptions,
+        type: DioExceptionType.badResponse,
+      );
+    }
+
+    if (json['response'] == false) {
+      throw DioException(
+        requestOptions: response.requestOptions,
+        response: Response(
+          requestOptions: response.requestOptions,
+          data: json,
+          statusCode: 422,
+        ),
+        type: DioExceptionType.badResponse,
+      );
+    } else {
+      return json['token'];
+    }
   }
 
   @override
@@ -63,14 +87,36 @@ class AuthRemoteDataSource implements IAuthRemoteDataSource {
   }
 
   @override
-  Future<void> confirmCode({
+  Future<String> confirmCode({
     required String email,
     required String code,
   }) async {
-    await _dio.post(
+    final response = await _dio.post(
       '/auth/user/confirm-code',
       data: {'email': email, 'code': code},
     );
+
+    final json = response.data as Map<String, dynamic>?;
+
+    if (json == null) {
+      throw DioException(
+        requestOptions: response.requestOptions,
+        type: DioExceptionType.badResponse,
+      );
+    }
+    if (json['response'] == false) {
+      throw DioException(
+        requestOptions: response.requestOptions,
+        response: Response(
+          requestOptions: response.requestOptions,
+          data: json,
+          statusCode: 422,
+        ),
+        type: DioExceptionType.badResponse,
+      );
+    } else {
+      return json['token'];
+    }
   }
 
   @override

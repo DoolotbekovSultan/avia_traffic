@@ -17,27 +17,28 @@ class ProfileLoginWidget extends StatelessWidget {
       width: 343.w,
       child: Card(
         color: Color(0xFFD9E4F6),
-        shape: RoundedRectangleBorder(borderRadius: .circular(16.r)),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
         child: Padding(
-          padding: .symmetric(horizontal: 16.w, vertical: 16.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           child: Column(
-            mainAxisAlignment: .center,
-            crossAxisAlignment: .center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 "👋Уважаемый пользователь ",
                 style: getIt<AppTextStyles>().bodyMediumBold.copyWith(
-                  color: AppColors.onBackground,
-                ),
+                      color: AppColors.onBackground,
+                    ),
               ),
               SizedBox(height: 6.h),
               Text(
                 'Осуществите вход для просмотра\nзаказов и сохранения ваших данных',
-                textAlign: .center,
+                textAlign: TextAlign.center,
                 style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                  color: AppColors.onBackground,
-                  height: 24 / 15,
-                ),
+                      color: AppColors.onBackground,
+                      height: 24 / 15,
+                    ),
               ),
               Gap.v24,
               SizedBox(
@@ -55,4 +56,3 @@ class ProfileLoginWidget extends StatelessWidget {
     );
   }
 }
-

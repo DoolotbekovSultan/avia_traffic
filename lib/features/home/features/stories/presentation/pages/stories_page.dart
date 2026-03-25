@@ -122,7 +122,7 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                   Image.network(
                                     slide.imageUrl,
                                     fit: BoxFit.cover,
-                                    errorBuilder: (_, _, _) => Container(
+                                    errorBuilder: (_, __, ___) => Container(
                                       color: const Color(0xFF1A1A2E),
                                       child: const Icon(
                                         Icons.image,
@@ -186,8 +186,8 @@ class _StoriesPageStateState extends State<_StoriesPageState>
                                                   isDone: index < currentIndex,
                                                   controller:
                                                       index == currentIndex
-                                                      ? _progressController
-                                                      : null,
+                                                          ? _progressController
+                                                          : null,
                                                 ),
                                               ),
                                             ),
@@ -319,13 +319,13 @@ class _StoryIndicator extends StatelessWidget {
               ),
             )
           : isDone
-          ? Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(2),
-                color: Colors.white,
-              ),
-            )
-          : const SizedBox.shrink(),
+              ? Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(2),
+                    color: Colors.white,
+                  ),
+                )
+              : const SizedBox.shrink(),
     );
   }
 }

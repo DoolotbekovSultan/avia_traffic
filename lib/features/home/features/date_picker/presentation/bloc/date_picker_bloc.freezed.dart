@@ -12,72 +12,67 @@ part of 'date_picker_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DatePickerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )
-    initialize,
+    required TResult Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)
+        initialize,
     required TResult Function(DateTime date) selectDate,
     required TResult Function() resetDates,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )?
-    initialize,
+    TResult? Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)?
+        initialize,
     TResult? Function(DateTime date)? selectDate,
     TResult? Function()? resetDates,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )?
-    initialize,
+    TResult Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)?
+        initialize,
     TResult Function(DateTime date)? selectDate,
     TResult Function()? resetDates,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialize value) initialize,
     required TResult Function(_SelectDate value) selectDate,
     required TResult Function(_ResetDates value) resetDates,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialize value)? initialize,
     TResult? Function(_SelectDate value)? selectDate,
     TResult? Function(_ResetDates value)? resetDates,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialize value)? initialize,
     TResult Function(_SelectDate value)? selectDate,
     TResult Function(_ResetDates value)? resetDates,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DatePickerEventCopyWith<$Res> {
   factory $DatePickerEventCopyWith(
-    DatePickerEvent value,
-    $Res Function(DatePickerEvent) then,
-  ) = _$DatePickerEventCopyWithImpl<$Res, DatePickerEvent>;
+          DatePickerEvent value, $Res Function(DatePickerEvent) then) =
+      _$DatePickerEventCopyWithImpl<$Res, DatePickerEvent>;
 }
 
 /// @nodoc
@@ -97,15 +92,13 @@ class _$DatePickerEventCopyWithImpl<$Res, $Val extends DatePickerEvent>
 /// @nodoc
 abstract class _$$InitializeImplCopyWith<$Res> {
   factory _$$InitializeImplCopyWith(
-    _$InitializeImpl value,
-    $Res Function(_$InitializeImpl) then,
-  ) = __$$InitializeImplCopyWithImpl<$Res>;
+          _$InitializeImpl value, $Res Function(_$InitializeImpl) then) =
+      __$$InitializeImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({
-    DateTime? initialDepart,
-    DateTime? initialReturn,
-    Map<DateTime, int> prices,
-  });
+  $Res call(
+      {DateTime? initialDepart,
+      DateTime? initialReturn,
+      Map<DateTime, int> prices});
 }
 
 /// @nodoc
@@ -113,9 +106,8 @@ class __$$InitializeImplCopyWithImpl<$Res>
     extends _$DatePickerEventCopyWithImpl<$Res, _$InitializeImpl>
     implements _$$InitializeImplCopyWith<$Res> {
   __$$InitializeImplCopyWithImpl(
-    _$InitializeImpl _value,
-    $Res Function(_$InitializeImpl) _then,
-  ) : super(_value, _then);
+      _$InitializeImpl _value, $Res Function(_$InitializeImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DatePickerEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -126,33 +118,31 @@ class __$$InitializeImplCopyWithImpl<$Res>
     Object? initialReturn = freezed,
     Object? prices = null,
   }) {
-    return _then(
-      _$InitializeImpl(
-        initialDepart: freezed == initialDepart
-            ? _value.initialDepart
-            : initialDepart // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        initialReturn: freezed == initialReturn
-            ? _value.initialReturn
-            : initialReturn // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        prices: null == prices
-            ? _value._prices
-            : prices // ignore: cast_nullable_to_non_nullable
-                  as Map<DateTime, int>,
-      ),
-    );
+    return _then(_$InitializeImpl(
+      initialDepart: freezed == initialDepart
+          ? _value.initialDepart
+          : initialDepart // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      initialReturn: freezed == initialReturn
+          ? _value.initialReturn
+          : initialReturn // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      prices: null == prices
+          ? _value._prices
+          : prices // ignore: cast_nullable_to_non_nullable
+              as Map<DateTime, int>,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$InitializeImpl implements _Initialize {
-  const _$InitializeImpl({
-    this.initialDepart,
-    this.initialReturn,
-    final Map<DateTime, int> prices = const {},
-  }) : _prices = prices;
+  const _$InitializeImpl(
+      {this.initialDepart,
+      this.initialReturn,
+      final Map<DateTime, int> prices = const {}})
+      : _prices = prices;
 
   @override
   final DateTime? initialDepart;
@@ -185,12 +175,8 @@ class _$InitializeImpl implements _Initialize {
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    initialDepart,
-    initialReturn,
-    const DeepCollectionEquality().hash(_prices),
-  );
+  int get hashCode => Object.hash(runtimeType, initialDepart, initialReturn,
+      const DeepCollectionEquality().hash(_prices));
 
   /// Create a copy of DatePickerEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -203,12 +189,9 @@ class _$InitializeImpl implements _Initialize {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )
-    initialize,
+    required TResult Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)
+        initialize,
     required TResult Function(DateTime date) selectDate,
     required TResult Function() resetDates,
   }) {
@@ -218,12 +201,9 @@ class _$InitializeImpl implements _Initialize {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )?
-    initialize,
+    TResult? Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)?
+        initialize,
     TResult? Function(DateTime date)? selectDate,
     TResult? Function()? resetDates,
   }) {
@@ -233,12 +213,9 @@ class _$InitializeImpl implements _Initialize {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )?
-    initialize,
+    TResult Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)?
+        initialize,
     TResult Function(DateTime date)? selectDate,
     TResult Function()? resetDates,
     required TResult orElse(),
@@ -285,11 +262,10 @@ class _$InitializeImpl implements _Initialize {
 }
 
 abstract class _Initialize implements DatePickerEvent {
-  const factory _Initialize({
-    final DateTime? initialDepart,
-    final DateTime? initialReturn,
-    final Map<DateTime, int> prices,
-  }) = _$InitializeImpl;
+  const factory _Initialize(
+      {final DateTime? initialDepart,
+      final DateTime? initialReturn,
+      final Map<DateTime, int> prices}) = _$InitializeImpl;
 
   DateTime? get initialDepart;
   DateTime? get initialReturn;
@@ -305,9 +281,8 @@ abstract class _Initialize implements DatePickerEvent {
 /// @nodoc
 abstract class _$$SelectDateImplCopyWith<$Res> {
   factory _$$SelectDateImplCopyWith(
-    _$SelectDateImpl value,
-    $Res Function(_$SelectDateImpl) then,
-  ) = __$$SelectDateImplCopyWithImpl<$Res>;
+          _$SelectDateImpl value, $Res Function(_$SelectDateImpl) then) =
+      __$$SelectDateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DateTime date});
 }
@@ -317,23 +292,22 @@ class __$$SelectDateImplCopyWithImpl<$Res>
     extends _$DatePickerEventCopyWithImpl<$Res, _$SelectDateImpl>
     implements _$$SelectDateImplCopyWith<$Res> {
   __$$SelectDateImplCopyWithImpl(
-    _$SelectDateImpl _value,
-    $Res Function(_$SelectDateImpl) _then,
-  ) : super(_value, _then);
+      _$SelectDateImpl _value, $Res Function(_$SelectDateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DatePickerEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? date = null}) {
-    return _then(
-      _$SelectDateImpl(
-        null == date
-            ? _value.date
-            : date // ignore: cast_nullable_to_non_nullable
-                  as DateTime,
-      ),
-    );
+  $Res call({
+    Object? date = null,
+  }) {
+    return _then(_$SelectDateImpl(
+      null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
   }
 }
 
@@ -372,12 +346,9 @@ class _$SelectDateImpl implements _SelectDate {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )
-    initialize,
+    required TResult Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)
+        initialize,
     required TResult Function(DateTime date) selectDate,
     required TResult Function() resetDates,
   }) {
@@ -387,12 +358,9 @@ class _$SelectDateImpl implements _SelectDate {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )?
-    initialize,
+    TResult? Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)?
+        initialize,
     TResult? Function(DateTime date)? selectDate,
     TResult? Function()? resetDates,
   }) {
@@ -402,12 +370,9 @@ class _$SelectDateImpl implements _SelectDate {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )?
-    initialize,
+    TResult Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)?
+        initialize,
     TResult Function(DateTime date)? selectDate,
     TResult Function()? resetDates,
     required TResult orElse(),
@@ -468,9 +433,8 @@ abstract class _SelectDate implements DatePickerEvent {
 /// @nodoc
 abstract class _$$ResetDatesImplCopyWith<$Res> {
   factory _$$ResetDatesImplCopyWith(
-    _$ResetDatesImpl value,
-    $Res Function(_$ResetDatesImpl) then,
-  ) = __$$ResetDatesImplCopyWithImpl<$Res>;
+          _$ResetDatesImpl value, $Res Function(_$ResetDatesImpl) then) =
+      __$$ResetDatesImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -478,9 +442,8 @@ class __$$ResetDatesImplCopyWithImpl<$Res>
     extends _$DatePickerEventCopyWithImpl<$Res, _$ResetDatesImpl>
     implements _$$ResetDatesImplCopyWith<$Res> {
   __$$ResetDatesImplCopyWithImpl(
-    _$ResetDatesImpl _value,
-    $Res Function(_$ResetDatesImpl) _then,
-  ) : super(_value, _then);
+      _$ResetDatesImpl _value, $Res Function(_$ResetDatesImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DatePickerEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -508,12 +471,9 @@ class _$ResetDatesImpl implements _ResetDates {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )
-    initialize,
+    required TResult Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)
+        initialize,
     required TResult Function(DateTime date) selectDate,
     required TResult Function() resetDates,
   }) {
@@ -523,12 +483,9 @@ class _$ResetDatesImpl implements _ResetDates {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )?
-    initialize,
+    TResult? Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)?
+        initialize,
     TResult? Function(DateTime date)? selectDate,
     TResult? Function()? resetDates,
   }) {
@@ -538,12 +495,9 @@ class _$ResetDatesImpl implements _ResetDates {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-      DateTime? initialDepart,
-      DateTime? initialReturn,
-      Map<DateTime, int> prices,
-    )?
-    initialize,
+    TResult Function(DateTime? initialDepart, DateTime? initialReturn,
+            Map<DateTime, int> prices)?
+        initialize,
     TResult Function(DateTime date)? selectDate,
     TResult Function()? resetDates,
     required TResult orElse(),
@@ -609,15 +563,13 @@ mixin _$DatePickerState {
 /// @nodoc
 abstract class $DatePickerStateCopyWith<$Res> {
   factory $DatePickerStateCopyWith(
-    DatePickerState value,
-    $Res Function(DatePickerState) then,
-  ) = _$DatePickerStateCopyWithImpl<$Res, DatePickerState>;
+          DatePickerState value, $Res Function(DatePickerState) then) =
+      _$DatePickerStateCopyWithImpl<$Res, DatePickerState>;
   @useResult
-  $Res call({
-    DateTime? departDate,
-    DateTime? returnDate,
-    Map<DateTime, int> normalizedPrices,
-  });
+  $Res call(
+      {DateTime? departDate,
+      DateTime? returnDate,
+      Map<DateTime, int> normalizedPrices});
 }
 
 /// @nodoc
@@ -639,40 +591,35 @@ class _$DatePickerStateCopyWithImpl<$Res, $Val extends DatePickerState>
     Object? returnDate = freezed,
     Object? normalizedPrices = null,
   }) {
-    return _then(
-      _value.copyWith(
-            departDate: freezed == departDate
-                ? _value.departDate
-                : departDate // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            returnDate: freezed == returnDate
-                ? _value.returnDate
-                : returnDate // ignore: cast_nullable_to_non_nullable
-                      as DateTime?,
-            normalizedPrices: null == normalizedPrices
-                ? _value.normalizedPrices
-                : normalizedPrices // ignore: cast_nullable_to_non_nullable
-                      as Map<DateTime, int>,
-          )
-          as $Val,
-    );
+    return _then(_value.copyWith(
+      departDate: freezed == departDate
+          ? _value.departDate
+          : departDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      returnDate: freezed == returnDate
+          ? _value.returnDate
+          : returnDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      normalizedPrices: null == normalizedPrices
+          ? _value.normalizedPrices
+          : normalizedPrices // ignore: cast_nullable_to_non_nullable
+              as Map<DateTime, int>,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$DatePickerStateImplCopyWith<$Res>
     implements $DatePickerStateCopyWith<$Res> {
-  factory _$$DatePickerStateImplCopyWith(
-    _$DatePickerStateImpl value,
-    $Res Function(_$DatePickerStateImpl) then,
-  ) = __$$DatePickerStateImplCopyWithImpl<$Res>;
+  factory _$$DatePickerStateImplCopyWith(_$DatePickerStateImpl value,
+          $Res Function(_$DatePickerStateImpl) then) =
+      __$$DatePickerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    DateTime? departDate,
-    DateTime? returnDate,
-    Map<DateTime, int> normalizedPrices,
-  });
+  $Res call(
+      {DateTime? departDate,
+      DateTime? returnDate,
+      Map<DateTime, int> normalizedPrices});
 }
 
 /// @nodoc
@@ -680,9 +627,8 @@ class __$$DatePickerStateImplCopyWithImpl<$Res>
     extends _$DatePickerStateCopyWithImpl<$Res, _$DatePickerStateImpl>
     implements _$$DatePickerStateImplCopyWith<$Res> {
   __$$DatePickerStateImplCopyWithImpl(
-    _$DatePickerStateImpl _value,
-    $Res Function(_$DatePickerStateImpl) _then,
-  ) : super(_value, _then);
+      _$DatePickerStateImpl _value, $Res Function(_$DatePickerStateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DatePickerState
   /// with the given fields replaced by the non-null parameter values.
@@ -693,33 +639,31 @@ class __$$DatePickerStateImplCopyWithImpl<$Res>
     Object? returnDate = freezed,
     Object? normalizedPrices = null,
   }) {
-    return _then(
-      _$DatePickerStateImpl(
-        departDate: freezed == departDate
-            ? _value.departDate
-            : departDate // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        returnDate: freezed == returnDate
-            ? _value.returnDate
-            : returnDate // ignore: cast_nullable_to_non_nullable
-                  as DateTime?,
-        normalizedPrices: null == normalizedPrices
-            ? _value._normalizedPrices
-            : normalizedPrices // ignore: cast_nullable_to_non_nullable
-                  as Map<DateTime, int>,
-      ),
-    );
+    return _then(_$DatePickerStateImpl(
+      departDate: freezed == departDate
+          ? _value.departDate
+          : departDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      returnDate: freezed == returnDate
+          ? _value.returnDate
+          : returnDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      normalizedPrices: null == normalizedPrices
+          ? _value._normalizedPrices
+          : normalizedPrices // ignore: cast_nullable_to_non_nullable
+              as Map<DateTime, int>,
+    ));
   }
 }
 
 /// @nodoc
 
 class _$DatePickerStateImpl implements _DatePickerState {
-  const _$DatePickerStateImpl({
-    this.departDate,
-    this.returnDate,
-    final Map<DateTime, int> normalizedPrices = const {},
-  }) : _normalizedPrices = normalizedPrices;
+  const _$DatePickerStateImpl(
+      {this.departDate,
+      this.returnDate,
+      final Map<DateTime, int> normalizedPrices = const {}})
+      : _normalizedPrices = normalizedPrices;
 
   @override
   final DateTime? departDate;
@@ -748,19 +692,13 @@ class _$DatePickerStateImpl implements _DatePickerState {
                 other.departDate == departDate) &&
             (identical(other.returnDate, returnDate) ||
                 other.returnDate == returnDate) &&
-            const DeepCollectionEquality().equals(
-              other._normalizedPrices,
-              _normalizedPrices,
-            ));
+            const DeepCollectionEquality()
+                .equals(other._normalizedPrices, _normalizedPrices));
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    departDate,
-    returnDate,
-    const DeepCollectionEquality().hash(_normalizedPrices),
-  );
+  int get hashCode => Object.hash(runtimeType, departDate, returnDate,
+      const DeepCollectionEquality().hash(_normalizedPrices));
 
   /// Create a copy of DatePickerState
   /// with the given fields replaced by the non-null parameter values.
@@ -769,17 +707,14 @@ class _$DatePickerStateImpl implements _DatePickerState {
   @pragma('vm:prefer-inline')
   _$$DatePickerStateImplCopyWith<_$DatePickerStateImpl> get copyWith =>
       __$$DatePickerStateImplCopyWithImpl<_$DatePickerStateImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 }
 
 abstract class _DatePickerState implements DatePickerState {
-  const factory _DatePickerState({
-    final DateTime? departDate,
-    final DateTime? returnDate,
-    final Map<DateTime, int> normalizedPrices,
-  }) = _$DatePickerStateImpl;
+  const factory _DatePickerState(
+      {final DateTime? departDate,
+      final DateTime? returnDate,
+      final Map<DateTime, int> normalizedPrices}) = _$DatePickerStateImpl;
 
   @override
   DateTime? get departDate;
