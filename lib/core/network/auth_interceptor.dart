@@ -24,7 +24,7 @@ class AuthInterceptor extends Interceptor {
   /// - [dio]: Dio клиент для повторных запросов (должен быть из DI)
   /// - [getToken]: Функция получения текущего токена
   AuthInterceptor({required Future<String?> Function() getToken})
-    : _getToken = getToken;
+      : _getToken = getToken;
 
   @override
   Future<void> onRequest(
@@ -34,10 +34,9 @@ class AuthInterceptor extends Interceptor {
     try {
       // Получаем токен и добавляем в заголовки
       final token = await _getToken();
-      options.headers['Authorization'] = 'Token $token';
       if (token != null && token.isNotEmpty) {
         options.headers[ApiConstants.authHeaderKey] =
-            '${ApiConstants.basicPrefix} $token';
+            '${ApiConstants.tokenPrefix} $token';
         Log.d('Добавлен токен к запросу: ${options.method} ${options.path}');
       } else {
         Log.d(

@@ -10,8 +10,6 @@ import 'package:aviatraffic/features/auth/domain/usecases/get_token_usecase.dart
 
 @module
 abstract class RegisterModule {
-  final GetTokenUseCase _getTokenUseCase = getIt<GetTokenUseCase>();
-
   @lazySingleton
   Dio get dio {
     final dio = Dio(
@@ -28,7 +26,8 @@ abstract class RegisterModule {
     dio.interceptors.add(
       AuthInterceptor(
         getToken: () async {
-          final result = await _getTokenUseCase(NoParams());
+          final useCase = getIt<GetTokenUseCase>();
+          final result = await useCase(NoParams());
           result.fold(
             (left) {
               return null;

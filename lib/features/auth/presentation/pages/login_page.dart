@@ -103,40 +103,37 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     Gap.v24,
-                    SizedBox(
-                      height: 48.h,
-                      child: TextField(
-                        keyboardType: TextInputType.visiblePassword,
-                        controller: _passwordTextEditingController,
-                        obscuringCharacter: '*',
-                        style: getIt<AppTextStyles>()
-                            .bodyLargeSemiBold
-                            .copyWith(color: AppColors.onBackground),
-                        obscureText: isHidden,
-                        textInputAction: TextInputAction.done,
-                        decoration: InputDecoration(
-                          errorText: state.maybeMap(
-                              failure: (value) => value.passwordError,
-                              orElse: () => null),
-                          hintText: 'Ваш пароль',
-                          suffixIcon: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                isHidden = !isHidden;
-                              });
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 18.w,
-                                vertical: 12.h,
-                              ),
-                              child: SvgPicture.asset(
-                                isHidden ? hideEyeImagePath : showEyeImagePath,
-                              ),
+                    TextField(
+                      keyboardType: TextInputType.visiblePassword,
+                      controller: _passwordTextEditingController,
+                      obscuringCharacter: '*',
+                      style: getIt<AppTextStyles>()
+                          .bodyLargeSemiBold
+                          .copyWith(color: AppColors.onBackground),
+                      obscureText: isHidden,
+                      textInputAction: TextInputAction.done,
+                      decoration: InputDecoration(
+                        errorText: state.maybeMap(
+                            failure: (value) => value.passwordError,
+                            orElse: () => null),
+                        hintText: 'Ваш пароль',
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isHidden = !isHidden;
+                            });
+                          },
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 18.w,
+                              vertical: 12.h,
+                            ),
+                            child: SvgPicture.asset(
+                              isHidden ? hideEyeImagePath : showEyeImagePath,
                             ),
                           ),
-                          fillColor: Colors.white,
                         ),
+                        fillColor: Colors.white,
                       ),
                     ),
                     Gap.v24,
@@ -163,6 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                     Gap.v24,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 18.h,

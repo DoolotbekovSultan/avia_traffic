@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -24,6 +25,8 @@ import 'package:aviatraffic/features/auth/data/datasources/i_auth_remote_datasou
     as _i601;
 import 'package:aviatraffic/features/auth/data/datasources/I_token_local_datasource.dart'
     as _i209;
+import 'package:aviatraffic/features/auth/data/datasources/token_local_datasource.dart'
+    as _i566;
 import 'package:aviatraffic/features/auth/data/repositories/auth_repository.dart'
     as _i1010;
 import 'package:aviatraffic/features/auth/domain/repositories/i_auth_repository.dart'
@@ -148,6 +151,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i865.SystemLocaleService>(
         () => _i865.SystemLocaleService());
     gh.lazySingleton<_i1029.CityPickerBloc>(() => _i1029.CityPickerBloc());
+    gh.lazySingleton<_i209.ITokenLocalDatasource>(() =>
+        _i566.TokenLocalDatasource(storage: gh<_i558.FlutterSecureStorage>()));
     gh.lazySingleton<_i450.IOnboardingLocalDataSource>(
         () => _i993.OnboardingLocalDataSource(gh<_i460.SharedPreferences>()));
     gh.lazySingleton<_i672.LocaleBloc>(
@@ -172,26 +177,26 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i831.AppTextStyles>(() => const _i746.NunitoSansTextStyles());
     gh.lazySingleton<_i461.ConfirmCodeUseCase>(
         () => _i461.ConfirmCodeUseCase(gh<_i739.IAuthRepository>()));
+    gh.lazySingleton<_i933.DeleteAccountUseCase>(
+        () => _i933.DeleteAccountUseCase(gh<_i739.IAuthRepository>()));
     gh.lazySingleton<_i1059.ForgotPasswordUseCase>(
         () => _i1059.ForgotPasswordUseCase(gh<_i739.IAuthRepository>()));
-    gh.lazySingleton<_i144.RegisterUseCase>(
-        () => _i144.RegisterUseCase(gh<_i739.IAuthRepository>()));
+    gh.lazySingleton<_i230.GetPersonalInfoUseCase>(
+        () => _i230.GetPersonalInfoUseCase(gh<_i739.IAuthRepository>()));
+    gh.lazySingleton<_i968.GetTokenUseCase>(
+        () => _i968.GetTokenUseCase(gh<_i739.IAuthRepository>()));
     gh.lazySingleton<_i148.LoginUseCase>(
         () => _i148.LoginUseCase(gh<_i739.IAuthRepository>()));
     gh.lazySingleton<_i1036.LogoutUseCase>(
         () => _i1036.LogoutUseCase(gh<_i739.IAuthRepository>()));
-    gh.lazySingleton<_i230.GetPersonalInfoUseCase>(
-        () => _i230.GetPersonalInfoUseCase(gh<_i739.IAuthRepository>()));
-    gh.lazySingleton<_i324.ResendEmailUseCase>(
-        () => _i324.ResendEmailUseCase(gh<_i739.IAuthRepository>()));
     gh.lazySingleton<_i244.ModifyPasswordUseCase>(
         () => _i244.ModifyPasswordUseCase(gh<_i739.IAuthRepository>()));
-    gh.lazySingleton<_i968.GetTokenUseCase>(
-        () => _i968.GetTokenUseCase(gh<_i739.IAuthRepository>()));
-    gh.lazySingleton<_i933.DeleteAccountUseCase>(
-        () => _i933.DeleteAccountUseCase(gh<_i739.IAuthRepository>()));
     gh.lazySingleton<_i453.ModifyPersonalUseCase>(
         () => _i453.ModifyPersonalUseCase(gh<_i739.IAuthRepository>()));
+    gh.lazySingleton<_i144.RegisterUseCase>(
+        () => _i144.RegisterUseCase(gh<_i739.IAuthRepository>()));
+    gh.lazySingleton<_i324.ResendEmailUseCase>(
+        () => _i324.ResendEmailUseCase(gh<_i739.IAuthRepository>()));
     gh.lazySingleton<_i21.ICityPickerRemoteDatasource>(
         () => _i460.CityPickerRemoteDatasource(gh<_i361.Dio>()));
     gh.lazySingleton<_i1044.IStoriesRemoteDatasource>(
@@ -208,18 +213,18 @@ extension GetItInjectableX on _i174.GetIt {
         _i202.CityPickerRepository(gh<_i21.ICityPickerRemoteDatasource>()));
     gh.lazySingleton<_i308.GetDealsUsecase>(
         () => _i308.GetDealsUsecase(gh<_i884.IDealsRepository>()));
-    gh.lazySingleton<_i335.SetOnboardingSeenUsecase>(() =>
-        _i335.SetOnboardingSeenUsecase(gh<_i524.IOnboardingRepository>()));
     gh.lazySingleton<_i572.GetPagesUsecase>(
         () => _i572.GetPagesUsecase(gh<_i524.IOnboardingRepository>()));
     gh.lazySingleton<_i733.IsOnboardingSeenUseCase>(
         () => _i733.IsOnboardingSeenUseCase(gh<_i524.IOnboardingRepository>()));
+    gh.lazySingleton<_i335.SetOnboardingSeenUsecase>(() =>
+        _i335.SetOnboardingSeenUsecase(gh<_i524.IOnboardingRepository>()));
     gh.factory<_i812.DealsBloc>(
         () => _i812.DealsBloc(gh<_i308.GetDealsUsecase>()));
-    gh.lazySingleton<_i243.GetCountriesUsecase>(
-        () => _i243.GetCountriesUsecase(gh<_i331.ICityPickerRepository>()));
     gh.lazySingleton<_i589.GetCitiesUsecase>(
         () => _i589.GetCitiesUsecase(gh<_i331.ICityPickerRepository>()));
+    gh.lazySingleton<_i243.GetCountriesUsecase>(
+        () => _i243.GetCountriesUsecase(gh<_i331.ICityPickerRepository>()));
     gh.lazySingleton<_i507.OnboardingBloc>(() => _i507.OnboardingBloc(
           getPagesUsecase: gh<_i572.GetPagesUsecase>(),
           setOnboardingSeenUsecase: gh<_i335.SetOnboardingSeenUsecase>(),

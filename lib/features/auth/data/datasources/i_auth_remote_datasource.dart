@@ -9,7 +9,7 @@ abstract class IAuthRemoteDataSource {
     String? email,
   });
 
-  Future<void> login({required String phone, required String password});
+  Future<String> login({required String phone, required String password});
 
   Future<void> logout();
 

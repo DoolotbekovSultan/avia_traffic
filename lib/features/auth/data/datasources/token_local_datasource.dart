@@ -1,6 +1,8 @@
 import 'package:aviatraffic/features/auth/data/datasources/I_token_local_datasource.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: ITokenLocalDatasource)
 class TokenLocalDatasource implements ITokenLocalDatasource {
   final FlutterSecureStorage storage;
   static const String _tokenKey = "token";

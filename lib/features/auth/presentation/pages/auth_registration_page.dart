@@ -52,6 +52,7 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
     _authBloc.close();
     _nameTextEditingController.dispose();
     _emailTextEditingController.dispose();
+    _numberTextEditingController.dispose();
     _invesionPasswordTextEditingController.dispose();
     _repeatPasswordTextEditingController.dispose();
     super.dispose();

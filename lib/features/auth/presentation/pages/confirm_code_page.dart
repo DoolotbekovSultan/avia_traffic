@@ -23,14 +23,21 @@ class ConfirmCodePage extends StatefulWidget {
 }
 
 class _ConfirmCodePageState extends State<ConfirmCodePage> {
-  late final _codeEdittingController;
+  late final TextEditingController _codeEditingController;
   late final AuthBloc _authBloc;
 
   @override
   void initState() {
-    _authBloc = getIt<AuthBloc>();
-    _codeEdittingController = TextEditingController();
     super.initState();
+    _authBloc = getIt<AuthBloc>();
+    _codeEditingController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _codeEditingController.dispose();
+    _authBloc.close();
+    super.dispose();
   }
 
   @override
@@ -61,14 +68,13 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
                     Text('Код подтверждения'),
                     Gap.v12,
                     Text(
-                      'На вашу почту AlexSay@gmail.com\nбыл отправлен код подтверждения. \nПожалуйста введите код ниже',
+                      'На вашу почту ${widget.email}\nбыл отправлен код подтверждения. \nПожалуйста введите код ниже', // ✅ email из widget
                     ),
                     TextField(
-                      keyboardType: TextInputType.name,
-                      // controller: _nameTextEditingController,
-                      controller: _codeEdittingController,
+                      keyboardType: TextInputType.number,
+                      controller: _codeEditingController,
                       decoration: InputDecoration(
-                        hintText: 'Ваше имя',
+                        hintText: 'Код подтверждения',
                         fillColor: Colors.white,
                         errorText: state.maybeMap(
                           failure: (f) => f.nameError,
@@ -100,17 +106,24 @@ class _ConfirmCodePageState extends State<ConfirmCodePage> {
                       height: 56.h,
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {
-                          _authBloc.add(
-                            AuthEvent.confirmCode(
-                              params: ConfirmCodeParams(
-                                code: _codeEdittingController,
-                                email: widget.email,
+                        onPressed: state.maybeMap(
+                          loading: (_) => null,
+                          orElse: () => () {
+                            _authBloc.add(
+                              AuthEvent.confirmCode(
+                                params: ConfirmCodeParams(
+                                  code: _codeEditingController.text, // ✅ .text
+                                  email: widget.email,
+                                ),
                               ),
-                            ),
-                          );
-                        },
-                        child: Text('Потвердить'),
+                            );
+                          },
+                        ),
+                        child: state.maybeMap(
+                          loading: (_) => const CircularProgressIndicator(
+                              color: Colors.white),
+                          orElse: () => const Text('Подтвердить'),
+                        ),
                       ),
                     ),
                     Gap.v16,

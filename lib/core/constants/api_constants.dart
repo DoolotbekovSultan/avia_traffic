@@ -1,4 +1,4 @@
 class ApiConstants {
   static const String authHeaderKey = 'Authorization';
-  static const String basicPrefix = 'Basic';
+  static const String tokenPrefix = 'Token';
 }
