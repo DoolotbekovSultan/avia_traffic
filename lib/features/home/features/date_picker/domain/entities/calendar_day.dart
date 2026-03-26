@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'calendar_day.freezed.dart';
 
 @freezed
-class CalendarDay with _$CalendarDay {
+sealed class CalendarDay with _$CalendarDay {
   const factory CalendarDay({
     required DateTime date,
     required bool isCurrentMonth,

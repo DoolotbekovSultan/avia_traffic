@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,184 +9,45 @@ part of 'stories_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$StoriesEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(int index) updateIndex,
-    required TResult Function() nextStory,
-    required TResult Function() previousStory,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(int index)? updateIndex,
-    TResult? Function()? nextStory,
-    TResult? Function()? previousStory,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(int index)? updateIndex,
-    TResult Function()? nextStory,
-    TResult Function()? previousStory,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_UpdateIndex value) updateIndex,
-    required TResult Function(_NextStory value) nextStory,
-    required TResult Function(_PreviousStory value) previousStory,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_UpdateIndex value)? updateIndex,
-    TResult? Function(_NextStory value)? nextStory,
-    TResult? Function(_PreviousStory value)? previousStory,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_UpdateIndex value)? updateIndex,
-    TResult Function(_NextStory value)? nextStory,
-    TResult Function(_PreviousStory value)? previousStory,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StoriesEventCopyWith<$Res> {
-  factory $StoriesEventCopyWith(
-          StoriesEvent value, $Res Function(StoriesEvent) then) =
-      _$StoriesEventCopyWithImpl<$Res, StoriesEvent>;
-}
-
-/// @nodoc
-class _$StoriesEventCopyWithImpl<$Res, $Val extends StoriesEvent>
-    implements $StoriesEventCopyWith<$Res> {
-  _$StoriesEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of StoriesEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$StoriesEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of StoriesEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
-
-  @override
-  String toString() {
-    return 'StoriesEvent.started()';
-  }
-
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+        (other.runtimeType == runtimeType && other is StoriesEvent);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(int index) updateIndex,
-    required TResult Function() nextStory,
-    required TResult Function() previousStory,
-  }) {
-    return started();
+  String toString() {
+    return 'StoriesEvent()';
   }
+}
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(int index)? updateIndex,
-    TResult? Function()? nextStory,
-    TResult? Function()? previousStory,
-  }) {
-    return started?.call();
-  }
+/// @nodoc
+class $StoriesEventCopyWith<$Res> {
+  $StoriesEventCopyWith(StoriesEvent _, $Res Function(StoriesEvent) __);
+}
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(int index)? updateIndex,
-    TResult Function()? nextStory,
-    TResult Function()? previousStory,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started();
-    }
-    return orElse();
-  }
+/// Adds pattern-matching-related methods to [StoriesEvent].
+extension StoriesEventPatterns on StoriesEvent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_UpdateIndex value) updateIndex,
-    required TResult Function(_NextStory value) nextStory,
-    required TResult Function(_PreviousStory value) previousStory,
-  }) {
-    return started(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_UpdateIndex value)? updateIndex,
-    TResult? Function(_NextStory value)? nextStory,
-    TResult? Function(_PreviousStory value)? previousStory,
-  }) {
-    return started?.call(this);
-  }
-
-  @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
@@ -195,44 +56,268 @@ class _$StartedImpl implements _Started {
     TResult Function(_PreviousStory value)? previousStory,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    final _that = this;
+    switch (_that) {
+      case _Started() when started != null:
+        return started(_that);
+      case _UpdateIndex() when updateIndex != null:
+        return updateIndex(_that);
+      case _NextStory() when nextStory != null:
+        return nextStory(_that);
+      case _PreviousStory() when previousStory != null:
+        return previousStory(_that);
+      case _:
+        return orElse();
     }
-    return orElse();
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_UpdateIndex value) updateIndex,
+    required TResult Function(_NextStory value) nextStory,
+    required TResult Function(_PreviousStory value) previousStory,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Started():
+        return started(_that);
+      case _UpdateIndex():
+        return updateIndex(_that);
+      case _NextStory():
+        return nextStory(_that);
+      case _PreviousStory():
+        return previousStory(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateIndex value)? updateIndex,
+    TResult? Function(_NextStory value)? nextStory,
+    TResult? Function(_PreviousStory value)? previousStory,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Started() when started != null:
+        return started(_that);
+      case _UpdateIndex() when updateIndex != null:
+        return updateIndex(_that);
+      case _NextStory() when nextStory != null:
+        return nextStory(_that);
+      case _PreviousStory() when previousStory != null:
+        return previousStory(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(int index)? updateIndex,
+    TResult Function()? nextStory,
+    TResult Function()? previousStory,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Started() when started != null:
+        return started();
+      case _UpdateIndex() when updateIndex != null:
+        return updateIndex(_that.index);
+      case _NextStory() when nextStory != null:
+        return nextStory();
+      case _PreviousStory() when previousStory != null:
+        return previousStory();
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(int index) updateIndex,
+    required TResult Function() nextStory,
+    required TResult Function() previousStory,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Started():
+        return started();
+      case _UpdateIndex():
+        return updateIndex(_that.index);
+      case _NextStory():
+        return nextStory();
+      case _PreviousStory():
+        return previousStory();
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(int index)? updateIndex,
+    TResult? Function()? nextStory,
+    TResult? Function()? previousStory,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Started() when started != null:
+        return started();
+      case _UpdateIndex() when updateIndex != null:
+        return updateIndex(_that.index);
+      case _NextStory() when nextStory != null:
+        return nextStory();
+      case _PreviousStory() when previousStory != null:
+        return previousStory();
+      case _:
+        return null;
+    }
   }
 }
 
-abstract class _Started implements StoriesEvent {
-  const factory _Started() = _$StartedImpl;
+/// @nodoc
+
+class _Started implements StoriesEvent {
+  const _Started();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Started);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'StoriesEvent.started()';
+  }
 }
 
 /// @nodoc
-abstract class _$$UpdateIndexImplCopyWith<$Res> {
-  factory _$$UpdateIndexImplCopyWith(
-          _$UpdateIndexImpl value, $Res Function(_$UpdateIndexImpl) then) =
-      __$$UpdateIndexImplCopyWithImpl<$Res>;
+
+class _UpdateIndex implements StoriesEvent {
+  const _UpdateIndex(this.index);
+
+  final int index;
+
+  /// Create a copy of StoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateIndexCopyWith<_UpdateIndex> get copyWith =>
+      __$UpdateIndexCopyWithImpl<_UpdateIndex>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _UpdateIndex &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @override
+  String toString() {
+    return 'StoriesEvent.updateIndex(index: $index)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$UpdateIndexCopyWith<$Res>
+    implements $StoriesEventCopyWith<$Res> {
+  factory _$UpdateIndexCopyWith(
+          _UpdateIndex value, $Res Function(_UpdateIndex) _then) =
+      __$UpdateIndexCopyWithImpl;
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$UpdateIndexImplCopyWithImpl<$Res>
-    extends _$StoriesEventCopyWithImpl<$Res, _$UpdateIndexImpl>
-    implements _$$UpdateIndexImplCopyWith<$Res> {
-  __$$UpdateIndexImplCopyWithImpl(
-      _$UpdateIndexImpl _value, $Res Function(_$UpdateIndexImpl) _then)
-      : super(_value, _then);
+class __$UpdateIndexCopyWithImpl<$Res> implements _$UpdateIndexCopyWith<$Res> {
+  __$UpdateIndexCopyWithImpl(this._self, this._then);
+
+  final _UpdateIndex _self;
+  final $Res Function(_UpdateIndex) _then;
 
   /// Create a copy of StoriesEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$UpdateIndexImpl(
+    return _then(_UpdateIndex(
       null == index
-          ? _value.index
+          ? _self.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -241,400 +326,80 @@ class __$$UpdateIndexImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateIndexImpl implements _UpdateIndex {
-  const _$UpdateIndexImpl(this.index);
-
-  @override
-  final int index;
-
-  @override
-  String toString() {
-    return 'StoriesEvent.updateIndex(index: $index)';
-  }
+class _NextStory implements StoriesEvent {
+  const _NextStory();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateIndexImpl &&
-            (identical(other.index, index) || other.index == index));
+        (other.runtimeType == runtimeType && other is _NextStory);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, index);
-
-  /// Create a copy of StoriesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateIndexImplCopyWith<_$UpdateIndexImpl> get copyWith =>
-      __$$UpdateIndexImplCopyWithImpl<_$UpdateIndexImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(int index) updateIndex,
-    required TResult Function() nextStory,
-    required TResult Function() previousStory,
-  }) {
-    return updateIndex(index);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(int index)? updateIndex,
-    TResult? Function()? nextStory,
-    TResult? Function()? previousStory,
-  }) {
-    return updateIndex?.call(index);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(int index)? updateIndex,
-    TResult Function()? nextStory,
-    TResult Function()? previousStory,
-    required TResult orElse(),
-  }) {
-    if (updateIndex != null) {
-      return updateIndex(index);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_UpdateIndex value) updateIndex,
-    required TResult Function(_NextStory value) nextStory,
-    required TResult Function(_PreviousStory value) previousStory,
-  }) {
-    return updateIndex(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_UpdateIndex value)? updateIndex,
-    TResult? Function(_NextStory value)? nextStory,
-    TResult? Function(_PreviousStory value)? previousStory,
-  }) {
-    return updateIndex?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_UpdateIndex value)? updateIndex,
-    TResult Function(_NextStory value)? nextStory,
-    TResult Function(_PreviousStory value)? previousStory,
-    required TResult orElse(),
-  }) {
-    if (updateIndex != null) {
-      return updateIndex(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdateIndex implements StoriesEvent {
-  const factory _UpdateIndex(final int index) = _$UpdateIndexImpl;
-
-  int get index;
-
-  /// Create a copy of StoriesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateIndexImplCopyWith<_$UpdateIndexImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$NextStoryImplCopyWith<$Res> {
-  factory _$$NextStoryImplCopyWith(
-          _$NextStoryImpl value, $Res Function(_$NextStoryImpl) then) =
-      __$$NextStoryImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NextStoryImplCopyWithImpl<$Res>
-    extends _$StoriesEventCopyWithImpl<$Res, _$NextStoryImpl>
-    implements _$$NextStoryImplCopyWith<$Res> {
-  __$$NextStoryImplCopyWithImpl(
-      _$NextStoryImpl _value, $Res Function(_$NextStoryImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of StoriesEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$NextStoryImpl implements _NextStory {
-  const _$NextStoryImpl();
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'StoriesEvent.nextStory()';
   }
+}
+
+/// @nodoc
+
+class _PreviousStory implements StoriesEvent {
+  const _PreviousStory();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NextStoryImpl);
+        (other.runtimeType == runtimeType && other is _PreviousStory);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(int index) updateIndex,
-    required TResult Function() nextStory,
-    required TResult Function() previousStory,
-  }) {
-    return nextStory();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(int index)? updateIndex,
-    TResult? Function()? nextStory,
-    TResult? Function()? previousStory,
-  }) {
-    return nextStory?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(int index)? updateIndex,
-    TResult Function()? nextStory,
-    TResult Function()? previousStory,
-    required TResult orElse(),
-  }) {
-    if (nextStory != null) {
-      return nextStory();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_UpdateIndex value) updateIndex,
-    required TResult Function(_NextStory value) nextStory,
-    required TResult Function(_PreviousStory value) previousStory,
-  }) {
-    return nextStory(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_UpdateIndex value)? updateIndex,
-    TResult? Function(_NextStory value)? nextStory,
-    TResult? Function(_PreviousStory value)? previousStory,
-  }) {
-    return nextStory?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_UpdateIndex value)? updateIndex,
-    TResult Function(_NextStory value)? nextStory,
-    TResult Function(_PreviousStory value)? previousStory,
-    required TResult orElse(),
-  }) {
-    if (nextStory != null) {
-      return nextStory(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _NextStory implements StoriesEvent {
-  const factory _NextStory() = _$NextStoryImpl;
-}
-
-/// @nodoc
-abstract class _$$PreviousStoryImplCopyWith<$Res> {
-  factory _$$PreviousStoryImplCopyWith(
-          _$PreviousStoryImpl value, $Res Function(_$PreviousStoryImpl) then) =
-      __$$PreviousStoryImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$PreviousStoryImplCopyWithImpl<$Res>
-    extends _$StoriesEventCopyWithImpl<$Res, _$PreviousStoryImpl>
-    implements _$$PreviousStoryImplCopyWith<$Res> {
-  __$$PreviousStoryImplCopyWithImpl(
-      _$PreviousStoryImpl _value, $Res Function(_$PreviousStoryImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of StoriesEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$PreviousStoryImpl implements _PreviousStory {
-  const _$PreviousStoryImpl();
 
   @override
   String toString() {
     return 'StoriesEvent.previousStory()';
   }
+}
 
+/// @nodoc
+mixin _$StoriesState {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PreviousStoryImpl);
+        (other.runtimeType == runtimeType && other is StoriesState);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(int index) updateIndex,
-    required TResult Function() nextStory,
-    required TResult Function() previousStory,
-  }) {
-    return previousStory();
+  String toString() {
+    return 'StoriesState()';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(int index)? updateIndex,
-    TResult? Function()? nextStory,
-    TResult? Function()? previousStory,
-  }) {
-    return previousStory?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(int index)? updateIndex,
-    TResult Function()? nextStory,
-    TResult Function()? previousStory,
-    required TResult orElse(),
-  }) {
-    if (previousStory != null) {
-      return previousStory();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_UpdateIndex value) updateIndex,
-    required TResult Function(_NextStory value) nextStory,
-    required TResult Function(_PreviousStory value) previousStory,
-  }) {
-    return previousStory(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_UpdateIndex value)? updateIndex,
-    TResult? Function(_NextStory value)? nextStory,
-    TResult? Function(_PreviousStory value)? previousStory,
-  }) {
-    return previousStory?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_UpdateIndex value)? updateIndex,
-    TResult Function(_NextStory value)? nextStory,
-    TResult Function(_PreviousStory value)? previousStory,
-    required TResult orElse(),
-  }) {
-    if (previousStory != null) {
-      return previousStory(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PreviousStory implements StoriesEvent {
-  const factory _PreviousStory() = _$PreviousStoryImpl;
 }
 
 /// @nodoc
-mixin _$StoriesState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
-    required TResult Function(Failure failure) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
-    TResult? Function(Failure failure)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
-    TResult Function(Failure failure)? failure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Failure value) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Failure value)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
+class $StoriesStateCopyWith<$Res> {
+  $StoriesStateCopyWith(StoriesState _, $Res Function(StoriesState) __);
+}
+
+/// Adds pattern-matching-related methods to [StoriesState].
+extension StoriesStatePatterns on StoriesState {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -642,332 +407,260 @@ mixin _$StoriesState {
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial(_that);
+      case _Loading() when loading != null:
+        return loading(_that);
+      case _Loaded() when loaded != null:
+        return loaded(_that);
+      case _Failure() when failure != null:
+        return failure(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Failure value) failure,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial():
+        return initial(_that);
+      case _Loading():
+        return loading(_that);
+      case _Loaded():
+        return loaded(_that);
+      case _Failure():
+        return failure(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial(_that);
+      case _Loading() when loading != null:
+        return loading(_that);
+      case _Loaded() when loaded != null:
+        return loaded(_that);
+      case _Failure() when failure != null:
+        return failure(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
+    TResult Function(Failure failure)? failure,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial();
+      case _Loading() when loading != null:
+        return loading();
+      case _Loaded() when loaded != null:
+        return loaded(_that.stories, _that.currentIndex);
+      case _Failure() when failure != null:
+        return failure(_that.failure);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
+    required TResult Function(Failure failure) failure,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial():
+        return initial();
+      case _Loading():
+        return loading();
+      case _Loaded():
+        return loaded(_that.stories, _that.currentIndex);
+      case _Failure():
+        return failure(_that.failure);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
+    TResult? Function(Failure failure)? failure,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial();
+      case _Loading() when loading != null:
+        return loading();
+      case _Loaded() when loaded != null:
+        return loaded(_that.stories, _that.currentIndex);
+      case _Failure() when failure != null:
+        return failure(_that.failure);
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
-abstract class $StoriesStateCopyWith<$Res> {
-  factory $StoriesStateCopyWith(
-          StoriesState value, $Res Function(StoriesState) then) =
-      _$StoriesStateCopyWithImpl<$Res, StoriesState>;
-}
 
-/// @nodoc
-class _$StoriesStateCopyWithImpl<$Res, $Val extends StoriesState>
-    implements $StoriesStateCopyWith<$Res> {
-  _$StoriesStateCopyWithImpl(this._value, this._then);
+class _Initial implements StoriesState {
+  const _Initial();
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
+  }
 
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$StoriesStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+  @override
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'StoriesState.initial()';
   }
+}
+
+/// @nodoc
+
+class _Loading implements StoriesState {
+  const _Loading();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is _Loading);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
-    required TResult Function(Failure failure) failure,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
-    TResult? Function(Failure failure)? failure,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
-    TResult Function(Failure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements StoriesState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$StoriesStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
 
   @override
   String toString() {
     return 'StoriesState.loading()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
-    required TResult Function(Failure failure) failure,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
-    TResult? Function(Failure failure)? failure,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
-    TResult Function(Failure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Loading implements StoriesState {
-  const factory _Loading() = _$LoadingImpl;
-}
-
-/// @nodoc
-abstract class _$$LoadedImplCopyWith<$Res> {
-  factory _$$LoadedImplCopyWith(
-          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
-      __$$LoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<StoryItem> stories, int currentIndex});
-}
-
-/// @nodoc
-class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$StoriesStateCopyWithImpl<$Res, _$LoadedImpl>
-    implements _$$LoadedImplCopyWith<$Res> {
-  __$$LoadedImplCopyWithImpl(
-      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? stories = null,
-    Object? currentIndex = null,
-  }) {
-    return _then(_$LoadedImpl(
-      stories: null == stories
-          ? _value._stories
-          : stories // ignore: cast_nullable_to_non_nullable
-              as List<StoryItem>,
-      currentIndex: null == currentIndex
-          ? _value.currentIndex
-          : currentIndex // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(
-      {required final List<StoryItem> stories, this.currentIndex = 0})
+class _Loaded implements StoriesState {
+  const _Loaded({required final List<StoryItem> stories, this.currentIndex = 0})
       : _stories = stories;
 
   final List<StoryItem> _stories;
-  @override
   List<StoryItem> get stories {
     if (_stories is EqualUnmodifiableListView) return _stories;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_stories);
   }
 
-  @override
   @JsonKey()
   final int currentIndex;
 
-  @override
-  String toString() {
-    return 'StoriesState.loaded(stories: $stories, currentIndex: $currentIndex)';
-  }
+  /// Create a copy of StoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LoadedCopyWith<_Loaded> get copyWith =>
+      __$LoadedCopyWithImpl<_Loaded>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadedImpl &&
+            other is _Loaded &&
             const DeepCollectionEquality().equals(other._stories, _stories) &&
             (identical(other.currentIndex, currentIndex) ||
                 other.currentIndex == currentIndex));
@@ -977,109 +670,84 @@ class _$LoadedImpl implements _Loaded {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_stories), currentIndex);
 
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
-    required TResult Function(Failure failure) failure,
-  }) {
-    return loaded(stories, currentIndex);
+  String toString() {
+    return 'StoriesState.loaded(stories: $stories, currentIndex: $currentIndex)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
-    TResult? Function(Failure failure)? failure,
-  }) {
-    return loaded?.call(stories, currentIndex);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
-    TResult Function(Failure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded(stories, currentIndex);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return loaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return loaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Loaded implements StoriesState {
-  const factory _Loaded(
-      {required final List<StoryItem> stories,
-      final int currentIndex}) = _$LoadedImpl;
-
-  List<StoryItem> get stories;
-  int get currentIndex;
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FailureImplCopyWith<$Res> {
-  factory _$$FailureImplCopyWith(
-          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
-      __$$FailureImplCopyWithImpl<$Res>;
+abstract mixin class _$LoadedCopyWith<$Res>
+    implements $StoriesStateCopyWith<$Res> {
+  factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) _then) =
+      __$LoadedCopyWithImpl;
+  @useResult
+  $Res call({List<StoryItem> stories, int currentIndex});
+}
+
+/// @nodoc
+class __$LoadedCopyWithImpl<$Res> implements _$LoadedCopyWith<$Res> {
+  __$LoadedCopyWithImpl(this._self, this._then);
+
+  final _Loaded _self;
+  final $Res Function(_Loaded) _then;
+
+  /// Create a copy of StoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? stories = null,
+    Object? currentIndex = null,
+  }) {
+    return _then(_Loaded(
+      stories: null == stories
+          ? _self._stories
+          : stories // ignore: cast_nullable_to_non_nullable
+              as List<StoryItem>,
+      currentIndex: null == currentIndex
+          ? _self.currentIndex
+          : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _Failure implements StoriesState {
+  const _Failure({required this.failure});
+
+  final Failure failure;
+
+  /// Create a copy of StoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FailureCopyWith<_Failure> get copyWith =>
+      __$FailureCopyWithImpl<_Failure>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Failure &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @override
+  String toString() {
+    return 'StoriesState.failure(failure: $failure)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$FailureCopyWith<$Res>
+    implements $StoriesStateCopyWith<$Res> {
+  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) _then) =
+      __$FailureCopyWithImpl;
   @useResult
   $Res call({Failure failure});
 
@@ -1087,23 +755,21 @@ abstract class _$$FailureImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FailureImplCopyWithImpl<$Res>
-    extends _$StoriesStateCopyWithImpl<$Res, _$FailureImpl>
-    implements _$$FailureImplCopyWith<$Res> {
-  __$$FailureImplCopyWithImpl(
-      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
-      : super(_value, _then);
+class __$FailureCopyWithImpl<$Res> implements _$FailureCopyWith<$Res> {
+  __$FailureCopyWithImpl(this._self, this._then);
+
+  final _Failure _self;
+  final $Res Function(_Failure) _then;
 
   /// Create a copy of StoriesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$FailureImpl(
+    return _then(_Failure(
       failure: null == failure
-          ? _value.failure
+          ? _self.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Failure,
     ));
@@ -1114,127 +780,10 @@ class __$$FailureImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $FailureCopyWith<$Res> get failure {
-    return $FailureCopyWith<$Res>(_value.failure, (value) {
-      return _then(_value.copyWith(failure: value));
+    return $FailureCopyWith<$Res>(_self.failure, (value) {
+      return _then(_self.copyWith(failure: value));
     });
   }
 }
 
-/// @nodoc
-
-class _$FailureImpl implements _Failure {
-  const _$FailureImpl({required this.failure});
-
-  @override
-  final Failure failure;
-
-  @override
-  String toString() {
-    return 'StoriesState.failure(failure: $failure)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FailureImpl &&
-            (identical(other.failure, failure) || other.failure == failure));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, failure);
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<StoryItem> stories, int currentIndex) loaded,
-    required TResult Function(Failure failure) failure,
-  }) {
-    return failure(this.failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<StoryItem> stories, int currentIndex)? loaded,
-    TResult? Function(Failure failure)? failure,
-  }) {
-    return failure?.call(this.failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<StoryItem> stories, int currentIndex)? loaded,
-    TResult Function(Failure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this.failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return failure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return failure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Failure implements StoriesState {
-  const factory _Failure({required final Failure failure}) = _$FailureImpl;
-
-  Failure get failure;
-
-  /// Create a copy of StoriesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

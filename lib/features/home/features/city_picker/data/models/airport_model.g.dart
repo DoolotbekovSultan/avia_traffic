@@ -6,14 +6,14 @@ part of 'airport_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AirportModelImpl _$$AirportModelImplFromJson(Map<String, dynamic> json) =>
-    _$AirportModelImpl(
+_AirportModel _$AirportModelFromJson(Map<String, dynamic> json) =>
+    _AirportModel(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       codeName: json['code_name'] as String,
     );
 
-Map<String, dynamic> _$$AirportModelImplToJson(_$AirportModelImpl instance) =>
+Map<String, dynamic> _$AirportModelToJson(_AirportModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

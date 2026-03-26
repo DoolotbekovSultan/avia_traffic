@@ -8,7 +8,7 @@ import 'package:injectable/injectable.dart';
 part 'modify_password_usecase.freezed.dart';
 
 @freezed
-class ModifyPasswordParams with _$ModifyPasswordParams {
+sealed class ModifyPasswordParams with _$ModifyPasswordParams {
   const factory ModifyPasswordParams({
     required String password,
     required String confirmPassword,

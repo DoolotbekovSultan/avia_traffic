@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,64 +9,45 @@ part of 'auth_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AuthEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LoginParams params) login,
-    required TResult Function(RegisterParams params) register,
-    required TResult Function() logout,
-    required TResult Function(String email) forgotPassword,
-    required TResult Function(ModifyPasswordParams params) modifyPassword,
-    required TResult Function(ConfirmCodeParams params) confirmCode,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LoginParams params)? login,
-    TResult? Function(RegisterParams params)? register,
-    TResult? Function()? logout,
-    TResult? Function(String email)? forgotPassword,
-    TResult? Function(ModifyPasswordParams params)? modifyPassword,
-    TResult? Function(ConfirmCodeParams params)? confirmCode,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LoginParams params)? login,
-    TResult Function(RegisterParams params)? register,
-    TResult Function()? logout,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(ModifyPasswordParams params)? modifyPassword,
-    TResult Function(ConfirmCodeParams params)? confirmCode,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthLogin value) login,
-    required TResult Function(AuthRegister value) register,
-    required TResult Function(AuthLogout value) logout,
-    required TResult Function(AuthForgotPassword value) forgotPassword,
-    required TResult Function(AuthModifyPassword value) modifyPassword,
-    required TResult Function(AuthConfirmCode value) confirmCode,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthLogin value)? login,
-    TResult? Function(AuthRegister value)? register,
-    TResult? Function(AuthLogout value)? logout,
-    TResult? Function(AuthForgotPassword value)? forgotPassword,
-    TResult? Function(AuthModifyPassword value)? modifyPassword,
-    TResult? Function(AuthConfirmCode value)? confirmCode,
-  }) =>
-      throw _privateConstructorUsedError;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AuthEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'AuthEvent()';
+  }
+}
+
+/// @nodoc
+class $AuthEventCopyWith<$Res> {
+  $AuthEventCopyWith(AuthEvent _, $Res Function(AuthEvent) __);
+}
+
+/// Adds pattern-matching-related methods to [AuthEvent].
+extension AuthEventPatterns on AuthEvent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthLogin value)? login,
@@ -76,35 +57,266 @@ mixin _$AuthEvent {
     TResult Function(AuthModifyPassword value)? modifyPassword,
     TResult Function(AuthConfirmCode value)? confirmCode,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case AuthLogin() when login != null:
+        return login(_that);
+      case AuthRegister() when register != null:
+        return register(_that);
+      case AuthLogout() when logout != null:
+        return logout(_that);
+      case AuthForgotPassword() when forgotPassword != null:
+        return forgotPassword(_that);
+      case AuthModifyPassword() when modifyPassword != null:
+        return modifyPassword(_that);
+      case AuthConfirmCode() when confirmCode != null:
+        return confirmCode(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AuthLogin value) login,
+    required TResult Function(AuthRegister value) register,
+    required TResult Function(AuthLogout value) logout,
+    required TResult Function(AuthForgotPassword value) forgotPassword,
+    required TResult Function(AuthModifyPassword value) modifyPassword,
+    required TResult Function(AuthConfirmCode value) confirmCode,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case AuthLogin():
+        return login(_that);
+      case AuthRegister():
+        return register(_that);
+      case AuthLogout():
+        return logout(_that);
+      case AuthForgotPassword():
+        return forgotPassword(_that);
+      case AuthModifyPassword():
+        return modifyPassword(_that);
+      case AuthConfirmCode():
+        return confirmCode(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AuthLogin value)? login,
+    TResult? Function(AuthRegister value)? register,
+    TResult? Function(AuthLogout value)? logout,
+    TResult? Function(AuthForgotPassword value)? forgotPassword,
+    TResult? Function(AuthModifyPassword value)? modifyPassword,
+    TResult? Function(AuthConfirmCode value)? confirmCode,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case AuthLogin() when login != null:
+        return login(_that);
+      case AuthRegister() when register != null:
+        return register(_that);
+      case AuthLogout() when logout != null:
+        return logout(_that);
+      case AuthForgotPassword() when forgotPassword != null:
+        return forgotPassword(_that);
+      case AuthModifyPassword() when modifyPassword != null:
+        return modifyPassword(_that);
+      case AuthConfirmCode() when confirmCode != null:
+        return confirmCode(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LoginParams params)? login,
+    TResult Function(RegisterParams params)? register,
+    TResult Function()? logout,
+    TResult Function(String email)? forgotPassword,
+    TResult Function(ModifyPasswordParams params)? modifyPassword,
+    TResult Function(ConfirmCodeParams params)? confirmCode,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case AuthLogin() when login != null:
+        return login(_that.params);
+      case AuthRegister() when register != null:
+        return register(_that.params);
+      case AuthLogout() when logout != null:
+        return logout();
+      case AuthForgotPassword() when forgotPassword != null:
+        return forgotPassword(_that.email);
+      case AuthModifyPassword() when modifyPassword != null:
+        return modifyPassword(_that.params);
+      case AuthConfirmCode() when confirmCode != null:
+        return confirmCode(_that.params);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LoginParams params) login,
+    required TResult Function(RegisterParams params) register,
+    required TResult Function() logout,
+    required TResult Function(String email) forgotPassword,
+    required TResult Function(ModifyPasswordParams params) modifyPassword,
+    required TResult Function(ConfirmCodeParams params) confirmCode,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case AuthLogin():
+        return login(_that.params);
+      case AuthRegister():
+        return register(_that.params);
+      case AuthLogout():
+        return logout();
+      case AuthForgotPassword():
+        return forgotPassword(_that.email);
+      case AuthModifyPassword():
+        return modifyPassword(_that.params);
+      case AuthConfirmCode():
+        return confirmCode(_that.params);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LoginParams params)? login,
+    TResult? Function(RegisterParams params)? register,
+    TResult? Function()? logout,
+    TResult? Function(String email)? forgotPassword,
+    TResult? Function(ModifyPasswordParams params)? modifyPassword,
+    TResult? Function(ConfirmCodeParams params)? confirmCode,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case AuthLogin() when login != null:
+        return login(_that.params);
+      case AuthRegister() when register != null:
+        return register(_that.params);
+      case AuthLogout() when logout != null:
+        return logout();
+      case AuthForgotPassword() when forgotPassword != null:
+        return forgotPassword(_that.email);
+      case AuthModifyPassword() when modifyPassword != null:
+        return modifyPassword(_that.params);
+      case AuthConfirmCode() when confirmCode != null:
+        return confirmCode(_that.params);
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
-abstract class $AuthEventCopyWith<$Res> {
-  factory $AuthEventCopyWith(AuthEvent value, $Res Function(AuthEvent) then) =
-      _$AuthEventCopyWithImpl<$Res, AuthEvent>;
-}
 
-/// @nodoc
-class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
-    implements $AuthEventCopyWith<$Res> {
-  _$AuthEventCopyWithImpl(this._value, this._then);
+class AuthLogin implements AuthEvent {
+  const AuthLogin({required this.params});
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final LoginParams params;
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AuthLoginCopyWith<AuthLogin> get copyWith =>
+      _$AuthLoginCopyWithImpl<AuthLogin>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AuthLogin &&
+            (identical(other.params, params) || other.params == params));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, params);
+
+  @override
+  String toString() {
+    return 'AuthEvent.login(params: $params)';
+  }
 }
 
 /// @nodoc
-abstract class _$$AuthLoginImplCopyWith<$Res> {
-  factory _$$AuthLoginImplCopyWith(
-          _$AuthLoginImpl value, $Res Function(_$AuthLoginImpl) then) =
-      __$$AuthLoginImplCopyWithImpl<$Res>;
+abstract mixin class $AuthLoginCopyWith<$Res>
+    implements $AuthEventCopyWith<$Res> {
+  factory $AuthLoginCopyWith(AuthLogin value, $Res Function(AuthLogin) _then) =
+      _$AuthLoginCopyWithImpl;
   @useResult
   $Res call({LoginParams params});
 
@@ -112,23 +324,21 @@ abstract class _$$AuthLoginImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AuthLoginImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$AuthLoginImpl>
-    implements _$$AuthLoginImplCopyWith<$Res> {
-  __$$AuthLoginImplCopyWithImpl(
-      _$AuthLoginImpl _value, $Res Function(_$AuthLoginImpl) _then)
-      : super(_value, _then);
+class _$AuthLoginCopyWithImpl<$Res> implements $AuthLoginCopyWith<$Res> {
+  _$AuthLoginCopyWithImpl(this._self, this._then);
+
+  final AuthLogin _self;
+  final $Res Function(AuthLogin) _then;
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? params = null,
   }) {
-    return _then(_$AuthLoginImpl(
+    return _then(AuthLogin(
       params: null == params
-          ? _value.params
+          ? _self.params
           : params // ignore: cast_nullable_to_non_nullable
               as LoginParams,
     ));
@@ -139,149 +349,49 @@ class __$$AuthLoginImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $LoginParamsCopyWith<$Res> get params {
-    return $LoginParamsCopyWith<$Res>(_value.params, (value) {
-      return _then(_value.copyWith(params: value));
+    return $LoginParamsCopyWith<$Res>(_self.params, (value) {
+      return _then(_self.copyWith(params: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$AuthLoginImpl implements AuthLogin {
-  const _$AuthLoginImpl({required this.params});
+class AuthRegister implements AuthEvent {
+  const AuthRegister({required this.params});
 
-  @override
-  final LoginParams params;
+  final RegisterParams params;
 
-  @override
-  String toString() {
-    return 'AuthEvent.login(params: $params)';
-  }
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AuthRegisterCopyWith<AuthRegister> get copyWith =>
+      _$AuthRegisterCopyWithImpl<AuthRegister>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AuthLoginImpl &&
+            other is AuthRegister &&
             (identical(other.params, params) || other.params == params));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, params);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AuthLoginImplCopyWith<_$AuthLoginImpl> get copyWith =>
-      __$$AuthLoginImplCopyWithImpl<_$AuthLoginImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LoginParams params) login,
-    required TResult Function(RegisterParams params) register,
-    required TResult Function() logout,
-    required TResult Function(String email) forgotPassword,
-    required TResult Function(ModifyPasswordParams params) modifyPassword,
-    required TResult Function(ConfirmCodeParams params) confirmCode,
-  }) {
-    return login(params);
+  String toString() {
+    return 'AuthEvent.register(params: $params)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LoginParams params)? login,
-    TResult? Function(RegisterParams params)? register,
-    TResult? Function()? logout,
-    TResult? Function(String email)? forgotPassword,
-    TResult? Function(ModifyPasswordParams params)? modifyPassword,
-    TResult? Function(ConfirmCodeParams params)? confirmCode,
-  }) {
-    return login?.call(params);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LoginParams params)? login,
-    TResult Function(RegisterParams params)? register,
-    TResult Function()? logout,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(ModifyPasswordParams params)? modifyPassword,
-    TResult Function(ConfirmCodeParams params)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (login != null) {
-      return login(params);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthLogin value) login,
-    required TResult Function(AuthRegister value) register,
-    required TResult Function(AuthLogout value) logout,
-    required TResult Function(AuthForgotPassword value) forgotPassword,
-    required TResult Function(AuthModifyPassword value) modifyPassword,
-    required TResult Function(AuthConfirmCode value) confirmCode,
-  }) {
-    return login(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthLogin value)? login,
-    TResult? Function(AuthRegister value)? register,
-    TResult? Function(AuthLogout value)? logout,
-    TResult? Function(AuthForgotPassword value)? forgotPassword,
-    TResult? Function(AuthModifyPassword value)? modifyPassword,
-    TResult? Function(AuthConfirmCode value)? confirmCode,
-  }) {
-    return login?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthLogin value)? login,
-    TResult Function(AuthRegister value)? register,
-    TResult Function(AuthLogout value)? logout,
-    TResult Function(AuthForgotPassword value)? forgotPassword,
-    TResult Function(AuthModifyPassword value)? modifyPassword,
-    TResult Function(AuthConfirmCode value)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (login != null) {
-      return login(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AuthLogin implements AuthEvent {
-  const factory AuthLogin({required final LoginParams params}) =
-      _$AuthLoginImpl;
-
-  LoginParams get params;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AuthLoginImplCopyWith<_$AuthLoginImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AuthRegisterImplCopyWith<$Res> {
-  factory _$$AuthRegisterImplCopyWith(
-          _$AuthRegisterImpl value, $Res Function(_$AuthRegisterImpl) then) =
-      __$$AuthRegisterImplCopyWithImpl<$Res>;
+abstract mixin class $AuthRegisterCopyWith<$Res>
+    implements $AuthEventCopyWith<$Res> {
+  factory $AuthRegisterCopyWith(
+          AuthRegister value, $Res Function(AuthRegister) _then) =
+      _$AuthRegisterCopyWithImpl;
   @useResult
   $Res call({RegisterParams params});
 
@@ -289,23 +399,21 @@ abstract class _$$AuthRegisterImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AuthRegisterImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$AuthRegisterImpl>
-    implements _$$AuthRegisterImplCopyWith<$Res> {
-  __$$AuthRegisterImplCopyWithImpl(
-      _$AuthRegisterImpl _value, $Res Function(_$AuthRegisterImpl) _then)
-      : super(_value, _then);
+class _$AuthRegisterCopyWithImpl<$Res> implements $AuthRegisterCopyWith<$Res> {
+  _$AuthRegisterCopyWithImpl(this._self, this._then);
+
+  final AuthRegister _self;
+  final $Res Function(AuthRegister) _then;
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? params = null,
   }) {
-    return _then(_$AuthRegisterImpl(
+    return _then(AuthRegister(
       params: null == params
-          ? _value.params
+          ? _self.params
           : params // ignore: cast_nullable_to_non_nullable
               as RegisterParams,
     ));
@@ -316,300 +424,90 @@ class __$$AuthRegisterImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $RegisterParamsCopyWith<$Res> get params {
-    return $RegisterParamsCopyWith<$Res>(_value.params, (value) {
-      return _then(_value.copyWith(params: value));
+    return $RegisterParamsCopyWith<$Res>(_self.params, (value) {
+      return _then(_self.copyWith(params: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$AuthRegisterImpl implements AuthRegister {
-  const _$AuthRegisterImpl({required this.params});
-
-  @override
-  final RegisterParams params;
-
-  @override
-  String toString() {
-    return 'AuthEvent.register(params: $params)';
-  }
+class AuthLogout implements AuthEvent {
+  const AuthLogout();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AuthRegisterImpl &&
-            (identical(other.params, params) || other.params == params));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, params);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AuthRegisterImplCopyWith<_$AuthRegisterImpl> get copyWith =>
-      __$$AuthRegisterImplCopyWithImpl<_$AuthRegisterImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LoginParams params) login,
-    required TResult Function(RegisterParams params) register,
-    required TResult Function() logout,
-    required TResult Function(String email) forgotPassword,
-    required TResult Function(ModifyPasswordParams params) modifyPassword,
-    required TResult Function(ConfirmCodeParams params) confirmCode,
-  }) {
-    return register(params);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LoginParams params)? login,
-    TResult? Function(RegisterParams params)? register,
-    TResult? Function()? logout,
-    TResult? Function(String email)? forgotPassword,
-    TResult? Function(ModifyPasswordParams params)? modifyPassword,
-    TResult? Function(ConfirmCodeParams params)? confirmCode,
-  }) {
-    return register?.call(params);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LoginParams params)? login,
-    TResult Function(RegisterParams params)? register,
-    TResult Function()? logout,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(ModifyPasswordParams params)? modifyPassword,
-    TResult Function(ConfirmCodeParams params)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (register != null) {
-      return register(params);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthLogin value) login,
-    required TResult Function(AuthRegister value) register,
-    required TResult Function(AuthLogout value) logout,
-    required TResult Function(AuthForgotPassword value) forgotPassword,
-    required TResult Function(AuthModifyPassword value) modifyPassword,
-    required TResult Function(AuthConfirmCode value) confirmCode,
-  }) {
-    return register(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthLogin value)? login,
-    TResult? Function(AuthRegister value)? register,
-    TResult? Function(AuthLogout value)? logout,
-    TResult? Function(AuthForgotPassword value)? forgotPassword,
-    TResult? Function(AuthModifyPassword value)? modifyPassword,
-    TResult? Function(AuthConfirmCode value)? confirmCode,
-  }) {
-    return register?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthLogin value)? login,
-    TResult Function(AuthRegister value)? register,
-    TResult Function(AuthLogout value)? logout,
-    TResult Function(AuthForgotPassword value)? forgotPassword,
-    TResult Function(AuthModifyPassword value)? modifyPassword,
-    TResult Function(AuthConfirmCode value)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (register != null) {
-      return register(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AuthRegister implements AuthEvent {
-  const factory AuthRegister({required final RegisterParams params}) =
-      _$AuthRegisterImpl;
-
-  RegisterParams get params;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AuthRegisterImplCopyWith<_$AuthRegisterImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$AuthLogoutImplCopyWith<$Res> {
-  factory _$$AuthLogoutImplCopyWith(
-          _$AuthLogoutImpl value, $Res Function(_$AuthLogoutImpl) then) =
-      __$$AuthLogoutImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AuthLogoutImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$AuthLogoutImpl>
-    implements _$$AuthLogoutImplCopyWith<$Res> {
-  __$$AuthLogoutImplCopyWithImpl(
-      _$AuthLogoutImpl _value, $Res Function(_$AuthLogoutImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$AuthLogoutImpl implements AuthLogout {
-  const _$AuthLogoutImpl();
-
-  @override
-  String toString() {
-    return 'AuthEvent.logout()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AuthLogoutImpl);
+        (other.runtimeType == runtimeType && other is AuthLogout);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LoginParams params) login,
-    required TResult Function(RegisterParams params) register,
-    required TResult Function() logout,
-    required TResult Function(String email) forgotPassword,
-    required TResult Function(ModifyPasswordParams params) modifyPassword,
-    required TResult Function(ConfirmCodeParams params) confirmCode,
-  }) {
-    return logout();
+  String toString() {
+    return 'AuthEvent.logout()';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LoginParams params)? login,
-    TResult? Function(RegisterParams params)? register,
-    TResult? Function()? logout,
-    TResult? Function(String email)? forgotPassword,
-    TResult? Function(ModifyPasswordParams params)? modifyPassword,
-    TResult? Function(ConfirmCodeParams params)? confirmCode,
-  }) {
-    return logout?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LoginParams params)? login,
-    TResult Function(RegisterParams params)? register,
-    TResult Function()? logout,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(ModifyPasswordParams params)? modifyPassword,
-    TResult Function(ConfirmCodeParams params)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (logout != null) {
-      return logout();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthLogin value) login,
-    required TResult Function(AuthRegister value) register,
-    required TResult Function(AuthLogout value) logout,
-    required TResult Function(AuthForgotPassword value) forgotPassword,
-    required TResult Function(AuthModifyPassword value) modifyPassword,
-    required TResult Function(AuthConfirmCode value) confirmCode,
-  }) {
-    return logout(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthLogin value)? login,
-    TResult? Function(AuthRegister value)? register,
-    TResult? Function(AuthLogout value)? logout,
-    TResult? Function(AuthForgotPassword value)? forgotPassword,
-    TResult? Function(AuthModifyPassword value)? modifyPassword,
-    TResult? Function(AuthConfirmCode value)? confirmCode,
-  }) {
-    return logout?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthLogin value)? login,
-    TResult Function(AuthRegister value)? register,
-    TResult Function(AuthLogout value)? logout,
-    TResult Function(AuthForgotPassword value)? forgotPassword,
-    TResult Function(AuthModifyPassword value)? modifyPassword,
-    TResult Function(AuthConfirmCode value)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (logout != null) {
-      return logout(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AuthLogout implements AuthEvent {
-  const factory AuthLogout() = _$AuthLogoutImpl;
 }
 
 /// @nodoc
-abstract class _$$AuthForgotPasswordImplCopyWith<$Res> {
-  factory _$$AuthForgotPasswordImplCopyWith(_$AuthForgotPasswordImpl value,
-          $Res Function(_$AuthForgotPasswordImpl) then) =
-      __$$AuthForgotPasswordImplCopyWithImpl<$Res>;
+
+class AuthForgotPassword implements AuthEvent {
+  const AuthForgotPassword({required this.email});
+
+  final String email;
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AuthForgotPasswordCopyWith<AuthForgotPassword> get copyWith =>
+      _$AuthForgotPasswordCopyWithImpl<AuthForgotPassword>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AuthForgotPassword &&
+            (identical(other.email, email) || other.email == email));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email);
+
+  @override
+  String toString() {
+    return 'AuthEvent.forgotPassword(email: $email)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AuthForgotPasswordCopyWith<$Res>
+    implements $AuthEventCopyWith<$Res> {
+  factory $AuthForgotPasswordCopyWith(
+          AuthForgotPassword value, $Res Function(AuthForgotPassword) _then) =
+      _$AuthForgotPasswordCopyWithImpl;
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$AuthForgotPasswordImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$AuthForgotPasswordImpl>
-    implements _$$AuthForgotPasswordImplCopyWith<$Res> {
-  __$$AuthForgotPasswordImplCopyWithImpl(_$AuthForgotPasswordImpl _value,
-      $Res Function(_$AuthForgotPasswordImpl) _then)
-      : super(_value, _then);
+class _$AuthForgotPasswordCopyWithImpl<$Res>
+    implements $AuthForgotPasswordCopyWith<$Res> {
+  _$AuthForgotPasswordCopyWithImpl(this._self, this._then);
+
+  final AuthForgotPassword _self;
+  final $Res Function(AuthForgotPassword) _then;
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? email = null,
   }) {
-    return _then(_$AuthForgotPasswordImpl(
+    return _then(AuthForgotPassword(
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -618,142 +516,41 @@ class __$$AuthForgotPasswordImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AuthForgotPasswordImpl implements AuthForgotPassword {
-  const _$AuthForgotPasswordImpl({required this.email});
+class AuthModifyPassword implements AuthEvent {
+  const AuthModifyPassword({required this.params});
 
-  @override
-  final String email;
+  final ModifyPasswordParams params;
 
-  @override
-  String toString() {
-    return 'AuthEvent.forgotPassword(email: $email)';
-  }
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AuthModifyPasswordCopyWith<AuthModifyPassword> get copyWith =>
+      _$AuthModifyPasswordCopyWithImpl<AuthModifyPassword>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AuthForgotPasswordImpl &&
-            (identical(other.email, email) || other.email == email));
+            other is AuthModifyPassword &&
+            (identical(other.params, params) || other.params == params));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AuthForgotPasswordImplCopyWith<_$AuthForgotPasswordImpl> get copyWith =>
-      __$$AuthForgotPasswordImplCopyWithImpl<_$AuthForgotPasswordImpl>(
-          this, _$identity);
+  int get hashCode => Object.hash(runtimeType, params);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LoginParams params) login,
-    required TResult Function(RegisterParams params) register,
-    required TResult Function() logout,
-    required TResult Function(String email) forgotPassword,
-    required TResult Function(ModifyPasswordParams params) modifyPassword,
-    required TResult Function(ConfirmCodeParams params) confirmCode,
-  }) {
-    return forgotPassword(email);
+  String toString() {
+    return 'AuthEvent.modifyPassword(params: $params)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LoginParams params)? login,
-    TResult? Function(RegisterParams params)? register,
-    TResult? Function()? logout,
-    TResult? Function(String email)? forgotPassword,
-    TResult? Function(ModifyPasswordParams params)? modifyPassword,
-    TResult? Function(ConfirmCodeParams params)? confirmCode,
-  }) {
-    return forgotPassword?.call(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LoginParams params)? login,
-    TResult Function(RegisterParams params)? register,
-    TResult Function()? logout,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(ModifyPasswordParams params)? modifyPassword,
-    TResult Function(ConfirmCodeParams params)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (forgotPassword != null) {
-      return forgotPassword(email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthLogin value) login,
-    required TResult Function(AuthRegister value) register,
-    required TResult Function(AuthLogout value) logout,
-    required TResult Function(AuthForgotPassword value) forgotPassword,
-    required TResult Function(AuthModifyPassword value) modifyPassword,
-    required TResult Function(AuthConfirmCode value) confirmCode,
-  }) {
-    return forgotPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthLogin value)? login,
-    TResult? Function(AuthRegister value)? register,
-    TResult? Function(AuthLogout value)? logout,
-    TResult? Function(AuthForgotPassword value)? forgotPassword,
-    TResult? Function(AuthModifyPassword value)? modifyPassword,
-    TResult? Function(AuthConfirmCode value)? confirmCode,
-  }) {
-    return forgotPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthLogin value)? login,
-    TResult Function(AuthRegister value)? register,
-    TResult Function(AuthLogout value)? logout,
-    TResult Function(AuthForgotPassword value)? forgotPassword,
-    TResult Function(AuthModifyPassword value)? modifyPassword,
-    TResult Function(AuthConfirmCode value)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (forgotPassword != null) {
-      return forgotPassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AuthForgotPassword implements AuthEvent {
-  const factory AuthForgotPassword({required final String email}) =
-      _$AuthForgotPasswordImpl;
-
-  String get email;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AuthForgotPasswordImplCopyWith<_$AuthForgotPasswordImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AuthModifyPasswordImplCopyWith<$Res> {
-  factory _$$AuthModifyPasswordImplCopyWith(_$AuthModifyPasswordImpl value,
-          $Res Function(_$AuthModifyPasswordImpl) then) =
-      __$$AuthModifyPasswordImplCopyWithImpl<$Res>;
+abstract mixin class $AuthModifyPasswordCopyWith<$Res>
+    implements $AuthEventCopyWith<$Res> {
+  factory $AuthModifyPasswordCopyWith(
+          AuthModifyPassword value, $Res Function(AuthModifyPassword) _then) =
+      _$AuthModifyPasswordCopyWithImpl;
   @useResult
   $Res call({ModifyPasswordParams params});
 
@@ -761,23 +558,22 @@ abstract class _$$AuthModifyPasswordImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AuthModifyPasswordImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$AuthModifyPasswordImpl>
-    implements _$$AuthModifyPasswordImplCopyWith<$Res> {
-  __$$AuthModifyPasswordImplCopyWithImpl(_$AuthModifyPasswordImpl _value,
-      $Res Function(_$AuthModifyPasswordImpl) _then)
-      : super(_value, _then);
+class _$AuthModifyPasswordCopyWithImpl<$Res>
+    implements $AuthModifyPasswordCopyWith<$Res> {
+  _$AuthModifyPasswordCopyWithImpl(this._self, this._then);
+
+  final AuthModifyPassword _self;
+  final $Res Function(AuthModifyPassword) _then;
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? params = null,
   }) {
-    return _then(_$AuthModifyPasswordImpl(
+    return _then(AuthModifyPassword(
       params: null == params
-          ? _value.params
+          ? _self.params
           : params // ignore: cast_nullable_to_non_nullable
               as ModifyPasswordParams,
     ));
@@ -788,150 +584,49 @@ class __$$AuthModifyPasswordImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $ModifyPasswordParamsCopyWith<$Res> get params {
-    return $ModifyPasswordParamsCopyWith<$Res>(_value.params, (value) {
-      return _then(_value.copyWith(params: value));
+    return $ModifyPasswordParamsCopyWith<$Res>(_self.params, (value) {
+      return _then(_self.copyWith(params: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$AuthModifyPasswordImpl implements AuthModifyPassword {
-  const _$AuthModifyPasswordImpl({required this.params});
+class AuthConfirmCode implements AuthEvent {
+  const AuthConfirmCode({required this.params});
 
-  @override
-  final ModifyPasswordParams params;
+  final ConfirmCodeParams params;
 
-  @override
-  String toString() {
-    return 'AuthEvent.modifyPassword(params: $params)';
-  }
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AuthConfirmCodeCopyWith<AuthConfirmCode> get copyWith =>
+      _$AuthConfirmCodeCopyWithImpl<AuthConfirmCode>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AuthModifyPasswordImpl &&
+            other is AuthConfirmCode &&
             (identical(other.params, params) || other.params == params));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, params);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AuthModifyPasswordImplCopyWith<_$AuthModifyPasswordImpl> get copyWith =>
-      __$$AuthModifyPasswordImplCopyWithImpl<_$AuthModifyPasswordImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LoginParams params) login,
-    required TResult Function(RegisterParams params) register,
-    required TResult Function() logout,
-    required TResult Function(String email) forgotPassword,
-    required TResult Function(ModifyPasswordParams params) modifyPassword,
-    required TResult Function(ConfirmCodeParams params) confirmCode,
-  }) {
-    return modifyPassword(params);
+  String toString() {
+    return 'AuthEvent.confirmCode(params: $params)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LoginParams params)? login,
-    TResult? Function(RegisterParams params)? register,
-    TResult? Function()? logout,
-    TResult? Function(String email)? forgotPassword,
-    TResult? Function(ModifyPasswordParams params)? modifyPassword,
-    TResult? Function(ConfirmCodeParams params)? confirmCode,
-  }) {
-    return modifyPassword?.call(params);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LoginParams params)? login,
-    TResult Function(RegisterParams params)? register,
-    TResult Function()? logout,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(ModifyPasswordParams params)? modifyPassword,
-    TResult Function(ConfirmCodeParams params)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (modifyPassword != null) {
-      return modifyPassword(params);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthLogin value) login,
-    required TResult Function(AuthRegister value) register,
-    required TResult Function(AuthLogout value) logout,
-    required TResult Function(AuthForgotPassword value) forgotPassword,
-    required TResult Function(AuthModifyPassword value) modifyPassword,
-    required TResult Function(AuthConfirmCode value) confirmCode,
-  }) {
-    return modifyPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthLogin value)? login,
-    TResult? Function(AuthRegister value)? register,
-    TResult? Function(AuthLogout value)? logout,
-    TResult? Function(AuthForgotPassword value)? forgotPassword,
-    TResult? Function(AuthModifyPassword value)? modifyPassword,
-    TResult? Function(AuthConfirmCode value)? confirmCode,
-  }) {
-    return modifyPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthLogin value)? login,
-    TResult Function(AuthRegister value)? register,
-    TResult Function(AuthLogout value)? logout,
-    TResult Function(AuthForgotPassword value)? forgotPassword,
-    TResult Function(AuthModifyPassword value)? modifyPassword,
-    TResult Function(AuthConfirmCode value)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (modifyPassword != null) {
-      return modifyPassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AuthModifyPassword implements AuthEvent {
-  const factory AuthModifyPassword(
-      {required final ModifyPasswordParams params}) = _$AuthModifyPasswordImpl;
-
-  ModifyPasswordParams get params;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AuthModifyPasswordImplCopyWith<_$AuthModifyPasswordImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AuthConfirmCodeImplCopyWith<$Res> {
-  factory _$$AuthConfirmCodeImplCopyWith(_$AuthConfirmCodeImpl value,
-          $Res Function(_$AuthConfirmCodeImpl) then) =
-      __$$AuthConfirmCodeImplCopyWithImpl<$Res>;
+abstract mixin class $AuthConfirmCodeCopyWith<$Res>
+    implements $AuthEventCopyWith<$Res> {
+  factory $AuthConfirmCodeCopyWith(
+          AuthConfirmCode value, $Res Function(AuthConfirmCode) _then) =
+      _$AuthConfirmCodeCopyWithImpl;
   @useResult
   $Res call({ConfirmCodeParams params});
 
@@ -939,23 +634,22 @@ abstract class _$$AuthConfirmCodeImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AuthConfirmCodeImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$AuthConfirmCodeImpl>
-    implements _$$AuthConfirmCodeImplCopyWith<$Res> {
-  __$$AuthConfirmCodeImplCopyWithImpl(
-      _$AuthConfirmCodeImpl _value, $Res Function(_$AuthConfirmCodeImpl) _then)
-      : super(_value, _then);
+class _$AuthConfirmCodeCopyWithImpl<$Res>
+    implements $AuthConfirmCodeCopyWith<$Res> {
+  _$AuthConfirmCodeCopyWithImpl(this._self, this._then);
+
+  final AuthConfirmCode _self;
+  final $Res Function(AuthConfirmCode) _then;
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? params = null,
   }) {
-    return _then(_$AuthConfirmCodeImpl(
+    return _then(AuthConfirmCode(
       params: null == params
-          ? _value.params
+          ? _self.params
           : params // ignore: cast_nullable_to_non_nullable
               as ConfirmCodeParams,
     ));
@@ -966,141 +660,10 @@ class __$$AuthConfirmCodeImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $ConfirmCodeParamsCopyWith<$Res> get params {
-    return $ConfirmCodeParamsCopyWith<$Res>(_value.params, (value) {
-      return _then(_value.copyWith(params: value));
+    return $ConfirmCodeParamsCopyWith<$Res>(_self.params, (value) {
+      return _then(_self.copyWith(params: value));
     });
   }
 }
 
-/// @nodoc
-
-class _$AuthConfirmCodeImpl implements AuthConfirmCode {
-  const _$AuthConfirmCodeImpl({required this.params});
-
-  @override
-  final ConfirmCodeParams params;
-
-  @override
-  String toString() {
-    return 'AuthEvent.confirmCode(params: $params)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AuthConfirmCodeImpl &&
-            (identical(other.params, params) || other.params == params));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, params);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AuthConfirmCodeImplCopyWith<_$AuthConfirmCodeImpl> get copyWith =>
-      __$$AuthConfirmCodeImplCopyWithImpl<_$AuthConfirmCodeImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(LoginParams params) login,
-    required TResult Function(RegisterParams params) register,
-    required TResult Function() logout,
-    required TResult Function(String email) forgotPassword,
-    required TResult Function(ModifyPasswordParams params) modifyPassword,
-    required TResult Function(ConfirmCodeParams params) confirmCode,
-  }) {
-    return confirmCode(params);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(LoginParams params)? login,
-    TResult? Function(RegisterParams params)? register,
-    TResult? Function()? logout,
-    TResult? Function(String email)? forgotPassword,
-    TResult? Function(ModifyPasswordParams params)? modifyPassword,
-    TResult? Function(ConfirmCodeParams params)? confirmCode,
-  }) {
-    return confirmCode?.call(params);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(LoginParams params)? login,
-    TResult Function(RegisterParams params)? register,
-    TResult Function()? logout,
-    TResult Function(String email)? forgotPassword,
-    TResult Function(ModifyPasswordParams params)? modifyPassword,
-    TResult Function(ConfirmCodeParams params)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (confirmCode != null) {
-      return confirmCode(params);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AuthLogin value) login,
-    required TResult Function(AuthRegister value) register,
-    required TResult Function(AuthLogout value) logout,
-    required TResult Function(AuthForgotPassword value) forgotPassword,
-    required TResult Function(AuthModifyPassword value) modifyPassword,
-    required TResult Function(AuthConfirmCode value) confirmCode,
-  }) {
-    return confirmCode(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthLogin value)? login,
-    TResult? Function(AuthRegister value)? register,
-    TResult? Function(AuthLogout value)? logout,
-    TResult? Function(AuthForgotPassword value)? forgotPassword,
-    TResult? Function(AuthModifyPassword value)? modifyPassword,
-    TResult? Function(AuthConfirmCode value)? confirmCode,
-  }) {
-    return confirmCode?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthLogin value)? login,
-    TResult Function(AuthRegister value)? register,
-    TResult Function(AuthLogout value)? logout,
-    TResult Function(AuthForgotPassword value)? forgotPassword,
-    TResult Function(AuthModifyPassword value)? modifyPassword,
-    TResult Function(AuthConfirmCode value)? confirmCode,
-    required TResult orElse(),
-  }) {
-    if (confirmCode != null) {
-      return confirmCode(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AuthConfirmCode implements AuthEvent {
-  const factory AuthConfirmCode({required final ConfirmCodeParams params}) =
-      _$AuthConfirmCodeImpl;
-
-  ConfirmCodeParams get params;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AuthConfirmCodeImplCopyWith<_$AuthConfirmCodeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

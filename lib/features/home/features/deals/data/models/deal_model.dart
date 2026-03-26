@@ -5,7 +5,7 @@ part 'deal_model.freezed.dart';
 part 'deal_model.g.dart';
 
 @freezed
-class DealModel with _$DealModel {
+sealed class DealModel with _$DealModel {
   const factory DealModel({
     required int id,
     required String language,
@@ -23,15 +23,15 @@ class DealModel with _$DealModel {
   const DealModel._();
 
   Deal toDomain() => Deal(
-    id: id,
-    language: language,
-    codeTo: codeTo,
-    codeFrom: codeFrom,
-    slug: slug,
-    imageUrl: imageUrl,
-    title: title,
-    description: description,
-  );
+        id: id,
+        language: language,
+        codeTo: codeTo,
+        codeFrom: codeFrom,
+        slug: slug,
+        imageUrl: imageUrl,
+        title: title,
+        description: description,
+      );
 }
 
 extension DealModelListX on List<DealModel> {

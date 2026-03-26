@@ -8,7 +8,7 @@ import 'package:injectable/injectable.dart';
 part 'confirm_code_usecase.freezed.dart';
 
 @freezed
-class ConfirmCodeParams with _$ConfirmCodeParams {
+sealed class ConfirmCodeParams with _$ConfirmCodeParams {
   const factory ConfirmCodeParams({
     required String email,
     required String code,

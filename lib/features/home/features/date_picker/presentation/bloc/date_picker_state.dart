@@ -1,7 +1,7 @@
 part of 'date_picker_bloc.dart';
 
 @freezed
-class DatePickerState with _$DatePickerState {
+sealed class DatePickerState with _$DatePickerState {
   const factory DatePickerState({
     DateTime? departDate,
     DateTime? returnDate,

@@ -8,7 +8,7 @@ import 'package:injectable/injectable.dart';
 part 'modify_personal_usecase.freezed.dart';
 
 @freezed
-class ModifyPersonalParams with _$ModifyPersonalParams {
+sealed class ModifyPersonalParams with _$ModifyPersonalParams {
   const factory ModifyPersonalParams({
     required String email,
     String? firstName,

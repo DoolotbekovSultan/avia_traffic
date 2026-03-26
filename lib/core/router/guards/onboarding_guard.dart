@@ -16,13 +16,13 @@ class OnboardingGuard extends AutoRouteGuard {
 
     result.fold(
       (failure) {
-        resolver.redirect(OnboardingRoute());
+        router.replace(const OnboardingRoute());
       },
       (isSeen) {
         if (isSeen) {
           resolver.next(true);
         } else {
-          resolver.redirect(OnboardingRoute());
+          router.replace(const OnboardingRoute());
         }
       },
     );

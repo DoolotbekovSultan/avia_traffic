@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,54 +9,46 @@ part of 'city_picker_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CityPickerEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(City from) setFrom,
-    required TResult Function(City to) setTo,
-    required TResult Function(City? from, City? to) setCities,
-    required TResult Function() swap,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(City from)? setFrom,
-    TResult? Function(City to)? setTo,
-    TResult? Function(City? from, City? to)? setCities,
-    TResult? Function()? swap,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(City from)? setFrom,
-    TResult Function(City to)? setTo,
-    TResult Function(City? from, City? to)? setCities,
-    TResult Function()? swap,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetFrom value) setFrom,
-    required TResult Function(_SetTo value) setTo,
-    required TResult Function(_SetCities value) setCities,
-    required TResult Function(_Swap value) swap,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SetFrom value)? setFrom,
-    TResult? Function(_SetTo value)? setTo,
-    TResult? Function(_SetCities value)? setCities,
-    TResult? Function(_Swap value)? swap,
-  }) =>
-      throw _privateConstructorUsedError;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is CityPickerEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'CityPickerEvent()';
+  }
+}
+
+/// @nodoc
+class $CityPickerEventCopyWith<$Res> {
+  $CityPickerEventCopyWith(
+      CityPickerEvent _, $Res Function(CityPickerEvent) __);
+}
+
+/// Adds pattern-matching-related methods to [CityPickerEvent].
+extension CityPickerEventPatterns on CityPickerEvent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetFrom value)? setFrom,
@@ -64,36 +56,228 @@ mixin _$CityPickerEvent {
     TResult Function(_SetCities value)? setCities,
     TResult Function(_Swap value)? swap,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SetFrom() when setFrom != null:
+        return setFrom(_that);
+      case _SetTo() when setTo != null:
+        return setTo(_that);
+      case _SetCities() when setCities != null:
+        return setCities(_that);
+      case _Swap() when swap != null:
+        return swap(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SetFrom value) setFrom,
+    required TResult Function(_SetTo value) setTo,
+    required TResult Function(_SetCities value) setCities,
+    required TResult Function(_Swap value) swap,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SetFrom():
+        return setFrom(_that);
+      case _SetTo():
+        return setTo(_that);
+      case _SetCities():
+        return setCities(_that);
+      case _Swap():
+        return swap(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SetFrom value)? setFrom,
+    TResult? Function(_SetTo value)? setTo,
+    TResult? Function(_SetCities value)? setCities,
+    TResult? Function(_Swap value)? swap,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SetFrom() when setFrom != null:
+        return setFrom(_that);
+      case _SetTo() when setTo != null:
+        return setTo(_that);
+      case _SetCities() when setCities != null:
+        return setCities(_that);
+      case _Swap() when swap != null:
+        return swap(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(City from)? setFrom,
+    TResult Function(City to)? setTo,
+    TResult Function(City? from, City? to)? setCities,
+    TResult Function()? swap,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SetFrom() when setFrom != null:
+        return setFrom(_that.from);
+      case _SetTo() when setTo != null:
+        return setTo(_that.to);
+      case _SetCities() when setCities != null:
+        return setCities(_that.from, _that.to);
+      case _Swap() when swap != null:
+        return swap();
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(City from) setFrom,
+    required TResult Function(City to) setTo,
+    required TResult Function(City? from, City? to) setCities,
+    required TResult Function() swap,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SetFrom():
+        return setFrom(_that.from);
+      case _SetTo():
+        return setTo(_that.to);
+      case _SetCities():
+        return setCities(_that.from, _that.to);
+      case _Swap():
+        return swap();
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(City from)? setFrom,
+    TResult? Function(City to)? setTo,
+    TResult? Function(City? from, City? to)? setCities,
+    TResult? Function()? swap,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SetFrom() when setFrom != null:
+        return setFrom(_that.from);
+      case _SetTo() when setTo != null:
+        return setTo(_that.to);
+      case _SetCities() when setCities != null:
+        return setCities(_that.from, _that.to);
+      case _Swap() when swap != null:
+        return swap();
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
-abstract class $CityPickerEventCopyWith<$Res> {
-  factory $CityPickerEventCopyWith(
-          CityPickerEvent value, $Res Function(CityPickerEvent) then) =
-      _$CityPickerEventCopyWithImpl<$Res, CityPickerEvent>;
-}
 
-/// @nodoc
-class _$CityPickerEventCopyWithImpl<$Res, $Val extends CityPickerEvent>
-    implements $CityPickerEventCopyWith<$Res> {
-  _$CityPickerEventCopyWithImpl(this._value, this._then);
+class _SetFrom implements CityPickerEvent {
+  const _SetFrom({required this.from});
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final City from;
 
   /// Create a copy of CityPickerEvent
   /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SetFromCopyWith<_SetFrom> get copyWith =>
+      __$SetFromCopyWithImpl<_SetFrom>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SetFrom &&
+            (identical(other.from, from) || other.from == from));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, from);
+
+  @override
+  String toString() {
+    return 'CityPickerEvent.setFrom(from: $from)';
+  }
 }
 
 /// @nodoc
-abstract class _$$SetFromImplCopyWith<$Res> {
-  factory _$$SetFromImplCopyWith(
-          _$SetFromImpl value, $Res Function(_$SetFromImpl) then) =
-      __$$SetFromImplCopyWithImpl<$Res>;
+abstract mixin class _$SetFromCopyWith<$Res>
+    implements $CityPickerEventCopyWith<$Res> {
+  factory _$SetFromCopyWith(_SetFrom value, $Res Function(_SetFrom) _then) =
+      __$SetFromCopyWithImpl;
   @useResult
   $Res call({City from});
 
@@ -101,23 +285,21 @@ abstract class _$$SetFromImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SetFromImplCopyWithImpl<$Res>
-    extends _$CityPickerEventCopyWithImpl<$Res, _$SetFromImpl>
-    implements _$$SetFromImplCopyWith<$Res> {
-  __$$SetFromImplCopyWithImpl(
-      _$SetFromImpl _value, $Res Function(_$SetFromImpl) _then)
-      : super(_value, _then);
+class __$SetFromCopyWithImpl<$Res> implements _$SetFromCopyWith<$Res> {
+  __$SetFromCopyWithImpl(this._self, this._then);
+
+  final _SetFrom _self;
+  final $Res Function(_SetFrom) _then;
 
   /// Create a copy of CityPickerEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? from = null,
   }) {
-    return _then(_$SetFromImpl(
+    return _then(_SetFrom(
       from: null == from
-          ? _value.from
+          ? _self.from
           : from // ignore: cast_nullable_to_non_nullable
               as City,
     ));
@@ -128,136 +310,48 @@ class __$$SetFromImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $CityCopyWith<$Res> get from {
-    return $CityCopyWith<$Res>(_value.from, (value) {
-      return _then(_value.copyWith(from: value));
+    return $CityCopyWith<$Res>(_self.from, (value) {
+      return _then(_self.copyWith(from: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$SetFromImpl implements _SetFrom {
-  const _$SetFromImpl({required this.from});
+class _SetTo implements CityPickerEvent {
+  const _SetTo({required this.to});
 
-  @override
-  final City from;
+  final City to;
 
-  @override
-  String toString() {
-    return 'CityPickerEvent.setFrom(from: $from)';
-  }
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SetToCopyWith<_SetTo> get copyWith =>
+      __$SetToCopyWithImpl<_SetTo>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetFromImpl &&
-            (identical(other.from, from) || other.from == from));
+            other is _SetTo &&
+            (identical(other.to, to) || other.to == to));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, from);
-
-  /// Create a copy of CityPickerEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetFromImplCopyWith<_$SetFromImpl> get copyWith =>
-      __$$SetFromImplCopyWithImpl<_$SetFromImpl>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, to);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(City from) setFrom,
-    required TResult Function(City to) setTo,
-    required TResult Function(City? from, City? to) setCities,
-    required TResult Function() swap,
-  }) {
-    return setFrom(from);
+  String toString() {
+    return 'CityPickerEvent.setTo(to: $to)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(City from)? setFrom,
-    TResult? Function(City to)? setTo,
-    TResult? Function(City? from, City? to)? setCities,
-    TResult? Function()? swap,
-  }) {
-    return setFrom?.call(from);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(City from)? setFrom,
-    TResult Function(City to)? setTo,
-    TResult Function(City? from, City? to)? setCities,
-    TResult Function()? swap,
-    required TResult orElse(),
-  }) {
-    if (setFrom != null) {
-      return setFrom(from);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetFrom value) setFrom,
-    required TResult Function(_SetTo value) setTo,
-    required TResult Function(_SetCities value) setCities,
-    required TResult Function(_Swap value) swap,
-  }) {
-    return setFrom(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SetFrom value)? setFrom,
-    TResult? Function(_SetTo value)? setTo,
-    TResult? Function(_SetCities value)? setCities,
-    TResult? Function(_Swap value)? swap,
-  }) {
-    return setFrom?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetFrom value)? setFrom,
-    TResult Function(_SetTo value)? setTo,
-    TResult Function(_SetCities value)? setCities,
-    TResult Function(_Swap value)? swap,
-    required TResult orElse(),
-  }) {
-    if (setFrom != null) {
-      return setFrom(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SetFrom implements CityPickerEvent {
-  const factory _SetFrom({required final City from}) = _$SetFromImpl;
-
-  City get from;
-
-  /// Create a copy of CityPickerEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SetFromImplCopyWith<_$SetFromImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetToImplCopyWith<$Res> {
-  factory _$$SetToImplCopyWith(
-          _$SetToImpl value, $Res Function(_$SetToImpl) then) =
-      __$$SetToImplCopyWithImpl<$Res>;
+abstract mixin class _$SetToCopyWith<$Res>
+    implements $CityPickerEventCopyWith<$Res> {
+  factory _$SetToCopyWith(_SetTo value, $Res Function(_SetTo) _then) =
+      __$SetToCopyWithImpl;
   @useResult
   $Res call({City to});
 
@@ -265,23 +359,21 @@ abstract class _$$SetToImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SetToImplCopyWithImpl<$Res>
-    extends _$CityPickerEventCopyWithImpl<$Res, _$SetToImpl>
-    implements _$$SetToImplCopyWith<$Res> {
-  __$$SetToImplCopyWithImpl(
-      _$SetToImpl _value, $Res Function(_$SetToImpl) _then)
-      : super(_value, _then);
+class __$SetToCopyWithImpl<$Res> implements _$SetToCopyWith<$Res> {
+  __$SetToCopyWithImpl(this._self, this._then);
+
+  final _SetTo _self;
+  final $Res Function(_SetTo) _then;
 
   /// Create a copy of CityPickerEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? to = null,
   }) {
-    return _then(_$SetToImpl(
+    return _then(_SetTo(
       to: null == to
-          ? _value.to
+          ? _self.to
           : to // ignore: cast_nullable_to_non_nullable
               as City,
     ));
@@ -292,136 +384,51 @@ class __$$SetToImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $CityCopyWith<$Res> get to {
-    return $CityCopyWith<$Res>(_value.to, (value) {
-      return _then(_value.copyWith(to: value));
+    return $CityCopyWith<$Res>(_self.to, (value) {
+      return _then(_self.copyWith(to: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$SetToImpl implements _SetTo {
-  const _$SetToImpl({required this.to});
+class _SetCities implements CityPickerEvent {
+  const _SetCities({this.from, this.to});
 
-  @override
-  final City to;
+  final City? from;
+  final City? to;
 
-  @override
-  String toString() {
-    return 'CityPickerEvent.setTo(to: $to)';
-  }
+  /// Create a copy of CityPickerEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SetCitiesCopyWith<_SetCities> get copyWith =>
+      __$SetCitiesCopyWithImpl<_SetCities>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetToImpl &&
+            other is _SetCities &&
+            (identical(other.from, from) || other.from == from) &&
             (identical(other.to, to) || other.to == to));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, to);
-
-  /// Create a copy of CityPickerEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetToImplCopyWith<_$SetToImpl> get copyWith =>
-      __$$SetToImplCopyWithImpl<_$SetToImpl>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, from, to);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(City from) setFrom,
-    required TResult Function(City to) setTo,
-    required TResult Function(City? from, City? to) setCities,
-    required TResult Function() swap,
-  }) {
-    return setTo(to);
+  String toString() {
+    return 'CityPickerEvent.setCities(from: $from, to: $to)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(City from)? setFrom,
-    TResult? Function(City to)? setTo,
-    TResult? Function(City? from, City? to)? setCities,
-    TResult? Function()? swap,
-  }) {
-    return setTo?.call(to);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(City from)? setFrom,
-    TResult Function(City to)? setTo,
-    TResult Function(City? from, City? to)? setCities,
-    TResult Function()? swap,
-    required TResult orElse(),
-  }) {
-    if (setTo != null) {
-      return setTo(to);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetFrom value) setFrom,
-    required TResult Function(_SetTo value) setTo,
-    required TResult Function(_SetCities value) setCities,
-    required TResult Function(_Swap value) swap,
-  }) {
-    return setTo(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SetFrom value)? setFrom,
-    TResult? Function(_SetTo value)? setTo,
-    TResult? Function(_SetCities value)? setCities,
-    TResult? Function(_Swap value)? swap,
-  }) {
-    return setTo?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetFrom value)? setFrom,
-    TResult Function(_SetTo value)? setTo,
-    TResult Function(_SetCities value)? setCities,
-    TResult Function(_Swap value)? swap,
-    required TResult orElse(),
-  }) {
-    if (setTo != null) {
-      return setTo(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SetTo implements CityPickerEvent {
-  const factory _SetTo({required final City to}) = _$SetToImpl;
-
-  City get to;
-
-  /// Create a copy of CityPickerEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SetToImplCopyWith<_$SetToImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetCitiesImplCopyWith<$Res> {
-  factory _$$SetCitiesImplCopyWith(
-          _$SetCitiesImpl value, $Res Function(_$SetCitiesImpl) then) =
-      __$$SetCitiesImplCopyWithImpl<$Res>;
+abstract mixin class _$SetCitiesCopyWith<$Res>
+    implements $CityPickerEventCopyWith<$Res> {
+  factory _$SetCitiesCopyWith(
+          _SetCities value, $Res Function(_SetCities) _then) =
+      __$SetCitiesCopyWithImpl;
   @useResult
   $Res call({City? from, City? to});
 
@@ -430,28 +437,26 @@ abstract class _$$SetCitiesImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SetCitiesImplCopyWithImpl<$Res>
-    extends _$CityPickerEventCopyWithImpl<$Res, _$SetCitiesImpl>
-    implements _$$SetCitiesImplCopyWith<$Res> {
-  __$$SetCitiesImplCopyWithImpl(
-      _$SetCitiesImpl _value, $Res Function(_$SetCitiesImpl) _then)
-      : super(_value, _then);
+class __$SetCitiesCopyWithImpl<$Res> implements _$SetCitiesCopyWith<$Res> {
+  __$SetCitiesCopyWithImpl(this._self, this._then);
+
+  final _SetCities _self;
+  final $Res Function(_SetCities) _then;
 
   /// Create a copy of CityPickerEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? from = freezed,
     Object? to = freezed,
   }) {
-    return _then(_$SetCitiesImpl(
+    return _then(_SetCities(
       from: freezed == from
-          ? _value.from
+          ? _self.from
           : from // ignore: cast_nullable_to_non_nullable
               as City?,
       to: freezed == to
-          ? _value.to
+          ? _self.to
           : to // ignore: cast_nullable_to_non_nullable
               as City?,
     ));
@@ -462,12 +467,12 @@ class __$$SetCitiesImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $CityCopyWith<$Res>? get from {
-    if (_value.from == null) {
+    if (_self.from == null) {
       return null;
     }
 
-    return $CityCopyWith<$Res>(_value.from!, (value) {
-      return _then(_value.copyWith(from: value));
+    return $CityCopyWith<$Res>(_self.from!, (value) {
+      return _then(_self.copyWith(from: value));
     });
   }
 
@@ -476,305 +481,72 @@ class __$$SetCitiesImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $CityCopyWith<$Res>? get to {
-    if (_value.to == null) {
+    if (_self.to == null) {
       return null;
     }
 
-    return $CityCopyWith<$Res>(_value.to!, (value) {
-      return _then(_value.copyWith(to: value));
+    return $CityCopyWith<$Res>(_self.to!, (value) {
+      return _then(_self.copyWith(to: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$SetCitiesImpl implements _SetCities {
-  const _$SetCitiesImpl({this.from, this.to});
-
-  @override
-  final City? from;
-  @override
-  final City? to;
-
-  @override
-  String toString() {
-    return 'CityPickerEvent.setCities(from: $from, to: $to)';
-  }
+class _Swap implements CityPickerEvent {
+  const _Swap();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SetCitiesImpl &&
-            (identical(other.from, from) || other.from == from) &&
-            (identical(other.to, to) || other.to == to));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, from, to);
-
-  /// Create a copy of CityPickerEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetCitiesImplCopyWith<_$SetCitiesImpl> get copyWith =>
-      __$$SetCitiesImplCopyWithImpl<_$SetCitiesImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(City from) setFrom,
-    required TResult Function(City to) setTo,
-    required TResult Function(City? from, City? to) setCities,
-    required TResult Function() swap,
-  }) {
-    return setCities(from, to);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(City from)? setFrom,
-    TResult? Function(City to)? setTo,
-    TResult? Function(City? from, City? to)? setCities,
-    TResult? Function()? swap,
-  }) {
-    return setCities?.call(from, to);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(City from)? setFrom,
-    TResult Function(City to)? setTo,
-    TResult Function(City? from, City? to)? setCities,
-    TResult Function()? swap,
-    required TResult orElse(),
-  }) {
-    if (setCities != null) {
-      return setCities(from, to);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetFrom value) setFrom,
-    required TResult Function(_SetTo value) setTo,
-    required TResult Function(_SetCities value) setCities,
-    required TResult Function(_Swap value) swap,
-  }) {
-    return setCities(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SetFrom value)? setFrom,
-    TResult? Function(_SetTo value)? setTo,
-    TResult? Function(_SetCities value)? setCities,
-    TResult? Function(_Swap value)? swap,
-  }) {
-    return setCities?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetFrom value)? setFrom,
-    TResult Function(_SetTo value)? setTo,
-    TResult Function(_SetCities value)? setCities,
-    TResult Function(_Swap value)? swap,
-    required TResult orElse(),
-  }) {
-    if (setCities != null) {
-      return setCities(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SetCities implements CityPickerEvent {
-  const factory _SetCities({final City? from, final City? to}) =
-      _$SetCitiesImpl;
-
-  City? get from;
-  City? get to;
-
-  /// Create a copy of CityPickerEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SetCitiesImplCopyWith<_$SetCitiesImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SwapImplCopyWith<$Res> {
-  factory _$$SwapImplCopyWith(
-          _$SwapImpl value, $Res Function(_$SwapImpl) then) =
-      __$$SwapImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SwapImplCopyWithImpl<$Res>
-    extends _$CityPickerEventCopyWithImpl<$Res, _$SwapImpl>
-    implements _$$SwapImplCopyWith<$Res> {
-  __$$SwapImplCopyWithImpl(_$SwapImpl _value, $Res Function(_$SwapImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CityPickerEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$SwapImpl implements _Swap {
-  const _$SwapImpl();
-
-  @override
-  String toString() {
-    return 'CityPickerEvent.swap()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SwapImpl);
+        (other.runtimeType == runtimeType && other is _Swap);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(City from) setFrom,
-    required TResult Function(City to) setTo,
-    required TResult Function(City? from, City? to) setCities,
-    required TResult Function() swap,
-  }) {
-    return swap();
+  String toString() {
+    return 'CityPickerEvent.swap()';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(City from)? setFrom,
-    TResult? Function(City to)? setTo,
-    TResult? Function(City? from, City? to)? setCities,
-    TResult? Function()? swap,
-  }) {
-    return swap?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(City from)? setFrom,
-    TResult Function(City to)? setTo,
-    TResult Function(City? from, City? to)? setCities,
-    TResult Function()? swap,
-    required TResult orElse(),
-  }) {
-    if (swap != null) {
-      return swap();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetFrom value) setFrom,
-    required TResult Function(_SetTo value) setTo,
-    required TResult Function(_SetCities value) setCities,
-    required TResult Function(_Swap value) swap,
-  }) {
-    return swap(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SetFrom value)? setFrom,
-    TResult? Function(_SetTo value)? setTo,
-    TResult? Function(_SetCities value)? setCities,
-    TResult? Function(_Swap value)? swap,
-  }) {
-    return swap?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetFrom value)? setFrom,
-    TResult Function(_SetTo value)? setTo,
-    TResult Function(_SetCities value)? setCities,
-    TResult Function(_Swap value)? swap,
-    required TResult orElse(),
-  }) {
-    if (swap != null) {
-      return swap(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Swap implements CityPickerEvent {
-  const factory _Swap() = _$SwapImpl;
 }
 
 /// @nodoc
 mixin _$CityPickerState {
-  City? get from => throw _privateConstructorUsedError;
-  City? get to => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(City? from, City? to) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(City? from, City? to)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(City? from, City? to)? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  City? get from;
+  City? get to;
 
   /// Create a copy of CityPickerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $CityPickerStateCopyWith<CityPickerState> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$CityPickerStateCopyWithImpl<CityPickerState>(
+          this as CityPickerState, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CityPickerState &&
+            (identical(other.from, from) || other.from == from) &&
+            (identical(other.to, to) || other.to == to));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, from, to);
+
+  @override
+  String toString() {
+    return 'CityPickerState(from: $from, to: $to)';
+  }
 }
 
 /// @nodoc
-abstract class $CityPickerStateCopyWith<$Res> {
+abstract mixin class $CityPickerStateCopyWith<$Res> {
   factory $CityPickerStateCopyWith(
-          CityPickerState value, $Res Function(CityPickerState) then) =
-      _$CityPickerStateCopyWithImpl<$Res, CityPickerState>;
+          CityPickerState value, $Res Function(CityPickerState) _then) =
+      _$CityPickerStateCopyWithImpl;
   @useResult
   $Res call({City? from, City? to});
 
@@ -783,14 +555,12 @@ abstract class $CityPickerStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CityPickerStateCopyWithImpl<$Res, $Val extends CityPickerState>
+class _$CityPickerStateCopyWithImpl<$Res>
     implements $CityPickerStateCopyWith<$Res> {
-  _$CityPickerStateCopyWithImpl(this._value, this._then);
+  _$CityPickerStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CityPickerState _self;
+  final $Res Function(CityPickerState) _then;
 
   /// Create a copy of CityPickerState
   /// with the given fields replaced by the non-null parameter values.
@@ -800,16 +570,16 @@ class _$CityPickerStateCopyWithImpl<$Res, $Val extends CityPickerState>
     Object? from = freezed,
     Object? to = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       from: freezed == from
-          ? _value.from
+          ? _self.from
           : from // ignore: cast_nullable_to_non_nullable
               as City?,
       to: freezed == to
-          ? _value.to
+          ? _self.to
           : to // ignore: cast_nullable_to_non_nullable
               as City?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of CityPickerState
@@ -817,12 +587,12 @@ class _$CityPickerStateCopyWithImpl<$Res, $Val extends CityPickerState>
   @override
   @pragma('vm:prefer-inline')
   $CityCopyWith<$Res>? get from {
-    if (_value.from == null) {
+    if (_self.from == null) {
       return null;
     }
 
-    return $CityCopyWith<$Res>(_value.from!, (value) {
-      return _then(_value.copyWith(from: value) as $Val);
+    return $CityCopyWith<$Res>(_self.from!, (value) {
+      return _then(_self.copyWith(from: value));
     });
   }
 
@@ -831,22 +601,210 @@ class _$CityPickerStateCopyWithImpl<$Res, $Val extends CityPickerState>
   @override
   @pragma('vm:prefer-inline')
   $CityCopyWith<$Res>? get to {
-    if (_value.to == null) {
+    if (_self.to == null) {
       return null;
     }
 
-    return $CityCopyWith<$Res>(_value.to!, (value) {
-      return _then(_value.copyWith(to: value) as $Val);
+    return $CityCopyWith<$Res>(_self.to!, (value) {
+      return _then(_self.copyWith(to: value));
     });
   }
 }
 
+/// Adds pattern-matching-related methods to [CityPickerState].
+extension CityPickerStatePatterns on CityPickerState {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial():
+        return initial(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(City? from, City? to)? initial,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial(_that.from, _that.to);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(City? from, City? to) initial,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial():
+        return initial(_that.from, _that.to);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(City? from, City? to)? initial,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial(_that.from, _that.to);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res>
+
+class _Initial implements CityPickerState {
+  const _Initial({this.from, this.to});
+
+  @override
+  final City? from;
+  @override
+  final City? to;
+
+  /// Create a copy of CityPickerState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$InitialCopyWith<_Initial> get copyWith =>
+      __$InitialCopyWithImpl<_Initial>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Initial &&
+            (identical(other.from, from) || other.from == from) &&
+            (identical(other.to, to) || other.to == to));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, from, to);
+
+  @override
+  String toString() {
+    return 'CityPickerState.initial(from: $from, to: $to)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$InitialCopyWith<$Res>
     implements $CityPickerStateCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) _then) =
+      __$InitialCopyWithImpl;
   @override
   @useResult
   $Res call({City? from, City? to});
@@ -858,138 +816,59 @@ abstract class _$$InitialImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$CityPickerStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
+class __$InitialCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(this._self, this._then);
+
+  final _Initial _self;
+  final $Res Function(_Initial) _then;
 
   /// Create a copy of CityPickerState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? from = freezed,
     Object? to = freezed,
   }) {
-    return _then(_$InitialImpl(
+    return _then(_Initial(
       from: freezed == from
-          ? _value.from
+          ? _self.from
           : from // ignore: cast_nullable_to_non_nullable
               as City?,
       to: freezed == to
-          ? _value.to
+          ? _self.to
           : to // ignore: cast_nullable_to_non_nullable
               as City?,
     ));
   }
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl({this.from, this.to});
-
-  @override
-  final City? from;
-  @override
-  final City? to;
-
-  @override
-  String toString() {
-    return 'CityPickerState.initial(from: $from, to: $to)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InitialImpl &&
-            (identical(other.from, from) || other.from == from) &&
-            (identical(other.to, to) || other.to == to));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, from, to);
 
   /// Create a copy of CityPickerState
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
-      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(City? from, City? to) initial,
-  }) {
-    return initial(from, to);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(City? from, City? to)? initial,
-  }) {
-    return initial?.call(from, to);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(City? from, City? to)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(from, to);
+  $CityCopyWith<$Res>? get from {
+    if (_self.from == null) {
+      return null;
     }
-    return orElse();
+
+    return $CityCopyWith<$Res>(_self.from!, (value) {
+      return _then(_self.copyWith(from: value));
+    });
   }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements CityPickerState {
-  const factory _Initial({final City? from, final City? to}) = _$InitialImpl;
-
-  @override
-  City? get from;
-  @override
-  City? get to;
 
   /// Create a copy of CityPickerState
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $CityCopyWith<$Res>? get to {
+    if (_self.to == null) {
+      return null;
+    }
+
+    return $CityCopyWith<$Res>(_self.to!, (value) {
+      return _then(_self.copyWith(to: value));
+    });
+  }
 }
+
+// dart format on

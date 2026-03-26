@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,123 +9,26 @@ part of 'login_usecase.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LoginParams {
-  String get phone => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
+  String get phone;
+  String get password;
 
   /// Create a copy of LoginParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $LoginParamsCopyWith<LoginParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LoginParamsCopyWith<$Res> {
-  factory $LoginParamsCopyWith(
-          LoginParams value, $Res Function(LoginParams) then) =
-      _$LoginParamsCopyWithImpl<$Res, LoginParams>;
-  @useResult
-  $Res call({String phone, String password});
-}
-
-/// @nodoc
-class _$LoginParamsCopyWithImpl<$Res, $Val extends LoginParams>
-    implements $LoginParamsCopyWith<$Res> {
-  _$LoginParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of LoginParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? phone = null,
-    Object? password = null,
-  }) {
-    return _then(_value.copyWith(
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$LoginParamsImplCopyWith<$Res>
-    implements $LoginParamsCopyWith<$Res> {
-  factory _$$LoginParamsImplCopyWith(
-          _$LoginParamsImpl value, $Res Function(_$LoginParamsImpl) then) =
-      __$$LoginParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String phone, String password});
-}
-
-/// @nodoc
-class __$$LoginParamsImplCopyWithImpl<$Res>
-    extends _$LoginParamsCopyWithImpl<$Res, _$LoginParamsImpl>
-    implements _$$LoginParamsImplCopyWith<$Res> {
-  __$$LoginParamsImplCopyWithImpl(
-      _$LoginParamsImpl _value, $Res Function(_$LoginParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LoginParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? phone = null,
-    Object? password = null,
-  }) {
-    return _then(_$LoginParamsImpl(
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$LoginParamsImpl implements _LoginParams {
-  const _$LoginParamsImpl({required this.phone, required this.password});
-
-  @override
-  final String phone;
-  @override
-  final String password;
-
-  @override
-  String toString() {
-    return 'LoginParams(phone: $phone, password: $password)';
-  }
+      _$LoginParamsCopyWithImpl<LoginParams>(this as LoginParams, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginParamsImpl &&
+            other is LoginParams &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.password, password) ||
                 other.password == password));
@@ -134,29 +37,280 @@ class _$LoginParamsImpl implements _LoginParams {
   @override
   int get hashCode => Object.hash(runtimeType, phone, password);
 
+  @override
+  String toString() {
+    return 'LoginParams(phone: $phone, password: $password)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $LoginParamsCopyWith<$Res> {
+  factory $LoginParamsCopyWith(
+          LoginParams value, $Res Function(LoginParams) _then) =
+      _$LoginParamsCopyWithImpl;
+  @useResult
+  $Res call({String phone, String password});
+}
+
+/// @nodoc
+class _$LoginParamsCopyWithImpl<$Res> implements $LoginParamsCopyWith<$Res> {
+  _$LoginParamsCopyWithImpl(this._self, this._then);
+
+  final LoginParams _self;
+  final $Res Function(LoginParams) _then;
+
   /// Create a copy of LoginParams
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? phone = null,
+    Object? password = null,
+  }) {
+    return _then(_self.copyWith(
+      phone: null == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _self.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [LoginParams].
+extension LoginParamsPatterns on LoginParams {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_LoginParams value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LoginParams() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_LoginParams value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LoginParams():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_LoginParams value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LoginParams() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String phone, String password)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LoginParams() when $default != null:
+        return $default(_that.phone, _that.password);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String phone, String password) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LoginParams():
+        return $default(_that.phone, _that.password);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String phone, String password)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LoginParams() when $default != null:
+        return $default(_that.phone, _that.password);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _LoginParams implements LoginParams {
+  const _LoginParams({required this.phone, required this.password});
+
+  @override
+  final String phone;
+  @override
+  final String password;
+
+  /// Create a copy of LoginParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LoginParamsCopyWith<_LoginParams> get copyWith =>
+      __$LoginParamsCopyWithImpl<_LoginParams>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _LoginParams &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, phone, password);
+
+  @override
+  String toString() {
+    return 'LoginParams(phone: $phone, password: $password)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$LoginParamsCopyWith<$Res>
+    implements $LoginParamsCopyWith<$Res> {
+  factory _$LoginParamsCopyWith(
+          _LoginParams value, $Res Function(_LoginParams) _then) =
+      __$LoginParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String phone, String password});
+}
+
+/// @nodoc
+class __$LoginParamsCopyWithImpl<$Res> implements _$LoginParamsCopyWith<$Res> {
+  __$LoginParamsCopyWithImpl(this._self, this._then);
+
+  final _LoginParams _self;
+  final $Res Function(_LoginParams) _then;
+
+  /// Create a copy of LoginParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginParamsImplCopyWith<_$LoginParamsImpl> get copyWith =>
-      __$$LoginParamsImplCopyWithImpl<_$LoginParamsImpl>(this, _$identity);
+  $Res call({
+    Object? phone = null,
+    Object? password = null,
+  }) {
+    return _then(_LoginParams(
+      phone: null == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _self.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
-abstract class _LoginParams implements LoginParams {
-  const factory _LoginParams(
-      {required final String phone,
-      required final String password}) = _$LoginParamsImpl;
-
-  @override
-  String get phone;
-  @override
-  String get password;
-
-  /// Create a copy of LoginParams
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoginParamsImplCopyWith<_$LoginParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

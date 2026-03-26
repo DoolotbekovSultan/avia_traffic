@@ -6,7 +6,7 @@ part 'country_model.freezed.dart';
 part 'country_model.g.dart';
 
 @freezed
-class CountryModel with _$CountryModel {
+sealed class CountryModel with _$CountryModel {
   const factory CountryModel({
     required int id,
     required String name,
@@ -22,13 +22,13 @@ class CountryModel with _$CountryModel {
   const CountryModel._();
 
   Country toDomain() => Country(
-    id: id,
-    name: name,
-    codeName: codeName,
-    img: img,
-    directions: directions ?? cities.length,
-    cities: cities.toDomain(),
-  );
+        id: id,
+        name: name,
+        codeName: codeName,
+        img: img,
+        directions: directions ?? cities.length,
+        cities: cities.toDomain(),
+      );
 }
 
 extension CountryModelListX on List<CountryModel> {

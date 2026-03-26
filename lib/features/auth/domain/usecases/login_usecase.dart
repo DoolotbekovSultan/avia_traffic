@@ -9,7 +9,7 @@ import 'package:injectable/injectable.dart';
 part 'login_usecase.freezed.dart';
 
 @freezed
-class LoginParams with _$LoginParams {
+sealed class LoginParams with _$LoginParams {
   const factory LoginParams({
     required String phone,
     required String password,

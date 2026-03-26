@@ -6,8 +6,7 @@ part of 'deal_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DealModelImpl _$$DealModelImplFromJson(Map<String, dynamic> json) =>
-    _$DealModelImpl(
+_DealModel _$DealModelFromJson(Map<String, dynamic> json) => _DealModel(
       id: (json['id'] as num).toInt(),
       language: json['language'] as String,
       codeTo: json['code_to'] as String,
@@ -18,7 +17,7 @@ _$DealModelImpl _$$DealModelImplFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String,
     );
 
-Map<String, dynamic> _$$DealModelImplToJson(_$DealModelImpl instance) =>
+Map<String, dynamic> _$DealModelToJson(_DealModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'language': instance.language,

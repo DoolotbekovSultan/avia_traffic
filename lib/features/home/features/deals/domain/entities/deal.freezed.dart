@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,111 +9,60 @@ part of 'deal.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Deal {
-  int get id => throw _privateConstructorUsedError;
-  String get language => throw _privateConstructorUsedError;
-  String get codeTo => throw _privateConstructorUsedError;
-  String get codeFrom => throw _privateConstructorUsedError;
-  String get slug => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  int get id;
+  String get language;
+  String get codeTo;
+  String get codeFrom;
+  String get slug;
+  String get imageUrl;
+  String get title;
+  String get description;
 
   /// Create a copy of Deal
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $DealCopyWith<Deal> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DealCopyWith<$Res> {
-  factory $DealCopyWith(Deal value, $Res Function(Deal) then) =
-      _$DealCopyWithImpl<$Res, Deal>;
-  @useResult
-  $Res call(
-      {int id,
-      String language,
-      String codeTo,
-      String codeFrom,
-      String slug,
-      String imageUrl,
-      String title,
-      String description});
-}
-
-/// @nodoc
-class _$DealCopyWithImpl<$Res, $Val extends Deal>
-    implements $DealCopyWith<$Res> {
-  _$DealCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Deal
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $DealCopyWith<Deal> get copyWith =>
+      _$DealCopyWithImpl<Deal>(this as Deal, _$identity);
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? language = null,
-    Object? codeTo = null,
-    Object? codeFrom = null,
-    Object? slug = null,
-    Object? imageUrl = null,
-    Object? title = null,
-    Object? description = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      language: null == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String,
-      codeTo: null == codeTo
-          ? _value.codeTo
-          : codeTo // ignore: cast_nullable_to_non_nullable
-              as String,
-      codeFrom: null == codeFrom
-          ? _value.codeFrom
-          : codeFrom // ignore: cast_nullable_to_non_nullable
-              as String,
-      slug: null == slug
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Deal &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.codeTo, codeTo) || other.codeTo == codeTo) &&
+            (identical(other.codeFrom, codeFrom) ||
+                other.codeFrom == codeFrom) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.description, description) ||
+                other.description == description));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id, language, codeTo, codeFrom,
+      slug, imageUrl, title, description);
+
+  @override
+  String toString() {
+    return 'Deal(id: $id, language: $language, codeTo: $codeTo, codeFrom: $codeFrom, slug: $slug, imageUrl: $imageUrl, title: $title, description: $description)';
   }
 }
 
 /// @nodoc
-abstract class _$$DealImplCopyWith<$Res> implements $DealCopyWith<$Res> {
-  factory _$$DealImplCopyWith(
-          _$DealImpl value, $Res Function(_$DealImpl) then) =
-      __$$DealImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $DealCopyWith<$Res> {
+  factory $DealCopyWith(Deal value, $Res Function(Deal) _then) =
+      _$DealCopyWithImpl;
   @useResult
   $Res call(
       {int id,
@@ -127,11 +76,11 @@ abstract class _$$DealImplCopyWith<$Res> implements $DealCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$DealImplCopyWithImpl<$Res>
-    extends _$DealCopyWithImpl<$Res, _$DealImpl>
-    implements _$$DealImplCopyWith<$Res> {
-  __$$DealImplCopyWithImpl(_$DealImpl _value, $Res Function(_$DealImpl) _then)
-      : super(_value, _then);
+class _$DealCopyWithImpl<$Res> implements $DealCopyWith<$Res> {
+  _$DealCopyWithImpl(this._self, this._then);
+
+  final Deal _self;
+  final $Res Function(Deal) _then;
 
   /// Create a copy of Deal
   /// with the given fields replaced by the non-null parameter values.
@@ -147,47 +96,213 @@ class __$$DealImplCopyWithImpl<$Res>
     Object? title = null,
     Object? description = null,
   }) {
-    return _then(_$DealImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
       language: null == language
-          ? _value.language
+          ? _self.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
       codeTo: null == codeTo
-          ? _value.codeTo
+          ? _self.codeTo
           : codeTo // ignore: cast_nullable_to_non_nullable
               as String,
       codeFrom: null == codeFrom
-          ? _value.codeFrom
+          ? _self.codeFrom
           : codeFrom // ignore: cast_nullable_to_non_nullable
               as String,
       slug: null == slug
-          ? _value.slug
+          ? _self.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String,
       imageUrl: null == imageUrl
-          ? _value.imageUrl
+          ? _self.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
-          ? _value.title
+          ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Deal].
+extension DealPatterns on Deal {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Deal value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Deal() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Deal value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Deal():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Deal value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Deal() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(int id, String language, String codeTo, String codeFrom,
+            String slug, String imageUrl, String title, String description)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Deal() when $default != null:
+        return $default(_that.id, _that.language, _that.codeTo, _that.codeFrom,
+            _that.slug, _that.imageUrl, _that.title, _that.description);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(int id, String language, String codeTo, String codeFrom,
+            String slug, String imageUrl, String title, String description)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Deal():
+        return $default(_that.id, _that.language, _that.codeTo, _that.codeFrom,
+            _that.slug, _that.imageUrl, _that.title, _that.description);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(int id, String language, String codeTo, String codeFrom,
+            String slug, String imageUrl, String title, String description)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Deal() when $default != null:
+        return $default(_that.id, _that.language, _that.codeTo, _that.codeFrom,
+            _that.slug, _that.imageUrl, _that.title, _that.description);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 
-class _$DealImpl implements _Deal {
-  const _$DealImpl(
+class _Deal implements Deal {
+  const _Deal(
       {required this.id,
       required this.language,
       required this.codeTo,
@@ -214,16 +329,19 @@ class _$DealImpl implements _Deal {
   @override
   final String description;
 
+  /// Create a copy of Deal
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Deal(id: $id, language: $language, codeTo: $codeTo, codeFrom: $codeFrom, slug: $slug, imageUrl: $imageUrl, title: $title, description: $description)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DealCopyWith<_Deal> get copyWith =>
+      __$DealCopyWithImpl<_Deal>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DealImpl &&
+            other is _Deal &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.language, language) ||
                 other.language == language) &&
@@ -242,47 +360,85 @@ class _$DealImpl implements _Deal {
   int get hashCode => Object.hash(runtimeType, id, language, codeTo, codeFrom,
       slug, imageUrl, title, description);
 
+  @override
+  String toString() {
+    return 'Deal(id: $id, language: $language, codeTo: $codeTo, codeFrom: $codeFrom, slug: $slug, imageUrl: $imageUrl, title: $title, description: $description)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$DealCopyWith<$Res> implements $DealCopyWith<$Res> {
+  factory _$DealCopyWith(_Deal value, $Res Function(_Deal) _then) =
+      __$DealCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {int id,
+      String language,
+      String codeTo,
+      String codeFrom,
+      String slug,
+      String imageUrl,
+      String title,
+      String description});
+}
+
+/// @nodoc
+class __$DealCopyWithImpl<$Res> implements _$DealCopyWith<$Res> {
+  __$DealCopyWithImpl(this._self, this._then);
+
+  final _Deal _self;
+  final $Res Function(_Deal) _then;
+
   /// Create a copy of Deal
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DealImplCopyWith<_$DealImpl> get copyWith =>
-      __$$DealImplCopyWithImpl<_$DealImpl>(this, _$identity);
+  $Res call({
+    Object? id = null,
+    Object? language = null,
+    Object? codeTo = null,
+    Object? codeFrom = null,
+    Object? slug = null,
+    Object? imageUrl = null,
+    Object? title = null,
+    Object? description = null,
+  }) {
+    return _then(_Deal(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      language: null == language
+          ? _self.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeTo: null == codeTo
+          ? _self.codeTo
+          : codeTo // ignore: cast_nullable_to_non_nullable
+              as String,
+      codeFrom: null == codeFrom
+          ? _self.codeFrom
+          : codeFrom // ignore: cast_nullable_to_non_nullable
+              as String,
+      slug: null == slug
+          ? _self.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: null == imageUrl
+          ? _self.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
-abstract class _Deal implements Deal {
-  const factory _Deal(
-      {required final int id,
-      required final String language,
-      required final String codeTo,
-      required final String codeFrom,
-      required final String slug,
-      required final String imageUrl,
-      required final String title,
-      required final String description}) = _$DealImpl;
-
-  @override
-  int get id;
-  @override
-  String get language;
-  @override
-  String get codeTo;
-  @override
-  String get codeFrom;
-  @override
-  String get slug;
-  @override
-  String get imageUrl;
-  @override
-  String get title;
-  @override
-  String get description;
-
-  /// Create a copy of Deal
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DealImplCopyWith<_$DealImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

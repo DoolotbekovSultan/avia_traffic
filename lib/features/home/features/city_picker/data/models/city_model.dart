@@ -6,7 +6,7 @@ part 'city_model.freezed.dart';
 part 'city_model.g.dart';
 
 @freezed
-class CityModel with _$CityModel {
+sealed class CityModel with _$CityModel {
   const factory CityModel({
     required int id,
     required String name,
@@ -21,12 +21,12 @@ class CityModel with _$CityModel {
   const CityModel._();
 
   City toDomain() => City(
-    id: id,
-    name: name,
-    codeName: codeName,
-    country: country ?? '',
-    airports: airports.map((e) => e.toDomain()).toList(),
-  );
+        id: id,
+        name: name,
+        codeName: codeName,
+        country: country ?? '',
+        airports: airports.map((e) => e.toDomain()).toList(),
+      );
 }
 
 extension CityModelListX on List<CityModel> {

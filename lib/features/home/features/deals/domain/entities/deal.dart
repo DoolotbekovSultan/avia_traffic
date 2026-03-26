@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'deal.freezed.dart';
 
 @freezed
-class Deal with _$Deal {
+sealed class Deal with _$Deal {
   const factory Deal({
     required int id,
     required String language,

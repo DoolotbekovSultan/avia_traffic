@@ -9,7 +9,7 @@ import 'package:injectable/injectable.dart';
 part 'register_usecase.freezed.dart';
 
 @freezed
-class RegisterParams with _$RegisterParams {
+sealed class RegisterParams with _$RegisterParams {
   const factory RegisterParams({
     required String email,
     required String firstName,

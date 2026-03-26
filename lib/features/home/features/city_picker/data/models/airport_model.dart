@@ -5,7 +5,7 @@ part 'airport_model.freezed.dart';
 part 'airport_model.g.dart';
 
 @freezed
-class AirportModel with _$AirportModel {
+sealed class AirportModel with _$AirportModel {
   const factory AirportModel({
     required int id,
     required String name,
