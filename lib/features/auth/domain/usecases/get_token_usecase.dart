@@ -7,13 +7,13 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
-class GetTokenUseCase extends BaseUseCase<void, NoParams> {
+class GetTokenUseCase extends BaseUseCase<String?, NoParams> {
   final IAuthRepository _repository;
 
   GetTokenUseCase(this._repository);
 
   @override
-  Future<Either<Failure, void>> execute(NoParams params) async {
+  Future<Either<Failure, String?>> execute(NoParams params) async {
     final result = await _repository.getToken();
     result.fold(
       (failure) => Log.e('GetTokenUseCase: failure: $failure'),

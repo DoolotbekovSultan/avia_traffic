@@ -28,15 +28,7 @@ abstract class RegisterModule {
         getToken: () async {
           final useCase = getIt<GetTokenUseCase>();
           final result = await useCase(NoParams());
-          result.fold(
-            (left) {
-              return null;
-            },
-            (right) {
-              return right;
-            },
-          );
-          return null;
+          return result.fold((left) => null, (right) => right);
         },
       ),
     );

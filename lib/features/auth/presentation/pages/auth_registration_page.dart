@@ -8,6 +8,7 @@ import 'package:aviatraffic/features/auth/domain/usecases/register_usecase.dart'
 import 'package:aviatraffic/features/auth/presentation/bloc/auth/auth_bloc.dart';
 import 'package:aviatraffic/features/auth/presentation/bloc/auth/auth_event.dart';
 import 'package:aviatraffic/features/auth/presentation/bloc/auth/auth_state.dart';
+import 'package:aviatraffic/shared/presentation/widgets/custom_text_field.dart';
 import 'package:aviatraffic/shared/presentation/widgets/gradient_app_bar.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +34,20 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
   late final TextEditingController _numberTextEditingController;
   late final TextEditingController _invesionPasswordTextEditingController;
   late final TextEditingController _repeatPasswordTextEditingController;
+  bool _registerButtonIsActive = false;
   bool isInvesionHidden = true;
   bool isRepeatHidden = true;
+
+  void updateAvtiveButtonFlag() {
+    setState(() {
+      _registerButtonIsActive =
+          _nameTextEditingController.text.isNotEmpty &&
+          _emailTextEditingController.text.isNotEmpty &&
+          _numberTextEditingController.text.isNotEmpty &&
+          _invesionPasswordTextEditingController.text.isNotEmpty &&
+          _repeatPasswordTextEditingController.text.isNotEmpty;
+    });
+  }
 
   @override
   void initState() {
@@ -44,6 +57,16 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
     _numberTextEditingController = TextEditingController();
     _invesionPasswordTextEditingController = TextEditingController();
     _repeatPasswordTextEditingController = TextEditingController();
+    final controllers = [
+      _nameTextEditingController,
+      _emailTextEditingController,
+      _numberTextEditingController,
+      _invesionPasswordTextEditingController,
+      _repeatPasswordTextEditingController,
+    ];
+    for (final controller in controllers) {
+      controller.addListener(updateAvtiveButtonFlag);
+    }
     super.initState();
   }
 
@@ -66,7 +89,11 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
         listener: (context, state) {
           state.maybeMap(
             authenticated: (_) => context.router.push(
-              ConfirmCodeRoute(email: _emailTextEditingController.text),
+              ConfirmCodeRoute(
+                onSuccess: () => context.router.replaceAll([const MainRoute()]),
+                email: _emailTextEditingController.text,
+                title: "Регистрация",
+              ),
             ),
             failure: (f) {},
             orElse: () {},
@@ -78,216 +105,221 @@ class _AuthRegistrationPageState extends State<AuthRegistrationPage> {
             body: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(height: 88.h),
-                    Text(
-                      "Регистрация",
-                      style: getIt<AppTextStyles>().headlineMediumBold.copyWith(
-                            color: AppColors.onBackground,
-                          ),
-                    ),
-                    Gap.v12,
-                    Text(
-                      'Уважаемый пользователь,\nвыполните вход в приложение',
-                      textAlign: TextAlign.center,
-                      style: getIt<AppTextStyles>().bodyMediumSemiBold.copyWith(
-                            color: AppColors.onBackground,
-                            height: 24 / 15,
-                          ),
-                    ),
-                    SizedBox(height: 43.h),
-                    TextField(
-                      keyboardType: TextInputType.name,
-                      readOnly: state.maybeMap(
-                        authenticated: (_) => true,
-                        orElse: () => false,
+              child: LayoutBuilder(
+                builder: (context, constrains) {
+                  return SingleChildScrollView(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: constrains.maxHeight,
                       ),
-                      controller: _nameTextEditingController,
-                      decoration: InputDecoration(
-                        hintText: 'Ваше имя',
-                        fillColor: Colors.white,
-                        errorText: state.maybeMap(
-                          failure: (f) => f.nameError,
-                          orElse: () => null,
-                        ),
-                      ),
-                    ),
-                    Gap.v24,
-                    TextField(
-                      controller: _emailTextEditingController,
-                      keyboardType: TextInputType.emailAddress,
-                      readOnly: state.maybeMap(
-                        authenticated: (_) => true,
-                        orElse: () => false,
-                      ),
-                      decoration: InputDecoration(
-                        hintText: 'Ваш Email',
-                        fillColor: Colors.white,
-                        errorText: state.maybeMap(
-                          failure: (f) => f.emailError,
-                          orElse: () => null,
-                        ),
-                      ),
-                    ),
-                    Gap.v24,
-                    TextField(
-                      keyboardType: TextInputType.phone,
-                      readOnly: state.maybeMap(
-                        authenticated: (_) => true,
-                        orElse: () => false,
-                      ),
-                      controller: _numberTextEditingController,
-                      decoration: InputDecoration(
-                        labelText: 'Ваш телефон',
-                        hintText: '+996 (XXX) XXXXXXX',
-                        fillColor: Colors.white,
-                        errorText: state.maybeMap(
-                          failure: (f) => f.phoneError,
-                          orElse: () => null,
-                        ),
-                      ),
-                    ),
-                    Gap.v24,
-                    TextField(
-                      keyboardType: TextInputType.visiblePassword,
-                      readOnly: state.maybeMap(
-                        authenticated: (_) => true,
-                        orElse: () => false,
-                      ),
-                      controller: _invesionPasswordTextEditingController,
-                      obscuringCharacter: '*',
-                      style: getIt<AppTextStyles>().bodyLargeSemiBold.copyWith(
-                            color: AppColors.onBackground,
-                          ),
-                      obscureText: isInvesionHidden,
-                      textInputAction: TextInputAction.next,
-                      decoration: InputDecoration(
-                        hintText: 'Придумайте пароль',
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isInvesionHidden = !isInvesionHidden;
-                            });
-                          },
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 18.w,
-                              vertical: 12.h,
+                      child: IntrinsicHeight(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 88.h),
+                            Text(
+                              "Регистрация",
+                              style: getIt<AppTextStyles>().headlineMediumBold
+                                  .copyWith(color: AppColors.onBackground),
                             ),
-                            child: SvgPicture.asset(
-                              isInvesionHidden
-                                  ? hideEyeImagePath
-                                  : showEyeImagePath,
+                            Gap.v12,
+                            Text(
+                              'Уважаемый пользователь,\nвыполните вход в приложение',
+                              textAlign: TextAlign.center,
+                              style: getIt<AppTextStyles>().bodyMediumSemiBold
+                                  .copyWith(
+                                    color: AppColors.onBackground,
+                                    height: 24 / 15,
+                                  ),
                             ),
-                          ),
-                        ),
-                        errorText: state.maybeMap(
-                          failure: (f) => f.passwordError,
-                          orElse: () => null,
-                        ),
-                        fillColor: Colors.white,
-                      ),
-                    ),
-                    Gap.v24,
-                    TextField(
-                      keyboardType: TextInputType.visiblePassword,
-                      readOnly: state.maybeMap(
-                        authenticated: (_) => true,
-                        orElse: () => false,
-                      ),
-                      controller: _repeatPasswordTextEditingController,
-                      obscuringCharacter: '*',
-                      style: getIt<AppTextStyles>().bodyLargeSemiBold.copyWith(
-                            color: AppColors.onBackground,
-                          ),
-                      obscureText: isRepeatHidden,
-                      textInputAction: TextInputAction.done,
-                      decoration: InputDecoration(
-                        hintText: 'Повторите пароль',
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isRepeatHidden = !isRepeatHidden;
-                            });
-                          },
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 18.w,
-                              vertical: 12.h,
+                            SizedBox(height: 43.h),
+                            CustomTextField(
+                              textEditingController: _nameTextEditingController,
+                              keyboardType: TextInputType.name,
+                              readOnly: state.maybeMap(
+                                authenticated: (_) => true,
+                                orElse: () => false,
+                              ),
+                              errorText: state.maybeMap(
+                                failure: (f) => f.nameError,
+                                orElse: () => null,
+                              ),
+                              hintText: 'Ваше имя',
+                              labelAlways: false,
+                              labelText: "Ваше имя",
                             ),
-                            child: SvgPicture.asset(
-                              isRepeatHidden
-                                  ? hideEyeImagePath
-                                  : showEyeImagePath,
+                            Gap.v24,
+                            CustomTextField(
+                              textEditingController:
+                                  _emailTextEditingController,
+                              keyboardType: TextInputType.emailAddress,
+                              readOnly: state.maybeMap(
+                                authenticated: (_) => true,
+                                orElse: () => false,
+                              ),
+                              errorText: state.maybeMap(
+                                failure: (f) => f.emailError,
+                                orElse: () => null,
+                              ),
+                              hintText: 'Ваш Email',
+                              labelAlways: false,
+                              labelText: "Ваше Email",
                             ),
-                          ),
-                        ),
-                        errorText: state.maybeMap(
-                          failure: (f) => f.confirmPasswordError,
-                          orElse: () => null,
-                        ),
-                        fillColor: Colors.white,
-                      ),
-                    ),
-                    Gap.v24,
-                    RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        style: getIt<AppTextStyles>().caption.copyWith(
-                              color: AppColors.neutral500,
-                              height: 18 / 13,
+                            Gap.v24,
+                            CustomTextField(
+                              errorText: state.maybeMap(
+                                failure: (f) => f.phoneError,
+                                orElse: () => null,
+                              ),
+                              readOnly: state.maybeMap(
+                                authenticated: (_) => true,
+                                orElse: () => false,
+                              ),
+                              labelText: 'Ваш номер',
+                              hintText: '+996 (XXX) XXXXXXX',
+                              hasError: state.maybeMap(
+                                incorrectPhoneOrNumber: (f) => true,
+                                orElse: () => false,
+                              ),
+                              keyboardType: TextInputType.phone,
+                              textEditingController:
+                                  _numberTextEditingController,
                             ),
-                        children: [
-                          TextSpan(
-                            text:
-                                'Проходя регистрацию в приложении, вы\nсоглашаетесь ',
-                          ),
-                          TextSpan(
-                            text: 'с правилами и условиями.',
-                            style: TextStyle(color: AppColors.primary),
-                            recognizer: TapGestureRecognizer()..onTap = () {},
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 70.h),
-                    SizedBox(
-                      height: 56.h,
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: state.maybeMap(
-                          loading: (_) => null,
-                          orElse: () => () {
-                            _authBloc.add(
-                              AuthEvent.register(
-                                params: RegisterParams(
-                                  firstName: _nameTextEditingController.text,
-                                  email: _emailTextEditingController.text,
-                                  phone: _numberTextEditingController.text,
-                                  password:
-                                      _invesionPasswordTextEditingController
-                                          .text,
-                                  confirmPassword:
-                                      _repeatPasswordTextEditingController.text,
+                            Gap.v24,
+                            CustomTextField(
+                              keyboardType: TextInputType.visiblePassword,
+                              textEditingController:
+                                  _invesionPasswordTextEditingController,
+                              obscureText: isInvesionHidden,
+                              obscuringCharacter: '*',
+                              hintText: 'Придумайте пароль',
+                              errorText: state.maybeMap(
+                                failure: (value) => value.passwordError,
+                                orElse: () => null,
+                              ),
+                              readOnly: state.maybeMap(
+                                authenticated: (_) => true,
+                                orElse: () => false,
+                              ),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    isInvesionHidden = !isInvesionHidden;
+                                  });
+                                },
+                                child: SvgPicture.asset(
+                                  isInvesionHidden
+                                      ? hideEyeImagePath
+                                      : showEyeImagePath,
+                                  width: 24.w,
+                                  height: 24.h,
                                 ),
                               ),
-                            );
-                          },
-                        ),
-                        child: state.maybeMap(
-                          loading: (_) => const CircularProgressIndicator(
-                            color: Colors.white,
-                          ),
-                          orElse: () => const Text('Зарегистрироваться'),
+                            ),
+                            Gap.v24,
+                            CustomTextField(
+                              keyboardType: TextInputType.visiblePassword,
+                              textEditingController:
+                                  _repeatPasswordTextEditingController,
+                              obscureText: isRepeatHidden,
+                              obscuringCharacter: '*',
+                              hintText: 'Повторите пароль',
+                              errorText: state.maybeMap(
+                                failure: (value) => value.passwordError,
+                                orElse: () => null,
+                              ),
+                              readOnly: state.maybeMap(
+                                authenticated: (_) => true,
+                                orElse: () => false,
+                              ),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    isRepeatHidden = !isRepeatHidden;
+                                  });
+                                },
+                                child: SvgPicture.asset(
+                                  isRepeatHidden
+                                      ? hideEyeImagePath
+                                      : showEyeImagePath,
+                                  width: 24.w,
+                                  height: 24.h,
+                                ),
+                              ),
+                            ),
+                            Gap.v24,
+                            RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(
+                                style: getIt<AppTextStyles>().caption.copyWith(
+                                  color: AppColors.neutral500,
+                                  height: 18 / 13,
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text:
+                                        'Проходя регистрацию в приложении, вы\nсоглашаетесь ',
+                                  ),
+                                  TextSpan(
+                                    text: 'с правилами и условиями.',
+                                    style: TextStyle(color: AppColors.primary),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {},
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Gap.v16,
+                            const Spacer(),
+                            SizedBox(
+                              height: 56.h,
+                              width: double.infinity,
+                              child: ElevatedButton(
+                                onPressed: !_registerButtonIsActive
+                                    ? null
+                                    : state.maybeMap(
+                                        loading: (_) => null,
+                                        orElse: () => () {
+                                          _authBloc.add(
+                                            AuthEvent.register(
+                                              params: RegisterParams(
+                                                firstName:
+                                                    _nameTextEditingController
+                                                        .text,
+                                                email:
+                                                    _emailTextEditingController
+                                                        .text,
+                                                phone:
+                                                    _numberTextEditingController
+                                                        .text,
+                                                password:
+                                                    _invesionPasswordTextEditingController
+                                                        .text,
+                                                confirmPassword:
+                                                    _repeatPasswordTextEditingController
+                                                        .text,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                child: state.maybeMap(
+                                  loading: (_) =>
+                                      const CircularProgressIndicator(
+                                        color: Colors.white,
+                                      ),
+                                  orElse: () =>
+                                      const Text('Зарегистрироваться'),
+                                ),
+                              ),
+                            ),
+                            Gap.v16,
+                          ],
                         ),
                       ),
                     ),
-                    Gap.v16,
-                  ],
-                ),
+                  );
+                },
               ),
             ),
           );

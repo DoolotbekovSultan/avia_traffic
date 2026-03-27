@@ -18,5 +18,6 @@ class AuthState with _$AuthState {
     String? emailError,
     String? codeError,
   }) = _Failure;
+  const factory AuthState.incorrectPhoneOrNumber() = _IncorrectPhoneOrNumber;
   const factory AuthState.success() = _Success;
 }

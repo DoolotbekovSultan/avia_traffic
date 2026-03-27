@@ -8,6 +8,7 @@ import 'package:aviatraffic/features/auth/domain/usecases/login_usecase.dart';
 import 'package:aviatraffic/features/auth/domain/usecases/logout_usecase.dart';
 import 'package:aviatraffic/features/auth/domain/usecases/modify_password_usecase.dart';
 import 'package:aviatraffic/features/auth/domain/usecases/register_usecase.dart';
+import 'package:aviatraffic/features/auth/domain/usecases/resend_email_usecase.dart';
 import 'package:aviatraffic/features/auth/presentation/bloc/auth/auth_event.dart';
 import 'package:aviatraffic/features/auth/presentation/bloc/auth/auth_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,6 +22,7 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
   final ForgotPasswordUseCase _forgotPasswordUseCase;
   final ModifyPasswordUseCase _modifyPasswordUseCase;
   final ConfirmCodeUseCase _confirmCodeUseCase;
+  final ResendEmailUseCase _resendEmailUseCase;
 
   AuthBloc(
     this._loginUseCase,
@@ -29,6 +31,7 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
     this._forgotPasswordUseCase,
     this._modifyPasswordUseCase,
     this._confirmCodeUseCase,
+    this._resendEmailUseCase,
   ) : super(const AuthState.initial()) {
     on<AuthEvent>((event, emit) async {
       await event.map(
@@ -38,6 +41,7 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
         forgotPassword: (e) => _onForgotPassword(e, emit),
         modifyPassword: (e) => _onModifyPassword(e, emit),
         confirmCode: (e) => _onConfirmCode(e, emit),
+        resendEmail: (e) => _onResendEmail(e, emit),
       );
     });
   }
@@ -58,11 +62,29 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
     }
 
     emit(const AuthState.loading());
-    final result = await _loginUseCase.execute(event.params);
+
+    final result = await _loginUseCase(event.params);
+
+    result.fold((failure) {
+      if (failure is ClientValidationFailure) {
+        emit(AuthState.incorrectPhoneOrNumber());
+      } else {
+        emit(AuthState.failure(failure: failure));
+      }
+    }, (_) => emit(const AuthState.success()));
+  }
+
+  Future<void> _onResendEmail(
+    ResendEmail event,
+    Emitter<AuthState> emit,
+  ) async {
+    emit(const AuthState.loading());
+    final result = await _resendEmailUseCase(event.email);
     result.fold(
       (failure) => emit(AuthState.failure(failure: failure)),
-      (_) => emit(const AuthState.success()),
+      (right) => null,
     );
+    return;
   }
 
   Future<void> _onRegister(AuthRegister event, Emitter<AuthState> emit) async {
@@ -148,10 +170,11 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
     }
 
     emit(const AuthState.loading());
-    final result = await _forgotPasswordUseCase.execute(event.email);
+
+    final result = await _forgotPasswordUseCase(event.email);
     result.fold(
       (failure) => emit(AuthState.failure(failure: failure)),
-      (_) => emit(const AuthState.success()),
+      (_) => emit(const AuthState.authenticated()),
     );
   }
 
@@ -204,9 +227,17 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
 
     emit(const AuthState.loading());
     final result = await _confirmCodeUseCase.execute(event.params);
-    result.fold(
-      (failure) => emit(AuthState.failure(failure: failure)),
-      (_) => emit(const AuthState.success()),
-    );
+    result.fold((failure) {
+      if (failure is ClientValidationFailure) {
+        emit(
+          AuthState.failure(
+            failure: failure,
+            codeError: failure.errors?['code_error']?.join(', '),
+          ),
+        );
+      } else {
+        emit(AuthState.failure(failure: failure));
+      }
+    }, (_) => emit(const AuthState.success()));
   }
 }

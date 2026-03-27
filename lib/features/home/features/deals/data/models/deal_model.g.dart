@@ -7,15 +7,15 @@ part of 'deal_model.dart';
 // **************************************************************************
 
 _DealModel _$DealModelFromJson(Map<String, dynamic> json) => _DealModel(
-      id: (json['id'] as num).toInt(),
-      language: json['language'] as String,
-      codeTo: json['code_to'] as String,
-      codeFrom: json['code_from'] as String,
-      slug: json['slug'] as String,
-      imageUrl: json['image'] as String,
-      title: json['name'] as String,
-      description: json['description'] as String,
-    );
+  id: (json['id'] as num).toInt(),
+  language: json['language'] as String,
+  codeTo: json['code_to'] as String,
+  codeFrom: json['code_from'] as String,
+  slug: json['slug'] as String,
+  imageUrl: json['image'] as String,
+  title: json['name'] as String,
+  description: json['description'] as String,
+);
 
 Map<String, dynamic> _$DealModelToJson(_DealModel instance) =>
     <String, dynamic>{

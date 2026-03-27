@@ -5,6 +5,7 @@ import 'package:aviatraffic/features/auth/data/datasources/i_auth_remote_datasou
 import 'package:aviatraffic/features/auth/domain/entities/user.dart';
 import 'package:aviatraffic/features/auth/domain/repositories/i_auth_repository.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IAuthRepository)
@@ -21,29 +22,42 @@ class AuthRepository with DioExceptionHandler implements IAuthRepository {
     required String password,
     required String confirmPassword,
     String? email,
-  }) =>
-      executeSafely(() async {
-        await _remoteDataSource.register(
-          firstName: firstName,
-          phone: phone,
-          password: password,
-          confirmPassword: confirmPassword,
-          email: email,
-        );
-      });
+  }) => executeSafely(() async {
+    await _remoteDataSource.register(
+      firstName: firstName,
+      phone: phone,
+      password: password,
+      confirmPassword: confirmPassword,
+      email: email,
+    );
+  });
 
   @override
   Future<Either<Failure, void>> login({
     required String phone,
     required String password,
-  }) =>
-      executeSafely(() async {
-        final token = await _remoteDataSource.login(
-          phone: phone,
-          password: password,
+  }) => executeSafely(() async {
+    try {
+      final token = await _remoteDataSource.login(
+        phone: phone,
+        password: password,
+      );
+      await _tokenLocalDatasource.saveToken(token);
+    } on DioException catch (e) {
+      final detail = (e.response?.data as Map<String, dynamic>?)?['detail'];
+      if (detail != null) {
+        throw ClientValidationFailure(
+          errors: {
+            'phone': [detail],
+            'password': [detail],
+          },
         );
-        await _tokenLocalDatasource.saveToken(token);
-      });
+      } else {
+        rethrow;
+      }
+    }
+  });
+
   @override
   Future<Either<Failure, void>> logout() =>
       executeSafely(() => _remoteDataSource.logout());
@@ -52,12 +66,21 @@ class AuthRepository with DioExceptionHandler implements IAuthRepository {
   Future<Either<Failure, void>> confirmCode({
     required String email,
     required String code,
-  }) =>
-      executeSafely(() async {
-        final token =
-            await _remoteDataSource.confirmCode(email: email, code: code);
-        _tokenLocalDatasource.saveToken(token);
-      });
+  }) => executeSafely(() async {
+    try {
+      final token = await _remoteDataSource.confirmCode(
+        email: email,
+        code: code,
+      );
+      _tokenLocalDatasource.saveToken(token);
+    } on DioException catch (e) {
+      throw ClientValidationFailure(
+        errors: {
+          'code_error': [e.response?.data['message']],
+        },
+      );
+    }
+  });
 
   @override
   Future<Either<Failure, void>> resendEmail({required String email}) =>
@@ -71,29 +94,26 @@ class AuthRepository with DioExceptionHandler implements IAuthRepository {
   Future<Either<Failure, void>> modifyPassword({
     required String password,
     required String confirmPassword,
-  }) =>
-      executeSafely(
-        () => _remoteDataSource.modifyPassword(
-          password: password,
-          confirmPassword: confirmPassword,
-        ),
-      );
+  }) => executeSafely(
+    () => _remoteDataSource.modifyPassword(
+      password: password,
+      confirmPassword: confirmPassword,
+    ),
+  );
 
   @override
   Future<Either<Failure, void>> modifyPersonal({
     required String email,
     String? firstName,
-  }) =>
-      executeSafely(
-        () => _remoteDataSource.modifyPersonal(
-            email: email, firstName: firstName),
-      );
+  }) => executeSafely(
+    () => _remoteDataSource.modifyPersonal(email: email, firstName: firstName),
+  );
 
   @override
   Future<Either<Failure, User>> getPersonalInfo() => executeSafely(() async {
-        final model = await _remoteDataSource.getPersonalInfo();
-        return model.toDomain();
-      });
+    final model = await _remoteDataSource.getPersonalInfo();
+    return model.toDomain();
+  });
 
   @override
   Future<Either<Failure, void>> deleteAccount() =>
@@ -101,6 +121,6 @@ class AuthRepository with DioExceptionHandler implements IAuthRepository {
 
   @override
   Future<Either<Failure, String?>> getToken() async => executeSafely(() async {
-        return await _tokenLocalDatasource.getToken();
-      });
+    return await _tokenLocalDatasource.getToken();
+  });
 }

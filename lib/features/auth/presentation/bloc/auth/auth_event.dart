@@ -24,4 +24,6 @@ class AuthEvent with _$AuthEvent {
 
   const factory AuthEvent.confirmCode({required ConfirmCodeParams params}) =
       AuthConfirmCode;
+
+  const factory AuthEvent.resendEmail({required String email}) = ResendEmail;
 }
